@@ -48,4 +48,28 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - Register feature
+- (IBAction)onRegisterTap{
+    if (activeTextField != nil) {
+        [activeTextField resignFirstResponder];
+    }
+}
+
+- (IBAction)dismissKeyboard{
+    if (activeTextField != nil) {
+        [activeTextField resignFirstResponder];
+    }
+}
+
+#pragma mark - Text Fields Delegate Methods
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    activeTextField = textField;
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 @end

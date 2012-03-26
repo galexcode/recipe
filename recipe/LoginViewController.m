@@ -47,5 +47,30 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+#pragma mark - Login feature
+- (IBAction)onLoginTap{
+    if (activeTextField != nil) {
+        [activeTextField resignFirstResponder];
+    }
+}
+
+- (IBAction)dismissKeyboard{
+    if (activeTextField != nil) {
+        [activeTextField resignFirstResponder];
+    }
+}
+
+#pragma mark - Text Fields Delegate Methods
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    activeTextField = textField;
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
 
 @end

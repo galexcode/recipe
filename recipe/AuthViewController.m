@@ -7,8 +7,11 @@
 //
 
 #import "AuthViewController.h"
+#import "LoginViewController.h"
+#import "RegisterViewController.h"
 
 @implementation AuthViewController
+@synthesize containerView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,12 +30,41 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+#pragma mark - Change View Methods
+-(void)switchToViewController: (UIViewController *)viewControllerToSwitch{
+    if (viewControllerToSwitch == currentViewController) {
+        return;
+    }
+    if ([currentViewController isViewLoaded]) {
+        [currentViewController.view removeFromSuperview];
+    }
+    if (viewControllerToSwitch != nil) {
+        [containerView addSubview:viewControllerToSwitch.view];
+    }
+    currentViewController = viewControllerToSwitch;
+}
+
+- (IBAction)segmentControlChanged:(id)sender {
+    UISegmentedControl *segmentControl = sender;
+    switch (segmentControl.selectedSegmentIndex) {
+        case 0:
+            [self switchToViewController:loginViewController];
+            break;
+        case 1:
+            [self switchToViewController:registerViewController];
+            break;
+    }
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    loginViewController = [[LoginViewController alloc] init];
+    registerViewController = [[RegisterViewController alloc] init];
+    currentViewController = loginViewController;
+    [containerView addSubview:loginViewController.view];
 }
 
 - (void)viewDidUnload

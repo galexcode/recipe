@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AuthViewController : UIViewController
+@interface AuthViewController : UIViewController{
+    UIViewController *loginViewController;
+    UIViewController *registerViewController;
+    UIViewController *currentViewController;
+}
+
+@property (nonatomic, assign) IBOutlet UIView *containerView;
+
+- (void)switchToViewController: (UIViewController *)viewControllerToSwitch;
+- (IBAction)segmentControlChanged:(id)sender;
 
 @end

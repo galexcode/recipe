@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController{
+    UITextField *activeTextField;
+}
+
+- (IBAction)dismissKeyboard;
+- (IBAction)onLoginTap;
 
 @end
