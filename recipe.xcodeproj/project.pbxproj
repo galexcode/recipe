@@ -18,6 +18,12 @@
 		902964B1152014B0002BAC2D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902964B0152014B0002BAC2D /* SecondViewController.m */; };
 		902964B4152014B0002BAC2D /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902964B2152014B0002BAC2D /* FirstView.xib */; };
 		902964B7152014B0002BAC2D /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902964B5152014B0002BAC2D /* SecondView.xib */; };
+		902964C015201E24002BAC2D /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902964BE15201E24002BAC2D /* AuthViewController.m */; };
+		902964C115201E24002BAC2D /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902964BF15201E24002BAC2D /* AuthViewController.xib */; };
+		902964C5152039BF002BAC2D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902964C3152039BF002BAC2D /* LoginViewController.m */; };
+		902964C6152039BF002BAC2D /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902964C4152039BF002BAC2D /* LoginViewController.xib */; };
+		902964CA152039FF002BAC2D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902964C8152039FF002BAC2D /* RegisterViewController.m */; };
+		902964CB152039FF002BAC2D /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902964C9152039FF002BAC2D /* RegisterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,15 @@
 		902964B0152014B0002BAC2D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		902964B3152014B0002BAC2D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
 		902964B6152014B0002BAC2D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
+		902964BD15201E24002BAC2D /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
+		902964BE15201E24002BAC2D /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
+		902964BF15201E24002BAC2D /* AuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
+		902964C2152039BF002BAC2D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		902964C3152039BF002BAC2D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		902964C4152039BF002BAC2D /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		902964C7152039FF002BAC2D /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		902964C8152039FF002BAC2D /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		902964C9152039FF002BAC2D /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +102,15 @@
 				902964A6152014B0002BAC2D /* recipeAppDelegate.h */,
 				902964A7152014B0002BAC2D /* recipeAppDelegate.m */,
 				902964A9152014B0002BAC2D /* MainWindow.xib */,
+				902964BD15201E24002BAC2D /* AuthViewController.h */,
+				902964BE15201E24002BAC2D /* AuthViewController.m */,
+				902964BF15201E24002BAC2D /* AuthViewController.xib */,
+				902964C2152039BF002BAC2D /* LoginViewController.h */,
+				902964C3152039BF002BAC2D /* LoginViewController.m */,
+				902964C4152039BF002BAC2D /* LoginViewController.xib */,
+				902964C7152039FF002BAC2D /* RegisterViewController.h */,
+				902964C8152039FF002BAC2D /* RegisterViewController.m */,
+				902964C9152039FF002BAC2D /* RegisterViewController.xib */,
 				902964AC152014B0002BAC2D /* FirstViewController.h */,
 				902964AD152014B0002BAC2D /* FirstViewController.m */,
 				902964AF152014B0002BAC2D /* SecondViewController.h */,
@@ -160,6 +184,9 @@
 				902964AB152014B0002BAC2D /* MainWindow.xib in Resources */,
 				902964B4152014B0002BAC2D /* FirstView.xib in Resources */,
 				902964B7152014B0002BAC2D /* SecondView.xib in Resources */,
+				902964C115201E24002BAC2D /* AuthViewController.xib in Resources */,
+				902964C6152039BF002BAC2D /* LoginViewController.xib in Resources */,
+				902964CB152039FF002BAC2D /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +201,9 @@
 				902964A8152014B0002BAC2D /* recipeAppDelegate.m in Sources */,
 				902964AE152014B0002BAC2D /* FirstViewController.m in Sources */,
 				902964B1152014B0002BAC2D /* SecondViewController.m in Sources */,
+				902964C015201E24002BAC2D /* AuthViewController.m in Sources */,
+				902964C5152039BF002BAC2D /* LoginViewController.m in Sources */,
+				902964CA152039FF002BAC2D /* RegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +294,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "recipe/recipe-Prefix.pch";
 				INFOPLIST_FILE = "recipe/recipe-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -275,7 +307,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "recipe/recipe-Prefix.pch";
 				INFOPLIST_FILE = "recipe/recipe-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

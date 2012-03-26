@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface recipeAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate>
+@interface recipeAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate>{
+    UIViewController *authViewController;
+}
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 

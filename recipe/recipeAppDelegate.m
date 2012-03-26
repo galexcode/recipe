@@ -7,6 +7,7 @@
 //
 
 #import "recipeAppDelegate.h"
+#import "AuthViewController.h"
 
 @implementation recipeAppDelegate
 
@@ -17,7 +18,10 @@
 {
     // Override point for customization after application launch.
     // Add the tab bar controller's current view as a subview of the window
+    authViewController = [[AuthViewController alloc] init];
+    [authViewController.view setFrame:CGRectMake(0, 20, 320, 440)];
     self.window.rootViewController = self.tabBarController;
+    [self.window addSubview:authViewController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }
