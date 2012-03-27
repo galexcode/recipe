@@ -76,6 +76,7 @@
 		908409D81521C3B900FA078B /* Step.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Step.m; sourceTree = "<group>"; };
 		908409DA1521C3E700FA078B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		908409DB1521C3E700FA078B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		908409DE1521C60200FA078B /* recipeGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recipeGlobal.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,11 +123,12 @@
 		9029649D152014AF002BAC2D /* recipe */ = {
 			isa = PBXGroup;
 			children = (
-				908409C51521BFAF00FA078B /* model */,
-				908409DD1521C4C300FA078B /* service */,
 				902964A6152014B0002BAC2D /* recipeAppDelegate.h */,
 				902964A7152014B0002BAC2D /* recipeAppDelegate.m */,
 				902964A9152014B0002BAC2D /* MainWindow.xib */,
+				908409DE1521C60200FA078B /* recipeGlobal.h */,
+				908409C51521BFAF00FA078B /* model */,
+				908409DD1521C4C300FA078B /* service */,
 				902964BD15201E24002BAC2D /* AuthViewController.h */,
 				902964BE15201E24002BAC2D /* AuthViewController.m */,
 				902964BF15201E24002BAC2D /* AuthViewController.xib */,
@@ -145,6 +147,7 @@
 				908409B7152166C100FA078B /* ToDoViewController.h */,
 				908409B8152166C100FA078B /* ToDoViewController.m */,
 				908409B9152166C100FA078B /* ToDoViewController.xib */,
+				908409E31521C65B00FA078B /* resource */,
 				9029649E152014AF002BAC2D /* Supporting Files */,
 			);
 			path = recipe;
@@ -185,6 +188,13 @@
 			children = (
 			);
 			name = service;
+			sourceTree = "<group>";
+		};
+		908409E31521C65B00FA078B /* resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
