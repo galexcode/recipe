@@ -1,28 +1,20 @@
 //
-//  RegisterViewController.m
+//  MyRecipeViewController.m
 //  recipe
 //
-//  Created by ongsoft on 3/26/12.
+//  Created by ongsoft on 3/27/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "RegisterViewController.h"
+#import "MyRecipeViewController.h"
 
-@implementation RegisterViewController
+@implementation MyRecipeViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-    }
-    return self;
-}
-
-- (id)initWithParentRef:(UIViewController*)parentViewController{
-    self = [super init];
-    if (self) {
-        parent = parentViewController;
     }
     return self;
 }
@@ -54,30 +46,6 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-#pragma mark - Register feature
-- (IBAction)onRegisterTap{
-    if (activeTextField != nil) {
-        [activeTextField resignFirstResponder];
-    }
-}
-
-- (IBAction)dismissKeyboard{
-    if (activeTextField != nil) {
-        [activeTextField resignFirstResponder];
-    }
-}
-
-#pragma mark - Text Fields Delegate Methods
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    activeTextField = textField;
-    return YES;
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
-    return YES;
 }
 
 @end

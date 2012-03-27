@@ -10,9 +10,12 @@
 
 @interface LoginViewController : UIViewController{
     UITextField *activeTextField;
+    UIViewController *parent;
 }
 
 - (IBAction)dismissKeyboard;
 - (IBAction)onLoginTap;
+
+- (id)initWithParentRef:(UIViewController*)parentViewController;
 
 @end

@@ -14,16 +14,18 @@
 		902964A4152014B0002BAC2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 902964A3152014B0002BAC2D /* main.m */; };
 		902964A8152014B0002BAC2D /* recipeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 902964A7152014B0002BAC2D /* recipeAppDelegate.m */; };
 		902964AB152014B0002BAC2D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902964A9152014B0002BAC2D /* MainWindow.xib */; };
-		902964AE152014B0002BAC2D /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902964AD152014B0002BAC2D /* FirstViewController.m */; };
-		902964B1152014B0002BAC2D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902964B0152014B0002BAC2D /* SecondViewController.m */; };
-		902964B4152014B0002BAC2D /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902964B2152014B0002BAC2D /* FirstView.xib */; };
-		902964B7152014B0002BAC2D /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902964B5152014B0002BAC2D /* SecondView.xib */; };
 		902964C015201E24002BAC2D /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902964BE15201E24002BAC2D /* AuthViewController.m */; };
 		902964C115201E24002BAC2D /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902964BF15201E24002BAC2D /* AuthViewController.xib */; };
 		902964C5152039BF002BAC2D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902964C3152039BF002BAC2D /* LoginViewController.m */; };
 		902964C6152039BF002BAC2D /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902964C4152039BF002BAC2D /* LoginViewController.xib */; };
 		902964CA152039FF002BAC2D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902964C8152039FF002BAC2D /* RegisterViewController.m */; };
 		902964CB152039FF002BAC2D /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902964C9152039FF002BAC2D /* RegisterViewController.xib */; };
+		908409AF1521666300FA078B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409AD1521666300FA078B /* HomeViewController.m */; };
+		908409B01521666300FA078B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908409AE1521666300FA078B /* HomeViewController.xib */; };
+		908409B51521668400FA078B /* MyRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409B31521668400FA078B /* MyRecipeViewController.m */; };
+		908409B61521668400FA078B /* MyRecipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908409B41521668400FA078B /* MyRecipeViewController.xib */; };
+		908409BA152166C100FA078B /* ToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409B8152166C100FA078B /* ToDoViewController.m */; };
+		908409BB152166C100FA078B /* ToDoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908409B9152166C100FA078B /* ToDoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,12 +40,6 @@
 		902964A6152014B0002BAC2D /* recipeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = recipeAppDelegate.h; sourceTree = "<group>"; };
 		902964A7152014B0002BAC2D /* recipeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = recipeAppDelegate.m; sourceTree = "<group>"; };
 		902964AA152014B0002BAC2D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		902964AC152014B0002BAC2D /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		902964AD152014B0002BAC2D /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		902964AF152014B0002BAC2D /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		902964B0152014B0002BAC2D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		902964B3152014B0002BAC2D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
-		902964B6152014B0002BAC2D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
 		902964BD15201E24002BAC2D /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
 		902964BE15201E24002BAC2D /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
 		902964BF15201E24002BAC2D /* AuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
@@ -53,6 +49,15 @@
 		902964C7152039FF002BAC2D /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		902964C8152039FF002BAC2D /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		902964C9152039FF002BAC2D /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		908409AC1521666300FA078B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		908409AD1521666300FA078B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		908409AE1521666300FA078B /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		908409B21521668400FA078B /* MyRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRecipeViewController.h; sourceTree = "<group>"; };
+		908409B31521668400FA078B /* MyRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRecipeViewController.m; sourceTree = "<group>"; };
+		908409B41521668400FA078B /* MyRecipeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyRecipeViewController.xib; sourceTree = "<group>"; };
+		908409B7152166C100FA078B /* ToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoViewController.h; sourceTree = "<group>"; };
+		908409B8152166C100FA078B /* ToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoViewController.m; sourceTree = "<group>"; };
+		908409B9152166C100FA078B /* ToDoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,12 +116,15 @@
 				902964C7152039FF002BAC2D /* RegisterViewController.h */,
 				902964C8152039FF002BAC2D /* RegisterViewController.m */,
 				902964C9152039FF002BAC2D /* RegisterViewController.xib */,
-				902964AC152014B0002BAC2D /* FirstViewController.h */,
-				902964AD152014B0002BAC2D /* FirstViewController.m */,
-				902964AF152014B0002BAC2D /* SecondViewController.h */,
-				902964B0152014B0002BAC2D /* SecondViewController.m */,
-				902964B2152014B0002BAC2D /* FirstView.xib */,
-				902964B5152014B0002BAC2D /* SecondView.xib */,
+				908409AC1521666300FA078B /* HomeViewController.h */,
+				908409AD1521666300FA078B /* HomeViewController.m */,
+				908409AE1521666300FA078B /* HomeViewController.xib */,
+				908409B21521668400FA078B /* MyRecipeViewController.h */,
+				908409B31521668400FA078B /* MyRecipeViewController.m */,
+				908409B41521668400FA078B /* MyRecipeViewController.xib */,
+				908409B7152166C100FA078B /* ToDoViewController.h */,
+				908409B8152166C100FA078B /* ToDoViewController.m */,
+				908409B9152166C100FA078B /* ToDoViewController.xib */,
 				9029649E152014AF002BAC2D /* Supporting Files */,
 			);
 			path = recipe;
@@ -182,11 +190,12 @@
 			files = (
 				902964A2152014AF002BAC2D /* InfoPlist.strings in Resources */,
 				902964AB152014B0002BAC2D /* MainWindow.xib in Resources */,
-				902964B4152014B0002BAC2D /* FirstView.xib in Resources */,
-				902964B7152014B0002BAC2D /* SecondView.xib in Resources */,
 				902964C115201E24002BAC2D /* AuthViewController.xib in Resources */,
 				902964C6152039BF002BAC2D /* LoginViewController.xib in Resources */,
 				902964CB152039FF002BAC2D /* RegisterViewController.xib in Resources */,
+				908409B01521666300FA078B /* HomeViewController.xib in Resources */,
+				908409B61521668400FA078B /* MyRecipeViewController.xib in Resources */,
+				908409BB152166C100FA078B /* ToDoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,11 +208,12 @@
 			files = (
 				902964A4152014B0002BAC2D /* main.m in Sources */,
 				902964A8152014B0002BAC2D /* recipeAppDelegate.m in Sources */,
-				902964AE152014B0002BAC2D /* FirstViewController.m in Sources */,
-				902964B1152014B0002BAC2D /* SecondViewController.m in Sources */,
 				902964C015201E24002BAC2D /* AuthViewController.m in Sources */,
 				902964C5152039BF002BAC2D /* LoginViewController.m in Sources */,
 				902964CA152039FF002BAC2D /* RegisterViewController.m in Sources */,
+				908409AF1521666300FA078B /* HomeViewController.m in Sources */,
+				908409B51521668400FA078B /* MyRecipeViewController.m in Sources */,
+				908409BA152166C100FA078B /* ToDoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,22 +234,6 @@
 				902964AA152014B0002BAC2D /* en */,
 			);
 			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		902964B2152014B0002BAC2D /* FirstView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				902964B3152014B0002BAC2D /* en */,
-			);
-			name = FirstView.xib;
-			sourceTree = "<group>";
-		};
-		902964B5152014B0002BAC2D /* SecondView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				902964B6152014B0002BAC2D /* en */,
-			);
-			name = SecondView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -333,6 +327,7 @@
 				902964BC152014B0002BAC2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

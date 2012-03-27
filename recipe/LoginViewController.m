@@ -19,6 +19,14 @@
     return self;
 }
 
+- (id)initWithParentRef:(UIViewController*)parentViewController{
+    self = [super init];
+    if (self) {
+        parent = parentViewController;
+    }
+    return self;
+}
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -52,6 +60,13 @@
     if (activeTextField != nil) {
         [activeTextField resignFirstResponder];
     }
+    UIAlertView *successalertView = [[UIAlertView alloc] initWithTitle:@"Successful Login"
+                                                               message:@"Welcome back ..."
+                                                              delegate:nil
+                                                     cancelButtonTitle:@"OK"
+                                                     otherButtonTitles:nil];
+    [successalertView show];
+    [parent.view setHidden:YES];
 }
 
 - (IBAction)dismissKeyboard{

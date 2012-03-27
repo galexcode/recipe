@@ -61,8 +61,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    loginViewController = [[LoginViewController alloc] init];
-    registerViewController = [[RegisterViewController alloc] init];
+    loginViewController = [[LoginViewController alloc] initWithParentRef:self];
+    registerViewController = [[RegisterViewController alloc] initWithParentRef:self];
     currentViewController = loginViewController;
     [containerView addSubview:loginViewController.view];
 }

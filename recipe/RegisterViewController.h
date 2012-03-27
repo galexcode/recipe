@@ -10,9 +10,12 @@
 
 @interface RegisterViewController : UIViewController{
     UITextField *activeTextField;
+    UIViewController *parent;
 }
 
 - (IBAction)dismissKeyboard;
 - (IBAction)onRegisterTap;
+
+- (id)initWithParentRef:(UIViewController*)parentViewController;
 
 @end
