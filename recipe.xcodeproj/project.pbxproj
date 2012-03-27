@@ -26,6 +26,12 @@
 		908409B61521668400FA078B /* MyRecipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908409B41521668400FA078B /* MyRecipeViewController.xib */; };
 		908409BA152166C100FA078B /* ToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409B8152166C100FA078B /* ToDoViewController.m */; };
 		908409BB152166C100FA078B /* ToDoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908409B9152166C100FA078B /* ToDoViewController.xib */; };
+		908409CD1521C2E800FA078B /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409CC1521C2E800FA078B /* Category.m */; };
+		908409D01521C32900FA078B /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409CF1521C32900FA078B /* Recipe.m */; };
+		908409D31521C38D00FA078B /* Ingredient.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409D21521C38D00FA078B /* Ingredient.m */; };
+		908409D61521C39700FA078B /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409D51521C39700FA078B /* Store.m */; };
+		908409D91521C3B900FA078B /* Step.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409D81521C3B900FA078B /* Step.m */; };
+		908409DC1521C3E800FA078B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409DB1521C3E700FA078B /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +64,18 @@
 		908409B7152166C100FA078B /* ToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoViewController.h; sourceTree = "<group>"; };
 		908409B8152166C100FA078B /* ToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoViewController.m; sourceTree = "<group>"; };
 		908409B9152166C100FA078B /* ToDoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoViewController.xib; sourceTree = "<group>"; };
+		908409CB1521C2E800FA078B /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		908409CC1521C2E800FA078B /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
+		908409CE1521C32900FA078B /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
+		908409CF1521C32900FA078B /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
+		908409D11521C38D00FA078B /* Ingredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingredient.h; sourceTree = "<group>"; };
+		908409D21521C38D00FA078B /* Ingredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ingredient.m; sourceTree = "<group>"; };
+		908409D41521C39700FA078B /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
+		908409D51521C39700FA078B /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+		908409D71521C3B900FA078B /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
+		908409D81521C3B900FA078B /* Step.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Step.m; sourceTree = "<group>"; };
+		908409DA1521C3E700FA078B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		908409DB1521C3E700FA078B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +122,8 @@
 		9029649D152014AF002BAC2D /* recipe */ = {
 			isa = PBXGroup;
 			children = (
+				908409C51521BFAF00FA078B /* model */,
+				908409DD1521C4C300FA078B /* service */,
 				902964A6152014B0002BAC2D /* recipeAppDelegate.h */,
 				902964A7152014B0002BAC2D /* recipeAppDelegate.m */,
 				902964A9152014B0002BAC2D /* MainWindow.xib */,
@@ -139,6 +159,32 @@
 				902964A5152014B0002BAC2D /* recipe-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		908409C51521BFAF00FA078B /* model */ = {
+			isa = PBXGroup;
+			children = (
+				908409CB1521C2E800FA078B /* Category.h */,
+				908409CC1521C2E800FA078B /* Category.m */,
+				908409CE1521C32900FA078B /* Recipe.h */,
+				908409CF1521C32900FA078B /* Recipe.m */,
+				908409D11521C38D00FA078B /* Ingredient.h */,
+				908409D21521C38D00FA078B /* Ingredient.m */,
+				908409D71521C3B900FA078B /* Step.h */,
+				908409D81521C3B900FA078B /* Step.m */,
+				908409D41521C39700FA078B /* Store.h */,
+				908409D51521C39700FA078B /* Store.m */,
+				908409DA1521C3E700FA078B /* User.h */,
+				908409DB1521C3E700FA078B /* User.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		908409DD1521C4C300FA078B /* service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +260,12 @@
 				908409AF1521666300FA078B /* HomeViewController.m in Sources */,
 				908409B51521668400FA078B /* MyRecipeViewController.m in Sources */,
 				908409BA152166C100FA078B /* ToDoViewController.m in Sources */,
+				908409CD1521C2E800FA078B /* Category.m in Sources */,
+				908409D01521C32900FA078B /* Recipe.m in Sources */,
+				908409D31521C38D00FA078B /* Ingredient.m in Sources */,
+				908409D61521C39700FA078B /* Store.m in Sources */,
+				908409D91521C3B900FA078B /* Step.m in Sources */,
+				908409DC1521C3E800FA078B /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
