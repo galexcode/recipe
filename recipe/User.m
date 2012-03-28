@@ -9,12 +9,17 @@
 #import "User.h"
 
 @implementation User
+@synthesize userId = _userId;
+@synthesize name = _name;
+@synthesize password = _password;
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        // Initialization code here.
+        _userId = nil;
+        _name = nil;
+        _password = nil;
     }
     
     return self;

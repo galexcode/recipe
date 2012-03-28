@@ -9,12 +9,23 @@
 #import "Step.h"
 
 @implementation Step
+@synthesize stepId = _stepId;
+@synthesize name = _name;
+@synthesize desc = _desc;
+@synthesize note = _note;
+@synthesize imagePath = _imagePath;
+@synthesize order = _order;
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        // Initialization code here.
+        _stepId = nil;
+        _name = nil;
+        _desc = nil;
+        _note = nil;
+        _imagePath = nil;
+        _order = 0;
     }
     
     return self;

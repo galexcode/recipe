@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Ingredient : NSObject
+@interface Ingredient : NSObject{
+    NSString* _ingredientId;
+    NSString* _name;
+    NSString* _desc;
+    NSString* _imagePath;
+}
+
+@property (nonatomic, retain) NSString *ingredientId;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *desc;
+@property (retain) NSString *imagePath;
 
 @end

@@ -9,12 +9,17 @@
 #import "Category.h"
 
 @implementation Category
+@synthesize categoryId = _categoryId;
+@synthesize name = _name;
+@synthesize latestRecipes = _latestRecipes;
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        // Initialization code here.
+        _categoryId = nil;
+        _name = nil;
+        _latestRecipes = nil;
     }
     
     return self;

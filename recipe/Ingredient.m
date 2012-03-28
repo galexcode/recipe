@@ -9,12 +9,19 @@
 #import "Ingredient.h"
 
 @implementation Ingredient
+@synthesize ingredientId = _ingredientId;
+@synthesize name = _name;
+@synthesize desc = _desc;
+@synthesize imagePath = _imagePath;
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        // Initialization code here.
+        _ingredientId = nil;
+        _name = nil;
+        _desc = nil;
+        _imagePath = nil;
     }
     
     return self;

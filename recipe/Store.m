@@ -9,12 +9,20 @@
 #import "Store.h"
 
 @implementation Store
+@synthesize storeId = _storeId;
+@synthesize name = _name;
+@synthesize desc = _desc;
+@synthesize location = _location;
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        // Initialization code here.
+        _storeId = nil;
+        _name = nil;
+        _desc = nil;
+        _location.latitude = 0;
+        _location.longitude = 0;
     }
     
     return self;

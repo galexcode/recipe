@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface User : NSObject
+@interface User : NSObject{
+    NSString* _userId;
+    NSString* _name;
+    NSString* _password;
+}
+
+@property (nonatomic, retain) NSString *userId;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *password;
 
 @end

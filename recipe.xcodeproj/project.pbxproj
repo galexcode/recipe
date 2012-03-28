@@ -20,6 +20,8 @@
 		902964C6152039BF002BAC2D /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902964C4152039BF002BAC2D /* LoginViewController.xib */; };
 		902964CA152039FF002BAC2D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902964C8152039FF002BAC2D /* RegisterViewController.m */; };
 		902964CB152039FF002BAC2D /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902964C9152039FF002BAC2D /* RegisterViewController.xib */; };
+		90829C271522C22C00E6BFC9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90829C261522C22B00E6BFC9 /* CoreLocation.framework */; };
+		90829C291522C28300E6BFC9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90829C281522C28300E6BFC9 /* CoreLocation.framework */; };
 		908409AF1521666300FA078B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409AD1521666300FA078B /* HomeViewController.m */; };
 		908409B01521666300FA078B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908409AE1521666300FA078B /* HomeViewController.xib */; };
 		908409B51521668400FA078B /* MyRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409B31521668400FA078B /* MyRecipeViewController.m */; };
@@ -55,6 +57,8 @@
 		902964C7152039FF002BAC2D /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		902964C8152039FF002BAC2D /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		902964C9152039FF002BAC2D /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		90829C261522C22B00E6BFC9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		90829C281522C28300E6BFC9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		908409AC1521666300FA078B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		908409AD1521666300FA078B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		908409AE1521666300FA078B /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -86,7 +90,9 @@
 			files = (
 				90296498152014AF002BAC2D /* UIKit.framework in Frameworks */,
 				9029649A152014AF002BAC2D /* Foundation.framework in Frameworks */,
+				90829C271522C22C00E6BFC9 /* CoreLocation.framework in Frameworks */,
 				9029649C152014AF002BAC2D /* CoreGraphics.framework in Frameworks */,
+				90829C291522C28300E6BFC9 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +102,7 @@
 		90296488152014AF002BAC2D = {
 			isa = PBXGroup;
 			children = (
+				90829C261522C22B00E6BFC9 /* CoreLocation.framework */,
 				9029649D152014AF002BAC2D /* recipe */,
 				90296496152014AF002BAC2D /* Frameworks */,
 				90296494152014AF002BAC2D /* Products */,
@@ -113,6 +120,7 @@
 		90296496152014AF002BAC2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				90829C281522C28300E6BFC9 /* CoreLocation.framework */,
 				90296497152014AF002BAC2D /* UIKit.framework */,
 				90296499152014AF002BAC2D /* Foundation.framework */,
 				9029649B152014AF002BAC2D /* CoreGraphics.framework */,
@@ -129,6 +137,27 @@
 				908409DE1521C60200FA078B /* recipeGlobal.h */,
 				908409C51521BFAF00FA078B /* model */,
 				908409DD1521C4C300FA078B /* service */,
+				90829C1C1522ABE700E6BFC9 /* gui */,
+				908409E31521C65B00FA078B /* resource */,
+				9029649E152014AF002BAC2D /* Supporting Files */,
+			);
+			path = recipe;
+			sourceTree = "<group>";
+		};
+		9029649E152014AF002BAC2D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9029649F152014AF002BAC2D /* recipe-Info.plist */,
+				902964A0152014AF002BAC2D /* InfoPlist.strings */,
+				902964A3152014B0002BAC2D /* main.m */,
+				902964A5152014B0002BAC2D /* recipe-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		90829C1C1522ABE700E6BFC9 /* gui */ = {
+			isa = PBXGroup;
+			children = (
 				902964BD15201E24002BAC2D /* AuthViewController.h */,
 				902964BE15201E24002BAC2D /* AuthViewController.m */,
 				902964BF15201E24002BAC2D /* AuthViewController.xib */,
@@ -147,21 +176,8 @@
 				908409B7152166C100FA078B /* ToDoViewController.h */,
 				908409B8152166C100FA078B /* ToDoViewController.m */,
 				908409B9152166C100FA078B /* ToDoViewController.xib */,
-				908409E31521C65B00FA078B /* resource */,
-				9029649E152014AF002BAC2D /* Supporting Files */,
 			);
-			path = recipe;
-			sourceTree = "<group>";
-		};
-		9029649E152014AF002BAC2D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9029649F152014AF002BAC2D /* recipe-Info.plist */,
-				902964A0152014AF002BAC2D /* InfoPlist.strings */,
-				902964A3152014B0002BAC2D /* main.m */,
-				902964A5152014B0002BAC2D /* recipe-Prefix.pch */,
-			);
-			name = "Supporting Files";
+			name = gui;
 			sourceTree = "<group>";
 		};
 		908409C51521BFAF00FA078B /* model */ = {
