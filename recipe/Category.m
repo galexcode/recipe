@@ -21,7 +21,7 @@
         _name = nil;
         _latestRecipes = nil;
     }
-    
+
     return self;
 }
 

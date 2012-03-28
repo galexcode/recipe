@@ -21,7 +21,6 @@
 		902964CA152039FF002BAC2D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902964C8152039FF002BAC2D /* RegisterViewController.m */; };
 		902964CB152039FF002BAC2D /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902964C9152039FF002BAC2D /* RegisterViewController.xib */; };
 		90829C271522C22C00E6BFC9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90829C261522C22B00E6BFC9 /* CoreLocation.framework */; };
-		90829C291522C28300E6BFC9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90829C281522C28300E6BFC9 /* CoreLocation.framework */; };
 		908409AF1521666300FA078B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409AD1521666300FA078B /* HomeViewController.m */; };
 		908409B01521666300FA078B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908409AE1521666300FA078B /* HomeViewController.xib */; };
 		908409B51521668400FA078B /* MyRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409B31521668400FA078B /* MyRecipeViewController.m */; };
@@ -34,6 +33,14 @@
 		908409D61521C39700FA078B /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409D51521C39700FA078B /* Store.m */; };
 		908409D91521C3B900FA078B /* Step.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409D81521C3B900FA078B /* Step.m */; };
 		908409DC1521C3E800FA078B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409DB1521C3E700FA078B /* User.m */; };
+		9084A2F01522F1FB00BDEDC4 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9084A2EF1522F1FB00BDEDC4 /* CategoryCell.m */; };
+		9084A2F21522F83F00BDEDC4 /* kira.png in Resources */ = {isa = PBXBuildFile; fileRef = 9084A2F11522F83F00BDEDC4 /* kira.png */; };
+		9084A2F61523282000BDEDC4 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9084A2F41523281F00BDEDC4 /* RecipeViewController.m */; };
+		9084A2F71523282000BDEDC4 /* RecipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9084A2F51523281F00BDEDC4 /* RecipeViewController.xib */; };
+		9084A2FB152328E700BDEDC4 /* IngredientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9084A2F9152328E600BDEDC4 /* IngredientViewController.m */; };
+		9084A2FC152328E700BDEDC4 /* IngredientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9084A2FA152328E600BDEDC4 /* IngredientViewController.xib */; };
+		9084A3001523293D00BDEDC4 /* StepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9084A2FE1523293D00BDEDC4 /* StepViewController.m */; };
+		9084A3011523293D00BDEDC4 /* StepViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9084A2FF1523293D00BDEDC4 /* StepViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +65,6 @@
 		902964C8152039FF002BAC2D /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		902964C9152039FF002BAC2D /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		90829C261522C22B00E6BFC9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		90829C281522C28300E6BFC9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		908409AC1521666300FA078B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		908409AD1521666300FA078B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		908409AE1521666300FA078B /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -81,6 +87,18 @@
 		908409DA1521C3E700FA078B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		908409DB1521C3E700FA078B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		908409DE1521C60200FA078B /* recipeGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recipeGlobal.h; sourceTree = "<group>"; };
+		9084A2EE1522F1FB00BDEDC4 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
+		9084A2EF1522F1FB00BDEDC4 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
+		9084A2F11522F83F00BDEDC4 /* kira.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kira.png; sourceTree = "<group>"; };
+		9084A2F31523281E00BDEDC4 /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
+		9084A2F41523281F00BDEDC4 /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
+		9084A2F51523281F00BDEDC4 /* RecipeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeViewController.xib; sourceTree = "<group>"; };
+		9084A2F8152328E600BDEDC4 /* IngredientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientViewController.h; sourceTree = "<group>"; };
+		9084A2F9152328E600BDEDC4 /* IngredientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientViewController.m; sourceTree = "<group>"; };
+		9084A2FA152328E600BDEDC4 /* IngredientViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientViewController.xib; sourceTree = "<group>"; };
+		9084A2FD1523293D00BDEDC4 /* StepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepViewController.h; sourceTree = "<group>"; };
+		9084A2FE1523293D00BDEDC4 /* StepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepViewController.m; sourceTree = "<group>"; };
+		9084A2FF1523293D00BDEDC4 /* StepViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StepViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +110,6 @@
 				9029649A152014AF002BAC2D /* Foundation.framework in Frameworks */,
 				90829C271522C22C00E6BFC9 /* CoreLocation.framework in Frameworks */,
 				9029649C152014AF002BAC2D /* CoreGraphics.framework in Frameworks */,
-				90829C291522C28300E6BFC9 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +119,6 @@
 		90296488152014AF002BAC2D = {
 			isa = PBXGroup;
 			children = (
-				90829C261522C22B00E6BFC9 /* CoreLocation.framework */,
 				9029649D152014AF002BAC2D /* recipe */,
 				90296496152014AF002BAC2D /* Frameworks */,
 				90296494152014AF002BAC2D /* Products */,
@@ -120,7 +136,7 @@
 		90296496152014AF002BAC2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				90829C281522C28300E6BFC9 /* CoreLocation.framework */,
+				90829C261522C22B00E6BFC9 /* CoreLocation.framework */,
 				90296497152014AF002BAC2D /* UIKit.framework */,
 				90296499152014AF002BAC2D /* Foundation.framework */,
 				9029649B152014AF002BAC2D /* CoreGraphics.framework */,
@@ -137,7 +153,9 @@
 				908409DE1521C60200FA078B /* recipeGlobal.h */,
 				908409C51521BFAF00FA078B /* model */,
 				908409DD1521C4C300FA078B /* service */,
+				9084A2ED1522EFCA00BDEDC4 /* util */,
 				90829C1C1522ABE700E6BFC9 /* gui */,
+				9084A2EB1522ECD900BDEDC4 /* custom control */,
 				908409E31521C65B00FA078B /* resource */,
 				9029649E152014AF002BAC2D /* Supporting Files */,
 			);
@@ -176,6 +194,15 @@
 				908409B7152166C100FA078B /* ToDoViewController.h */,
 				908409B8152166C100FA078B /* ToDoViewController.m */,
 				908409B9152166C100FA078B /* ToDoViewController.xib */,
+				9084A2F31523281E00BDEDC4 /* RecipeViewController.h */,
+				9084A2F41523281F00BDEDC4 /* RecipeViewController.m */,
+				9084A2F51523281F00BDEDC4 /* RecipeViewController.xib */,
+				9084A2F8152328E600BDEDC4 /* IngredientViewController.h */,
+				9084A2F9152328E600BDEDC4 /* IngredientViewController.m */,
+				9084A2FA152328E600BDEDC4 /* IngredientViewController.xib */,
+				9084A2FD1523293D00BDEDC4 /* StepViewController.h */,
+				9084A2FE1523293D00BDEDC4 /* StepViewController.m */,
+				9084A2FF1523293D00BDEDC4 /* StepViewController.xib */,
 			);
 			name = gui;
 			sourceTree = "<group>";
@@ -209,8 +236,25 @@
 		908409E31521C65B00FA078B /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				9084A2F11522F83F00BDEDC4 /* kira.png */,
 			);
 			name = resource;
+			sourceTree = "<group>";
+		};
+		9084A2EB1522ECD900BDEDC4 /* custom control */ = {
+			isa = PBXGroup;
+			children = (
+				9084A2EE1522F1FB00BDEDC4 /* CategoryCell.h */,
+				9084A2EF1522F1FB00BDEDC4 /* CategoryCell.m */,
+			);
+			name = "custom control";
+			sourceTree = "<group>";
+		};
+		9084A2ED1522EFCA00BDEDC4 /* util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +312,10 @@
 				908409B01521666300FA078B /* HomeViewController.xib in Resources */,
 				908409B61521668400FA078B /* MyRecipeViewController.xib in Resources */,
 				908409BB152166C100FA078B /* ToDoViewController.xib in Resources */,
+				9084A2F21522F83F00BDEDC4 /* kira.png in Resources */,
+				9084A2F71523282000BDEDC4 /* RecipeViewController.xib in Resources */,
+				9084A2FC152328E700BDEDC4 /* IngredientViewController.xib in Resources */,
+				9084A3011523293D00BDEDC4 /* StepViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +340,10 @@
 				908409D61521C39700FA078B /* Store.m in Sources */,
 				908409D91521C3B900FA078B /* Step.m in Sources */,
 				908409DC1521C3E800FA078B /* User.m in Sources */,
+				9084A2F01522F1FB00BDEDC4 /* CategoryCell.m in Sources */,
+				9084A2F61523282000BDEDC4 /* RecipeViewController.m in Sources */,
+				9084A2FB152328E700BDEDC4 /* IngredientViewController.m in Sources */,
+				9084A3001523293D00BDEDC4 /* StepViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

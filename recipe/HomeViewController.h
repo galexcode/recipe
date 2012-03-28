@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController<UITableViewDataSource, UITabBarDelegate>
+
+@property (nonatomic, retain) IBOutlet UITableView *categoryTable;
 
 @end
