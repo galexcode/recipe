@@ -54,9 +54,24 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
 }
+//
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+//    return @"title";
+//}
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return @"title";
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 40;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *header = [[UIView alloc] init];
+    [header setBackgroundColor:[UIColor redColor]];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 200, 20)];
+    [headerLabel setText:@"category"];
+    [headerLabel setBackgroundColor:[UIColor clearColor]];
+    [headerLabel setTextColor:[UIColor greenColor]];
+    [header addSubview:headerLabel];
+    return header;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
