@@ -44,6 +44,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A995EB815259E0F00B8292E /* HttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpRequest.m; sourceTree = "<group>"; };
+		5A995EB915259E0F00B8292E /* HttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
+		5A995EBA15259EBC00B8292E /* BaseXMLHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseXMLHandler.m; sourceTree = "<group>"; };
+		5A995EBB15259EBC00B8292E /* BaseXMLHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseXMLHandler.h; sourceTree = "<group>"; };
+		5A995EBC1525A0BB00B8292E /* ApplicationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationService.m; sourceTree = "<group>"; };
+		5A995EBD1525A0BB00B8292E /* ApplicationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationService.h; sourceTree = "<group>"; };
+		5A995EC41525A4C100B8292E /* AsyncImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		5A995EC51525A4C100B8292E /* AsyncImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		90296493152014AF002BAC2D /* recipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90296497152014AF002BAC2D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		90296499152014AF002BAC2D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -229,6 +237,8 @@
 		908409DD1521C4C300FA078B /* service */ = {
 			isa = PBXGroup;
 			children = (
+				5A995EBD1525A0BB00B8292E /* ApplicationService.h */,
+				5A995EBC1525A0BB00B8292E /* ApplicationService.m */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -253,6 +263,12 @@
 		9084A2ED1522EFCA00BDEDC4 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				5A995EB915259E0F00B8292E /* HttpRequest.h */,
+				5A995EB815259E0F00B8292E /* HttpRequest.m */,
+				5A995EBB15259EBC00B8292E /* BaseXMLHandler.h */,
+				5A995EBA15259EBC00B8292E /* BaseXMLHandler.m */,
+				5A995EC51525A4C100B8292E /* AsyncImageView.h */,
+				5A995EC41525A4C100B8292E /* AsyncImageView.m */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -282,6 +298,9 @@
 /* Begin PBXProject section */
 		9029648A152014AF002BAC2D /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
 			buildConfigurationList = 9029648D152014AF002BAC2D /* Build configuration list for PBXProject "recipe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -417,6 +436,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "recipe/recipe-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "recipe/recipe-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,6 +450,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "recipe/recipe-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "recipe/recipe-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";

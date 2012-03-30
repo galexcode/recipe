@@ -25,4 +25,12 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [_userId release];
+    [_name release];
+    [_password release];
+    [super dealloc];
+}
+
 @end

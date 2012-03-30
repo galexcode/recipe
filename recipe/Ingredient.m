@@ -27,4 +27,13 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [_ingredientId release];
+    [_name release];
+    [_desc release];
+    [_imagePath release];
+    [super dealloc];
+}
+
 @end
