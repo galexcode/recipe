@@ -1,14 +1,18 @@
 //
-//  RecipeViewController.m
+//  ResultViewController.m
 //  recipe
 //
-//  Created by Vu Tran on 3/28/12.
-//  Copyright 2012 OngSoft. All rights reserved.
+//  Created by Vu Tran on on 4/4/12.
+//  Copyright (c) 2012 OngSoft. All rights reserved.
 //
 
-#import "RecipeViewController.h"
+#import "ResultViewController.h"
 
-@implementation RecipeViewController
+@interface ResultViewController ()
+
+@end
+
+@implementation ResultViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -18,16 +22,6 @@
     }
     return self;
 }
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
@@ -44,7 +38,6 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 

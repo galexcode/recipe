@@ -2,8 +2,8 @@
 //  RecipeListViewController.m
 //  recipe
 //
-//  Created by Dung on 4/3/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Vu Tran on on 4/3/12.
+//  Copyright (c) 2012 OngSoft. All rights reserved.
 //
 
 #import "RecipeListViewController.h"
@@ -13,6 +13,7 @@
 @end
 
 @implementation RecipeListViewController
+@synthesize recipeTable;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +32,7 @@
 
 - (void)viewDidUnload
 {
+    [self setRecipeTable:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
