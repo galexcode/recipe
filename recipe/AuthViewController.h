@@ -14,7 +14,7 @@
     UIViewController *currentViewController;
 }
 
-@property (nonatomic, assign) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 
 - (void)switchToViewController: (UIViewController *)viewControllerToSwitch;
 - (IBAction)segmentControlChanged:(id)sender;
