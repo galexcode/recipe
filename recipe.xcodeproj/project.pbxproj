@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5ADF1385152A9182008B521A /* RecipeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADF1383152A9182008B521A /* RecipeListViewController.m */; };
+		5ADF1386152A9182008B521A /* RecipeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ADF1384152A9182008B521A /* RecipeListViewController.xib */; };
 		90296498152014AF002BAC2D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90296497152014AF002BAC2D /* UIKit.framework */; };
 		9029649A152014AF002BAC2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90296499152014AF002BAC2D /* Foundation.framework */; };
 		9029649C152014AF002BAC2D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9029649B152014AF002BAC2D /* CoreGraphics.framework */; };
@@ -52,6 +54,9 @@
 		5A995EBD1525A0BB00B8292E /* ApplicationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationService.h; sourceTree = "<group>"; };
 		5A995EC41525A4C100B8292E /* AsyncImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		5A995EC51525A4C100B8292E /* AsyncImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		5ADF1382152A9182008B521A /* RecipeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeListViewController.h; sourceTree = "<group>"; };
+		5ADF1383152A9182008B521A /* RecipeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeListViewController.m; sourceTree = "<group>"; };
+		5ADF1384152A9182008B521A /* RecipeListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListViewController.xib; sourceTree = "<group>"; };
 		90296493152014AF002BAC2D /* recipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90296497152014AF002BAC2D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		90296499152014AF002BAC2D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -202,6 +207,9 @@
 				908409B7152166C100FA078B /* ToDoViewController.h */,
 				908409B8152166C100FA078B /* ToDoViewController.m */,
 				908409B9152166C100FA078B /* ToDoViewController.xib */,
+				5ADF1382152A9182008B521A /* RecipeListViewController.h */,
+				5ADF1383152A9182008B521A /* RecipeListViewController.m */,
+				5ADF1384152A9182008B521A /* RecipeListViewController.xib */,
 				9084A2F31523281E00BDEDC4 /* RecipeViewController.h */,
 				9084A2F41523281F00BDEDC4 /* RecipeViewController.m */,
 				9084A2F51523281F00BDEDC4 /* RecipeViewController.xib */,
@@ -335,6 +343,7 @@
 				9084A2F71523282000BDEDC4 /* RecipeViewController.xib in Resources */,
 				9084A2FC152328E700BDEDC4 /* IngredientViewController.xib in Resources */,
 				9084A3011523293D00BDEDC4 /* StepViewController.xib in Resources */,
+				5ADF1386152A9182008B521A /* RecipeListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +372,7 @@
 				9084A2F61523282000BDEDC4 /* RecipeViewController.m in Sources */,
 				9084A2FB152328E700BDEDC4 /* IngredientViewController.m in Sources */,
 				9084A3001523293D00BDEDC4 /* StepViewController.m in Sources */,
+				5ADF1385152A9182008B521A /* RecipeListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +448,7 @@
 				GCC_PREFIX_HEADER = "recipe/recipe-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "recipe/recipe-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -452,7 +462,7 @@
 				GCC_PREFIX_HEADER = "recipe/recipe-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "recipe/recipe-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
