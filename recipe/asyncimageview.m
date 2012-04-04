@@ -19,16 +19,9 @@
 @implementation AsyncImageView
 @synthesize delegate = _delegate;
 
-- (void)dealloc {
-	[connection cancel]; //in case the URL is still downloading
-	[connection release];
-	[data release]; 
-    [super dealloc];
-}
-
 - (void)loadImageFromURL:(NSURL*)url forButton:(UIButton *)button {
-	if (connection!=nil) { [connection release]; } //in case we are downloading a 2nd image
-	if (data!=nil) { [data release]; }
+	if (connection!=nil) { connection = nil; } //in case we are downloading a 2nd image
+	if (data!=nil) { data = nil; }
 	cbutton = button;
 	NSURLRequest* request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
 	connection = [[NSURLConnection alloc] initWithRequest:request delegate:self]; //notice how delegate set to self object
@@ -36,8 +29,8 @@
 }
 
 - (void)loadImageFromURL:(NSURL*)url forButtonIndex:(NSInteger)cindex {
-	if (connection!=nil) { [connection release]; } //in case we are downloading a 2nd image
-	if (data!=nil) { [data release]; }
+	if (connection!=nil) { connection = nil; } //in case we are downloading a 2nd image
+	if (data!=nil) { data = nil; }
 	index = cindex;
 	NSURLRequest* request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
 	connection = [[NSURLConnection alloc] initWithRequest:request delegate:self]; //notice how delegate set to self object
@@ -53,12 +46,10 @@
 //the URL connection calls this once all the data has downloaded
 - (void)connectionDidFinishLoading:(NSURLConnection*)theConnection {
 	//so self data now has the complete image 
-	[connection release];
 	connection=nil;
 	
 	image = [UIImage imageWithData:data];
 
-	[data release]; //don't need this any more, its in the UIImageView now
 	data=nil;
     
     if (_delegate != nil)

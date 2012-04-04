@@ -23,7 +23,7 @@
 	id<HttpRequestDelegate> _delegate;
 }
 
-@property (nonatomic,assign) id<HttpRequestDelegate> delegate;
+@property (nonatomic, assign) id<HttpRequestDelegate> delegate;
 @property (nonatomic, assign) id transientObject;
 
 -(void) call:(NSString*)url params:(NSDictionary*)params;

@@ -92,23 +92,13 @@
 		[_target performSelector:_action withObject:_responseText withObject:self];
 	}
 	
-	[_responseText release];
 	_responseText = nil;
-	[_connection release];
 	_connection = nil;
 }
 
 - (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-	[_responseText release];
 	_responseText = nil;
-	[_connection release];
 	_connection = nil;
-}
-
-- (void)dealloc {
-	[_connection cancel];
-	[_connection release];
-	[super dealloc];
 }
 @end

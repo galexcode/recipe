@@ -28,7 +28,7 @@
     id<AsyncImageViewDelegate> _delegate;
 }
 
-@property (nonatomic, retain) id<AsyncImageViewDelegate> delegate;
+@property (nonatomic, assign) id<AsyncImageViewDelegate> delegate;
 
 //- (void)loadImageFromURL:(NSURL*)url forButton:(UIButton *)button;
 - (void) loadImageFromURL:(NSURL *)url forButtonIndex:(NSInteger)cindex;

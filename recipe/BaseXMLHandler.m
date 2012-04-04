@@ -21,11 +21,6 @@
 	return self;
 }
 
-- (void)dealloc {
-	[_parseError release];
-	[super dealloc];
-}
-
 -(id) initObjectAfterElementStarting:(NSString*)elementName
 {
 	// abstract
