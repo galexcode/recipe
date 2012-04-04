@@ -82,7 +82,7 @@
     static NSString *CellIdentifier = @"Cell";
     CategoryCell *cell = (CategoryCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[CategoryCell alloc] initWithImageList:nil reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[CategoryCell alloc] initWithImageList:nil reuseIdentifier:CellIdentifier];
     }
     return cell;
 }

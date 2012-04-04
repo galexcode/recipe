@@ -15,7 +15,7 @@
     NSMutableArray* _imageList;
 }
 
-@property (nonatomic, retain) NSMutableArray *imageList;
+@property (nonatomic) NSMutableArray *imageList;
 
 - (id)initWithImageList:(NSMutableArray *)list reuseIdentifier:(NSString *)reuseIdentifier;
 

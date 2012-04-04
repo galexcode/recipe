@@ -16,9 +16,9 @@
     CLLocationCoordinate2D _location;
 }
 
-@property (nonatomic, retain) NSString *storeId;
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *desc;
+@property (nonatomic) NSString *storeId;
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *desc;
 @property (nonatomic) CLLocationCoordinate2D location;
 
 @end

@@ -18,12 +18,12 @@
     NSMutableArray* _stepList;
 }
 
-@property (nonatomic, retain) NSString *recipeId;
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic) NSString *recipeId;
+@property (nonatomic) NSString *name;
 @property (nonatomic) int serving;
-@property (nonatomic, retain) NSData *createDate;
-@property (nonatomic, retain) NSMutableArray *imageList;
-@property (nonatomic, retain) NSMutableArray *ingredientList;
-@property (nonatomic, retain) NSMutableArray *stepList;
+@property (nonatomic) NSData *createDate;
+@property (nonatomic) NSMutableArray *imageList;
+@property (nonatomic) NSMutableArray *ingredientList;
+@property (nonatomic) NSMutableArray *stepList;
 
 @end

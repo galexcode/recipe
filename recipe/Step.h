@@ -17,11 +17,11 @@
     int _order;
 }
 
-@property (nonatomic, retain) NSString *stepId;
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *desc;
-@property (nonatomic, retain) NSString *note;
-@property (retain) NSString *imagePath;
+@property (nonatomic) NSString *stepId;
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *desc;
+@property (nonatomic) NSString *note;
+@property  NSString *imagePath;
 @property (nonatomic) int order;
 
 @end

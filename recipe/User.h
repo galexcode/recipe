@@ -14,8 +14,8 @@
     NSString* _password;
 }
 
-@property (nonatomic, retain) NSString *userId;
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *password;
+@property (nonatomic) NSString *userId;
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *password;
 
 @end

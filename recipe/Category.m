@@ -25,12 +25,5 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [_categoryId release];
-    [_name release];
-    [_latestRecipes release];
-    [super dealloc];
-}
 
 @end

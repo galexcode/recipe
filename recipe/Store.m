@@ -28,12 +28,5 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [_storeId release];
-    [_name release];
-    [_desc release];
-    [super dealloc];
-}
 
 @end

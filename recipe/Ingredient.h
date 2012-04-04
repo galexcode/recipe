@@ -15,9 +15,9 @@
     NSString* _imagePath;
 }
 
-@property (nonatomic, retain) NSString *ingredientId;
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *desc;
-@property (retain) NSString *imagePath;
+@property (nonatomic) NSString *ingredientId;
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *desc;
+@property  NSString *imagePath;
 
 @end

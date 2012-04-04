@@ -31,14 +31,5 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [_stepId release];
-    [_name release];
-    [_desc release];
-    [_note release];
-    [_imagePath release];
-    [super dealloc];
-}
 
 @end

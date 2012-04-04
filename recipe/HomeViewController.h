@@ -10,6 +10,6 @@
 
 @interface HomeViewController : UIViewController<UITableViewDataSource, UITabBarDelegate>
 
-@property (nonatomic, retain) IBOutlet UITableView *categoryTable;
+@property (nonatomic, weak) IBOutlet UITableView *categoryTable;
 
 @end

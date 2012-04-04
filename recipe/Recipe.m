@@ -33,15 +33,5 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [_recipeId release];
-    [_name release];
-    [_createDate release];
-    [_imageList release];
-    [_ingredientList release];
-    [_stepList release];
-    [super dealloc];
-}
 
 @end
