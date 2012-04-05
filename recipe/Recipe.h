@@ -8,15 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Recipe : NSObject{
-    NSString* _recipeId;
-    NSString* _name;
-    int _serving;
-    NSData* _createDate;
-    NSMutableArray* _imageList;
-    NSMutableArray* _ingredientList;
-    NSMutableArray* _stepList;
-}
+@interface Recipe : NSObject
 
 @property (nonatomic) NSString *recipeId;
 @property (nonatomic) NSString *name;

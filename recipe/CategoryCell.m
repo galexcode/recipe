@@ -15,23 +15,28 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        _imageList = nil;
+        //custome init
     }
     return self;
 }
 
-- (id)initWithImageList:(NSMutableArray *)list reuseIdentifier:(NSString *)reuseIdentifier
-{
+- (id)initWithImageList:(NSMutableArray *)list reuseIdentifier:(NSString *)reuseIdentifier refController:(HomeViewController *)refController{
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     if (self) {
-        _imageList = list;
+        _refController = refController;
         UIImage *image = [UIImage imageNamed:@"kira.png"];
-        _thumb1 = [[UIImageView alloc] initWithImage:image];
-        _thumb2 = [[UIImageView alloc] initWithImage:image];
-        _thumb3 = [[UIImageView alloc] initWithImage:image];
-        [self.contentView addSubview:_thumb1];
-        [self.contentView addSubview:_thumb2];
-        [self.contentView addSubview:_thumb3];
+        _button1 = [[UIButton alloc] init];
+        _button2 = [[UIButton alloc] init];
+        _button3 = [[UIButton alloc] init];
+        [_button1 setImage:image forState:UIControlStateNormal];
+        [_button2 setImage:image forState:UIControlStateNormal];
+        [_button3 setImage:image forState:UIControlStateNormal];
+        [_button1 addTarget:self action:@selector(tapOnThumbs:) forControlEvents:UIControlEventTouchUpInside];
+        [_button1 addTarget:self action:@selector(tapOnThumbs:) forControlEvents:UIControlEventTouchUpInside];
+        [_button1 addTarget:self action:@selector(tapOnThumbs:) forControlEvents:UIControlEventTouchUpInside];
+        [self.contentView addSubview:_button1];
+        [self.contentView addSubview:_button2];
+        [self.contentView addSubview:_button3];
     }
     return self;
 }
@@ -43,13 +48,13 @@
     CGRect frame;
     
     frame= CGRectMake(boundsX ,0, 100, 100);
-    _thumb1.frame = frame;
+    _button1.frame = frame;
     
     frame= CGRectMake(boundsX+100 ,0, 100, 100);
-    _thumb2.frame = frame;
+    _button2.frame = frame;
     
     frame= CGRectMake(boundsX+200 ,0, 100, 100);
-    _thumb3.frame = frame;
+    _button3.frame = frame;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -57,6 +62,11 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+#pragma Methods Handle Tap On Thumbs
+- (void)tapOnThumbs:(id)sender{
+    [_refController showRecipeView];
 }
 
 @end

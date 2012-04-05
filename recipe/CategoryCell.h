@@ -7,16 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeViewController.h"
 
 @interface CategoryCell : UITableViewCell{
-    UIImageView* _thumb1;
-    UIImageView* _thumb2;
-    UIImageView* _thumb3;
-    NSMutableArray* _imageList;
+    UIButton* _button1;
+    UIButton* _button2;
+    UIButton* _button3;
+    __weak HomeViewController *_refController;
 }
 
 @property (nonatomic) NSMutableArray *imageList;
 
-- (id)initWithImageList:(NSMutableArray *)list reuseIdentifier:(NSString *)reuseIdentifier;
+- (id)initWithImageList:(NSMutableArray *)list reuseIdentifier:(NSString *)reuseIdentifier refController:(HomeViewController *)refController;
 
 @end

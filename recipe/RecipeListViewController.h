@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RecipeListViewController : UIViewController <UITabBarDelegate, UITableViewDataSource>
+@interface RecipeListViewController : UIViewController <UITabBarDelegate, UITableViewDataSource>{
+    NSMutableArray *recipeList;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *recipeTable;
 

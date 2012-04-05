@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "RecipeListViewController.h"
 #import "CategoryCell.h"
 
 @implementation HomeViewController
@@ -51,7 +52,13 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark Table datasource
+#pragma mark - Navigation Handle
+- (void)showRecipeView{
+    RecipeListViewController *recipeListViewController = [[RecipeListViewController alloc] initWithNibName:@"RecipeListViewController" bundle:nil];
+    [self.navigationController pushViewController:recipeListViewController animated:YES];
+}
+
+#pragma mark Table delegate methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
 }
@@ -83,7 +90,7 @@
     static NSString *CellIdentifier = @"Cell";
     CategoryCell *cell = (CategoryCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[CategoryCell alloc] initWithImageList:nil reuseIdentifier:CellIdentifier];
+        cell = [[CategoryCell alloc] initWithImageList:nil reuseIdentifier:CellIdentifier refController:self];
     }
     return cell;
 }
