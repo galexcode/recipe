@@ -1,8 +1,9 @@
 //
-//  XMLHandler.m
+//  BaseXMLHandler.m
+//  recipe
 //
-//  Created by Khoi Pham on 3/11/11.
-//  Copyright 2011 OngSoft. All rights reserved.
+//  Created by SaRy on 4/6/12.
+//  Copyright (c) 2012 OngSoft. All rights reserved.
 //
 
 #import "BaseXMLHandler.h"
@@ -74,6 +75,7 @@
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)error {
 	//_parseError = [error retain];
     _parseError = error;
+    NSLog(@"error: %@", _parseError);
 }
 
 - (void) parserDidEndDocument:(NSXMLParser *)parser
@@ -93,4 +95,6 @@
 {
 	return @"";
 }
+
+
 @end

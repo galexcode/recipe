@@ -24,7 +24,7 @@
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     if (self) {
         _refController = refController;
-        UIImage *image = [UIImage imageNamed:@"kira.png"];
+        UIImage *image = [UIImage imageNamed:@"beef.jpg"];
         _button1 = [[UIButton alloc] init];
         _button2 = [[UIButton alloc] init];
         _button3 = [[UIButton alloc] init];

@@ -22,6 +22,8 @@
 		5AD404F7152E81B60045E74A /* StoreXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404F6152E81B60045E74A /* StoreXMLHandler.m */; };
 		5AD404FA152E82900045E74A /* UserXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404F9152E82900045E74A /* UserXMLHandler.m */; };
 		5AD404FC152EC5B50045E74A /* xml.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5AD404FB152EC5B50045E74A /* xml.xml */; };
+		5AD40508152EF4340045E74A /* BaseXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD40507152EF4340045E74A /* BaseXMLHandler.m */; };
+		5AD40516152F08530045E74A /* beef.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AD40515152F08530045E74A /* beef.jpg */; };
 		5ADF1385152A9182008B521A /* RecipeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADF1383152A9182008B521A /* RecipeListViewController.m */; };
 		5ADF1386152A9182008B521A /* RecipeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ADF1384152A9182008B521A /* RecipeListViewController.xib */; };
 		90296498152014AF002BAC2D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90296497152014AF002BAC2D /* UIKit.framework */; };
@@ -66,8 +68,6 @@
 		5A3828EE152C605B00400A54 /* ResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		5A995EB815259E0F00B8292E /* HttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpRequest.m; sourceTree = "<group>"; };
 		5A995EB915259E0F00B8292E /* HttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
-		5A995EBA15259EBC00B8292E /* BaseXMLHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseXMLHandler.m; sourceTree = "<group>"; };
-		5A995EBB15259EBC00B8292E /* BaseXMLHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseXMLHandler.h; sourceTree = "<group>"; };
 		5A995EBC1525A0BB00B8292E /* ApplicationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationService.m; sourceTree = "<group>"; };
 		5A995EBD1525A0BB00B8292E /* ApplicationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationService.h; sourceTree = "<group>"; };
 		5A995EC41525A4C100B8292E /* AsyncImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
@@ -94,6 +94,9 @@
 		5AD404F8152E82900045E74A /* UserXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserXMLHandler.h; sourceTree = "<group>"; };
 		5AD404F9152E82900045E74A /* UserXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserXMLHandler.m; sourceTree = "<group>"; };
 		5AD404FB152EC5B50045E74A /* xml.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = xml.xml; sourceTree = "<group>"; };
+		5AD40506152EF4340045E74A /* BaseXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseXMLHandler.h; sourceTree = "<group>"; };
+		5AD40507152EF4340045E74A /* BaseXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseXMLHandler.m; sourceTree = "<group>"; };
+		5AD40515152F08530045E74A /* beef.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beef.jpg; sourceTree = "<group>"; };
 		5ADF1382152A9182008B521A /* RecipeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeListViewController.h; sourceTree = "<group>"; };
 		5ADF1383152A9182008B521A /* RecipeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeListViewController.m; sourceTree = "<group>"; };
 		5ADF1384152A9182008B521A /* RecipeListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListViewController.xib; sourceTree = "<group>"; };
@@ -200,11 +203,11 @@
 		9029649D152014AF002BAC2D /* recipe */ = {
 			isa = PBXGroup;
 			children = (
+				908409C51521BFAF00FA078B /* model */,
 				902964A6152014B0002BAC2D /* recipeAppDelegate.h */,
 				902964A7152014B0002BAC2D /* recipeAppDelegate.m */,
 				902964A9152014B0002BAC2D /* MainWindow.xib */,
 				908409DE1521C60200FA078B /* recipeGlobal.h */,
-				908409C51521BFAF00FA078B /* model */,
 				908409DD1521C4C300FA078B /* service */,
 				9084A2ED1522EFCA00BDEDC4 /* util */,
 				90829C1C1522ABE700E6BFC9 /* gui */,
@@ -307,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				5AD404FB152EC5B50045E74A /* xml.xml */,
+				5AD40515152F08530045E74A /* beef.jpg */,
 				9084A2F11522F83F00BDEDC4 /* kira.png */,
 			);
 			name = resource;
@@ -328,8 +332,8 @@
 				5A995EB815259E0F00B8292E /* HttpRequest.m */,
 				5A995EC51525A4C100B8292E /* AsyncImageView.h */,
 				5A995EC41525A4C100B8292E /* AsyncImageView.m */,
-				5A995EBB15259EBC00B8292E /* BaseXMLHandler.h */,
-				5A995EBA15259EBC00B8292E /* BaseXMLHandler.m */,
+				5AD40506152EF4340045E74A /* BaseXMLHandler.h */,
+				5AD40507152EF4340045E74A /* BaseXMLHandler.m */,
 				5AD404E9152E80C30045E74A /* CategoryXMLHandler.h */,
 				5AD404EA152E80C30045E74A /* CategoryXMLHandler.m */,
 				5AD404EC152E81310045E74A /* RecipeXMLHandler.h */,
@@ -415,6 +419,7 @@
 				5AC54A24152D86F200C87E3E /* StepListViewController.xib in Resources */,
 				5AC54A29152D8AE200C87E3E /* MapViewController.xib in Resources */,
 				5AD404FC152EC5B50045E74A /* xml.xml in Resources */,
+				5AD40516152F08530045E74A /* beef.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +459,7 @@
 				5AD404F4152E819E0045E74A /* StepXMLHandler.m in Sources */,
 				5AD404F7152E81B60045E74A /* StoreXMLHandler.m in Sources */,
 				5AD404FA152E82900045E74A /* UserXMLHandler.m in Sources */,
+				5AD40508152EF4340045E74A /* BaseXMLHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

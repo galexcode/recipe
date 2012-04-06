@@ -19,11 +19,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        CategoryXMLHandler* handler = [[CategoryXMLHandler alloc] initWithCategoryArray:_categoryArray];
-        NSData* data = [[NSData alloc] initWithContentsOfFile:@"xml.xml"];
-        NSXMLParser* parser = [[NSXMLParser alloc] initWithData:data];
-        parser.delegate = handler;
-        [parser parse];
     }
     return self;
 }
@@ -42,6 +37,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    _categoryArray = [[NSMutableArray alloc] init];
+    CategoryXMLHandler* handler = [[CategoryXMLHandler alloc] initWithCategoryArray:_categoryArray];
+    NSString *xmlFilePath = [[NSBundle mainBundle] pathForResource:@"xml" ofType:@"xml"];
+    NSData* data = [[NSData alloc] initWithContentsOfFile:xmlFilePath];
+    NSLog(@"DATA: %s", data.bytes);
+    NSXMLParser* parser = [[NSXMLParser alloc] initWithData:data];
+    parser.delegate = handler;
+    [parser parse];
 }
 
 - (void)viewDidUnload
@@ -75,8 +78,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //return 1;
-    return [[_categoryArray objectAtIndex:section] count];
+    return 1;
+    //return [[[_categoryArray objectAtIndex:section] latestRecipes] count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
