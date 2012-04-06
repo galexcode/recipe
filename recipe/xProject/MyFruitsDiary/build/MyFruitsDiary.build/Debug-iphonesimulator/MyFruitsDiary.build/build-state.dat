@@ -1,1291 +1,0 @@
-TMyFruitsDiary
-v7
-r0
-t321901596.665321
-cCheck dependencies
-cProcessInfoPlistFile /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/Info.plist MyFruitsDiary-Info.plist
-cCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/MainWindow.xib
-cCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/MyFruitsDiaryViewController.xib
-cCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/AboutView.xib
-cCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/MyDiaryView.xib
-cCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/EntryTitleView.xib
-cCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/FruitsListView.xib
-cCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/FruitView.xib
-cCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/AddEntryView.xib
-cCpResource build/Debug-iphonesimulator/MyFruitsDiary.app/btnCancel-highlight.png btnCancel-highlight.png
-cCpResource build/Debug-iphonesimulator/MyFruitsDiary.app/btnCancel.png btnCancel.png
-cCpResource build/Debug-iphonesimulator/MyFruitsDiary.app/btnOK-highlight.png btnOK-highlight.png
-cCpResource build/Debug-iphonesimulator/MyFruitsDiary.app/btnOK.png btnOK.png
-cCpResource build/Debug-iphonesimulator/MyFruitsDiary.app/notebook-big-icon.png notebook-big-icon.png
-cCpResource build/Debug-iphonesimulator/MyFruitsDiary.app/about-icon.png about-icon.png
-cCpResource build/Debug-iphonesimulator/MyFruitsDiary.app/notebook-icon.png notebook-icon.png
-cProcessPCH /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch.gch MyFruitsDiary_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/main.o /Users/khoipham/Documents/Projects/MyFruitsDiary/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyFruitsDiaryAppDelegate.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyFruitsDiaryViewController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/Fruit.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Fruit.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitBag.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitBag.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/Entry.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Entry.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/HttpRequest.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/HttpRequest.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/BaseXMLHandler.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseXMLHandler.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/AboutViewController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AboutViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyDiaryViewController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/EntryTitleViewController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntryTitleViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitsListViewController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitViewController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/AddEntryViewController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/ApplicationService.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/ApplicationService.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitsXMLHandler.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsXMLHandler.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/EntriesXMLHandler.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntriesXMLHandler.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/BaseViewController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cLd /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MyFruitsDiary normal i386
-cGenerateDSYMFile /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app.dSYM /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MyFruitsDiary
-cTouch /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk
-c000000004CC128950000000000000110
-t1287727253
-s272
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004CC12246000000000029B310
-t1287725638
-s2732816
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004CC1226D000000000029D5D0
-t1287725677
-s2741712
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004CC1225F0000000000001466
-t1287725663
-s5222
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004CC1281F0000000000000AA1
-t1287727135
-s2721
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004CC12883000000000074D7B0
-t1287727235
-s7657392
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/AboutView.xib
-c000000004D7F95A20000000000005D3B
-t1300207010
-s23867
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/AddEntryController.xib
-c000000004D7CDCBA0000000000006522
-t1300028602
-s25890
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/AddEntryView.xib
-c000000004D7EE22D0000000000006E65
-t1300161069
-s28261
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AboutViewController.h
-c000000004D7F1639000000000000010D
-t1300174393
-s269
-i<UIKit/UIKit.h>
-i"BaseViewController.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AboutViewController.m
-c000000004D7B44E300000000000003C4
-t1299924195
-s964
-i"AboutViewController.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryController.h
-c000000004D7CE71D000000000000017A
-t1300031261
-s378
-i<UIKit/UIKit.h>
-i"MyFruitsDiaryGlobal.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryController.m
-c000000004D7CDF0900000000000003E6
-t1300029193
-s998
-i"AddEntryController.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryViewController.h
-c000000004D7CECF20000000000000290
-t1300032754
-s656
-i<UIKit/UIKit.h>
-i"MyFruitsDiaryGlobal.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryViewController.m
-c000000004D7CED280000000000000466
-t1300032808
-s1126
-i"AddEntryViewController.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/ApplicationService.h
-c000000004D7F876000000000000004EF
-t1300203360
-s1263
-i<Foundation/Foundation.h>
-i"Entry.h"
-i"Fruit.h"
-i"FruitBag.h"
-i"HttpRequest.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/ApplicationService.m
-c000000004D7F8BD00000000000001AFA
-t1300204496
-s6906
-i"ApplicationService.h"
-i"MyFruitsDiaryGlobal.h"
-i"FruitsXMLHandler.h"
-i"EntriesXMLHandler.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.h
-c000000004D7AEE58000000000000017E
-t1299902040
-s382
-i"MyFruitsDiaryGlobal.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.m
-c000000004D7AFF330000000000000E73
-t1299906355
-s3699
-i"BaseRequest.h"
-i"XMLHandler.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseViewController.h
-c000000004D7F670900000000000001B5
-t1300195081
-s437
-i<UIKit/UIKit.h>
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseViewController.m
-c000000004D7F72F00000000000000B36
-t1300198128
-s2870
-i"BaseViewController.h"
-i"MyFruitsDiaryGlobal.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseXMLHandler.h
-c000000004D7F797E00000000000002A7
-t1300199806
-s679
-i<Foundation/Foundation.h>
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseXMLHandler.m
-c000000004D7F79FE0000000000000838
-t1300199934
-s2104
-i"BaseXMLHandler.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntriesXMLHandler.h
-c000000004D7F793900000000000001E3
-t1300199737
-s483
-i"BaseXMLHandler.h"
-i"MyFruitsDiaryGlobal.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntriesXMLHandler.m
-c000000004D7F7A120000000000000795
-t1300199954
-s1941
-i"EntriesXMLHandler.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Entry.h
-c000000004D7F63EE000000000000026B
-t1300194286
-s619
-i<UIKit/UIKit.h>
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Entry.m
-c000000004D7F9C960000000000000601
-t1300208790
-s1537
-i"Entry.h"
-i"FruitBag.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntryTitleViewController.h
-c000000004D7F1CB500000000000001FD
-t1300176053
-s509
-i"MyFruitsDiaryGlobal.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntryTitleViewController.m
-c000000004D7CDF9F0000000000000558
-t1300029343
-s1368
-i"EntryTitleViewController.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Fruit.h
-c000000004D7F63E100000000000002B4
-t1300194273
-s692
-i<UIKit/UIKit.h>
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Fruit.m
-c000000004D7EFCE8000000000000039B
-t1300167912
-s923
-i"Fruit.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitBag.h
-c000000004D7B7C590000000000000191
-t1299938393
-s401
-i<UIKit/UIKit.h>
-i"Fruit.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitBag.m
-c000000004D7F64030000000000000252
-t1300194307
-s594
-i"FruitBag.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitViewController.h
-c000000004D7F8AAF00000000000002A2
-t1300204207
-s674
-i<UIKit/UIKit.h>
-i"MyFruitsDiaryGlobal.h"
-i"BaseViewController.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitViewController.m
-c000000004D7F8AE80000000000000982
-t1300204264
-s2434
-i"FruitViewController.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsListViewController.h
-c000000004D7F1F9B00000000000001C5
-t1300176795
-s453
-i<UIKit/UIKit.h>
-i"MyFruitsDiaryGlobal.h"
-i"BaseViewController.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsListViewController.m
-c000000004D7F8B0E0000000000000BAA
-t1300204302
-s2986
-i"FruitsListViewController.h"
-i"FruitViewController.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsXMLHandler.h
-c000000004D7E469F0000000000000172
-t1300121247
-s370
-i"BaseXMLHandler.h"
-i"MyFruitsDiaryGlobal.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsXMLHandler.m
-c000000004D7F7A1B00000000000004EC
-t1300199963
-s1260
-i"FruitsXMLHandler.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/HttpRequest.h
-c000000004D7F806300000000000002E9
-t1300201571
-s745
-i<Foundation/Foundation.h>
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/HttpRequest.m
-c000000004D7F78910000000000000B65
-t1300199569
-s2917
-i"HttpRequest.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.h
-c000000004D7F1CA10000000000000282
-t1300176033
-s642
-i"MyFruitsDiaryGlobal.h"
-i"AddEntryViewController.h"
-i"BaseViewController.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m
-c000000004D7F9C8B0000000000001C5B
-t1300208779
-s7259
-i"MyDiaryViewController.h"
-i"EntryTitleViewController.h"
-i"FruitsListViewController.h"
-i"FruitViewController.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryAppDelegate.h
-c000000004D7DC0E50000000000000269
-t1300087013
-s617
-i<UIKit/UIKit.h>
-i"ApplicationService.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryAppDelegate.m
-c000000004D7F24EB0000000000000B38
-t1300178155
-s2872
-i"MyFruitsDiaryAppDelegate.h"
-i"MyFruitsDiaryViewController.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryGlobal.h
-c000000004D7F66D900000000000004E9
-t1300195033
-s1257
-i<UIKit/UIKit.h>
-i"Fruit.h"
-i"Entry.h"
-i"FruitBag.h"
-i"ApplicationService.h"
-i"MyFruitsDiaryAppDelegate.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryViewController.h
-c000000004D7F1FBD0000000000000145
-t1300176829
-s325
-i<UIKit/UIKit.h>
-i"BaseViewController.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryViewController.m
-c000000004D7F93410000000000000A3D
-t1300206401
-s2621
-i"MyFruitsDiaryViewController.h"
-i"MyDiaryViewController.h"
-i"AboutViewController.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.h
-c000000004D7E3DDE0000000000000148
-t1300119006
-s328
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m
-c000000004D7E3DFF00000000000007A5
-t1300119039
-s1957
-i"BaseXMLHandler.h"
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/EntryTitleView.xib
-c000000004D7EE13C00000000000051EA
-t1300160828
-s20970
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/FruitView.xib
-c000000004D7F8602000000000000879A
-t1300203010
-s34714
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/FruitsListView.xib
-c000000004D7DAAC90000000000005060
-t1300081353
-s20576
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/MainWindow.xib
-c000000004D7C68510000000000004E71
-t1299998801
-s20081
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/MyDiaryView.xib
-c000000004D7D7FAE000000000000505C
-t1300070318
-s20572
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/MyFruitsDiaryViewController.xib
-c000000004D7C7AA10000000000003B3D
-t1300003489
-s15165
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/MyFruitsDiary_Prefix.pch
-c000000004D7C685100000000000000C3
-t1299998801
-s195
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/about-icon.png
-c000000004D7F9464000000000000107F
-t1300206692
-s4223
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/btnCancel-highlight.png
-c000000004D7DD7380000000000000CA1
-t1300092728
-s3233
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/btnCancel.png
-c000000004D7DD7380000000000000CDC
-t1300092728
-s3292
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/btnOK-highlight.png
-c000000004D7DD3620000000000000937
-t1300091746
-s2359
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/btnOK.png
-c000000004D7DD3620000000000000964
-t1300091746
-s2404
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app
-t1300208796
-s714
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app.dSYM
-t1300208796
-s102
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/AboutView.nib
-t1300207100
-s1847
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/AddEntryController.nib
-t1300029238
-s2228
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/AddEntryView.nib
-t1300161082
-s2486
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/EntryTitleView.nib
-t1300160844
-s1598
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/FruitView.nib
-t1300203498
-s2626
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/FruitsListView.nib
-t1300082059
-s1220
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/Info.plist
-t1299998970
-s615
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MainWindow.nib
-t1299998972
-s1135
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MyDiaryView.nib
-t1300070335
-s1220
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MyFruitsDiary
-t1300208796
-s103200
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MyFruitsDiaryViewController.nib
-t1300003534
-s795
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/PkgInfo
-t1299998970
-s8
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/about-icon.png
-t1300206770
-s4223
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/btnCancel-highlight.png
-t1300110886
-s3233
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/btnCancel.png
-t1300110886
-s3292
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/btnOK-highlight.png
-t1300110886
-s2359
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/btnOK.png
-t1300110886
-s2404
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/notebook-big-icon.png
-t1300206539
-s10716
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/notebook-icon.png
-t1300206770
-s5233
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/AboutViewController.o
-t1300195336
-s38344
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/AddEntryController.o
-t1300029261
-s41384
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/AddEntryViewController.o
-t1300203519
-s43176
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/ApplicationService.o
-t1300204533
-s31648
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/BaseRequest.o
-t1300087426
-s19388
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/BaseViewController.o
-t1300203531
-s45576
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/BaseXMLHandler.o
-t1300199974
-s17304
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/EntriesXMLHandler.o
-t1300203528
-s16092
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/Entry.o
-t1300208794
-s17552
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/EntryTitleViewController.o
-t1300203511
-s41128
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/Fruit.o
-t1300194310
-s14944
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitBag.o
-t1300194312
-s10788
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitViewController.o
-t1300204353
-s54400
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitsListViewController.o
-t1300204344
-s60288
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitsXMLHandler.o
-t1300203525
-s13204
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/HttpRequest.o
-t1300201662
-s19460
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyDiaryViewController.o
-t1300208795
-s77096
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyFruitsDiary.LinkFileList
-c000000004D7F12F70000000000000B00
-t1300173559
-s2816
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyFruitsDiaryAppDelegate.o
-t1300203502
-s55664
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyFruitsDiaryViewController.o
-t1300206590
-s54796
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/XMLHandler.o
-t2
-s0
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/main.o
-t1299998980
-s6324
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/AboutViewController.plist
-t1300070362
-s276
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/AddEntryViewController.plist
-t1300070363
-s276
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/BaseRequest.plist
-t1300070362
-s276
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/Entry.plist
-t1300070362
-s276
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/EntryTitleViewController.plist
-t1300070363
-s276
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/Fruit.plist
-t1300070361
-s276
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/FruitBag.plist
-t1300070362
-s276
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/FruitViewController.plist
-t1300070363
-s276
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/FruitsListViewController.plist
-t1300070363
-s276
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/MyDiaryViewController.plist
-t1300070362
-s1732
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/MyFruitsDiaryAppDelegate.plist
-t1300070361
-s276
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/MyFruitsDiaryViewController.plist
-t1300070361
-s276
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/XMLHandler.plist
-t1300070362
-s276
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/main.plist
-t1300070361
-s276
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/main.m
-c000000004D7C6851000000000000016C
-t1299998801
-s364
-i<UIKit/UIKit.h>
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/notebook-big-icon.png
-c000000004D7F8EFF00000000000029DC
-t1300205311
-s10716
-
-N/Users/khoipham/Documents/Projects/MyFruitsDiary/notebook-icon.png
-c000000004D7F945B0000000000001471
-t1300206683
-s5233
-
-N/var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch.gch
-t1299998979
-s15453392
-
-N/var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch.pth
-t1300070360
-s2784060
-
-NMyFruitsDiary-Info.plist
-c000000004D7C6851000000000000038D
-t1299998801
-s909
-
-CAnalyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AboutViewController.m
-s321763162.538431
-e321763162.707791
-r1
-xAnalyze
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AboutViewController.m
-lSLF07#2@86"Analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AboutViewController.m321763162#321763162#0(0"0(0#0#78"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AboutViewController.m8636994464#2191"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch --analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AboutViewController.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/AboutViewController.plist0#
-
-CAnalyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryViewController.m
-s321763163.411918
-e321763163.647693
-r1
-xAnalyze
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryViewController.m
-lSLF07#2@89"Analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryViewController.m321763163#321763163#0(0"0(0#0#81"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryViewController.m8636610400#2197"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch --analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryViewController.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/AddEntryViewController.plist0#
-
-CAnalyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.m
-s321763162.191259
-e321763162.348137
-r1
-xAnalyze
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.m
-lSLF07#2@78"Analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.m321763162#321763162#0(0"0(0#0#70"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.m8605508128#2175"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch --analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/BaseRequest.plist0#
-
-CAnalyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Entry.m
-s321763162.073989
-e321763162.191174
-r1
-xAnalyze
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Entry.m
-lSLF07#2@72"Analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Entry.m321763162#321763162#0(0"0(0#0#64"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Entry.m8636829056#2163"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch --analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Entry.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/Entry.plist0#
-
-CAnalyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntryTitleViewController.m
-s321763162.979003
-e321763163.099399
-r1
-xAnalyze
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntryTitleViewController.m
-lSLF07#2@91"Analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntryTitleViewController.m321763162#321763163#0(0"0(0#0#83"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntryTitleViewController.m8637990880#2201"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch --analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntryTitleViewController.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/EntryTitleViewController.plist0#
-
-CAnalyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Fruit.m
-s321763161.822889
-e321763161.941819
-r1
-xAnalyze
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Fruit.m
-lSLF07#2@72"Analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Fruit.m321763161#321763161#0(0"0(0#0#64"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Fruit.m8638890752#2163"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch --analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Fruit.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/Fruit.plist0#
-
-CAnalyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitBag.m
-s321763161.941907
-e321763162.073905
-r1
-xAnalyze
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitBag.m
-lSLF07#2@75"Analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitBag.m321763161#321763162#0(0"0(0#0#67"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitBag.m8637544096#2169"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch --analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitBag.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/FruitBag.plist0#
-
-CAnalyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitViewController.m
-s321763163.275604
-e321763163.411834
-r1
-xAnalyze
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitViewController.m
-lSLF07#2@86"Analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitViewController.m321763163#321763163#0(0"0(0#0#78"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitViewController.m8637929664#2191"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch --analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitViewController.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/FruitViewController.plist0#
-
-CAnalyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsListViewController.m
-s321763163.099483
-e321763163.275520
-r1
-xAnalyze
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsListViewController.m
-lSLF07#2@91"Analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsListViewController.m321763163#321763163#0(0"0(0#0#83"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsListViewController.m8637267776#2201"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch --analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsListViewController.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/FruitsListViewController.plist0#
-
-CAnalyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m
-s321763162.708143
-e321763162.978926
-r1
-xAnalyze
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m
-o/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m:160:13:{160:24-160:71}: warning: Value stored to 'fruitBag' during its initialization is never read
-o                 FruitBag* fruitBag = [[entry fruitBags] objectAtIndex:indexPath.row];
-o                           ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-o1 warning generated.
-lSLF07#2@88"Analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m321763162#321763162#0(375"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m:160:13:{160:24-160:71}: warning: Value stored to 'fruitBag' during its initialization is never read                 FruitBag* fruitBag = [[entry fruitBags] objectAtIndex:indexPath.row];                           ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~1 warning generated.1(0@66"Value stored to 'fruitBag' during its initialization is never read321763162#18446744073709551615#0#1(21@66"Value stored to 'fruitBag' during its initialization is never read321763162#18446744073709551615#0#0(6@80"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m321763062#160#13#0#0#0"1(6@80"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m321763062#160#24#160#70#66"Value stored to 'fruitBag' during its initialization is never read6@80"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m321763062#160#13#0#0#10"Dead store0(19"Dead initialization0#0#80"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m8637429504#2195"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch --analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/MyDiaryViewController.plist0#
-
-CAnalyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryAppDelegate.m
-s321763161.465984
-e321763161.659873
-r1
-xAnalyze
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryAppDelegate.m
-lSLF07#2@91"Analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryAppDelegate.m321763161#321763161#0(0"0(0#0#83"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryAppDelegate.m8639030304#2201"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch --analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryAppDelegate.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/MyFruitsDiaryAppDelegate.plist0#
-
-CAnalyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryViewController.m
-s321763161.659960
-e321763161.822807
-r1
-xAnalyze
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryViewController.m
-lSLF07#2@94"Analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryViewController.m321763161#321763161#0(0"0(0#0#86"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryViewController.m8637114624#2207"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch --analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryViewController.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/MyFruitsDiaryViewController.plist0#
-
-CAnalyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m
-s321763162.348223
-e321763162.538333
-r1
-xAnalyze
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m
-lSLF07#2@77"Analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m321763162#321763162#0(0"0(0#0#69"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m8638389440#2173"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch --analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/XMLHandler.plist0#
-
-CAnalyze /Users/khoipham/Documents/Projects/MyFruitsDiary/main.m
-s321763161.055782
-e321763161.465904
-r1
-xAnalyze
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/main.m
-lSLF07#2@63"Analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/main.m321763161#321763161#0(0"0(0#0#55"/Users/khoipham/Documents/Projects/MyFruitsDiary/main.m8636663808#2153"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch --analyze /Users/khoipham/Documents/Projects/MyFruitsDiary/main.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/StaticAnalyzer/normal/i386/main.plist0#
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies321901592#321901592#0(0"0(0#1#0"8613709888#0"0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/AboutViewController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AboutViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321888136.062933
-e321888136.415280
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/AboutViewController.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AboutViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@86"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AboutViewController.m321888136#321888136#0(0"0(0#0#78"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AboutViewController.m8615972256#2182"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AboutViewController.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/AboutViewController.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/AddEntryController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321722051.665132
-e321722061.670017
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/AddEntryController.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@85"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryController.m321722051#321722061#0(0"0(0#0#77"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryController.m8640321792#2180"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryController.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/AddEntryController.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/AddEntryViewController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321896317.496570
-e321896320.073785
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/AddEntryViewController.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@89"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryViewController.m321896317#321896320#0(0"0(0#0#81"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryViewController.m8617370496#2188"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/AddEntryViewController.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/AddEntryViewController.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/ApplicationService.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/ApplicationService.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321897321.652644
-e321897333.314569
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/ApplicationService.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/ApplicationService.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@85"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/ApplicationService.m321897321#321897333#0(0"0(0#0#77"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/ApplicationService.m8618373952#2180"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/ApplicationService.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/ApplicationService.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/BaseRequest.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321780223.676666
-e321780226.204422
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/BaseRequest.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-o/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.m: In function '-[BaseRequest connection:didReceiveResponse:]':
-o/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.m:95: warning: unused variable 'httpResponse'
-lSLF07#2@78"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.m321780223#321780226#0(248"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.m: In function '-[BaseRequest connection:didReceiveResponse:]':/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.m:95: warning: unused variable 'httpResponse'1(22@30"Unused variable 'httpResponse'321780225#133#115#0(6@70"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.m321599155#95#0#95#0#19"unused variable '*'0(0#0#70"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.m8638841056#2166"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseRequest.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/BaseRequest.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/BaseViewController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321896328.537026
-e321896331.300415
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/BaseViewController.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@85"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseViewController.m321896328#321896331#0(0"0(0#0#77"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseViewController.m8618020224#2180"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseViewController.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/BaseViewController.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/BaseXMLHandler.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseXMLHandler.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321892772.756770
-e321892774.939393
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/BaseXMLHandler.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseXMLHandler.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@81"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseXMLHandler.m321892772#321892774#0(0"0(0#0#73"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseXMLHandler.m8613743680#2172"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/BaseXMLHandler.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/BaseXMLHandler.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/EntriesXMLHandler.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntriesXMLHandler.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321896325.889551
-e321896328.535311
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/EntriesXMLHandler.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntriesXMLHandler.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@84"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntriesXMLHandler.m321896325#321896328#0(0"0(0#0#76"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntriesXMLHandler.m8615734400#2178"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntriesXMLHandler.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/EntriesXMLHandler.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/Entry.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Entry.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321901592.609367
-e321901594.269782
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/Entry.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Entry.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@72"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Entry.m321901592#321901594#0(0"0(0#0#64"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Entry.m8615345856#2154"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Entry.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/Entry.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/EntryTitleViewController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntryTitleViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321896308.570369
-e321896311.419363
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/EntryTitleViewController.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntryTitleViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@91"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntryTitleViewController.m321896308#321896311#0(0"0(0#0#83"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntryTitleViewController.m8617774240#2192"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/EntryTitleViewController.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/EntryTitleViewController.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/Fruit.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Fruit.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321887110.317258
-e321887110.685153
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/Fruit.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Fruit.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@72"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Fruit.m321887110#321887110#0(0"0(0#0#64"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Fruit.m8615052832#2154"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/Fruit.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/Fruit.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitBag.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitBag.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321887110.685248
-e321887112.471667
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitBag.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitBag.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@75"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitBag.m321887110#321887112#0(0"0(0#0#67"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitBag.m8617537408#2160"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitBag.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitBag.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitViewController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321897144.298683
-e321897154.031217
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitViewController.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@86"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitViewController.m321897144#321897154#0(0"0(0#0#78"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitViewController.m8619137312#2182"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitViewController.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitViewController.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitsListViewController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321897133.342646
-e321897144.298079
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitsListViewController.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsListViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@91"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsListViewController.m321897133#321897144#0(0"0(0#0#83"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsListViewController.m8618514240#2192"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsListViewController.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitsListViewController.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitsXMLHandler.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsXMLHandler.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321896323.469713
-e321896325.887891
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitsXMLHandler.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsXMLHandler.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@83"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsXMLHandler.m321896323#321896325#0(0"0(0#0#75"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsXMLHandler.m8618104672#2176"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/FruitsXMLHandler.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/FruitsXMLHandler.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/HttpRequest.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/HttpRequest.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321894458.195426
-e321894462.895906
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/HttpRequest.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/HttpRequest.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@78"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/HttpRequest.m321894458#321894462#0(0"0(0#0#70"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/HttpRequest.m8609223360#2166"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/HttpRequest.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/HttpRequest.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyDiaryViewController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321901594.271112
-e321901595.754530
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyDiaryViewController.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@88"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m321901594#321901595#0(0"0(0#0#80"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m8604585664#2186"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyDiaryViewController.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyDiaryViewController.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyFruitsDiaryAppDelegate.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321896299.257496
-e321896302.390357
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyFruitsDiaryAppDelegate.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryAppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@91"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryAppDelegate.m321896299#321896302#0(0"0(0#0#83"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryAppDelegate.m8617453248#2192"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryAppDelegate.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyFruitsDiaryAppDelegate.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyFruitsDiaryViewController.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321899381.734777
-e321899390.750491
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyFruitsDiaryViewController.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@94"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryViewController.m321899381#321899390#0(0"0(0#0#86"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryViewController.m8604478464#2198"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/MyFruitsDiaryViewController.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyFruitsDiaryViewController.o0#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/XMLHandler.o /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321811357.565460
-e321811361.676330
-r0
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/XMLHandler.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-oIn file included from /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m:9:
-o/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.h:24: error: expected identifier or '(' before 'protected'
-o/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m: In function '-[XMLHandler parser:didEndElement:namespaceURI:qualifiedName:]':
-o/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m:81: warning: 'XMLHandler' may not respond to '-flushCharacters'
-o/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m:81: warning: (Messages without a matching method signature
-o/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m:81: warning: will be assumed to return 'id' and accept
-o/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m:81: warning: '...' as arguments.)
-lSLF07#2@77"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m321811357#321811361#0(863"In file included from /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m:9:/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.h:24: error: expected identifier or '(' before 'protected'/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m: In function '-[XMLHandler parser:didEndElement:namespaceURI:qualifiedName:]':/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m:81: warning: 'XMLHandler' may not respond to '-flushCharacters'/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m:81: warning: (Messages without a matching method signature/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m:81: warning: will be assumed to return 'id' and accept/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m:81: warning: '...' as arguments.)3(4@45"Expected identifier or '(' before 'protected'321811361#95#127#2(7@91"In file included from /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m321811361#18446744073709551615#0#0(6@69"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m321811350#9#0#9#0#0"0(13@118"Expected identifier or '(' before 'protected' in /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.h321811361#18446744073709551615#0#0(6@69"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.h321811228#24#0#24#0#0"0(6@69"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.h321811228#24#0#24#0#19"expected * before *0(22@50"'XMLHandler' may not respond to '-flushCharacters'321811361#371#134#0(6@69"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m321811350#81#0#81#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)321811361#505#129#0(6@69"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m321811350#81#0#81#0#0"0(0#0#69"/Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m8636127392#2164"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/Classes/XMLHandler.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/XMLHandler.o1#
-
-CCompileC build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/main.o /Users/khoipham/Documents/Projects/MyFruitsDiary/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321691780.179587
-e321691780.539842
-r1
-xCompileC
-xbuild/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/main.o
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@63"Compile /Users/khoipham/Documents/Projects/MyFruitsDiary/main.m321691780#321691780#0(0"0(0#0#55"/Users/khoipham/Documents/Projects/MyFruitsDiary/main.m8607245664#2144"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -include /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/main.m -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/main.o0#
-
-CCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/AboutView.xib
-s321899887.144642
-e321899901.117956
-r1
-xCompileXIB
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/AboutView.xib
-o2011-03-16 00:38:14.816 ibtool[333:607] __CFServiceControllerBeginPBSLoadForLocalizations timed out while talking to pbs
-lSLF07#2@24"CompileXIB AboutView.xib321899887#321899901#0(121"2011-03-16 00:38:14.816 ibtool[333:607] __CFServiceControllerBeginPBSLoadForLocalizations timed out while talking to pbs0(0#0#62"/Users/khoipham/Documents/Projects/MyFruitsDiary/AboutView.xib8613948480#604"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/AboutView.nib /Users/khoipham/Documents/Projects/MyFruitsDiary/AboutView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
-
-CCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/AddEntryController.xib
-s321722018.134629
-e321722040.248881
-r1
-xCompileXIB
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/AddEntryController.xib
-oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
-lSLF07#2@33"CompileXIB AddEntryController.xib321722018#321722040#0(84"Couldn't open shared capabilities memory GSCapabilities (No such file or directory)0(0#0#71"/Users/khoipham/Documents/Projects/MyFruitsDiary/AddEntryController.xib8630424384#622"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/AddEntryController.nib /Users/khoipham/Documents/Projects/MyFruitsDiary/AddEntryController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
-
-CCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/AddEntryView.xib
-s321853872.971202
-e321853883.247165
-r1
-xCompileXIB
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/AddEntryView.xib
-lSLF07#2@27"CompileXIB AddEntryView.xib321853872#321853883#0(0"0(0#0#65"/Users/khoipham/Documents/Projects/MyFruitsDiary/AddEntryView.xib8616902784#610"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/AddEntryView.nib /Users/khoipham/Documents/Projects/MyFruitsDiary/AddEntryView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
-
-CCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/EntryTitleView.xib
-s321853633.526994
-e321853644.789545
-r1
-xCompileXIB
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/EntryTitleView.xib
-lSLF07#2@29"CompileXIB EntryTitleView.xib321853633#321853644#0(0"0(0#0#67"/Users/khoipham/Documents/Projects/MyFruitsDiary/EntryTitleView.xib8615570528#614"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/EntryTitleView.nib /Users/khoipham/Documents/Projects/MyFruitsDiary/EntryTitleView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
-
-CCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/FruitView.xib
-s321896287.558054
-e321896299.249709
-r1
-xCompileXIB
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/FruitView.xib
-lSLF07#2@24"CompileXIB FruitView.xib321896287#321896299#0(0"0(0#0#62"/Users/khoipham/Documents/Projects/MyFruitsDiary/FruitView.xib8616835968#604"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/FruitView.nib /Users/khoipham/Documents/Projects/MyFruitsDiary/FruitView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
-
-CCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/FruitsListView.xib
-s321774841.684240
-e321774861.886564
-r1
-xCompileXIB
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/FruitsListView.xib
-lSLF07#2@29"CompileXIB FruitsListView.xib321774841#321774861#0(0"0(0#0#67"/Users/khoipham/Documents/Projects/MyFruitsDiary/FruitsListView.xib8642466112#614"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/FruitsListView.nib /Users/khoipham/Documents/Projects/MyFruitsDiary/FruitsListView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
-
-CCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/MainWindow.xib
-s321691770.760174
-e321691772.579926
-r1
-xCompileXIB
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/MainWindow.xib
-lSLF07#2@25"CompileXIB MainWindow.xib321691770#321691772#0(0"0(0#0#63"/Users/khoipham/Documents/Projects/MyFruitsDiary/MainWindow.xib8608053472#606"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MainWindow.nib /Users/khoipham/Documents/Projects/MyFruitsDiary/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
-
-CCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/MyDiaryView.xib
-s321763133.143638
-e321763135.704793
-r1
-xCompileXIB
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/MyDiaryView.xib
-lSLF07#2@26"CompileXIB MyDiaryView.xib321763133#321763135#0(0"0(0#0#64"/Users/khoipham/Documents/Projects/MyFruitsDiary/MyDiaryView.xib8637029792#608"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MyDiaryView.nib /Users/khoipham/Documents/Projects/MyFruitsDiary/MyDiaryView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
-
-CCompileXIB /Users/khoipham/Documents/Projects/MyFruitsDiary/MyFruitsDiaryViewController.xib
-s321696325.737185
-e321696334.430411
-r1
-xCompileXIB
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/MyFruitsDiaryViewController.xib
-lSLF07#2@42"CompileXIB MyFruitsDiaryViewController.xib321696325#321696334#0(0"0(0#0#80"/Users/khoipham/Documents/Projects/MyFruitsDiary/MyFruitsDiaryViewController.xib8635869280#640"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MyFruitsDiaryViewController.nib /Users/khoipham/Documents/Projects/MyFruitsDiary/MyFruitsDiaryViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
-
-CCpResource build/Debug-iphonesimulator/MyFruitsDiary.app/about-icon.png about-icon.png
-s321899570.489083
-e321899570.746304
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/MyFruitsDiary.app/about-icon.png
-xabout-icon.png
-lSLF07#2@19"Copy about-icon.png321899570#321899570#0(0"0(0#0#63"/Users/khoipham/Documents/Projects/MyFruitsDiary/about-icon.png8607945344#508"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/khoipham/Documents/Projects/MyFruitsDiary/about-icon.png /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app0#
-
-CCpResource build/Debug-iphonesimulator/MyFruitsDiary.app/btnCancel-highlight.png btnCancel-highlight.png
-s321803686.017576
-e321803686.091455
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/MyFruitsDiary.app/btnCancel-highlight.png
-xbtnCancel-highlight.png
-lSLF07#2@28"Copy btnCancel-highlight.png321803686#321803686#0(0"0(0#0#72"/Users/khoipham/Documents/Projects/MyFruitsDiary/btnCancel-highlight.png8599758464#517"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/khoipham/Documents/Projects/MyFruitsDiary/btnCancel-highlight.png /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app0#
-
-CCpResource build/Debug-iphonesimulator/MyFruitsDiary.app/btnCancel.png btnCancel.png
-s321803686.022182
-e321803686.091641
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/MyFruitsDiary.app/btnCancel.png
-xbtnCancel.png
-lSLF07#2@18"Copy btnCancel.png321803686#321803686#0(0"0(0#0#62"/Users/khoipham/Documents/Projects/MyFruitsDiary/btnCancel.png8608622912#507"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/khoipham/Documents/Projects/MyFruitsDiary/btnCancel.png /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app0#
-
-CCpResource build/Debug-iphonesimulator/MyFruitsDiary.app/btnOK-highlight.png btnOK-highlight.png
-s321803686.027208
-e321803686.091804
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/MyFruitsDiary.app/btnOK-highlight.png
-xbtnOK-highlight.png
-lSLF07#2@24"Copy btnOK-highlight.png321803686#321803686#0(0"0(0#0#68"/Users/khoipham/Documents/Projects/MyFruitsDiary/btnOK-highlight.png8607843872#513"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/khoipham/Documents/Projects/MyFruitsDiary/btnOK-highlight.png /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app0#
-
-CCpResource build/Debug-iphonesimulator/MyFruitsDiary.app/btnOK.png btnOK.png
-s321803686.031998
-e321803686.091971
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/MyFruitsDiary.app/btnOK.png
-xbtnOK.png
-lSLF07#2@14"Copy btnOK.png321803686#321803686#0(0"0(0#0#58"/Users/khoipham/Documents/Projects/MyFruitsDiary/btnOK.png8606633344#503"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/khoipham/Documents/Projects/MyFruitsDiary/btnOK.png /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app0#
-
-CCpResource build/Debug-iphonesimulator/MyFruitsDiary.app/notebook-big-icon.png notebook-big-icon.png
-s321899339.713733
-e321899339.975163
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/MyFruitsDiary.app/notebook-big-icon.png
-xnotebook-big-icon.png
-lSLF07#2@26"Copy notebook-big-icon.png321899339#321899340#0(0"0(0#0#70"/Users/khoipham/Documents/Projects/MyFruitsDiary/notebook-big-icon.png8615312224#515"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/khoipham/Documents/Projects/MyFruitsDiary/notebook-big-icon.png /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app0#
-
-CCpResource build/Debug-iphonesimulator/MyFruitsDiary.app/notebook-icon.png notebook-icon.png
-s321899570.693722
-e321899570.869683
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/MyFruitsDiary.app/notebook-icon.png
-xnotebook-icon.png
-lSLF07#2@22"Copy notebook-icon.png321899570#321899571#0(0"0(0#0#66"/Users/khoipham/Documents/Projects/MyFruitsDiary/notebook-icon.png8607854976#511"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/khoipham/Documents/Projects/MyFruitsDiary/notebook-icon.png /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app0#
-
-CGenerateDSYMFile /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app.dSYM /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MyFruitsDiary
-s321901596.211515
-e321901596.638332
-r1
-xGenerateDSYMFile
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app.dSYM
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MyFruitsDiary
-lSLF07#2@127"GenerateDSYMFile build/Debug-iphonesimulator/MyFruitsDiary.app.dSYM build/Debug-iphonesimulator/MyFruitsDiary.app/MyFruitsDiary321901596#321901596#0(0"0(0#0#108"/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MyFruitsDiary8615051392#431"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MyFruitsDiary -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app.dSYM0#
-
-CLd /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MyFruitsDiary normal i386
-s321901595.769169
-e321901596.205962
-r1
-xLd
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MyFruitsDiary
-xnormal
-xi386
-lSLF07#2@113"Link /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MyFruitsDiary321901595#321901596#0(0"0(0#0#0"8615542080#980"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -L/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -filelist /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/Objects-normal/i386/MyFruitsDiary.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/MyFruitsDiary0#
-
-CProcessInfoPlistFile /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/Info.plist MyFruitsDiary-Info.plist
-s321691770.676576
-e321691770.760086
-r1
-xProcessInfoPlistFile
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/Info.plist
-xMyFruitsDiary-Info.plist
-lSLF07#2@32"Process MyFruitsDiary-Info.plist321691770#321691770#0(0"0(0#0#73"/Users/khoipham/Documents/Projects/MyFruitsDiary/MyFruitsDiary-Info.plist29555164619931764#527"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility MyFruitsDiary-Info.plist -genpkginfo /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app/Info.plist0#
-
-CProcessPCH /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch.gch MyFruitsDiary_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-s321691778.044362
-e321691780.179355
-r1
-xProcessPCH
-x/var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch.gch
-xMyFruitsDiary_Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@35"Precompile MyFruitsDiary_Prefix.pch321691778#321691780#0(0"0(0#0#73"/Users/khoipham/Documents/Projects/MyFruitsDiary/MyFruitsDiary_Prefix.pch8608149920#2020"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -c /Users/khoipham/Documents/Projects/MyFruitsDiary/MyFruitsDiary_Prefix.pch -o /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-avwymcylpaazrfcopigfsgaxasdl/MyFruitsDiary_Prefix.pch.gch0#
-
-CProcessPCH /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch.pth MyFruitsDiary_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.analyzer
-s321763153.736602
-e321763161.052890
-r1
-xProcessPCH
-x/var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch.pth
-xMyFruitsDiary_Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.analyzer
-lSLF07#2@35"Precompile MyFruitsDiary_Prefix.pch321763153#321763161#0(0"0(0#0#73"/Users/khoipham/Documents/Projects/MyFruitsDiary/MyFruitsDiary_Prefix.pch8636807008#2011"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-generated-files.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-own-target-headers.hmap -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-all-target-headers.hmap -iquote /Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/MyFruitsDiary-project-headers.hmap -F/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/include -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources/i386 -I/Users/khoipham/Documents/Projects/MyFruitsDiary/build/MyFruitsDiary.build/Debug-iphonesimulator/MyFruitsDiary.build/DerivedSources -c /Users/khoipham/Documents/Projects/MyFruitsDiary/MyFruitsDiary_Prefix.pch -o /var/folders/0X/0XX-ND8OF9iNjkaR5QKvpU+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/MyFruitsDiary_Prefix-cjyklqicpuoydeerjfhthwcudyrp/MyFruitsDiary_Prefix.pch.pth0#
-
-CTouch /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app
-s321901596.638571
-e321901596.665195
-r1
-xTouch
-x/Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app
-lSLF07#2@100"Touch /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app321901596#321901596#0(0"0(0#0#0"8614772032#304"    cd /Users/khoipham/Documents/Projects/MyFruitsDiary    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/khoipham/Documents/Projects/MyFruitsDiary/build/Debug-iphonesimulator/MyFruitsDiary.app0#
-
