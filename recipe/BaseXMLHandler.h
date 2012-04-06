@@ -11,10 +11,10 @@
 	NSError*		_parseError;
 	id				_target;
 	SEL				_action;
-	
+	NSMutableString* _chars;
 @protected
 	// Workaround to prevent trash xml data
-	BOOL				_stop;
+	BOOL                _stop;
 }
 
 

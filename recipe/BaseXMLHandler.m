@@ -7,7 +7,6 @@
 
 #import "BaseXMLHandler.h"
 
-
 @implementation BaseXMLHandler
 
 #pragma mark private
@@ -36,8 +35,8 @@
 {
 	// abstract
 }
-#pragma mark NSXMLParserDelegate
 
+#pragma mark NSXMLParserDelegate
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName
 	attributes:(NSDictionary *)attributeDict {
@@ -54,13 +53,11 @@
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-	// Do nothing
-	/*
 	if (!_chars) {
 		_chars = [string mutableCopy];
 	} else {
 		[_chars appendString:string];
-	}*/
+	}
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName
@@ -71,10 +68,12 @@
 		return;
 	}
 	[self afterElementEnding:elementName];
+    _chars = nil;
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)error {
-	_parseError = [error retain];
+	//_parseError = [error retain];
+    _parseError = error;
 }
 
 - (void) parserDidEndDocument:(NSXMLParser *)parser

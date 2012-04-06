@@ -25,9 +25,9 @@
         _name = nil;
         _serving = 0;
         _createDate = nil;
-        _imageList = nil;
-        _ingredientList = nil;
-        _stepList = nil;
+        _imageList = [[NSMutableArray alloc] init];
+        _ingredientList = [[NSMutableArray alloc] init];
+        _stepList = [[NSMutableArray alloc] init];
     }
     
     return self;

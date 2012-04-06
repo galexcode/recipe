@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IngredientViewController : UIViewController
+@interface IngredientViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+    UIViewController *detailsViewController;
+    UIViewController *storeListViewController;
+    UIViewController *currentViewController;
+}
+
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+
+- (void)switchToViewController: (UIViewController *)viewControllerToSwitch;
+- (IBAction)segmentControlChanged:(id)sender;
 
 @end

@@ -19,7 +19,7 @@
     if (self) {
         _categoryId = nil;
         _name = nil;
-        _latestRecipes = nil;
+        _latestRecipes = [[NSMutableArray alloc] init];
     }
 
     return self;

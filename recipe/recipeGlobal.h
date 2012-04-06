@@ -7,3 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "Ingredient.h"
+#import "Step.h"
+#import "Recipe.h"
+#import "Category.h"

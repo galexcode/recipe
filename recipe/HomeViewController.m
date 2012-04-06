@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "RecipeListViewController.h"
 #import "CategoryCell.h"
+#import "CategoryXMLHandler.h"
 
 @implementation HomeViewController
 @synthesize categoryTable;
@@ -18,6 +19,11 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        CategoryXMLHandler* handler = [[CategoryXMLHandler alloc] initWithCategoryArray:_categoryArray];
+        NSData* data = [[NSData alloc] initWithContentsOfFile:@"xml.xml"];
+        NSXMLParser* parser = [[NSXMLParser alloc] initWithData:data];
+        parser.delegate = handler;
+        [parser parse];
     }
     return self;
 }
@@ -58,32 +64,35 @@
     [self.navigationController pushViewController:recipeListViewController animated:YES];
 }
 
-#pragma mark Table delegate methods
+#pragma mark - UITableView delegate methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    //return 2;
+    return [_categoryArray count];
 }
-//
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-//    return @"title";
-//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 40;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    //return 1;
+    return [[_categoryArray objectAtIndex:section] count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *header = [[UIView alloc] init];
     [header setBackgroundColor:[UIColor redColor]];
     UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 200, 20)];
-    [headerLabel setText:@"category"];
+    [headerLabel setText:[[_categoryArray objectAtIndex:section] name]];
     [headerLabel setBackgroundColor:[UIColor clearColor]];
     [headerLabel setTextColor:[UIColor greenColor]];
     [header addSubview:headerLabel];
     return header;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -95,9 +104,6 @@
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 100;
-}
+
 
 @end

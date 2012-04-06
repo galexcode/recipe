@@ -9,6 +9,7 @@
 #import "IngredientViewController.h"
 
 @implementation IngredientViewController
+@synthesize containerView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +34,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+//    detailsViewController = [[LoginViewController alloc] initWithParentRef:self];
+//    storeListViewController = [[RegisterViewController alloc] initWithParentRef:self];
+//    currentViewController = loginViewController;
+//    [containerView addSubview:loginViewController.view];
 }
 
 - (void)viewDidUnload
@@ -46,6 +51,55 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Change View Methods
+-(void)switchToViewController: (UIViewController *)viewControllerToSwitch{
+    if (viewControllerToSwitch == currentViewController) {
+        return;
+    }
+    if ([currentViewController isViewLoaded]) {
+        [currentViewController.view removeFromSuperview];
+    }
+    if (viewControllerToSwitch != nil) {
+        [containerView addSubview:viewControllerToSwitch.view];
+    }
+    currentViewController = viewControllerToSwitch;
+}
+
+- (IBAction)segmentControlChanged:(id)sender {
+    UISegmentedControl *segmentControl = sender;
+    switch (segmentControl.selectedSegmentIndex) {
+        case 0:
+            //[self switchToViewController:loginViewController];
+            break;
+        case 1:
+            //[self switchToViewController:registerViewController];
+            break;
+    }
+}
+
+#pragma mark - Table Delegate Methods
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    [cell.textLabel setText:@"simple store"];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
 }
 
 @end

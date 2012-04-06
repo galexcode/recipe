@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RecipeViewController : UIViewController
+@interface RecipeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *recipeDetailsTable;
 
 @end
