@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ApplicationService.h"
 
 @interface recipeAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate>{
     UIViewController *authViewController;
+    ApplicationService* _appService;
 }
 
 @property (nonatomic) IBOutlet UIWindow *window;
 
 @property (nonatomic) IBOutlet UITabBarController *tabBarController;
+
+-(ApplicationService*) appService;
 
 @end

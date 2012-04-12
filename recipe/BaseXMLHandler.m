@@ -80,7 +80,8 @@
 
 - (void) parserDidEndDocument:(NSXMLParser *)parser
 {
-	if (_target != nil) {
+	if (_target && [_target respondsToSelector:_action])
+    {
 		[_target performSelector:_action];
 	}
 }

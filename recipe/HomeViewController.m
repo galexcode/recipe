@@ -41,7 +41,7 @@
     CategoryXMLHandler* handler = [[CategoryXMLHandler alloc] initWithCategoryArray:_categoryArray];
     NSString *xmlFilePath = [[NSBundle mainBundle] pathForResource:@"xml" ofType:@"xml"];
     NSData* data = [[NSData alloc] initWithContentsOfFile:xmlFilePath];
-    NSLog(@"DATA: %s", data.bytes);
+    //NSLog(@"DATA: %s", data.bytes);
     NSXMLParser* parser = [[NSXMLParser alloc] initWithData:data];
     parser.delegate = handler;
     [parser parse];

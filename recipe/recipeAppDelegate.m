@@ -15,6 +15,11 @@
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
 
+- (ApplicationService*) appService
+{
+    return _appService;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -23,6 +28,10 @@
     [authViewController.view setFrame:CGRectMake(0, 20, 320, 440)];
     self.window.rootViewController = self.tabBarController;
     [self.window addSubview:authViewController.view];
+    
+    _appService = [[ApplicationService alloc] init];
+    [_appService loadCategories];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

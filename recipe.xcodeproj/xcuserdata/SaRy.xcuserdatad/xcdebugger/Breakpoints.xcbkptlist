@@ -59,13 +59,39 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "recipe/CategoryXMLHandler.m"
-         timestampString = "355401540.258265"
+         filePath = "recipe/ASIFormDataRequest.m"
+         timestampString = "355905527.760576"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "36"
-         endingLineNumber = "36"
-         landmarkName = "-initObjectAfterElementStarting:"
+         startingLineNumber = "50"
+         endingLineNumber = "50"
+         landmarkName = "-initWithURL:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "recipe/ASIHTTPRequest.m"
+         timestampString = "355912829.983935"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "4104"
+         endingLineNumber = "4104"
+         landmarkName = "-copyWithZone:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "recipe/ASIHTTPRequest.m"
+         timestampString = "355912829.983935"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "4081"
+         endingLineNumber = "4081"
+         landmarkName = "-copyWithZone:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
