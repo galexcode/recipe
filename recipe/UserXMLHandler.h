@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "recipeGlobal.h"
 
-@interface UserXMLHandler : NSObject
+@interface UserXMLHandler : BaseXMLHandler{
+    User* _user;
+}
+
+-(id) initWithUser:(User*)user;
+-(void) afterElementStarting:(NSString *)elementName withAttributes:(NSDictionary *)attributeDict;
+-(void) afterElementEnding:(NSString *)elementName;
+-(NSString*) getWrappedRootNode;
 
 @end

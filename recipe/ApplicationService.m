@@ -1,8 +1,7 @@
 //
 //  ApplicationService.m
-//  MyFruitsDiary
 //
-//  Created by Khoi Pham on 3/14/11.
+//  Created by Vu Tran on 4/12/12.
 //  Copyright 2011 OngSoft. All rights reserved.
 //
 
@@ -18,13 +17,50 @@
 	return self;	
 }
 
+-(User*) user
+{
+    return _user;
+}
+
 -(NSMutableArray*) categories
 {
     return _categories;
 }
 
 #pragma mark -
-#pragma mark loadCategories
+#pragma mark check user
+-(void) verifyUser:(User *)loggingUser
+{
+    NSURL *url = [NSURL URLWithString:@"http://www.checkuser.com/login/"];
+    
+    ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+    [request setPostValue:[loggingUser name] forKey:@"u"];
+    [request setPostValue:[loggingUser password] forKey:@"p"];
+    
+    [request setTarget:self andAction:@selector(gotUserByRequest:)];
+}
+
+-(void) gotUserByRequest:(ASI2HTTPRequest *)request
+{
+    if (request.responseStatusCode == 200) {
+        UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
+        [handler setEndDocumentTarget:self andAction:@selector(didParsedUser:)];
+        NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+        parser.delegate = handler;
+        [parser parse];
+    }else {
+        //user login faile
+        [self didParsedUser];
+    }
+    
+}
+
+-(void) didParsedUser
+{
+    //notify user login success or false
+}
+
+#pragma mark load Categories
 -(void) loadCategories
 {    
     NSURL *url = [NSURL URLWithString:@"http://www.wildfables.com/promos/"];
@@ -33,8 +69,9 @@
     [request setPostValue:@"1" forKey:@"rw_app_id"];
     [request setPostValue:@"test" forKey:@"code"];
     [request setPostValue:@"test" forKey:@"device_id"];
-    //[request setDelegate:self];
+
     [request setTarget:self andAction:@selector(gotCategoriesByRequest:)];
+    
     [request startAsynchronous];
 }
 
@@ -64,40 +101,41 @@
     
 }
 
-- (void)requestFinished:(ASIHTTPRequest *)request
-{    
-    //[MBProgressHUD hideHUDForView:self.view animated:YES];
-    if (request.responseStatusCode == 400) {
-        NSLog(@"Invalid code");        
-    } else if (request.responseStatusCode == 403) {
-        NSLog(@"Code already used");
-    } else if (request.responseStatusCode == 200) {
-        NSString *responseString = [request responseString];
-        NSLog(@"%@", responseString);
-        NSLog(@"DATA: %s", [request responseData].bytes);
-//        NSDictionary *responseDict = [responseString JSONValue];
-//        NSString *unlockCode = [responseDict objectForKey:@"unlock_code"];
+//- (void)requestFinished:(ASIHTTPRequest *)request
+//{    
+//    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+//    if (request.responseStatusCode == 400) {
+//        NSLog(@"Invalid code");        
+//    } else if (request.responseStatusCode == 403) {
+//        NSLog(@"Code already used");
+//    } else if (request.responseStatusCode == 200) {
+//        NSString *responseString = [request responseString];
+//        NSLog(@"%@", responseString);
+//        NSLog(@"DATA: %s", [request responseData].bytes);
+////        NSDictionary *responseDict = [responseString JSONValue];
+////        NSString *unlockCode = [responseDict objectForKey:@"unlock_code"];
+////        
+////        if ([unlockCode compare:@"com.razeware.test.unlock.cake"] == NSOrderedSame) {
+////            NSLog(@"The cake is a lie!");
+////        } else {        
+////            NSLog(@"%@", [NSString stringWithFormat:@"Received unexpected unlock code: %@", unlockCode]);
+////        }
 //        
-//        if ([unlockCode compare:@"com.razeware.test.unlock.cake"] == NSOrderedSame) {
-//            NSLog(@"The cake is a lie!");
-//        } else {        
-//            NSLog(@"%@", [NSString stringWithFormat:@"Received unexpected unlock code: %@", unlockCode]);
-//        }
-        
-    } else {
-        NSLog(@"Unexpected error");
-    }
-    
-}
+//    } else {
+//        NSLog(@"Unexpected error");
+//    }
+//    
+//}
+//
+//- (void)requestFailed:(ASIHTTPRequest *)request
+//{    
+//    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+//    //NSError *error = [request error];
+//    //NSLog(error.localizedDescription);
+//    NSLog(@"Error");
+//}
 
-- (void)requestFailed:(ASIHTTPRequest *)request
-{    
-    //[MBProgressHUD hideHUDForView:self.view animated:YES];
-    //NSError *error = [request error];
-    //NSLog(error.localizedDescription);
-    NSLog(@"Error");
-}
-
+#pragma mark Errors Handler
 - (void) gotErrorByRequest:(ASI2HTTPRequest *)request
 {
     NSError *error = [request error];

@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 OngSoft. All rights reserved.
 //
 
-#import "BaseXMLHandler.h"
 #import "recipeGlobal.h"
 
 @interface RecipeXMLHandler : BaseXMLHandler{

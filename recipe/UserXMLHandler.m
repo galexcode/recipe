@@ -10,4 +10,27 @@
 
 @implementation UserXMLHandler
 
+-(id) initWithUser:(User*)user
+{
+    if (self = [super init]) {
+        _user = user;
+    }
+    return self;
+}
+
+-(void) afterElementStarting:(NSString *)elementName withAttributes:(NSDictionary *)attributeDict
+{
+    
+}
+
+-(void) afterElementEnding:(NSString *)elementName
+{
+    
+}
+
+-(NSString*) getWrappedRootNode
+{
+    return nil;
+}
+
 @end

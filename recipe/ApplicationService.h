@@ -1,22 +1,31 @@
 //
 //  ApplicationService.h
-//  MyFruitsDiary
 //
-//  Created by Khoi Pham on 3/14/11.
+//  Created by Vu Tran on 4/12/12.
 //  Copyright 2011 OngSoft. All rights reserved.
 //
 #import <Foundation/Foundation.h>
 #import "ASI2HTTPRequest.h"
 #import "ASIForm2DataRequest.h"
+#import "User.h"
+#import "UserXMLHandler.h"
 
 @interface ApplicationService : NSObject{
+    User* _user;
     NSMutableArray* _categories;
 }
+
+-(User*) user;
+-(void) verifyUser: (User*)loggingUser;
+-(void) gotUserByRequest: (ASI2HTTPRequest*)request;
+-(void) didParsedUser;
 
 -(NSMutableArray*) categories;
 -(void) loadCategories;
 -(void) gotCategoriesByRequest: (ASI2HTTPRequest*)request;
 -(void) didParsedCategories;
+
+//other loading function go here
 
 -(void) gotErrorByRequest: (ASI2HTTPRequest*)request;
 -(void) requestStatusHandler: (ASI2HTTPRequest*)request;

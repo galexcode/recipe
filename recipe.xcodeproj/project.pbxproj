@@ -236,6 +236,36 @@
 			name = CustomASIHTTPRequest;
 			sourceTree = "<group>";
 		};
+		5A0AD4CF1536E3D700D057A9 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				5AEA8C10153688C50097C796 /* MBProgressHUD.h */,
+				5AEA8C11153688C50097C796 /* MBProgressHUD.m */,
+			);
+			name = HUD;
+			sourceTree = "<group>";
+		};
+		5A0AD4D01536E3F000D057A9 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				5AD40506152EF4340045E74A /* BaseXMLHandler.h */,
+				5AD40507152EF4340045E74A /* BaseXMLHandler.m */,
+				5AD404E9152E80C30045E74A /* CategoryXMLHandler.h */,
+				5AD404EA152E80C30045E74A /* CategoryXMLHandler.m */,
+				5AD404EC152E81310045E74A /* RecipeXMLHandler.h */,
+				5AD404ED152E81310045E74A /* RecipeXMLHandler.m */,
+				5AD404EF152E81890045E74A /* IngredientXMLHandler.h */,
+				5AD404F0152E81890045E74A /* IngredientXMLHandler.m */,
+				5AD404F2152E819E0045E74A /* StepXMLHandler.h */,
+				5AD404F3152E819E0045E74A /* StepXMLHandler.m */,
+				5AD404F5152E81B60045E74A /* StoreXMLHandler.h */,
+				5AD404F6152E81B60045E74A /* StoreXMLHandler.m */,
+				5AD404F8152E82900045E74A /* UserXMLHandler.h */,
+				5AD404F9152E82900045E74A /* UserXMLHandler.m */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
 		5A3B81651536771C007BD9ED /* ASIHTTPRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,28 +455,14 @@
 		9084A2ED1522EFCA00BDEDC4 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				5A0AD4CF1536E3D700D057A9 /* HUD */,
 				5A0AD4C71536C1BB00D057A9 /* CustomASIHTTPRequest */,
 				5A3B81651536771C007BD9ED /* ASIHTTPRequest */,
-				5AEA8C10153688C50097C796 /* MBProgressHUD.h */,
-				5AEA8C11153688C50097C796 /* MBProgressHUD.m */,
 				5A995EB915259E0F00B8292E /* HttpRequest.h */,
 				5A995EB815259E0F00B8292E /* HttpRequest.m */,
 				5A995EC51525A4C100B8292E /* AsyncImageView.h */,
 				5A995EC41525A4C100B8292E /* AsyncImageView.m */,
-				5AD40506152EF4340045E74A /* BaseXMLHandler.h */,
-				5AD40507152EF4340045E74A /* BaseXMLHandler.m */,
-				5AD404E9152E80C30045E74A /* CategoryXMLHandler.h */,
-				5AD404EA152E80C30045E74A /* CategoryXMLHandler.m */,
-				5AD404EC152E81310045E74A /* RecipeXMLHandler.h */,
-				5AD404ED152E81310045E74A /* RecipeXMLHandler.m */,
-				5AD404EF152E81890045E74A /* IngredientXMLHandler.h */,
-				5AD404F0152E81890045E74A /* IngredientXMLHandler.m */,
-				5AD404F2152E819E0045E74A /* StepXMLHandler.h */,
-				5AD404F3152E819E0045E74A /* StepXMLHandler.m */,
-				5AD404F5152E81B60045E74A /* StoreXMLHandler.h */,
-				5AD404F6152E81B60045E74A /* StoreXMLHandler.m */,
-				5AD404F8152E82900045E74A /* UserXMLHandler.h */,
-				5AD404F9152E82900045E74A /* UserXMLHandler.m */,
+				5A0AD4D01536E3F000D057A9 /* Parser */,
 			);
 			name = util;
 			sourceTree = "<group>";

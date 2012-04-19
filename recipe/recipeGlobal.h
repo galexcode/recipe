@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "BaseXMLHandler.h"
+#import "User.h"
 #import "Ingredient.h"
 #import "Step.h"
 #import "Recipe.h"
