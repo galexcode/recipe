@@ -76,19 +76,6 @@
          timestampString = "355912829.983935"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "4104"
-         endingLineNumber = "4104"
-         landmarkName = "-copyWithZone:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "recipe/ASIHTTPRequest.m"
-         timestampString = "355912829.983935"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
          startingLineNumber = "4081"
          endingLineNumber = "4081"
          landmarkName = "-copyWithZone:"

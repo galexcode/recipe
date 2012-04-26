@@ -33,7 +33,7 @@
 		5ADF1385152A9182008B521A /* RecipeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADF1383152A9182008B521A /* RecipeListViewController.m */; };
 		5ADF1386152A9182008B521A /* RecipeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ADF1384152A9182008B521A /* RecipeListViewController.xib */; };
 		5AEA8BF0153686250097C796 /* ApplicationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA8BEF153686250097C796 /* ApplicationService.m */; };
-		5AEA8C12153688C50097C796 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA8C11153688C50097C796 /* MBProgressHUD.m */; };
+		5AEA8C12153688C50097C796 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA8C11153688C50097C796 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5AEA8C2715368D900097C796 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA8C1415368D900097C796 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5AEA8C2815368D900097C796 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA8C1715368D900097C796 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5AEA8C2915368D900097C796 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA8C1915368D900097C796 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -298,7 +298,6 @@
 		90296488152014AF002BAC2D = {
 			isa = PBXGroup;
 			children = (
-				5A3B818615367B2A007BD9ED /* libz.1.2.5.dylib */,
 				9029649D152014AF002BAC2D /* recipe */,
 				90296496152014AF002BAC2D /* Frameworks */,
 				90296494152014AF002BAC2D /* Products */,
@@ -316,6 +315,7 @@
 		90296496152014AF002BAC2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A3B818615367B2A007BD9ED /* libz.1.2.5.dylib */,
 				5A3B818415367B04007BD9ED /* CFNetwork.framework */,
 				5A3B818215367AF5007BD9ED /* SystemConfiguration.framework */,
 				5A3B818015367AE0007BD9ED /* MobileCoreServices.framework */,

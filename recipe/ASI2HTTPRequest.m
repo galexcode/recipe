@@ -25,18 +25,16 @@
 /* ALWAYS CALLED ON MAIN THREAD! */
 - (void)reportFinished
 {
-    if (_target && [_target respondsToSelector:_action]) {
+    if (_target && [_target respondsToSelector:_action])
         [_target performSelector:_action withObject:self];
-    }
     [super reportFinished];
 }
 
 /* ALWAYS CALLED ON MAIN THREAD! */
 - (void)reportFailure
 {
-    if (_target && [_target respondsToSelector:_action]) {
+    if (_target && [_target respondsToSelector:_action])
         [_target performSelector:_action withObject:self];
-    }
     [super reportFailure];
 }
 
