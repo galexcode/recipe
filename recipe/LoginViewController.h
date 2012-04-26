@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "recipeGlobal.h"
 
-@interface LoginViewController : UIViewController{
+@interface LoginViewController : UIViewController<ApplicationServiceDelegate>{
     UITextField *activeTextField;
-    UIViewController *parent;
+    __weak UIViewController* _parentController;
 }
 
 - (IBAction)dismissKeyboard;

@@ -22,7 +22,7 @@
 - (id)initWithParentRef:(UIViewController*)parentViewController{
     self = [super init];
     if (self) {
-        parent = parentViewController;
+        _parentController = parentViewController;
     }
     return self;
 }
@@ -60,13 +60,10 @@
     if (activeTextField != nil) {
         [activeTextField resignFirstResponder];
     }
-    UIAlertView *successalertView = [[UIAlertView alloc] initWithTitle:@"Successful Login"
-                                                               message:@"Welcome back ..."
-                                                              delegate:nil
-                                                     cancelButtonTitle:@"OK"
-                                                     otherButtonTitles:nil];
-    [successalertView show];
-    [parent.view setHidden:YES];
+    APP_SERVICE(appSrv);
+    USER(currentUser);
+    [appSrv setDelegate:self];
+    [appSrv verifyUser:currentUser];
 }
 
 - (IBAction)dismissKeyboard{
@@ -86,6 +83,18 @@
     return YES;
 }
 
-
+#pragma mark Application Service Delegate Methods
+-(void) didFinishVerifyUser:(__weak User *)loggedUser{
+    if (loggedUser != nil) {
+        NSLog(@"username: %@", [loggedUser name]);
+        UIAlertView *successAlertView = [[UIAlertView alloc] initWithTitle:@"Successful Login"
+                                                                   message:@"Welcome back ..."
+                                                                  delegate:nil
+                                                         cancelButtonTitle:@"OK"
+                                                         otherButtonTitles:nil];
+        [successAlertView show];
+        [_parentController.view setHidden:YES];
+    }
+}
 
 @end

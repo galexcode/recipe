@@ -13,11 +13,11 @@
     UIButton* _button1;
     UIButton* _button2;
     UIButton* _button3;
-    __weak HomeViewController *_refController;
+    __weak UIViewController* _refController;
 }
 
 @property (nonatomic) NSMutableArray *imageList;
 
-- (id)initWithImageList:(NSMutableArray *)list reuseIdentifier:(NSString *)reuseIdentifier refController:(HomeViewController *)refController;
+- (id)initWithImageList:(NSMutableArray *)list reuseIdentifier:(NSString *)reuseIdentifier refController:(UIViewController *)refController;
 
 @end

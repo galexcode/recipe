@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "recipeGlobal.h"
+#import "BaseXMLHandler.h"
+#import "User.h"
 
 @interface UserXMLHandler : BaseXMLHandler{
-    User* _user;
+    __weak User* _user;
 }
 
 -(id) initWithUser:(User*)user;

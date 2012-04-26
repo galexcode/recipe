@@ -66,7 +66,10 @@
 
 #pragma Methods Handle Tap On Thumbs
 - (void)tapOnThumbs:(id)sender{
-    [_refController showRecipeView];
+    if ([_refController isKindOfClass:[HomeViewController class]]) {
+        __weak HomeViewController *homeController = (HomeViewController *)_refController;
+        [homeController showRecipeView];
+    }
 }
 
 @end

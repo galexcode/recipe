@@ -15,11 +15,19 @@
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
 
+#pragma  mark Global Variable
+- (User*) user
+{
+    return _user;
+}
+
+#pragma mark Services Accessor
 - (ApplicationService*) appService
 {
     return _appService;
 }
 
+#pragma mark Application Lifecycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -30,7 +38,7 @@
     [self.window addSubview:authViewController.view];
     
     _appService = [[ApplicationService alloc] init];
-    [_appService loadCategories];
+    _user = [[User alloc] init];
     
     [self.window makeKeyAndVisible];
     return YES;

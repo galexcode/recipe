@@ -337,7 +337,7 @@
 				908409DE1521C60200FA078B /* recipeGlobal.h */,
 				908409DD1521C4C300FA078B /* service */,
 				9084A2ED1522EFCA00BDEDC4 /* util */,
-				90829C1C1522ABE700E6BFC9 /* gui */,
+				90829C1C1522ABE700E6BFC9 /* controller + gui */,
 				9084A2EB1522ECD900BDEDC4 /* custom control */,
 				908409E31521C65B00FA078B /* resource */,
 				9029649E152014AF002BAC2D /* Supporting Files */,
@@ -356,7 +356,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		90829C1C1522ABE700E6BFC9 /* gui */ = {
+		90829C1C1522ABE700E6BFC9 /* controller + gui */ = {
 			isa = PBXGroup;
 			children = (
 				902964BD15201E24002BAC2D /* AuthViewController.h */,
@@ -402,7 +402,7 @@
 				5AC54A26152D8AE200C87E3E /* MapViewController.m */,
 				5AC54A27152D8AE200C87E3E /* MapViewController.xib */,
 			);
-			name = gui;
+			name = "controller + gui";
 			sourceTree = "<group>";
 		};
 		908409C51521BFAF00FA078B /* model */ = {

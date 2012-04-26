@@ -10,16 +10,33 @@
 #import "User.h"
 #import "UserXMLHandler.h"
 
+@protocol ApplicationServiceDelegate
+
+@optional
+-(void) didFinishVerifyUser:(__weak User *)loggedUser;
+-(void) didFinishParsedUser:(__weak User *)user;
+
+@end
+
 @interface ApplicationService : NSObject{
-    User* _user;
+    __weak User* _user;
     NSMutableArray* _categories;
+    __weak id<ApplicationServiceDelegate> _delegate;
 }
 
--(User*) user;
--(void) verifyUser: (User*)loggingUser;
+@property (nonatomic, weak) id<ApplicationServiceDelegate> delegate;
+
+#pragma mark Check Logging User
+-(void) verifyUser: (__weak User*)loggingUser;
+-(void) gotLoggingUserByRequest:(ASI2HTTPRequest *)request;
+-(void) didParsedLoggingUser;
+
+#pragma mark Load User Profile
+-(void) loadUser:(User*)user;
 -(void) gotUserByRequest: (ASI2HTTPRequest*)request;
 -(void) didParsedUser;
 
+#pragma mark Load Categories
 -(NSMutableArray*) categories;
 -(void) loadCategories;
 -(void) gotCategoriesByRequest: (ASI2HTTPRequest*)request;

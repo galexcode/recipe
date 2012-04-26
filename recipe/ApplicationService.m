@@ -8,6 +8,7 @@
 #import "ApplicationService.h"
 
 @implementation ApplicationService
+@synthesize delegate = _delegate;
 
 -(id) init
 {
@@ -17,25 +18,62 @@
 	return self;	
 }
 
--(User*) user
-{
-    return _user;
-}
-
 -(NSMutableArray*) categories
 {
     return _categories;
 }
 
 #pragma mark -
-#pragma mark check user
--(void) verifyUser:(User *)loggingUser
+#pragma mark Check User
+-(void) verifyUser:(__weak User *)loggingUser
 {
-    NSURL *url = [NSURL URLWithString:@"http://www.checkuser.com/login/"];
+    _user = loggingUser;
+    
+    [_user setUserId:@"1"];
+    [_user setName:@"my name"];
+    
+    
+//    NSURL *url = [NSURL URLWithString:@"http://www.checkuser.com/login/"];
+//    
+//    ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+//    [request setPostValue:[loggingUser name] forKey:@"u"];
+//    [request setPostValue:[loggingUser password] forKey:@"p"];
+//    
+//    [request setTarget:self andAction:@selector(gotLoggingUserByRequest:)];
+    [self gotLoggingUserByRequest:nil];
+}
+
+-(void) gotLoggingUserByRequest:(ASI2HTTPRequest *)request
+{
+//    if (request.responseStatusCode == 200) {
+//        UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
+//        [handler setEndDocumentTarget:self andAction:@selector(didParsedLoggingUser:)];
+//        NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+//        parser.delegate = handler;
+//        [parser parse];
+//    }else if(request.responseStatusCode == 404){
+//        [_delegate didFinishVerifyUser:nil];
+//    } else {
+//        [_delegate didFinishVerifyUser:nil];
+//    }
+    [self didParsedLoggingUser];
+}
+
+-(void) didParsedLoggingUser
+{
+    [_delegate didFinishVerifyUser:_user];
+    //_user = nil;
+}
+
+#pragma mark Loading User Profile
+-(void) loadUser:(User *)user
+{
+    _user = user;
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.checkuser.com/profile/"];
     
     ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
-    [request setPostValue:[loggingUser name] forKey:@"u"];
-    [request setPostValue:[loggingUser password] forKey:@"p"];
+    [request setPostValue:[user userId] forKey:@"id"];
     
     [request setTarget:self andAction:@selector(gotUserByRequest:)];
 }
@@ -48,16 +86,17 @@
         NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
         parser.delegate = handler;
         [parser parse];
-    }else {
-        //user login faile
-        [self didParsedUser];
+    }else if(request.responseStatusCode == 404){
+        [_delegate didFinishVerifyUser:nil];
+    } else {
+        [_delegate didFinishVerifyUser:nil];
     }
     
 }
 
 -(void) didParsedUser
 {
-    //notify user login success or false
+    [_delegate didFinishParsedUser:_user];
 }
 
 #pragma mark load Categories
