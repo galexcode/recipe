@@ -10,9 +10,13 @@
 #import "recipeGlobal.h"
 
 @interface LoginViewController : UIViewController<ApplicationServiceDelegate>{
-    UITextField *activeTextField;
+    __weak UITextField *activeTextField;
     __weak UIViewController* _parentController;
+    User* _user;
 }
+
+@property (weak, nonatomic) IBOutlet UITextField *userName;
+@property (weak, nonatomic) IBOutlet UITextField *password;
 
 - (IBAction)dismissKeyboard;
 - (IBAction)onLoginTap;

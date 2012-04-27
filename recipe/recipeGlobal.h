@@ -17,6 +17,8 @@
 #import "Recipe.h"
 #import "Category.h"
 
+//Macro
+#define trimSpaces( object ) [object stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ]
 
 //Application Service
 #define USER(currentUser) User* currentUser = [(recipeAppDelegate*)[[UIApplication sharedApplication] delegate] user]

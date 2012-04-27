@@ -85,8 +85,8 @@
         [[_currentRecipe imageList] addObject:_chars];
     if ([elementName isEqualToString:@"recipe"]) {
         [[_currentUser recipes] addObject:_currentRecipe];
-        //_currentRecipe = nil;
-        //_currentObject = nil;
+        _currentRecipe = nil;
+        _currentObject = nil;
     }
 }
 

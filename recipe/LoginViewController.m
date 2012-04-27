@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 
 @implementation LoginViewController
+@synthesize userName;
+@synthesize password;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,6 +47,8 @@
 
 - (void)viewDidUnload
 {
+    [self setUserName:nil];
+    [self setPassword:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -60,10 +64,18 @@
     if (activeTextField != nil) {
         [activeTextField resignFirstResponder];
     }
-    APP_SERVICE(appSrv);
-    USER(currentUser);
-    [appSrv setDelegate:self];
-    [appSrv verifyUser:currentUser];
+    if ([trimSpaces([userName text]) length] != 0 && [[password text] length] != 0) {
+        _user = [[User alloc] init];
+        APP_SERVICE(appSrv);
+        [appSrv setDelegate:self];
+        [appSrv verifyUser:_user];
+    }else {
+        if ([trimSpaces([userName text]) length] == 0)
+            [userName setText:@""];
+            [userName setPlaceholder:@"User name is blank"];
+        if ([[password text] length] == 0)
+            [password setPlaceholder:@"Password is blank"];
+    }
 }
 
 - (IBAction)dismissKeyboard{
@@ -86,9 +98,13 @@
 #pragma mark Application Service Delegate Methods
 -(void) didFinishVerifyUser:(__weak User *)loggedUser{
     if (loggedUser != nil) {
-        NSLog(@"username: %@", [loggedUser name]);
+        USER(currentUser);
+        currentUser = _user;
+        NSLog(@"username on weak: %@", [loggedUser name]);
+        NSLog(@"username on strong: %@", [currentUser name]);
+        NSLog(@"username on nil: %@", [_user name]);
         UIAlertView *successAlertView = [[UIAlertView alloc] initWithTitle:@"Successful Login"
-                                                                   message:@"Welcome back ..."
+                                                                   message:[NSString stringWithFormat:@"Welcome back %@",[currentUser name]]
                                                                   delegate:nil
                                                          cancelButtonTitle:@"OK"
                                                          otherButtonTitles:nil];

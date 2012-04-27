@@ -56,6 +56,8 @@
     NSXMLParser* parser = [[NSXMLParser alloc] initWithData:data];
     [parser setDelegate:handler];
     [parser parse];
+    
+    NSLog(@"Recipe count: %i", [user recipeCount]);
 }
 
 - (void)viewDidUnload
