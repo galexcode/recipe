@@ -10,6 +10,7 @@
 #import "RecipeListViewController.h"
 #import "CategoryCell.h"
 #import "CategoryXMLHandler.h"
+#import "UserXMLHandler.h"
 
 @implementation HomeViewController
 @synthesize categoryTable;
@@ -38,12 +39,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     _categoryArray = [[NSMutableArray alloc] init];
-    CategoryXMLHandler* handler = [[CategoryXMLHandler alloc] initWithCategoryArray:_categoryArray];
-    NSString *xmlFilePath = [[NSBundle mainBundle] pathForResource:@"xml" ofType:@"xml"];
+    
+//    CategoryXMLHandler* handler = [[CategoryXMLHandler alloc] initWithCategoryArray:_categoryArray];
+//    NSString *xmlFilePath = [[NSBundle mainBundle] pathForResource:@"xml" ofType:@"xml"];
+//    NSData* data = [[NSData alloc] initWithContentsOfFile:xmlFilePath];
+//    NSLog(@"DATA: %s", data.bytes);
+//    NSXMLParser* parser = [[NSXMLParser alloc] initWithData:data];
+//    parser.delegate = handler;
+//    [parser parse];
+    
+    User *user = [[User alloc] init];
+    UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:user];
+    NSString *xmlFilePath = [[NSBundle mainBundle] pathForResource:@"user" ofType:@"xml"];
     NSData* data = [[NSData alloc] initWithContentsOfFile:xmlFilePath];
-    //NSLog(@"DATA: %s", data.bytes);
+    NSLog(@"DATA: %s", data.bytes);
     NSXMLParser* parser = [[NSXMLParser alloc] initWithData:data];
-    parser.delegate = handler;
+    [parser setDelegate:handler];
     [parser parse];
 }
 

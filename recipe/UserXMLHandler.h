@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "BaseXMLHandler.h"
 #import "User.h"
+#import "Recipe.h"
 
 @interface UserXMLHandler : BaseXMLHandler{
-    __weak User* _user;
+    __weak NSObject* _currentObject;
+    __weak User* _currentUser;
+    Recipe* _currentRecipe;
 }
 
--(id) initWithUser:(User*)user;
+-(id) initWithUser:(__weak User*)user;
 -(void) afterElementStarting:(NSString *)elementName withAttributes:(NSDictionary *)attributeDict;
 -(void) afterElementEnding:(NSString *)elementName;
 -(NSString*) getWrappedRootNode;

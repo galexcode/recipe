@@ -42,7 +42,7 @@
     if ([elementName isEqualToString:@"name"]
         || [elementName isEqualToString:@"serving"]
         || [elementName isEqualToString:@"createDate"]
-        || [elementName isEqualToString:@"image"])
+        || [elementName isEqualToString:@"imageId"])
     {
         return self;
     }
@@ -71,7 +71,7 @@
     }
     if ([elementName isEqualToString:@"serving"])
         [_currentRecipe setServing:[_chars intValue]];
-    if ([elementName isEqualToString:@"image"])
+    if ([elementName isEqualToString:@"imageId"])
         [[_currentRecipe imageList] addObject:_chars];
     if ([elementName isEqualToString:@"recipe"]) {
         [[_currentCategory latestRecipes] addObject:_currentRecipe];

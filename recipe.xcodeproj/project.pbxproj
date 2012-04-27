@@ -21,6 +21,7 @@
 		5AC54A24152D86F200C87E3E /* StepListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC54A22152D86F100C87E3E /* StepListViewController.xib */; };
 		5AC54A28152D8AE200C87E3E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC54A26152D8AE200C87E3E /* MapViewController.m */; };
 		5AC54A29152D8AE200C87E3E /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC54A27152D8AE200C87E3E /* MapViewController.xib */; };
+		5ACB0912154A4EE600C0FFCB /* user.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5ACB0911154A4EE600C0FFCB /* user.xml */; };
 		5AD404EB152E80C30045E74A /* CategoryXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404EA152E80C30045E74A /* CategoryXMLHandler.m */; };
 		5AD404EE152E81310045E74A /* RecipeXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404ED152E81310045E74A /* RecipeXMLHandler.m */; };
 		5AD404F1152E81890045E74A /* IngredientXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404F0152E81890045E74A /* IngredientXMLHandler.m */; };
@@ -104,6 +105,7 @@
 		5AC54A25152D8AE100C87E3E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		5AC54A26152D8AE200C87E3E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		5AC54A27152D8AE200C87E3E /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		5ACB0911154A4EE600C0FFCB /* user.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = user.xml; sourceTree = "<group>"; };
 		5AD404E9152E80C30045E74A /* CategoryXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryXMLHandler.h; sourceTree = "<group>"; };
 		5AD404EA152E80C30045E74A /* CategoryXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryXMLHandler.m; sourceTree = "<group>"; };
 		5AD404EC152E81310045E74A /* RecipeXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeXMLHandler.h; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				5AD404FB152EC5B50045E74A /* xml.xml */,
+				5ACB0911154A4EE600C0FFCB /* user.xml */,
 				5AD40515152F08530045E74A /* beef.jpg */,
 				9084A2F11522F83F00BDEDC4 /* kira.png */,
 			);
@@ -537,6 +540,7 @@
 				5AC54A29152D8AE200C87E3E /* MapViewController.xib in Resources */,
 				5AD404FC152EC5B50045E74A /* xml.xml in Resources */,
 				5AD40516152F08530045E74A /* beef.jpg in Resources */,
+				5ACB0912154A4EE600C0FFCB /* user.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
