@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4929F521155124A900D60AEF /* NSStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4929F520155124A900D60AEF /* NSStringUtil.m */; };
 		5A0AD4CB1536C24E00D057A9 /* ASIForm2DataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0AD4CA1536C24E00D057A9 /* ASIForm2DataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5A0AD4CE1536C62800D057A9 /* ASI2HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0AD4CD1536C62800D057A9 /* ASI2HTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5A3828EF152C605D00400A54 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3828ED152C605900400A54 /* ResultViewController.m */; };
@@ -81,6 +82,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4929F51F155124A800D60AEF /* NSStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringUtil.h; sourceTree = "<group>"; };
+		4929F520155124A900D60AEF /* NSStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringUtil.m; sourceTree = "<group>"; };
 		5A0AD4C91536C24E00D057A9 /* ASIForm2DataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIForm2DataRequest.h; sourceTree = "<group>"; };
 		5A0AD4CA1536C24E00D057A9 /* ASIForm2DataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIForm2DataRequest.m; sourceTree = "<group>"; };
 		5A0AD4CC1536C62800D057A9 /* ASI2HTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASI2HTTPRequest.h; sourceTree = "<group>"; };
@@ -458,6 +461,8 @@
 		9084A2ED1522EFCA00BDEDC4 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				4929F51F155124A800D60AEF /* NSStringUtil.h */,
+				4929F520155124A900D60AEF /* NSStringUtil.m */,
 				5A0AD4CF1536E3D700D057A9 /* HUD */,
 				5A0AD4C71536C1BB00D057A9 /* CustomASIHTTPRequest */,
 				5A3B81651536771C007BD9ED /* ASIHTTPRequest */,
@@ -594,6 +599,7 @@
 				5AEA8C3115368D9B0097C796 /* Reachability.m in Sources */,
 				5A0AD4CB1536C24E00D057A9 /* ASIForm2DataRequest.m in Sources */,
 				5A0AD4CE1536C62800D057A9 /* ASI2HTTPRequest.m in Sources */,
+				4929F521155124A900D60AEF /* NSStringUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

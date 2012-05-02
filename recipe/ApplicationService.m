@@ -24,6 +24,47 @@
 }
 
 #pragma mark -
+
+#pragma mark Register User
+-(void) registerUser:(__weak User*)registerUser
+{
+    _user = registerUser;
+    
+    NSLog(@"Register user name %@", [registerUser name]);
+    
+//    NSURL *url = [NSURL URLWithString:@"http://www.domain.com/register"];
+    
+//    ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+//    [request setPostValue:[registerUser name] forKey:@"u"];
+//    [request setPostValue:[registerUser email] forKey:@"e"];
+//    [request setPostValue:[registerUser password] forKey:@"p"];
+//    
+//    [request setTarget:self andAction:@selector(gotRegisteredUserByRequest:)];
+    
+    [self gotRegisteredUserByRequest:nil];
+}
+
+-(void) gotRegisteredUserByRequest:(ASI2HTTPRequest *)request
+{
+    //    if (request.responseStatusCode == 200) {
+    //        UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
+    //        [handler setEndDocumentTarget:self andAction:@selector(didParsedLoggingUser:)];
+    //        NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+    //        parser.delegate = handler;
+    //        [parser parse];
+    //    }else if(request.responseStatusCode == 404){
+    //        [_delegate didFinishVerifyUser:nil];
+    //    } else {
+    //        [_delegate didFinishVerifyUser:nil];
+    //    }
+    [self didParsedRegisteredUser];
+}
+
+-(void) didParsedRegisteredUser
+{
+    [_delegate didFinishRegisterUser:_user];
+}
+
 #pragma mark Check User
 -(void) verifyUser:(__weak User *)loggingUser
 {
@@ -31,7 +72,6 @@
     
     [_user setUserId:@"1"];
     [_user setName:@"my name"];
-    
     
 //    NSURL *url = [NSURL URLWithString:@"http://www.checkuser.com/login/"];
 //    

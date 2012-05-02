@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "recipeGlobal.h"
 
-@interface RegisterViewController : UIViewController{
-    UITextField *activeTextField;
-    UIViewController *parent;
+@interface RegisterViewController : UIViewController<ApplicationServiceDelegate>{
+    __weak UITextField *activeTextField;
+    __weak UIViewController *_parentController;
+    User* _user;
 }
+
+@property (weak, nonatomic) IBOutlet UITextField *userName;
+@property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UITextField *password;
+
 
 - (IBAction)dismissKeyboard;
 - (IBAction)onRegisterTap;

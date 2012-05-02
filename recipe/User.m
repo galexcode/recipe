@@ -11,6 +11,7 @@
 @implementation User
 @synthesize userId = _userId;
 @synthesize name = _name;
+@synthesize email = _email;
 @synthesize password = _password;
 @synthesize avatarId = _avatarId;
 @synthesize recipeCount = _recipeCount;
@@ -24,6 +25,7 @@
     if (self) {
         _userId = nil;
         _name = nil;
+        _email = nil;
         _password = nil;
         _avatarId = [[NSString alloc] initWithString:@"-1"];
         _recipeCount = 0;

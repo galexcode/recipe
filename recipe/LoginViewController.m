@@ -72,7 +72,8 @@
     }else {
         if ([trimSpaces([userName text]) length] == 0)
             [userName setText:@""];
-            [userName setPlaceholder:@"User name is blank"];
+        [userName setText:trimSpaces([userName text])];
+        [userName setPlaceholder:@"User name is blank"];
         if ([[password text] length] == 0)
             [password setPlaceholder:@"Password is blank"];
     }

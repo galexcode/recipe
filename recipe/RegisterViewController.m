@@ -7,8 +7,12 @@
 //
 
 #import "RegisterViewController.h"
+#import "NSStringUtil.h"
 
 @implementation RegisterViewController
+@synthesize userName;
+@synthesize email;
+@synthesize password;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,7 +26,7 @@
 - (id)initWithParentRef:(UIViewController*)parentViewController{
     self = [super init];
     if (self) {
-        parent = parentViewController;
+        _parentController = parentViewController;
     }
     return self;
 }
@@ -45,6 +49,9 @@
 
 - (void)viewDidUnload
 {
+    [self setUserName:nil];
+    [self setEmail:nil];
+    [self setPassword:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -60,6 +67,33 @@
 - (IBAction)onRegisterTap{
     if (activeTextField != nil) {
         [activeTextField resignFirstResponder];
+    }
+    if ([trimSpaces([userName text]) length] != 0
+        && [trimSpaces([email text]) length] != 0
+        && [NSStringUtil stringIsValidEmail:[email text]]
+        && [[password text] length] != 0)
+    {
+        _user = [[User alloc] init];
+        [_user setName:[userName text]];
+        [_user setPassword:[password text]];
+        [_user setEmail:[email text]];
+        APP_SERVICE(appSrv);
+        [appSrv setDelegate:self];
+        [appSrv registerUser:_user];
+    }else {
+        if ([trimSpaces([userName text]) length] == 0)
+            [userName setText:@""];
+        [userName setText:trimSpaces([userName text])];
+        [userName setPlaceholder:@"User name is blank"];
+        if ([trimSpaces([email text]) length] == 0) {
+            [email setText:@""];
+            [email setPlaceholder:@"Email is blank"];
+        }else if(![NSStringUtil stringIsValidEmail:[email text]]){
+            [email setText:@""];
+            [email setPlaceholder:@"Email is not valid"];
+        }
+        if ([[password text] length] == 0)
+            [password setPlaceholder:@"Password is blank"];
     }
 }
 
@@ -78,6 +112,24 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
+}
+
+#pragma mark Application Service Delegate Methods
+-(void) didFinishRegisterUser:(User *__weak)registerUser{
+    if (registerUser != nil) {
+        USER(currentUser);
+        currentUser = _user;
+        NSLog(@"username on weak: %@", [registerUser name]);
+        NSLog(@"username on strong: %@", [currentUser name]);
+        NSLog(@"username on nil: %@", [_user name]);
+        UIAlertView *successAlertView = [[UIAlertView alloc] initWithTitle:@"Successful Register"
+                                                                   message:[NSString stringWithFormat:@"Welcome to Recipe, %@",[currentUser name]]
+                                                                  delegate:nil
+                                                         cancelButtonTitle:@"OK"
+                                                         otherButtonTitles:nil];
+        [successAlertView show];
+        [_parentController.view setHidden:YES];
+    }
 }
 
 @end

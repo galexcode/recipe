@@ -13,6 +13,7 @@
 @protocol ApplicationServiceDelegate
 
 @optional
+-(void) didFinishRegisterUser:(__weak User *)registerUser;
 -(void) didFinishVerifyUser:(__weak User *)loggedUser;
 -(void) didFinishParsedUser:(__weak User *)user;
 
@@ -25,6 +26,11 @@
 }
 
 @property (nonatomic, weak) id<ApplicationServiceDelegate> delegate;
+
+#pragma mark Register User
+-(void) registerUser:(__weak User*)registerUser;
+-(void) gotRegisteredUserByRequest:(ASI2HTTPRequest *)request;
+-(void) didParsedRegisteredUser;
 
 #pragma mark Check Logging User
 -(void) verifyUser: (__weak User*)loggingUser;
