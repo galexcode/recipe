@@ -3,7 +3,7 @@
 //  recipe
 //
 //  Created by Vu Tran on on 4/4/12.
-//  Copyright (c) 2012 OngSoft. All rights reserved.
+//  Copyright (c) 2012 Perselab. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

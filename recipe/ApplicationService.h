@@ -2,7 +2,7 @@
 //  ApplicationService.h
 //
 //  Created by Vu Tran on 4/12/12.
-//  Copyright 2011 OngSoft. All rights reserved.
+//  Copyright 2011 Perselab. All rights reserved.
 //
 #import <Foundation/Foundation.h>
 #import "ASI2HTTPRequest.h"

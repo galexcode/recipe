@@ -2,7 +2,7 @@
 //  BaseRequest.mm
 //
 //  Created by Khoi Pham on 3/11/11.
-//  Copyright 2011 OngSoft. All rights reserved.
+//  Copyright 2011 Perselab. All rights reserved.
 //
 
 #import "HttpRequest.h"
