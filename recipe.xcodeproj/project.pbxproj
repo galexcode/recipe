@@ -79,6 +79,25 @@
 		9084A2FC152328E700BDEDC4 /* IngredientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9084A2FA152328E600BDEDC4 /* IngredientViewController.xib */; };
 		9084A3001523293D00BDEDC4 /* StepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9084A2FE1523293D00BDEDC4 /* StepViewController.m */; };
 		9084A3011523293D00BDEDC4 /* StepViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9084A2FF1523293D00BDEDC4 /* StepViewController.xib */; };
+		970F2C4C1564A74D00A787E5 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970F2C4A1564A74D00A787E5 /* FeedViewController.m */; };
+		970F2C4D1564A74D00A787E5 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 970F2C4B1564A74D00A787E5 /* FeedViewController.xib */; };
+		973310A0156642B8008108A9 /* my_recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 9733109D156642B8008108A9 /* my_recipe.png */; };
+		973310A1156642B8008108A9 /* todo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9733109E156642B8008108A9 /* todo.png */; };
+		9747F2DC1569DD94009DA030 /* feed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9747F2DB1569DD94009DA030 /* feed.png */; };
+		9747F2E31569E355009DA030 /* surf_gradient_textured_32.png in Resources */ = {isa = PBXBuildFile; fileRef = 9747F2E11569E355009DA030 /* surf_gradient_textured_32.png */; };
+		9747F2E41569E355009DA030 /* surf_gradient_textured_44.png in Resources */ = {isa = PBXBuildFile; fileRef = 9747F2E21569E355009DA030 /* surf_gradient_textured_44.png */; };
+		9747F2F51569E6A9009DA030 /* button_back_textured_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 9747F2F01569E6A9009DA030 /* button_back_textured_24.png */; };
+		9747F2F61569E6A9009DA030 /* button_back_textured_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 9747F2F11569E6A9009DA030 /* button_back_textured_30.png */; };
+		9747F2F71569E6A9009DA030 /* button_textured_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 9747F2F21569E6A9009DA030 /* button_textured_24.png */; };
+		9747F2F81569E6A9009DA030 /* button_textured_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 9747F2F31569E6A9009DA030 /* button_textured_30.png */; };
+		9747F2F91569E6A9009DA030 /* tab_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9747F2F41569E6A9009DA030 /* tab_bg.png */; };
+		9747F304156A27F9009DA030 /* MCSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9747F303156A27F9009DA030 /* MCSegmentedControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9747F30F156A3B6C009DA030 /* btn-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9747F30D156A3B6C009DA030 /* btn-black.png */; };
+		9747F310156A3B6C009DA030 /* btn-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 9747F30E156A3B6C009DA030 /* btn-red.png */; };
+		9747F326156A54B2009DA030 /* CategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9747F324156A54B1009DA030 /* CategoryListViewController.m */; };
+		9747F327156A54B2009DA030 /* CategoryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9747F325156A54B1009DA030 /* CategoryListViewController.xib */; };
+		978359071565FED900200699 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 978359051565FED900200699 /* home.png */; };
+		978359081565FED900200699 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 978359061565FED900200699 /* home@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -209,6 +228,28 @@
 		9084A2FD1523293D00BDEDC4 /* StepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepViewController.h; sourceTree = "<group>"; };
 		9084A2FE1523293D00BDEDC4 /* StepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepViewController.m; sourceTree = "<group>"; };
 		9084A2FF1523293D00BDEDC4 /* StepViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StepViewController.xib; sourceTree = "<group>"; };
+		970F2C491564A74D00A787E5 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		970F2C4A1564A74D00A787E5 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		970F2C4B1564A74D00A787E5 /* FeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
+		9733109D156642B8008108A9 /* my_recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_recipe.png; sourceTree = "<group>"; };
+		9733109E156642B8008108A9 /* todo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todo.png; sourceTree = "<group>"; };
+		9747F2DB1569DD94009DA030 /* feed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feed.png; sourceTree = "<group>"; };
+		9747F2E11569E355009DA030 /* surf_gradient_textured_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_gradient_textured_32.png; sourceTree = "<group>"; };
+		9747F2E21569E355009DA030 /* surf_gradient_textured_44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_gradient_textured_44.png; sourceTree = "<group>"; };
+		9747F2F01569E6A9009DA030 /* button_back_textured_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_back_textured_24.png; sourceTree = "<group>"; };
+		9747F2F11569E6A9009DA030 /* button_back_textured_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_back_textured_30.png; sourceTree = "<group>"; };
+		9747F2F21569E6A9009DA030 /* button_textured_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_textured_24.png; sourceTree = "<group>"; };
+		9747F2F31569E6A9009DA030 /* button_textured_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_textured_30.png; sourceTree = "<group>"; };
+		9747F2F41569E6A9009DA030 /* tab_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_bg.png; sourceTree = "<group>"; };
+		9747F302156A27F9009DA030 /* MCSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSegmentedControl.h; sourceTree = "<group>"; };
+		9747F303156A27F9009DA030 /* MCSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSegmentedControl.m; sourceTree = "<group>"; };
+		9747F30D156A3B6C009DA030 /* btn-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-black.png"; sourceTree = "<group>"; };
+		9747F30E156A3B6C009DA030 /* btn-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-red.png"; sourceTree = "<group>"; };
+		9747F323156A54B0009DA030 /* CategoryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryListViewController.h; sourceTree = "<group>"; };
+		9747F324156A54B1009DA030 /* CategoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryListViewController.m; sourceTree = "<group>"; };
+		9747F325156A54B1009DA030 /* CategoryListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryListViewController.xib; sourceTree = "<group>"; };
+		978359051565FED900200699 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		978359061565FED900200699 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +426,12 @@
 				908409B7152166C100FA078B /* ToDoViewController.h */,
 				908409B8152166C100FA078B /* ToDoViewController.m */,
 				908409B9152166C100FA078B /* ToDoViewController.xib */,
+				970F2C491564A74D00A787E5 /* FeedViewController.h */,
+				970F2C4A1564A74D00A787E5 /* FeedViewController.m */,
+				970F2C4B1564A74D00A787E5 /* FeedViewController.xib */,
+				9747F323156A54B0009DA030 /* CategoryListViewController.h */,
+				9747F324156A54B1009DA030 /* CategoryListViewController.m */,
+				9747F325156A54B1009DA030 /* CategoryListViewController.xib */,
 				5ADF1382152A9182008B521A /* RecipeListViewController.h */,
 				5ADF1383152A9182008B521A /* RecipeListViewController.m */,
 				5ADF1384152A9182008B521A /* RecipeListViewController.xib */,
@@ -443,6 +490,20 @@
 			children = (
 				5AD404FB152EC5B50045E74A /* xml.xml */,
 				5ACB0911154A4EE600C0FFCB /* user.xml */,
+				9747F30D156A3B6C009DA030 /* btn-black.png */,
+				9747F30E156A3B6C009DA030 /* btn-red.png */,
+				9747F2E11569E355009DA030 /* surf_gradient_textured_32.png */,
+				9747F2E21569E355009DA030 /* surf_gradient_textured_44.png */,
+				9733109D156642B8008108A9 /* my_recipe.png */,
+				9733109E156642B8008108A9 /* todo.png */,
+				9747F2F01569E6A9009DA030 /* button_back_textured_24.png */,
+				9747F2F11569E6A9009DA030 /* button_back_textured_30.png */,
+				9747F2F21569E6A9009DA030 /* button_textured_24.png */,
+				9747F2F31569E6A9009DA030 /* button_textured_30.png */,
+				9747F2F41569E6A9009DA030 /* tab_bg.png */,
+				9747F2DB1569DD94009DA030 /* feed.png */,
+				978359051565FED900200699 /* home.png */,
+				978359061565FED900200699 /* home@2x.png */,
 				5AD40515152F08530045E74A /* beef.jpg */,
 				9084A2F11522F83F00BDEDC4 /* kira.png */,
 			);
@@ -452,6 +513,8 @@
 		9084A2EB1522ECD900BDEDC4 /* custom control */ = {
 			isa = PBXGroup;
 			children = (
+				9747F302156A27F9009DA030 /* MCSegmentedControl.h */,
+				9747F303156A27F9009DA030 /* MCSegmentedControl.m */,
 				9084A2EE1522F1FB00BDEDC4 /* CategoryCell.h */,
 				9084A2EF1522F1FB00BDEDC4 /* CategoryCell.m */,
 			);
@@ -546,6 +609,22 @@
 				5AD404FC152EC5B50045E74A /* xml.xml in Resources */,
 				5AD40516152F08530045E74A /* beef.jpg in Resources */,
 				5ACB0912154A4EE600C0FFCB /* user.xml in Resources */,
+				970F2C4D1564A74D00A787E5 /* FeedViewController.xib in Resources */,
+				978359071565FED900200699 /* home.png in Resources */,
+				978359081565FED900200699 /* home@2x.png in Resources */,
+				973310A0156642B8008108A9 /* my_recipe.png in Resources */,
+				973310A1156642B8008108A9 /* todo.png in Resources */,
+				9747F2DC1569DD94009DA030 /* feed.png in Resources */,
+				9747F2E31569E355009DA030 /* surf_gradient_textured_32.png in Resources */,
+				9747F2E41569E355009DA030 /* surf_gradient_textured_44.png in Resources */,
+				9747F2F51569E6A9009DA030 /* button_back_textured_24.png in Resources */,
+				9747F2F61569E6A9009DA030 /* button_back_textured_30.png in Resources */,
+				9747F2F71569E6A9009DA030 /* button_textured_24.png in Resources */,
+				9747F2F81569E6A9009DA030 /* button_textured_30.png in Resources */,
+				9747F2F91569E6A9009DA030 /* tab_bg.png in Resources */,
+				9747F30F156A3B6C009DA030 /* btn-black.png in Resources */,
+				9747F310156A3B6C009DA030 /* btn-red.png in Resources */,
+				9747F327156A54B2009DA030 /* CategoryListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +679,9 @@
 				5A0AD4CB1536C24E00D057A9 /* ASIForm2DataRequest.m in Sources */,
 				5A0AD4CE1536C62800D057A9 /* ASI2HTTPRequest.m in Sources */,
 				4929F521155124A900D60AEF /* NSStringUtil.m in Sources */,
+				970F2C4C1564A74D00A787E5 /* FeedViewController.m in Sources */,
+				9747F304156A27F9009DA030 /* MCSegmentedControl.m in Sources */,
+				9747F326156A54B2009DA030 /* CategoryListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,7 +723,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -659,7 +741,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

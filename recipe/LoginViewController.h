@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 
 - (IBAction)dismissKeyboard;
-- (IBAction)onLoginTap;
+- (IBAction)onLoginTap:(id)sender;
 
 - (id)initWithParentRef:(UIViewController*)parentViewController;
 

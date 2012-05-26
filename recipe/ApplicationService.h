@@ -22,6 +22,7 @@
 @interface ApplicationService : NSObject{
     __weak User* _user;
     NSMutableArray* _categories;
+    NSMutableArray* _recipes;
     __weak id<ApplicationServiceDelegate> _delegate;
 }
 
@@ -44,9 +45,21 @@
 
 #pragma mark Load Categories
 -(NSMutableArray*) categories;
+
 -(void) loadCategories;
 -(void) gotCategoriesByRequest: (ASI2HTTPRequest*)request;
 -(void) didParsedCategories;
+
+#pragma mark Load Recipes
+-(NSMutableArray*) recipes;
+
+-(void) loadRecipesForCategory: (NSString*)categoryId;
+-(void) loadRecipesForUser: (NSString*)userId;
+-(void) loadRecipesByKeywords: (NSString*)keywords;
+
+-(void) gotRecipesByRequest: (ASI2HTTPRequest*)request;
+-(void) didParsedRecipes;
+
 
 //other loading function go here
 

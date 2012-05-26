@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "MBProgressHUD.h"
 
 @implementation LoginViewController
 @synthesize userName;
@@ -17,6 +18,14 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        UIButton * login = [UIButton buttonWithType:UIButtonTypeCustom];
+        login.frame = CGRectMake(20, 98, 280, 35);
+        [login setBackgroundImage:[[UIImage imageNamed:@"btn-red.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:0.0] forState:UIControlStateNormal];
+        [login addTarget:self action:@selector(onLoginTap:) forControlEvents:UIControlEventTouchUpInside];
+        [login setTitle:@"Login" forState:UIControlStateNormal];
+        //[buy.titleLabel setFont:[UIFont fontWithName: @"Helvetica" size: 24]];
+        //[buy.titleLabel setFont:[UIFont boldSystemFontOfSize:24]];
+        [self.view addSubview:login];
     }
     return self;
 }
@@ -59,12 +68,15 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
 #pragma mark - Login feature
-- (IBAction)onLoginTap{
+- (IBAction)onLoginTap:(id)sender{
     if (activeTextField != nil) {
         [activeTextField resignFirstResponder];
     }
     if ([trimSpaces([userName text]) length] != 0 && [[password text] length] != 0) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [hud setLabelText:@"Checking..."];
         _user = [[User alloc] init];
         APP_SERVICE(appSrv);
         [appSrv setDelegate:self];
@@ -98,6 +110,7 @@
 
 #pragma mark Application Service Delegate Methods
 -(void) didFinishVerifyUser:(__weak User *)loggedUser{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     if (loggedUser != nil) {
         USER(currentUser);
         currentUser = _user;

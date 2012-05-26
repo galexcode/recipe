@@ -23,6 +23,11 @@
     return _categories;
 }
 
+-(NSMutableArray*) recipes
+{
+    return _recipes;
+}
+
 #pragma mark -
 
 #pragma mark Register User
@@ -178,6 +183,34 @@
 
 -(void) didParsedCategories{
     
+}
+
+
+#pragma mark Load Recipes
+-(void) loadRecipesForCategory: (NSString*)categoryId
+{
+    
+}
+
+-(void) loadRecipesForUser:(NSString *)userId
+{
+    
+}
+
+-(void) loadRecipesByKeywords:(NSString *)keywords
+{
+    
+}
+
+
+-(void) gotRecipesByRequest: (ASI2HTTPRequest*)request
+{
+    
+}
+
+-(void) didParsedRecipes
+{
+
 }
 
 //- (void)requestFinished:(ASIHTTPRequest *)request

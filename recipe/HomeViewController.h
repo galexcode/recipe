@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "recipeGlobal.h"
 
-@interface HomeViewController : UIViewController<UITableViewDataSource, UITabBarDelegate>{
+@interface HomeViewController : UIViewController
+{
     NSMutableArray* _categoryArray;
 }
-
-@property (weak, nonatomic) IBOutlet UITableView *categoryTable;
 
 - (void)showRecipeView;
 

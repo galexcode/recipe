@@ -9,6 +9,7 @@
 #import "AuthViewController.h"
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import "MCSegmentedControl.h"
 
 @implementation AuthViewController
 @synthesize containerView;
@@ -18,6 +19,30 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        // Segment controll
+        NSArray *items = [NSArray arrayWithObjects:
+                          @"Login",
+                          @"Register",
+                          nil];
+        MCSegmentedControl *segmentedControl = [[MCSegmentedControl alloc] initWithItems:items];
+        
+        // set frame, add to view, set target and action for value change as usual
+        segmentedControl.frame = CGRectMake(8.0f, 50.0f, 300.0f, 44.0f);
+        //[self.view addSubview:segmentedControl];
+        [segmentedControl addTarget:self action:@selector(segmentControlChanged:) forControlEvents:UIControlEventValueChanged];
+        
+        segmentedControl.selectedSegmentIndex = 1;
+        
+        // Set a tint color
+        //segmentedControl.tintColor = [UIColor colorWithRed:.0 green:.6 blue:.0 alpha:1.0];
+        segmentedControl.tintColor = [UIColor brownColor];
+        
+        // Customize font and items color
+        segmentedControl.selectedItemColor   = [UIColor whiteColor];
+        segmentedControl.unselectedItemColor = [UIColor darkGrayColor];
+        segmentedControl.unSelectedItemBackgroundGradientColors = [NSArray arrayWithObjects:[UIColor grayColor] , [UIColor brownColor], nil];
+        
+        [self.view addSubview:segmentedControl];
     }
     return self;
 }
