@@ -63,11 +63,7 @@
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
 						</object>
-<<<<<<< HEAD
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="709470005">
-=======
 						<object class="IBUIFontDescription" key="IBUIFontDescription" id="542291886">
->>>>>>> change company information
 							<string key="name">Helvetica-Bold</string>
 							<string key="family">Helvetica</string>
 							<int key="traits">2</int>
@@ -106,19 +102,11 @@
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
-<<<<<<< HEAD
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="578780362">
-							<int key="type">1</int>
-							<double key="pointSize">12</double>
-						</object>
-						<object class="NSFont" key="IBUIFont" id="536851051">
-=======
 						<object class="IBUIFontDescription" key="IBUIFontDescription" id="936985657">
 							<int key="type">1</int>
 							<double key="pointSize">12</double>
 						</object>
 						<object class="NSFont" key="IBUIFont" id="937339275">
->>>>>>> change company information
 							<string key="NSName">Helvetica</string>
 							<double key="NSSize">12</double>
 							<int key="NSfFlags">16</int>
@@ -149,13 +137,8 @@
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
-<<<<<<< HEAD
-						<reference key="IBUIFontDescription" ref="578780362"/>
-						<reference key="IBUIFont" ref="536851051"/>
-=======
 						<reference key="IBUIFontDescription" ref="936985657"/>
 						<reference key="IBUIFont" ref="937339275"/>
->>>>>>> change company information
 					</object>
 					<object class="IBUITextField" id="316205434">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -183,13 +166,8 @@
 							<bool key="IBUISecureTextEntry">YES</bool>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
-<<<<<<< HEAD
-						<reference key="IBUIFontDescription" ref="578780362"/>
-						<reference key="IBUIFont" ref="536851051"/>
-=======
 						<reference key="IBUIFontDescription" ref="936985657"/>
 						<reference key="IBUIFont" ref="937339275"/>
->>>>>>> change company information
 					</object>
 					<object class="IBUIButton" id="689713345">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -210,11 +188,7 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="482851794"/>
-<<<<<<< HEAD
-						<reference key="IBUIFontDescription" ref="709470005"/>
-=======
 						<reference key="IBUIFontDescription" ref="542291886"/>
->>>>>>> change company information
 						<reference key="IBUIFont" ref="384566563"/>
 					</object>
 				</object>
@@ -323,11 +297,6 @@
 							<reference ref="855724477"/>
 							<reference ref="420076504"/>
 							<reference ref="689713345"/>
-<<<<<<< HEAD
-							<reference ref="96983994"/>
-							<reference ref="316205434"/>
-=======
->>>>>>> change company information
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
