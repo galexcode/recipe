@@ -171,9 +171,9 @@
 						<reference key="object" ref="191373211"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="70912314"/>
 							<reference ref="156218151"/>
 							<reference ref="725688077"/>
+							<reference ref="70912314"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>

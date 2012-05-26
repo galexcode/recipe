@@ -27,6 +27,7 @@
     return _appService;
 }
 
+// Change default appearance of UI Control Element
 #pragma mark Customization UI
 - (void)customizeAppearance
 {
@@ -68,6 +69,7 @@
 {
     // Call customize method to change UI look and feel
     [self customizeAppearance];
+    
     // Override point for customization after application launch.
     // Add the tab bar controller's current view as a subview of the window
     authViewController = [[AuthViewController alloc] init];

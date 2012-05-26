@@ -31,7 +31,7 @@
         //[self.view addSubview:segmentedControl];
         [segmentedControl addTarget:self action:@selector(segmentControlChanged:) forControlEvents:UIControlEventValueChanged];
         
-        segmentedControl.selectedSegmentIndex = 1;
+        segmentedControl.selectedSegmentIndex = 0;
         
         // Set a tint color
         //segmentedControl.tintColor = [UIColor colorWithRed:.0 green:.6 blue:.0 alpha:1.0];
