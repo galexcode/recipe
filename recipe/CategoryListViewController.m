@@ -7,6 +7,11 @@
 //
 
 #import "CategoryListViewController.h"
+#import "HorizontalTableCell.h"
+#import "ControlVariables.h"
+
+#define kHeadlineSectionHeight  26
+#define kRegularSectionHeight   18
 
 @interface CategoryListViewController ()
 
@@ -24,11 +29,18 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    [self.tableView setBackgroundColor:kVerticalTableBackgroundColor];
+    self.tableView.rowHeight = kCellHeight + (kRowVerticalPadding * 0.5) + ((kRowVerticalPadding * 0.5) * 0.5);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.categoryDictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Articles" ofType:@"plist"]];
+    //self.categoryDictionary = nil;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -52,29 +64,69 @@
 
 #pragma mark - Table view data source
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return kRegularSectionHeight;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    //return [self.categoryDictionary.allKeys count];
-    return 1;
+    return [self.categoryDictionary.allKeys count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return 10;
+    return 1;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *customSectionHeaderView;
+    UILabel *titleLabel;
+    
+    //Custom Section Header
+    customSectionHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, kRegularSectionHeight)];
+        
+    titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, tableView.frame.size.width, kRegularSectionHeight)];
+
+    customSectionHeaderView.backgroundColor = [UIColor colorWithRed:0 green:0.40784314 blue:0.21568627 alpha:0.95];
+    
+    titleLabel.textAlignment = UITextAlignmentLeft;
+    [titleLabel setTextColor:[UIColor whiteColor]];
+    [titleLabel setBackgroundColor:[UIColor clearColor]];   
+    titleLabel.font = [UIFont boldSystemFontOfSize:13];
+    
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];
+    NSArray* sortedCategories = [self.categoryDictionary.allKeys sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    NSString *categoryName = [sortedCategories objectAtIndex:section];
+    
+    titleLabel.text = [categoryName substringFromIndex:1];
+    
+    [customSectionHeaderView addSubview:titleLabel];
+    
+    return customSectionHeaderView;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+{    
+    static NSString *CellIdentifier = @"HorizontalCell";
     
-    if (cell == nil) 
+    HorizontalTableCell *cell = (HorizontalTableCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[HorizontalTableCell alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, tableView.frame.size.height)];
     }
     
-    cell.textLabel.text = @"Vertical Table Rows on iPhone";
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];
+    NSArray* sortedCategories = [self.categoryDictionary.allKeys sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    NSString *categoryName = [sortedCategories objectAtIndex:indexPath.section];
+    
+    NSArray *currentCategory = [self.categoryDictionary objectForKey:categoryName];
+    
+    cell.recipes = currentCategory;
     
     return cell;
 }

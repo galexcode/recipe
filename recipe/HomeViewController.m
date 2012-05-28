@@ -11,7 +11,6 @@
 #import "CategoryCell.h"
 #import "CategoryXMLHandler.h"
 #import "UserXMLHandler.h"
-#import "CategoryListViewController.h"
 
 @implementation HomeViewController
 
@@ -38,10 +37,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    CategoryListViewController *categoryList = [[CategoryListViewController alloc] initWithStyle:UITableViewStylePlain];
-    //categoryTable = (UITableView *)categoryList.view;
-    //self.view = categoryList.view;
-    
     
 //    _categoryArray = [[NSMutableArray alloc] init];
 //    
