@@ -33,6 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSDictionary* temp = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Articles" ofType:@"plist"]];
+    self.recipes = [temp objectForKey:@"1Headlines"];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -58,7 +60,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return [self.recipes count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -72,7 +74,17 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = @"Vertical Table Rows on iPhone";
+    //NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];
+    //NSArray* sortedCategories = [self.articleDictionary.allKeys sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    //NSString *categoryName = [sortedCategories objectAtIndex:indexPath.section];
+    
+    //NSArray *currentCategory = [self.articleDictionary objectForKey:categoryName];
+    
+    NSDictionary *currentArticle = [self.recipes objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [currentArticle objectForKey:@"Title"];
+    cell.imageView.image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
     
     return cell;
 }

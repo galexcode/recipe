@@ -71,7 +71,6 @@
 		908409D61521C39700FA078B /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409D51521C39700FA078B /* Store.m */; };
 		908409D91521C3B900FA078B /* Step.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409D81521C3B900FA078B /* Step.m */; };
 		908409DC1521C3E800FA078B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409DB1521C3E700FA078B /* User.m */; };
-		9084A2F01522F1FB00BDEDC4 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9084A2EF1522F1FB00BDEDC4 /* CategoryCell.m */; };
 		9084A2F21522F83F00BDEDC4 /* kira.png in Resources */ = {isa = PBXBuildFile; fileRef = 9084A2F11522F83F00BDEDC4 /* kira.png */; };
 		9084A2F61523282000BDEDC4 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9084A2F41523281F00BDEDC4 /* RecipeViewController.m */; };
 		9084A2F71523282000BDEDC4 /* RecipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9084A2F51523281F00BDEDC4 /* RecipeViewController.xib */; };
@@ -290,8 +289,6 @@
 		908409DA1521C3E700FA078B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		908409DB1521C3E700FA078B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		908409DE1521C60200FA078B /* recipeGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recipeGlobal.h; sourceTree = "<group>"; };
-		9084A2EE1522F1FB00BDEDC4 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CategoryCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		9084A2EF1522F1FB00BDEDC4 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CategoryCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9084A2F11522F83F00BDEDC4 /* kira.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kira.png; sourceTree = "<group>"; };
 		9084A2F31523281E00BDEDC4 /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
 		9084A2F41523281F00BDEDC4 /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
@@ -672,8 +669,6 @@
 				9747F303156A27F9009DA030 /* MCSegmentedControl.m */,
 				9742D814157377E5003B678D /* RecipeTitleLabel.h */,
 				9742D815157377E5003B678D /* RecipeTitleLabel.m */,
-				9084A2EE1522F1FB00BDEDC4 /* CategoryCell.h */,
-				9084A2EF1522F1FB00BDEDC4 /* CategoryCell.m */,
 				9742D8111573779D003B678D /* RecipeCell.h */,
 				9742D8121573779D003B678D /* RecipeCell.m */,
 				9742D8181573794C003B678D /* HorizontalTableCell.h */,
@@ -958,7 +953,6 @@
 				908409D61521C39700FA078B /* Store.m in Sources */,
 				908409D91521C3B900FA078B /* Step.m in Sources */,
 				908409DC1521C3E800FA078B /* User.m in Sources */,
-				9084A2F01522F1FB00BDEDC4 /* CategoryCell.m in Sources */,
 				9084A2F61523282000BDEDC4 /* RecipeViewController.m in Sources */,
 				9084A2FB152328E700BDEDC4 /* IngredientViewController.m in Sources */,
 				9084A3001523293D00BDEDC4 /* StepViewController.m in Sources */,

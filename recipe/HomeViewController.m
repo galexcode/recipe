@@ -8,7 +8,6 @@
 
 #import "HomeViewController.h"
 #import "RecipeListViewController.h"
-#import "CategoryCell.h"
 #import "CategoryXMLHandler.h"
 #import "UserXMLHandler.h"
 
