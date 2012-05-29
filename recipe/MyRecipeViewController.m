@@ -7,6 +7,7 @@
 //
 
 #import "MyRecipeViewController.h"
+#import "RecipeViewController.h"
 
 @implementation MyRecipeViewController
 @synthesize recipes = _recipes;
@@ -87,6 +88,13 @@
     cell.imageView.image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    RecipeViewController *viewControllerToPush = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
+    //[viewControllerToPush setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:viewControllerToPush animated:YES];
 }
 
 @end

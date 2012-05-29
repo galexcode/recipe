@@ -16,18 +16,19 @@
 
 @implementation RecipeListViewController
 @synthesize recipeTable;
+@synthesize recipes = _recipes;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        Recipe *recipe = [[Recipe alloc] init];
-        [recipe setName:@"Test name"];
-        recipeList = [[NSMutableArray alloc] init];
-        for (NSInteger i = 0; i < 5; i++) {
-            [recipeList addObject:recipe];
-        }
+//        Recipe *recipe = [[Recipe alloc] init];
+//        [recipe setName:@"Test name"];
+//        recipeList = [[NSMutableArray alloc] init];
+//        for (NSInteger i = 0; i < 5; i++) {
+//            [recipeList addObject:recipe];
+//        }
         [self.navigationItem setTitle:@"Recipe List"];
     }
     return self;
@@ -52,31 +53,48 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - Table Delegate Methods
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+#pragma mark - Table Delegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return @"need to be change";
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.recipes count];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return recipeList.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     static NSString *CellIdentifier = @"Cell";
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
+    
+    if (cell == nil) 
+    {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    [cell.textLabel setText:[[recipeList objectAtIndex:indexPath.row] name]];
+    
+    //NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];
+    //NSArray* sortedCategories = [self.articleDictionary.allKeys sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    //NSString *categoryName = [sortedCategories objectAtIndex:indexPath.section];
+    
+    //NSArray *currentCategory = [self.articleDictionary objectForKey:categoryName];
+    
+    NSDictionary *currentArticle = [self.recipes objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [currentArticle objectForKey:@"Title"];
+    cell.imageView.image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
+    
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    RecipeViewController *recipeViewController = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
-    [self.navigationController pushViewController:recipeViewController animated:YES];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    RecipeViewController *viewControllerToPush = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
+    //[viewControllerToPush setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:viewControllerToPush animated:YES];
 }
+
 @end

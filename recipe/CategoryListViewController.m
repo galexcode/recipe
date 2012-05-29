@@ -9,6 +9,8 @@
 #import "CategoryListViewController.h"
 #import "HorizontalTableCell.h"
 #import "ControlVariables.h"
+#import "HeaderButton.h"
+#import "RecipeListViewController.h"
 
 #define kHeadlineSectionHeight  26
 #define kRegularSectionHeight   18
@@ -62,6 +64,14 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)tapOnHeader:(id)sender
+{
+    __weak HeaderButton* tempButton = (HeaderButton*)sender;
+    RecipeListViewController* viewControllerToPush = [[RecipeListViewController alloc] initWithNibName:@"RecipeListViewController" bundle:nil];
+    viewControllerToPush.recipes = tempButton.array;
+    [self.navigationController pushViewController:viewControllerToPush animated:YES];
+}
+
 #pragma mark - Table view data source
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -83,6 +93,7 @@
 {
     UIView *customSectionHeaderView;
     UILabel *titleLabel;
+    HeaderButton *headerButton;
     
     //Custom Section Header
     customSectionHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, kRegularSectionHeight)];
@@ -101,9 +112,19 @@
     
     NSString *categoryName = [sortedCategories objectAtIndex:section];
     
+    NSArray *currentCategory = [self.categoryDictionary objectForKey:categoryName];
+    
     titleLabel.text = [categoryName substringFromIndex:1];
     
     [customSectionHeaderView addSubview:titleLabel];
+    
+    //Add button for header
+    headerButton = [[HeaderButton alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, kRegularSectionHeight)];
+    [headerButton setArray:currentCategory];
+    [headerButton setBackgroundColor:[UIColor clearColor]];
+    [headerButton addTarget:self action:@selector(tapOnHeader:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [customSectionHeaderView addSubview:headerButton];
     
     return customSectionHeaderView;
 }
@@ -117,6 +138,7 @@
     if (cell == nil)
     {
         cell = [[HorizontalTableCell alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, tableView.frame.size.height)];
+        cell.navController = self.navigationController;
     }
     
     NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];

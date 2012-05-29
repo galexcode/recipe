@@ -15,4 +15,6 @@
 
 @property (nonatomic) NSDictionary *categoryDictionary;
 
+-(void)tapOnHeader:(id)sender;
+
 @end

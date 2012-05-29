@@ -16,5 +16,6 @@
 
 @property (nonatomic, retain) UITableView *horizontalTableView;
 @property (nonatomic, retain) NSArray *recipes;
+@property (nonatomic, weak) UIViewController* navController;
 
 @end

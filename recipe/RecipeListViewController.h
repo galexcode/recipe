@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface RecipeListViewController : UIViewController <UITabBarDelegate, UITableViewDataSource>{
-    NSMutableArray *recipeList;
+    NSArray* _recipes;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *recipeTable;
+@property (nonatomic) NSArray* recipes;
 
 @end

@@ -78,6 +78,9 @@
 		9084A2FC152328E700BDEDC4 /* IngredientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9084A2FA152328E600BDEDC4 /* IngredientViewController.xib */; };
 		9084A3001523293D00BDEDC4 /* StepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9084A2FE1523293D00BDEDC4 /* StepViewController.m */; };
 		9084A3011523293D00BDEDC4 /* StepViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9084A2FF1523293D00BDEDC4 /* StepViewController.xib */; };
+		970C0E6A1574C749004844F8 /* HeaderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C0E691574C749004844F8 /* HeaderButton.m */; };
+		970C0E6E1574D86C004844F8 /* tobbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 970C0E6C1574D86C004844F8 /* tobbar.png */; };
+		970C0E6F1574D86C004844F8 /* tobbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 970C0E6D1574D86C004844F8 /* tobbar@2x.png */; };
 		970F2C4C1564A74D00A787E5 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970F2C4A1564A74D00A787E5 /* FeedViewController.m */; };
 		970F2C4D1564A74D00A787E5 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 970F2C4B1564A74D00A787E5 /* FeedViewController.xib */; };
 		973310A0156642B8008108A9 /* my_recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 9733109D156642B8008108A9 /* my_recipe.png */; };
@@ -299,6 +302,10 @@
 		9084A2FD1523293D00BDEDC4 /* StepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepViewController.h; sourceTree = "<group>"; };
 		9084A2FE1523293D00BDEDC4 /* StepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepViewController.m; sourceTree = "<group>"; };
 		9084A2FF1523293D00BDEDC4 /* StepViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StepViewController.xib; sourceTree = "<group>"; };
+		970C0E681574C749004844F8 /* HeaderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderButton.h; sourceTree = "<group>"; };
+		970C0E691574C749004844F8 /* HeaderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderButton.m; sourceTree = "<group>"; };
+		970C0E6C1574D86C004844F8 /* tobbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tobbar.png; sourceTree = "<group>"; };
+		970C0E6D1574D86C004844F8 /* tobbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tobbar@2x.png"; sourceTree = "<group>"; };
 		970F2C491564A74D00A787E5 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		970F2C4A1564A74D00A787E5 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		970F2C4B1564A74D00A787E5 /* FeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
@@ -643,6 +650,8 @@
 				5ACB0911154A4EE600C0FFCB /* user.xml */,
 				9742D778157362C7003B678D /* Articles.plist */,
 				9747F30D156A3B6C009DA030 /* btn-black.png */,
+				970C0E6C1574D86C004844F8 /* tobbar.png */,
+				970C0E6D1574D86C004844F8 /* tobbar@2x.png */,
 				9747F30E156A3B6C009DA030 /* btn-red.png */,
 				9747F2E11569E355009DA030 /* surf_gradient_textured_32.png */,
 				9747F2E21569E355009DA030 /* surf_gradient_textured_44.png */,
@@ -673,6 +682,8 @@
 				9742D8121573779D003B678D /* RecipeCell.m */,
 				9742D8181573794C003B678D /* HorizontalTableCell.h */,
 				9742D8191573794C003B678D /* HorizontalTableCell.m */,
+				970C0E681574C749004844F8 /* HeaderButton.h */,
+				970C0E691574C749004844F8 /* HeaderButton.m */,
 			);
 			name = "custom control";
 			sourceTree = "<group>";
@@ -929,6 +940,8 @@
 				9742D805157362E0003B678D /* WhiteKeyboard.png in Resources */,
 				9742D806157362E0003B678D /* WorldShape.png in Resources */,
 				9742D807157362E0003B678D /* YogaGirl.png in Resources */,
+				970C0E6E1574D86C004844F8 /* tobbar.png in Resources */,
+				970C0E6F1574D86C004844F8 /* tobbar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -988,6 +1001,7 @@
 				9742D8131573779D003B678D /* RecipeCell.m in Sources */,
 				9742D816157377E5003B678D /* RecipeTitleLabel.m in Sources */,
 				9742D81A1573794C003B678D /* HorizontalTableCell.m in Sources */,
+				970C0E6A1574C749004844F8 /* HeaderButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

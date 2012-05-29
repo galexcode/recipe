@@ -32,16 +32,16 @@
 - (void)customizeAppearance
 {
     // Create resizable images
-    UIImage *gradientImage44 = [[UIImage imageNamed:@"surf_gradient_textured_44"] 
+    UIImage *gradientImage44 = [[UIImage imageNamed:@"tobbar"] 
                                 resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-    UIImage *gradientImage32 = [[UIImage imageNamed:@"surf_gradient_textured_32"] 
-                                resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+//    UIImage *gradientImage32 = [[UIImage imageNamed:@"surf_gradient_textured_32"] 
+//                                resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     
     // Set the background image for *all* UINavigationBars
     [[UINavigationBar appearance] setBackgroundImage:gradientImage44 
                                        forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setBackgroundImage:gradientImage32 
-                                       forBarMetrics:UIBarMetricsLandscapePhone];
+//    [[UINavigationBar appearance] setBackgroundImage:gradientImage32 
+//                                       forBarMetrics:UIBarMetricsLandscapePhone];
     
     // Customize UIBarButtonItems 
     UIImage *button30 = [[UIImage imageNamed:@"button_textured_30"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
