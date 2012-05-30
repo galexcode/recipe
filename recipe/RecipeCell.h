@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QuartzCore/QuartzCore.h"
 #import "RecipeTitleLabel.h"
 #import "ControlVariables.h"
 

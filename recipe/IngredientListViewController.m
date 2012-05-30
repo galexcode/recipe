@@ -15,6 +15,7 @@
 
 @implementation IngredientListViewController
 @synthesize ingredientListTable;
+@synthesize ingredients = _ingredients;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -50,22 +51,30 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    //return [self.ingredients count];
+    return 10;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     static NSString *CellIdentifier = @"Cell";
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
+    
+    if (cell == nil) 
+    {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    [cell.textLabel setText:@"simple ingredient"];
+    
+    cell.textLabel.text = @"ingredient";
+    cell.imageView.image = [UIImage imageNamed:@"Aviation"];
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    IngredientViewController *ingredientViewController = [[IngredientViewController alloc] initWithNibName:@"IngredientViewController" bundle:nil];
-    [self.navigationController pushViewController:ingredientViewController animated:YES];
+    IngredientViewController *viewControllerToPush = [[IngredientViewController alloc] initWithNibName:@"IngredientViewController" bundle:nil];
+    [self.navigationController pushViewController:viewControllerToPush animated:YES];
 }
 
 @end

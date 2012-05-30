@@ -12,6 +12,7 @@
 
 @implementation RecipeViewController
 @synthesize recipeDetailsTable;
+@synthesize recipe = _recipe;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -116,11 +117,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
-            IngredientListViewController *ingredientListViewController = [[IngredientListViewController alloc] initWithNibName:@"IngredientListViewController" bundle:nil];
-            [self.navigationController pushViewController:ingredientListViewController animated:YES];
+            IngredientListViewController *viewControllerToPush = [[IngredientListViewController alloc] initWithNibName:@"IngredientListViewController" bundle:nil];
+            [self.navigationController pushViewController:viewControllerToPush animated:YES];
         } else if (indexPath.row == 1){
-            StepListViewController *stepListViewController = [[StepListViewController alloc] initWithNibName:@"IngredientListViewController" bundle:nil];
-            [self.navigationController pushViewController:stepListViewController animated:YES];
+            StepListViewController *viewControllerToPush = [[StepListViewController alloc] initWithNibName:@"StepListViewController" bundle:nil];
+            [self.navigationController pushViewController:viewControllerToPush animated:YES];
         }
     }
 }

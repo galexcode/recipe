@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h"
 
 @interface RecipeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
+    Recipe* _recipe;
+}
+
 @property (weak, nonatomic) IBOutlet UITableView *recipeDetailsTable;
+@property (nonatomic) Recipe *recipe;
 
 @end

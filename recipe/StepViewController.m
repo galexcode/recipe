@@ -9,6 +9,7 @@
 #import "StepViewController.h"
 
 @implementation StepViewController
+@synthesize steps = _steps;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

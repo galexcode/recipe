@@ -33,7 +33,8 @@
 
 - (void)awakeFromNib
 {
-    [self.tableView setBackgroundColor:kVerticalTableBackgroundColor];
+    //[self.tableView setBackgroundColor:kVerticalTableBackgroundColor];
+    [self.tableView setBackgroundColor:[UIColor brownColor]];
     self.tableView.rowHeight = kCellHeight + (kRowVerticalPadding * 0.5) + ((kRowVerticalPadding * 0.5) * 0.5);
 }
 
@@ -100,7 +101,8 @@
         
     titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, tableView.frame.size.width, kRegularSectionHeight)];
 
-    customSectionHeaderView.backgroundColor = [UIColor colorWithRed:0 green:0.40784314 blue:0.21568627 alpha:0.95];
+    //customSectionHeaderView.backgroundColor = [UIColor colorWithRed:0 green:0.40784314 blue:0.21568627 alpha:0.95];
+    customSectionHeaderView.backgroundColor = [UIColor colorWithRed:0.44f green:0.11f blue:0.05f alpha:1.00f];;
     
     titleLabel.textAlignment = UITextAlignmentLeft;
     [titleLabel setTextColor:[UIColor whiteColor]];

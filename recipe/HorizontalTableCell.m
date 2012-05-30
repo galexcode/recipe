@@ -30,13 +30,17 @@
     if ((self = [super initWithFrame:frame]))
     {
         self.horizontalTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kCellHeight, kTableLength)];
-        self.horizontalTableView.showsVerticalScrollIndicator = NO;
+        
+        self.horizontalTableView.showsVerticalScrollIndicator = YES;
         self.horizontalTableView.showsHorizontalScrollIndicator = NO;
+        [self.horizontalTableView setScrollIndicatorInsets:UIEdgeInsetsMake(0, 0, 0, 100)];
+        
         self.horizontalTableView.transform = CGAffineTransformMakeRotation(-M_PI * 0.5);
         [self.horizontalTableView setFrame:CGRectMake(kRowHorizontalPadding * 0.5, kRowVerticalPadding * 0.5, kTableLength - kRowHorizontalPadding, kCellHeight)];
         
         self.horizontalTableView.rowHeight = kCellWidth;
-        self.horizontalTableView.backgroundColor = kHorizontalTableBackgroundColor;
+        //self.horizontalTableView.backgroundColor = kHorizontalTableBackgroundColor;
+        self.horizontalTableView.backgroundColor = [UIColor clearColor];
         
         self.horizontalTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         self.horizontalTableView.separatorColor = [UIColor clearColor];

@@ -43,6 +43,16 @@
          self.thumbnail = [[UIImageView alloc] initWithFrame:CGRectMake(kArticleCellHorizontalInnerPadding, kArticleCellVerticalInnerPadding, kCellWidth - kArticleCellHorizontalInnerPadding * 2, kCellHeight - kArticleCellVerticalInnerPadding * 2)];
          self.thumbnail.opaque = YES;
          
+         //Round Corner and Drop Shadow
+         [[self.thumbnail layer] setCornerRadius:10];
+         [self.thumbnail setClipsToBounds:YES];
+         
+         UIView *shadowView = [[UIView alloc] initWithFrame:CGRectMake(kArticleCellHorizontalInnerPadding+1, kArticleCellVerticalInnerPadding+1, kCellWidth - kArticleCellHorizontalInnerPadding * 2, kCellHeight - kArticleCellVerticalInnerPadding * 2)];
+         [shadowView setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.5]];
+         [[shadowView layer] setCornerRadius:10];
+         [shadowView setClipsToBounds:YES];
+         
+         [self.contentView addSubview:shadowView];
          [self.contentView addSubview:self.thumbnail];
          
          self.titleLabel = [[RecipeTitleLabel alloc] initWithFrame:CGRectMake(0, self.thumbnail.frame.size.height * 0.632, self.thumbnail.frame.size.width, self.thumbnail.frame.size.height * 0.37)];
@@ -51,11 +61,14 @@
          self.titleLabel.textColor = [UIColor whiteColor];
          self.titleLabel.font = [UIFont boldSystemFontOfSize:11];
          self.titleLabel.numberOfLines = 2;
-         [self.thumbnail addSubview:self.titleLabel];
+         //[self.thumbnail addSubview:self.titleLabel];
          
          self.backgroundColor = [UIColor colorWithRed:0 green:0.40784314 blue:0.21568627 alpha:1.0];
-         self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.thumbnail.frame];
-         self.selectedBackgroundView.backgroundColor = kHorizontalTableSelectedBackgroundColor;
+         
+         //Selected Item UI Stage
+         [self setSelectionStyle:UITableViewCellEditingStyleNone];
+//         self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.thumbnail.frame];
+//         self.selectedBackgroundView.backgroundColor = kHorizontalTableSelectedBackgroundColor;
          
          self.transform = CGAffineTransformMakeRotation(M_PI * 0.5);
      }

@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface IngredientListViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+{
+    NSArray* _ingredients;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *ingredientListTable;
+@property (nonatomic) NSArray *ingredients;
+
 @end

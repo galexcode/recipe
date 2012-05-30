@@ -71,12 +71,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Call customize method to change UI look and feel
+    //[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    [application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
     [self customizeAppearance];
     
     // Override point for customization after application launch.
     // Add the tab bar controller's current view as a subview of the window
-    authViewController = [[AuthViewController alloc] init];
-    [authViewController.view setFrame:CGRectMake(0, 20, 320, 440)];
+    authViewController = [[AuthViewController alloc] initWithNibName:@"AuthViewController" bundle:nil];
+    //[authViewController.view setFrame:CGRectMake(0, 0, 320, 480)];
     self.window.rootViewController = self.tabBarController;
     [self.window addSubview:authViewController.view];
     

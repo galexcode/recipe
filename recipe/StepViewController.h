@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StepViewController : UIViewController
+@interface StepViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+{
+    NSArray* _steps;
+}
+
+@property (nonatomic) NSArray* steps;
 
 @end
