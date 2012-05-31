@@ -7,15 +7,20 @@
 #import <Foundation/Foundation.h>
 #import "ASI2HTTPRequest.h"
 #import "ASIForm2DataRequest.h"
-#import "User.h"
 #import "UserXMLHandler.h"
+#import "CategoriesXMLHandler.h"
 
 @protocol ApplicationServiceDelegate
 
 @optional
+//Register
 -(void) didFinishRegisterUser:(__weak User *)registerUser;
+//Login
 -(void) didFinishVerifyUser:(__weak User *)loggedUser;
+//Profile
 -(void) didFinishParsedUser:(__weak User *)user;
+//Categories
+-(void) didFinishParsedCategories:(__weak NSMutableDictionary *)categoryDictionary;
 
 @end
 
@@ -23,6 +28,7 @@
     __weak User* _user;
     NSMutableArray* _categories;
     NSMutableArray* _recipes;
+    __weak NSMutableDictionary* _categoryDictionary;
     __weak id<ApplicationServiceDelegate> _delegate;
 }
 
@@ -39,14 +45,14 @@
 -(void) didParsedLoggingUser;
 
 #pragma mark Load User Profile
--(void) loadUser:(User*)user;
+-(void) loadUser:(__weak User*)user;
 -(void) gotUserByRequest: (ASI2HTTPRequest*)request;
 -(void) didParsedUser;
 
 #pragma mark Load Categories
 -(NSMutableArray*) categories;
 
--(void) loadCategories;
+-(void) loadCategories:(__weak NSMutableDictionary*)categoryDictionary;
 -(void) gotCategoriesByRequest: (ASI2HTTPRequest*)request;
 -(void) didParsedCategories;
 

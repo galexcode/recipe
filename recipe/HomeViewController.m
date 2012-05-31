@@ -8,7 +8,7 @@
 
 #import "HomeViewController.h"
 #import "RecipeListViewController.h"
-#import "CategoryXMLHandler.h"
+#import "CategoriesXMLHandler.h"
 #import "UserXMLHandler.h"
 
 @implementation HomeViewController

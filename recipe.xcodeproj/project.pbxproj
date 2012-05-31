@@ -23,7 +23,6 @@
 		5AC54A28152D8AE200C87E3E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC54A26152D8AE200C87E3E /* MapViewController.m */; };
 		5AC54A29152D8AE200C87E3E /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC54A27152D8AE200C87E3E /* MapViewController.xib */; };
 		5ACB0912154A4EE600C0FFCB /* user.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5ACB0911154A4EE600C0FFCB /* user.xml */; };
-		5AD404EB152E80C30045E74A /* CategoryXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404EA152E80C30045E74A /* CategoryXMLHandler.m */; };
 		5AD404EE152E81310045E74A /* RecipeXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404ED152E81310045E74A /* RecipeXMLHandler.m */; };
 		5AD404F1152E81890045E74A /* IngredientXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404F0152E81890045E74A /* IngredientXMLHandler.m */; };
 		5AD404F4152E819E0045E74A /* StepXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404F3152E819E0045E74A /* StepXMLHandler.m */; };
@@ -178,6 +177,7 @@
 		976EF2D11575CBDE0068FCF2 /* topbar_44@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 976EF2CF1575CBDE0068FCF2 /* topbar_44@2x.png */; };
 		978359071565FED900200699 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 978359051565FED900200699 /* home.png */; };
 		978359081565FED900200699 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 978359061565FED900200699 /* home@2x.png */; };
+		979B4A931577241A00BD6A05 /* CategoriesXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 979B4A921577241A00BD6A05 /* CategoriesXMLHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -208,8 +208,6 @@
 		5AC54A26152D8AE200C87E3E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		5AC54A27152D8AE200C87E3E /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		5ACB0911154A4EE600C0FFCB /* user.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = user.xml; sourceTree = "<group>"; };
-		5AD404E9152E80C30045E74A /* CategoryXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryXMLHandler.h; sourceTree = "<group>"; };
-		5AD404EA152E80C30045E74A /* CategoryXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryXMLHandler.m; sourceTree = "<group>"; };
 		5AD404EC152E81310045E74A /* RecipeXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeXMLHandler.h; sourceTree = "<group>"; };
 		5AD404ED152E81310045E74A /* RecipeXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeXMLHandler.m; sourceTree = "<group>"; };
 		5AD404EF152E81890045E74A /* IngredientXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientXMLHandler.h; sourceTree = "<group>"; };
@@ -414,6 +412,8 @@
 		976EF2CF1575CBDE0068FCF2 /* topbar_44@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topbar_44@2x.png"; sourceTree = "<group>"; };
 		978359051565FED900200699 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		978359061565FED900200699 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
+		979B4A911577241A00BD6A05 /* CategoriesXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesXMLHandler.h; sourceTree = "<group>"; };
+		979B4A921577241A00BD6A05 /* CategoriesXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesXMLHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -460,8 +460,8 @@
 			children = (
 				5AD40506152EF4340045E74A /* BaseXMLHandler.h */,
 				5AD40507152EF4340045E74A /* BaseXMLHandler.m */,
-				5AD404E9152E80C30045E74A /* CategoryXMLHandler.h */,
-				5AD404EA152E80C30045E74A /* CategoryXMLHandler.m */,
+				979B4A911577241A00BD6A05 /* CategoriesXMLHandler.h */,
+				979B4A921577241A00BD6A05 /* CategoriesXMLHandler.m */,
 				5AD404EC152E81310045E74A /* RecipeXMLHandler.h */,
 				5AD404ED152E81310045E74A /* RecipeXMLHandler.m */,
 				5AD404EF152E81890045E74A /* IngredientXMLHandler.h */,
@@ -990,7 +990,6 @@
 				5AC54A1D152D86D000C87E3E /* IngredientListViewController.m in Sources */,
 				5AC54A23152D86F200C87E3E /* StepListViewController.m in Sources */,
 				5AC54A28152D8AE200C87E3E /* MapViewController.m in Sources */,
-				5AD404EB152E80C30045E74A /* CategoryXMLHandler.m in Sources */,
 				5AD404EE152E81310045E74A /* RecipeXMLHandler.m in Sources */,
 				5AD404F1152E81890045E74A /* IngredientXMLHandler.m in Sources */,
 				5AD404F4152E819E0045E74A /* StepXMLHandler.m in Sources */,
@@ -1018,6 +1017,7 @@
 				9742D816157377E5003B678D /* RecipeTitleLabel.m in Sources */,
 				9742D81A1573794C003B678D /* HorizontalTableCell.m in Sources */,
 				970C0E6A1574C749004844F8 /* HeaderButton.m in Sources */,
+				979B4A931577241A00BD6A05 /* CategoriesXMLHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

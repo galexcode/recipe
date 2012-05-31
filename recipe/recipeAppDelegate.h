@@ -12,7 +12,7 @@
 @interface recipeAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate>{
     UIViewController *authViewController;
     User* _user;
-    ApplicationService*_appService;
+    ApplicationService *_appService;
 }
 
 @property (nonatomic) IBOutlet UIWindow *window;

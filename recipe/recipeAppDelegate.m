@@ -8,7 +8,7 @@
 
 #import "recipeAppDelegate.h"
 #import "AuthViewController.h"
-#import "CategoryXMLHandler.h"
+//#import "CategoriesXMLHandler.h"
 
 @implementation recipeAppDelegate
 

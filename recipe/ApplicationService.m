@@ -46,6 +46,8 @@
 //    
 //    [request setTarget:self andAction:@selector(gotRegisteredUserByRequest:)];
     
+//    [request startAsynchronous]
+    
     [self gotRegisteredUserByRequest:nil];
 }
 
@@ -75,33 +77,37 @@
 {
     _user = loggingUser;
     
-    [_user setUserId:@"1"];
-    [_user setName:@"my name"];
+//    [_user setUserId:@"1"];
+//    [_user setName:@"my name"];
     
-//    NSURL *url = [NSURL URLWithString:@"http://www.checkuser.com/login/"];
-//    
-//    ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+    NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/login.xml"];
+    
+    ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
 //    [request setPostValue:[loggingUser name] forKey:@"u"];
 //    [request setPostValue:[loggingUser password] forKey:@"p"];
-//    
-//    [request setTarget:self andAction:@selector(gotLoggingUserByRequest:)];
-    [self gotLoggingUserByRequest:nil];
+    
+    [request setTarget:self andAction:@selector(gotLoggingUserByRequest:)];
+    
+    [request startAsynchronous];
+    //[self gotLoggingUserByRequest:nil];
 }
 
 -(void) gotLoggingUserByRequest:(ASI2HTTPRequest *)request
 {
-//    if (request.responseStatusCode == 200) {
-//        UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
-//        [handler setEndDocumentTarget:self andAction:@selector(didParsedLoggingUser:)];
-//        NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
-//        parser.delegate = handler;
-//        [parser parse];
-//    }else if(request.responseStatusCode == 404){
-//        [_delegate didFinishVerifyUser:nil];
-//    } else {
-//        [_delegate didFinishVerifyUser:nil];
-//    }
-    [self didParsedLoggingUser];
+    NSLog(@"%d", request.responseStatusCode);
+    if (request.responseStatusCode == 200) {
+        UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
+        [handler setEndDocumentTarget:self andAction:@selector(didParsedLoggingUser)];
+        NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+        parser.delegate = handler;
+        [parser parse];
+    }else if(request.responseStatusCode == 404){
+        [_delegate didFinishVerifyUser:nil];
+    } else {
+        [_delegate didFinishVerifyUser:nil];
+    }
+    
+    //[self didParsedLoggingUser];
 }
 
 -(void) didParsedLoggingUser
@@ -121,6 +127,8 @@
     [request setPostValue:[user userId] forKey:@"id"];
     
     [request setTarget:self andAction:@selector(gotUserByRequest:)];
+    
+    [request startAsynchronous];
 }
 
 -(void) gotUserByRequest:(ASI2HTTPRequest *)request
@@ -136,7 +144,6 @@
     } else {
         [_delegate didFinishVerifyUser:nil];
     }
-    
 }
 
 -(void) didParsedUser
@@ -145,14 +152,16 @@
 }
 
 #pragma mark load Categories
--(void) loadCategories
-{    
-    NSURL *url = [NSURL URLWithString:@"http://www.wildfables.com/promos/"];
+-(void) loadCategories:(__weak NSMutableDictionary*)categoryDictionary
+{
+    _categoryDictionary = categoryDictionary;
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/categories.xml"];
     
     ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
-    [request setPostValue:@"1" forKey:@"rw_app_id"];
-    [request setPostValue:@"test" forKey:@"code"];
-    [request setPostValue:@"test" forKey:@"device_id"];
+//    [request setPostValue:@"1" forKey:@"rw_app_id"];
+//    [request setPostValue:@"test" forKey:@"code"];
+//    [request setPostValue:@"test" forKey:@"device_id"];
 
     [request setTarget:self andAction:@selector(gotCategoriesByRequest:)];
     
@@ -162,27 +171,21 @@
 -(void) gotCategoriesByRequest:(ASI2HTTPRequest *)request
 {
     if (request.responseStatusCode == 200) {
-        NSString *responseString = [request responseString];
-        NSLog(@"%@", responseString);
-        NSLog(@"DATA: %s", [request responseData].bytes);
-        //        NSDictionary *responseDict = [responseString JSONValue];
-        //        NSString *unlockCode = [responseDict objectForKey:@"unlock_code"];
-        //        
-        //        if ([unlockCode compare:@"com.razeware.test.unlock.cake"] == NSOrderedSame) {
-        //            NSLog(@"The cake is a lie!");
-        //        } else {        
-        //            NSLog(@"%@", [NSString stringWithFormat:@"Received unexpected unlock code: %@", unlockCode]);
-        // 
+        CategoriesXMLHandler* handler = [[CategoriesXMLHandler alloc] initWithCategoryDictionary:_categoryDictionary];
+        [handler setEndDocumentTarget:self andAction:@selector(didParsedCategories)];
+        NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+        parser.delegate = handler;
+        [parser parse];
     }
     else {
-        [self requestStatusHandler:request];
+        [_delegate didFinishParsedCategories:nil];
     }
     
     
 }
 
 -(void) didParsedCategories{
-    
+    [_delegate didFinishParsedCategories:_categoryDictionary];
 }
 
 
