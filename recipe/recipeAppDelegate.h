@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "recipeGlobal.h"
+#import "User.h"
+#import "ApplicationService.h"
+//#import "recipeGlobal.h"
 
 @interface recipeAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate>{
     UIViewController *authViewController;
@@ -20,6 +22,9 @@
 @property (nonatomic) IBOutlet UITabBarController *tabBarController;
 
 -(ApplicationService*) appService;
+
+//+(ApplicationService*) sharedApplicationService;
+
 -(User*) user;
 
 @end

@@ -87,20 +87,23 @@
         cell = [[RecipeCell alloc] initWithFrame:CGRectMake(0, 0, kCellWidth, kCellHeight)];
     }
     
-    __block NSDictionary *currentArticle = [self.recipes objectAtIndex:indexPath.row];
+    //__block NSDictionary *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
+    __block Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
     
     dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
     dispatch_async(concurrentQueue, ^{        
         UIImage *image = nil;        
-        image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
+        //image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
+        image = [UIImage imageNamed:@"OrangeJuice"];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [cell.thumbnail setImage:image]; 
         });
     }); 
     
-    cell.titleLabel.text = [currentArticle objectForKey:@"Title"];
+    //cell.titleLabel.text = [currentRecipe objectForKey:@"Title"];
+    cell.titleLabel.text = [currentRecipe name];
     
     return cell;
 }

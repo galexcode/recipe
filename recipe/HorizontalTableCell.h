@@ -11,11 +11,11 @@
 @interface HorizontalTableCell : UITableViewCell <UITableViewDelegate, UITableViewDataSource>
 {
     UITableView *_horizontalTableView;
-    NSArray *_recipes;
+    NSMutableArray *_recipes;
 }
 
 @property (nonatomic, retain) UITableView *horizontalTableView;
-@property (nonatomic, retain) NSArray *recipes;
+@property (nonatomic, retain) NSMutableArray *recipes;
 @property (nonatomic, weak) UIViewController* navController;
 
 @end

@@ -77,9 +77,10 @@
         [_user setName:[userName text]];
         [_user setPassword:[password text]];
         [_user setEmail:[email text]];
-        APP_SERVICE(appSrv);
-        [appSrv setDelegate:self];
-        [appSrv registerUser:_user];
+//        APP_SERVICE(appSrv);
+//        NSLog(@"%@", appSrv);
+//        [appSrv setRegisterDelegate:self];
+//        [appSrv registerUser:_user];
     }else {
         if ([trimSpaces([userName text]) length] == 0)
             [userName setText:@""];
@@ -119,9 +120,9 @@
     if (registerUser != nil) {
         USER(currentUser);
         currentUser = _user;
-        NSLog(@"username on weak: %@", [registerUser name]);
-        NSLog(@"username on strong: %@", [currentUser name]);
-        NSLog(@"username on nil: %@", [_user name]);
+//        NSLog(@"username on weak: %@", [registerUser name]);
+//        NSLog(@"username on strong: %@", [currentUser name]);
+//        NSLog(@"username on nil: %@", [_user name]);
         UIAlertView *successAlertView = [[UIAlertView alloc] initWithTitle:@"Successful Register"
                                                                    message:[NSString stringWithFormat:@"Welcome to Recipe, %@",[currentUser name]]
                                                                   delegate:nil

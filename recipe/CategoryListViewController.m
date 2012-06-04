@@ -7,6 +7,7 @@
 //
 
 #import "CategoryListViewController.h"
+#import "ASIForm2DataRequest.h"
 #import "HorizontalTableCell.h"
 #import "ControlVariables.h"
 #import "HeaderButton.h"
@@ -22,28 +23,85 @@
 @implementation CategoryListViewController
 @synthesize categoryDictionary = _categoryDictionary;
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+//        APP_SERVICE(appSrv);
+//        NSLog(@"%@", appSrv);
+//        _applicationService = appSrv;
+    }
+    return self;
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+//        APP_SERVICE(appSrv);
+//        NSLog(@"%@", appSrv);
+//        _applicationService = appSrv;
     }
     return self;
 }
 
 - (void)awakeFromNib
 {
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] 
+                                  initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+                                  target:self 
+                                  action:@selector(reload)];
+    [[self navigationItem] setRightBarButtonItem:addButton];
     //[self.tableView setBackgroundColor:kVerticalTableBackgroundColor];
+    [self setCategoryDictionary:[[NSMutableDictionary alloc] init]];
     [self.tableView setBackgroundColor:[UIColor brownColor]];
     self.tableView.rowHeight = kCellHeight + (kRowVerticalPadding * 0.5) + ((kRowVerticalPadding * 0.5) * 0.5);
+    
+    [self reload];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self reload];
+}
+
+- (void)reload
+{
+    NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/categories.xml"];
+    
+    ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+    //    [request setPostValue:@"1" forKey:@"rw_app_id"];
+    //    [request setPostValue:@"test" forKey:@"code"];
+    //    [request setPostValue:@"test" forKey:@"device_id"];
+    
+    [request setCompletionBlock:^{
+        NSLog(@"Categories xml loaded.");
+        if (request.responseStatusCode == 200) {
+            CategoriesXMLHandler* handler = [[CategoriesXMLHandler alloc] initWithCategoryDictionary:_categoryDictionary];
+            [handler setEndDocumentTarget:self andAction:@selector(didParsedCategories)];
+            NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+            parser.delegate = handler;
+            [parser parse];
+        }
+        else {
+            _categoryDictionary = nil;
+            [self didParsedCategories];
+        }
+    }];
+    [request setFailedBlock:^{
+        NSError *error = request.error;
+        NSLog(@"Error downloading image: %@", error.localizedDescription);
+    }];
+    
+    [request startAsynchronous];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.categoryDictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Articles" ofType:@"plist"]];
-    //self.categoryDictionary = nil;
+    //self.categoryDictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Articles" ofType:@"plist"]];
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -83,6 +141,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return [self.categoryDictionary.allKeys count];
+    NSLog(@"section: %d", [self.categoryDictionary.allKeys count]);
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -148,12 +207,35 @@
     
     NSString *categoryName = [sortedCategories objectAtIndex:indexPath.section];
     
-    NSArray *currentCategory = [self.categoryDictionary objectForKey:categoryName];
+    NSMutableArray *currentCategory = [self.categoryDictionary objectForKey:categoryName];
     
-    cell.recipes = currentCategory;
+    Category* thisCategory = (Category *)currentCategory;
+    
+    //NSLog(@"Category row: %d", [thisCategory.latestRecipes count]);
+    
+    cell.recipes = thisCategory.latestRecipes;
     
     return cell;
 }
+
+#pragma mark Application Service Delegate Methods
+-(void) didParsedCategories
+{
+    if (_categoryDictionary != nil) {
+        [self.tableView reloadData];
+    }
+}
+
+//-(void) didFinishParsedCategories:(NSMutableDictionary *__weak)categoryDictionary
+//{
+//    if (categoryDictionary != nil) {
+////        _categoryDictionary = categoryDictionary;
+//        [self.tableView reloadData];
+//        //APP_SERVICE(appSrv);
+////        NSLog(@"%@", _applicationService);
+////        [_applicationService setDelegate:nil];
+//    }
+//}
 
 /*
 // Override to support conditional editing of the table view.

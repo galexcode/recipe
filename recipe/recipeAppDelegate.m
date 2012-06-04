@@ -8,7 +8,9 @@
 
 #import "recipeAppDelegate.h"
 #import "AuthViewController.h"
-//#import "CategoriesXMLHandler.h"
+
+//static ApplicationService *shared = nil;
+//static dispatch_queue_t serialQueue;
 
 @implementation recipeAppDelegate
 
@@ -75,15 +77,16 @@
     [application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
     [self customizeAppearance];
     
+    _appService = [[ApplicationService alloc] init];
+    
+    //_user = [[User alloc] init];
+    
     // Override point for customization after application launch.
     // Add the tab bar controller's current view as a subview of the window
     authViewController = [[AuthViewController alloc] initWithNibName:@"AuthViewController" bundle:nil];
-    //[authViewController.view setFrame:CGRectMake(0, 0, 320, 480)];
     self.window.rootViewController = self.tabBarController;
-    [self.window addSubview:authViewController.view];
     
-    _appService = [[ApplicationService alloc] init];
-    _user = [[User alloc] init];
+    [self.window addSubview:authViewController.view];
     
     [self.window makeKeyAndVisible];
     return YES;

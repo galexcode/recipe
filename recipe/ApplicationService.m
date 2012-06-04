@@ -7,16 +7,113 @@
 
 #import "ApplicationService.h"
 
+#define DEFINE_SHARED_INSTANCE_USING_BLOCK(block) \
+static dispatch_once_t pred = 0; \
+__strong static id _sharedObject = nil; \
+dispatch_once(&pred, ^{ \
+_sharedObject = block(); \
+}); \
+return _sharedObject; \
+
+static ApplicationService* sharedApplicationService = nil;
+static dispatch_queue_t serialQueue;
+
 @implementation ApplicationService
 @synthesize delegate = _delegate;
+@synthesize loginDelegate = _loginDelegate;
+@synthesize registerDelegate = _registerDelegate;
+@synthesize profileDelegate = _profileDelegate;
+@synthesize categoriesDelegate = _categoriesDelegate;
 
--(id) init
+
++(id<ApplicationServiceDelegate>) getLoginDelegate
 {
-	if (self = [super init]) {
-        _categories = [[NSMutableArray alloc] init];
-	} 
-	return self;	
+    ApplicationService *shared = [ApplicationService sharedApplicationService];
+    return shared.loginDelegate;
 }
++(void) setLoginDelegate:(id<ApplicationServiceDelegate>)delegate
+{
+    ApplicationService *shared = [ApplicationService sharedApplicationService];
+    shared.loginDelegate = delegate;
+}
++(id<ApplicationServiceDelegate>) getCategoriesDelegate
+{
+    ApplicationService *shared = [ApplicationService sharedApplicationService];
+    return shared.categoriesDelegate;
+}
++(void) setCategoriesDelegate:(id<ApplicationServiceDelegate>)delegate
+{
+    ApplicationService *shared = [ApplicationService sharedApplicationService];
+    shared.categoriesDelegate = delegate;
+}
+
+#pragma mark Singleton Object Implementation
+//+ (id)allocWithZone:(NSZone *)zone {
+//    static dispatch_once_t onceQueue;    
+//    
+//    dispatch_once(&onceQueue, ^{
+//        serialQueue = dispatch_queue_create("com.perselab.recipe.SerialQueue", NULL);        
+//        if (sharedApplicationService == nil) {
+//            sharedApplicationService = [super allocWithZone:zone];
+//        }
+//    });
+//    
+//    return sharedApplicationService; 
+//}
+
+//+ (void)initialize {
+//    serialQueue = dispatch_queue_create("com.perselab.recipe.SerialQueue", NULL);
+//}
+
++(ApplicationService*) sharedApplicationService
+{
+//    static dispatch_once_t onceQueue;    
+//    
+//    dispatch_once(&onceQueue, ^{
+//        sharedApplicationService = [[ApplicationService allocWithZone:NULL] init];
+//    });
+//    
+//    return sharedApplicationService;
+    DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
+        return [[self alloc] init];
+    });
+}
+
+//+ (ApplicationService*) sharedApplicationService
+//{
+//    if (sharedApplicationService == nil) {
+//        sharedApplicationService = [[super allocWithZone:NULL] init];
+//    }
+//    return sharedApplicationService;
+//}
+
+//-(id) init
+//{
+////	if (self = [super init]) {
+////        _categories = [[NSMutableArray alloc] init];
+////	} 
+////	return self;
+//	id __block obj;
+//    
+//    dispatch_sync(serialQueue, ^{
+//        obj = [super init];
+//        if (obj) {
+////            _categories = [[NSMutableArray alloc] init];         
+//        }
+//    });
+//    
+//    self = obj;
+//    return self;
+//}
+
+//-(void)setDelegate:(id)delegate
+//{
+//    dispatch_sync(serialQueue, ^{
+//        if (_delegate  != delegate) {
+//            _delegate = delegate;
+//        }
+//    });
+//}
 
 -(NSMutableArray*) categories
 {
@@ -69,10 +166,16 @@
 
 -(void) didParsedRegisteredUser
 {
-    [_delegate didFinishRegisterUser:_user];
+    [_registerDelegate didFinishRegisterUser:_user];
 }
 
 #pragma mark Check User
++(void) verifyUser: (__weak User*)loggingUser
+{
+    ApplicationService *shared = [ApplicationService sharedApplicationService];
+    [shared verifyUser:loggingUser];
+}
+
 -(void) verifyUser:(__weak User *)loggingUser
 {
     _user = loggingUser;
@@ -94,17 +197,18 @@
 
 -(void) gotLoggingUserByRequest:(ASI2HTTPRequest *)request
 {
-    NSLog(@"%d", request.responseStatusCode);
+    //NSLog(@"%d", request.responseStatusCode);
     if (request.responseStatusCode == 200) {
         UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
         [handler setEndDocumentTarget:self andAction:@selector(didParsedLoggingUser)];
         NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
         parser.delegate = handler;
         [parser parse];
-    }else if(request.responseStatusCode == 404){
-        [_delegate didFinishVerifyUser:nil];
+//    }else if(request.responseStatusCode == 404){
+//        [_delegate didFinishVerifyUser:nil];
     } else {
-        [_delegate didFinishVerifyUser:nil];
+        ApplicationService *shared = [ApplicationService sharedApplicationService];
+        [[shared loginDelegate] didFinishVerifyUser:nil];
     }
     
     //[self didParsedLoggingUser];
@@ -112,8 +216,8 @@
 
 -(void) didParsedLoggingUser
 {
-    [_delegate didFinishVerifyUser:_user];
-    //_user = nil;
+    ApplicationService *shared = [ApplicationService sharedApplicationService];
+    [[shared loginDelegate] didFinishVerifyUser:_user];
 }
 
 #pragma mark Loading User Profile
@@ -148,10 +252,16 @@
 
 -(void) didParsedUser
 {
-    [_delegate didFinishParsedUser:_user];
+    [_profileDelegate didFinishParsedUser:_user];
 }
 
 #pragma mark load Categories
++(void) loadCategories:(__weak NSMutableDictionary*)categoryDictionary
+{
+    ApplicationService *shared = [ApplicationService sharedApplicationService];
+    [shared loadCategories:categoryDictionary];
+}
+
 -(void) loadCategories:(__weak NSMutableDictionary*)categoryDictionary
 {
     _categoryDictionary = categoryDictionary;
@@ -185,7 +295,7 @@
 }
 
 -(void) didParsedCategories{
-    [_delegate didFinishParsedCategories:_categoryDictionary];
+    [_categoriesDelegate didFinishParsedCategories:_categoryDictionary];
 }
 
 

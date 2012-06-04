@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "MBProgressHUD.h"
+#import "ASIForm2DataRequest.h"
 
 @implementation LoginViewController
 @synthesize userName;
@@ -78,9 +79,35 @@
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [hud setLabelText:@"Checking..."];
         _user = [[User alloc] init];
-        APP_SERVICE(appSrv);
-        [appSrv setDelegate:self];
-        [appSrv verifyUser:_user];
+        
+        NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/login.xml"];
+        
+        __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+        //    [request setPostValue:[loggingUser name] forKey:@"u"];
+        //    [request setPostValue:[loggingUser password] forKey:@"p"];
+        
+        [request setCompletionBlock:^{
+            NSLog(@"Login xml loaded.");
+            if (request.responseStatusCode == 200) {
+                UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
+                [handler setEndDocumentTarget:self andAction:@selector(didParsedLoggingUser)];
+                NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+                parser.delegate = handler;
+                [parser parse];
+                //    }else if(request.responseStatusCode == 404){
+                //        [_delegate didFinishVerifyUser:nil];
+            } else {
+                _user = nil;
+                [self didParsedLoggingUser];
+            }
+        }];
+        [request setFailedBlock:^{
+            NSError *error = request.error;
+            NSLog(@"Error downloading image: %@", error.localizedDescription);
+        }];
+        
+        [request startAsynchronous];
+        
     }else {
         if ([trimSpaces([userName text]) length] == 0)
             [userName setText:@""];
@@ -109,22 +136,48 @@
 }
 
 #pragma mark Application Service Delegate Methods
--(void) didFinishVerifyUser:(__weak User *)loggedUser{
+-(void) didParsedLoggingUser
+{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    if (loggedUser != nil) {
-        USER(currentUser);
-        currentUser = _user;
-        NSLog(@"username on weak: %@", [loggedUser name]);
-        NSLog(@"username on strong: %@", [currentUser name]);
-        NSLog(@"username on nil: %@", [_user name]);
+    if (_user != nil) {
         UIAlertView *successAlertView = [[UIAlertView alloc] initWithTitle:@"Successful Login"
-                                                                   message:[NSString stringWithFormat:@"Welcome back %@",[currentUser name]]
+                                                                   message:[NSString stringWithFormat:@"Welcome back %@",[_user name]]
                                                                   delegate:nil
                                                          cancelButtonTitle:@"OK"
                                                          otherButtonTitles:nil];
         [successAlertView show];
         [_parentController.view setHidden:YES];
+    } else {
+        UIAlertView *failsAlertView = [[UIAlertView alloc] initWithTitle:@"Login Failed"
+                                                                   message:[NSString stringWithFormat:@", Username or Password is not correct"]
+                                                                  delegate:nil
+                                                         cancelButtonTitle:@"OK"
+                                                         otherButtonTitles:nil];
+        [failsAlertView show];
     }
 }
+    
+//-(void) didFinishVerifyUser:(__weak User *)loggedUser{
+//    [MBProgressHUD hideHUDForView:self.view animated:YES];
+//    if (loggedUser != nil) {
+//        USER(currentUser);
+//        currentUser = _user;
+////        [currentUser copy:_user];
+////        APP_SERVICE(appSrv);
+//        NSLog(@"%@", currentUser);
+////        [appSrv setDelegate:nil];
+//        NSLog(@"username on weak: %@", [loggedUser name]);
+//        NSLog(@"username on strong: %@", [currentUser name]);
+//        NSLog(@"username on nil: %@", [_user name]);
+//        NSLog(@"username on shared: %@", [currentUser name]);
+//        UIAlertView *successAlertView = [[UIAlertView alloc] initWithTitle:@"Successful Login"
+//                                                                   message:[NSString stringWithFormat:@"Welcome back %@",[currentUser name]]
+//                                                                  delegate:nil
+//                                                         cancelButtonTitle:@"OK"
+//                                                         otherButtonTitles:nil];
+//        [successAlertView show];
+//        [_parentController.view setHidden:YES];
+//    }
+//}
 
 @end

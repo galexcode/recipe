@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ApplicationService.h"
+#import "SingletonSample.h"
 #import "recipeAppDelegate.h"
 
 #import "BaseXMLHandler.h"
@@ -22,4 +23,5 @@
 
 //Application Service
 #define USER(currentUser) User* currentUser = [(recipeAppDelegate*)[[UIApplication sharedApplication] delegate] user]
-#define APP_SERVICE(appSrv) ApplicationService* appSrv = [(recipeAppDelegate*)[[UIApplication sharedApplication] delegate] appService]
+//#define APP_SERVICE(appSrv) ApplicationService* appSrv = [(recipeAppDelegate*)[[UIApplication sharedApplication] delegate] appService]
+

@@ -178,6 +178,7 @@
 		978359071565FED900200699 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 978359051565FED900200699 /* home.png */; };
 		978359081565FED900200699 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 978359061565FED900200699 /* home@2x.png */; };
 		979B4A931577241A00BD6A05 /* CategoriesXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 979B4A921577241A00BD6A05 /* CategoriesXMLHandler.m */; };
+		97DA7C67157C973A002449FB /* SingletonSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA7C66157C973A002449FB /* SingletonSample.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -414,6 +415,8 @@
 		978359061565FED900200699 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
 		979B4A911577241A00BD6A05 /* CategoriesXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesXMLHandler.h; sourceTree = "<group>"; };
 		979B4A921577241A00BD6A05 /* CategoriesXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesXMLHandler.m; sourceTree = "<group>"; };
+		97DA7C65157C973A002449FB /* SingletonSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonSample.h; sourceTree = "<group>"; };
+		97DA7C66157C973A002449FB /* SingletonSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonSample.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -646,6 +649,8 @@
 			children = (
 				5AEA8BEE153686250097C796 /* ApplicationService.h */,
 				5AEA8BEF153686250097C796 /* ApplicationService.m */,
+				97DA7C65157C973A002449FB /* SingletonSample.h */,
+				97DA7C66157C973A002449FB /* SingletonSample.m */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -1018,6 +1023,7 @@
 				9742D81A1573794C003B678D /* HorizontalTableCell.m in Sources */,
 				970C0E6A1574C749004844F8 /* HeaderButton.m in Sources */,
 				979B4A931577241A00BD6A05 /* CategoriesXMLHandler.m in Sources */,
+				97DA7C67157C973A002449FB /* SingletonSample.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

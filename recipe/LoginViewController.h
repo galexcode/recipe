@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "recipeGlobal.h"
 
-@interface LoginViewController : UIViewController<ApplicationServiceDelegate>{
+@interface LoginViewController : UIViewController{
     __weak UITextField *activeTextField;
     __weak UIViewController* _parentController;
     User* _user;
@@ -22,5 +22,6 @@
 - (IBAction)onLoginTap:(id)sender;
 
 - (id)initWithParentRef:(UIViewController*)parentViewController;
+- (void)didParsedLoggingUser;
 
 @end

@@ -13,13 +13,9 @@
 @protocol ApplicationServiceDelegate
 
 @optional
-//Register
 -(void) didFinishRegisterUser:(__weak User *)registerUser;
-//Login
 -(void) didFinishVerifyUser:(__weak User *)loggedUser;
-//Profile
 -(void) didFinishParsedUser:(__weak User *)user;
-//Categories
 -(void) didFinishParsedCategories:(__weak NSMutableDictionary *)categoryDictionary;
 
 @end
@@ -29,10 +25,29 @@
     NSMutableArray* _categories;
     NSMutableArray* _recipes;
     __weak NSMutableDictionary* _categoryDictionary;
-    __weak id<ApplicationServiceDelegate> _delegate;
+    id<ApplicationServiceDelegate> _delegate;
+    id<ApplicationServiceDelegate> _loginDelegate;
+    id<ApplicationServiceDelegate> _registerDelegate;
+    id<ApplicationServiceDelegate> _profileDelegate;
+    id<ApplicationServiceDelegate> _categoriesDelegate;
 }
 
-@property (nonatomic, weak) id<ApplicationServiceDelegate> delegate;
+@property (nonatomic) id<ApplicationServiceDelegate> delegate;
+@property (nonatomic) id<ApplicationServiceDelegate> loginDelegate;
+@property (nonatomic) id<ApplicationServiceDelegate> registerDelegate;
+@property (nonatomic) id<ApplicationServiceDelegate> profileDelegate;
+@property (nonatomic) id<ApplicationServiceDelegate> categoriesDelegate;
+
++(id<ApplicationServiceDelegate>) getLoginDelegate;
++(void) setLoginDelegate:(id<ApplicationServiceDelegate>)delegate;
++(id<ApplicationServiceDelegate>) getCategoriesDelegate;
++(void) setCategoriesDelegate:(id<ApplicationServiceDelegate>)delegate;
+
++(void) verifyUser:(__weak User*)loggingUser;
++(void) loadCategories:(__weak NSMutableDictionary*)categoryDictionary;
+
+#pragma mark Singloton Object
++(ApplicationService*) sharedApplicationService;
 
 #pragma mark Register User
 -(void) registerUser:(__weak User*)registerUser;

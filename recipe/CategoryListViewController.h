@@ -7,14 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "recipeGlobal.h"
 
 @interface CategoryListViewController : UITableViewController
 {
-    NSDictionary *_categoryDictionary;
+    NSMutableDictionary *_categoryDictionary;
+//    Boolean _loaded;
 }
 
-@property (nonatomic) NSDictionary *categoryDictionary;
+@property (nonatomic) NSMutableDictionary *categoryDictionary;
 
 -(void)tapOnHeader:(id)sender;
+-(void)reload;
+-(void) didParsedCategories;
 
 @end
