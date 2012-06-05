@@ -182,6 +182,12 @@
 		979B4A931577241A00BD6A05 /* CategoriesXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 979B4A921577241A00BD6A05 /* CategoriesXMLHandler.m */; };
 		97A645ED157DE9320084F7A2 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A645EB157DE9320084F7A2 /* RegisterViewController.m */; };
 		97A645EE157DE9320084F7A2 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A645EC157DE9320084F7A2 /* RegisterViewController.xib */; };
+		97A645F2157DF03E0084F7A2 /* TestLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A645F0157DF03E0084F7A2 /* TestLoginViewController.m */; };
+		97A645F3157DF03E0084F7A2 /* TestLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A645F1157DF03E0084F7A2 /* TestLoginViewController.xib */; };
+		97A645F8157E05A60084F7A2 /* sbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A645F4157E05A20084F7A2 /* sbutton.png */; };
+		97A645F9157E05A60084F7A2 /* sbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A645F5157E05A30084F7A2 /* sbutton@2x.png */; };
+		97A645FA157E05A60084F7A2 /* sbuttonp.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A645F6157E05A40084F7A2 /* sbuttonp.png */; };
+		97A645FB157E05A60084F7A2 /* sbuttonp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A645F7157E05A50084F7A2 /* sbuttonp@2x.png */; };
 		97B198F3157D9D6E001A8E3F /* backgound.png in Resources */ = {isa = PBXBuildFile; fileRef = 97B198F1157D9D6E001A8E3F /* backgound.png */; };
 		97B198F4157D9D6E001A8E3F /* backgound@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97B198F2157D9D6E001A8E3F /* backgound@2x.png */; };
 		97DA7C67157C973A002449FB /* SingletonSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA7C66157C973A002449FB /* SingletonSample.m */; };
@@ -425,6 +431,13 @@
 		97A645EA157DE9320084F7A2 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		97A645EB157DE9320084F7A2 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		97A645EC157DE9320084F7A2 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		97A645EF157DF03E0084F7A2 /* TestLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLoginViewController.h; sourceTree = "<group>"; };
+		97A645F0157DF03E0084F7A2 /* TestLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLoginViewController.m; sourceTree = "<group>"; };
+		97A645F1157DF03E0084F7A2 /* TestLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestLoginViewController.xib; sourceTree = "<group>"; };
+		97A645F4157E05A20084F7A2 /* sbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbutton.png; sourceTree = "<group>"; };
+		97A645F5157E05A30084F7A2 /* sbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sbutton@2x.png"; sourceTree = "<group>"; };
+		97A645F6157E05A40084F7A2 /* sbuttonp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbuttonp.png; sourceTree = "<group>"; };
+		97A645F7157E05A50084F7A2 /* sbuttonp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sbuttonp@2x.png"; sourceTree = "<group>"; };
 		97B198F1157D9D6E001A8E3F /* backgound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgound.png; sourceTree = "<group>"; };
 		97B198F2157D9D6E001A8E3F /* backgound@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgound@2x.png"; sourceTree = "<group>"; };
 		97DA7C65157C973A002449FB /* SingletonSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonSample.h; sourceTree = "<group>"; };
@@ -588,6 +601,9 @@
 				902964BD15201E24002BAC2D /* AuthViewController.h */,
 				902964BE15201E24002BAC2D /* AuthViewController.m */,
 				902964BF15201E24002BAC2D /* AuthViewController.xib */,
+				97A645EF157DF03E0084F7A2 /* TestLoginViewController.h */,
+				97A645F0157DF03E0084F7A2 /* TestLoginViewController.m */,
+				97A645F1157DF03E0084F7A2 /* TestLoginViewController.xib */,
 				902964C2152039BF002BAC2D /* LoginViewController.h */,
 				902964C3152039BF002BAC2D /* LoginViewController.m */,
 				902964C4152039BF002BAC2D /* LoginViewController.xib */,
@@ -685,6 +701,10 @@
 				9757D67D157DE6F400B13BFB /* button@2x.png */,
 				9757D67E157DE6F400B13BFB /* buttonp.png */,
 				9757D67F157DE6F400B13BFB /* buttonp@2x.png */,
+				97A645F4157E05A20084F7A2 /* sbutton.png */,
+				97A645F5157E05A30084F7A2 /* sbutton@2x.png */,
+				97A645F6157E05A40084F7A2 /* sbuttonp.png */,
+				97A645F7157E05A50084F7A2 /* sbuttonp@2x.png */,
 				9742D778157362C7003B678D /* Articles.plist */,
 				9747F30D156A3B6C009DA030 /* btn-black.png */,
 				9747F30E156A3B6C009DA030 /* btn-red.png */,
@@ -987,6 +1007,11 @@
 				9757D682157DE6F400B13BFB /* buttonp.png in Resources */,
 				9757D683157DE6F400B13BFB /* buttonp@2x.png in Resources */,
 				97A645EE157DE9320084F7A2 /* RegisterViewController.xib in Resources */,
+				97A645F3157DF03E0084F7A2 /* TestLoginViewController.xib in Resources */,
+				97A645F8157E05A60084F7A2 /* sbutton.png in Resources */,
+				97A645F9157E05A60084F7A2 /* sbutton@2x.png in Resources */,
+				97A645FA157E05A60084F7A2 /* sbuttonp.png in Resources */,
+				97A645FB157E05A60084F7A2 /* sbuttonp@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1048,6 +1073,7 @@
 				979B4A931577241A00BD6A05 /* CategoriesXMLHandler.m in Sources */,
 				97DA7C67157C973A002449FB /* SingletonSample.m in Sources */,
 				97A645ED157DE9320084F7A2 /* RegisterViewController.m in Sources */,
+				97A645F2157DF03E0084F7A2 /* TestLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "AuthViewController.h"
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import "TestLoginViewController.h"
 #import "MCSegmentedControl.h"
 
 @implementation AuthViewController
@@ -27,7 +28,7 @@
         MCSegmentedControl *segmentedControl = [[MCSegmentedControl alloc] initWithItems:items];
         
         // set frame, add to view, set target and action for value change as usual
-        segmentedControl.frame = CGRectMake(10.0f, 175.0f, 300.0f, 44.0f);
+        segmentedControl.frame = CGRectMake(20.0f, 20.0f, 280.0f, 44.0f);
         //[self.view addSubview:segmentedControl];
         [segmentedControl addTarget:self action:@selector(segmentControlChanged:) forControlEvents:UIControlEventValueChanged];
         
@@ -87,6 +88,7 @@
 {
     [super viewDidLoad];
     loginViewController = [[LoginViewController alloc] initWithParentRef:self];
+    //loginViewController = [[TestLoginViewController alloc] initWithParentRef:self];
     registerViewController = [[RegisterViewController alloc] initWithParentRef:self];
     currentViewController = loginViewController;
     [containerView addSubview:loginViewController.view];

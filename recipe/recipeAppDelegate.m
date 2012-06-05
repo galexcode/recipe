@@ -49,10 +49,10 @@
 //                                       forBarMetrics:UIBarMetricsLandscapePhone];
     
     // Customize UIBarButtonItems 
-    UIImage *button30 = [[UIImage imageNamed:@"button_textured_30"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
-    UIImage *button24 = [[UIImage imageNamed:@"button_textured_24"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
+    UIImage *button30 = [[UIImage imageNamed:@"sbutton"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
+//    UIImage *button24 = [[UIImage imageNamed:@"button_textured_24"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
     [[UIBarButtonItem appearance] setBackgroundImage:button30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [[UIBarButtonItem appearance] setBackgroundImage:button24 forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
+//    [[UIBarButtonItem appearance] setBackgroundImage:button24 forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
     
     // Customize back button items differently
     UIImage *buttonBack30 = [[UIImage imageNamed:@"back_button_30"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 5)];
@@ -60,15 +60,18 @@
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:buttonBack30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 //    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:buttonBack24 forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
     
-    // Customze UITabbar
+    // Customize UITabbar
     UIImage *tabBackground = [[UIImage imageNamed:@"tabbar_49"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     [[UITabBar appearance] setBackgroundImage:tabBackground];
-    [[UITabBar appearance] setSelectedImageTintColor:[UIColor brownColor]];
+    [[UITabBar appearance] setSelectedImageTintColor:[UIColor yellowColor]];
+    
+    // Custommize UITextField
+    [[UITextField appearance] setBackgroundColor:[UIColor brownColor]];
     
     // Customize UISegment
     //[[UISegmentedControl appearance] setSelectedIma];
     
-    UIImage *mainBackground = [[UIImage imageNamed:@"background"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    //UIImage *mainBackground = [[UIImage imageNamed:@"background"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     //[[UIView appearance] setBackgroundImage:mainBackground];
 }
 

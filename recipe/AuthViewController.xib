@@ -54,24 +54,10 @@
 							<string key="NSResourceName">backgound.png</string>
 						</object>
 					</object>
-					<object class="IBUIImageView" id="508389024">
-						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{10, 14}, {301, 128}}</string>
-						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSWindow"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<object class="NSColor" key="IBUIBackgroundColor">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MQA</bytes>
-						</object>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-					</object>
 					<object class="IBUISegmentedControl" id="156218151">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">-2147483356</int>
-						<string key="NSFrame">{{10, 155}, {301, 44}}</string>
+						<string key="NSFrame">{{20, 20}, {280, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="70912314"/>
@@ -109,7 +95,7 @@
 					<object class="IBUIView" id="70912314">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{0, 210}, {320, 270}}</string>
+						<string key="NSFrame">{{0, 80}, {320, 270}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:180</string>
@@ -180,7 +166,6 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="382007792"/>
 							<reference ref="156218151"/>
-							<reference ref="508389024"/>
 							<reference ref="70912314"/>
 						</object>
 						<reference key="parent" ref="0"/>
@@ -211,11 +196,6 @@
 						<reference key="object" ref="382007792"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">16</int>
-						<reference key="object" ref="508389024"/>
-						<reference key="parent" ref="191373211"/>
-					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -228,7 +208,6 @@
 					<string>-2.IBPluginDependency</string>
 					<string>1.IBPluginDependency</string>
 					<string>15.IBPluginDependency</string>
-					<string>16.IBPluginDependency</string>
 					<string>6.IBPluginDependency</string>
 					<string>6.IUISegmentedControlInspectorSelectedSegmentMetadataKey</string>
 					<string>7.IBPluginDependency</string>
@@ -238,7 +217,6 @@
 					<string>AuthViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>UIResponder</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
