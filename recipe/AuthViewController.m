@@ -27,7 +27,7 @@
         MCSegmentedControl *segmentedControl = [[MCSegmentedControl alloc] initWithItems:items];
         
         // set frame, add to view, set target and action for value change as usual
-        segmentedControl.frame = CGRectMake(8.0f, 50.0f, 300.0f, 44.0f);
+        segmentedControl.frame = CGRectMake(10.0f, 175.0f, 300.0f, 44.0f);
         //[self.view addSubview:segmentedControl];
         [segmentedControl addTarget:self action:@selector(segmentControlChanged:) forControlEvents:UIControlEventValueChanged];
         
@@ -87,9 +87,7 @@
 {
     [super viewDidLoad];
     loginViewController = [[LoginViewController alloc] initWithParentRef:self];
-    [loginViewController.view setBackgroundColor:[UIColor clearColor]];
     registerViewController = [[RegisterViewController alloc] initWithParentRef:self];
-    [registerViewController.view setBackgroundColor:[UIColor clearColor]];
     currentViewController = loginViewController;
     [containerView addSubview:loginViewController.view];
 }

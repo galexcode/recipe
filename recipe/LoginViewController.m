@@ -19,14 +19,14 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        UIButton * login = [UIButton buttonWithType:UIButtonTypeCustom];
-        login.frame = CGRectMake(20, 98, 280, 35);
-        [login setBackgroundImage:[[UIImage imageNamed:@"btn-red.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:0.0] forState:UIControlStateNormal];
-        [login addTarget:self action:@selector(onLoginTap:) forControlEvents:UIControlEventTouchUpInside];
-        [login setTitle:@"Login" forState:UIControlStateNormal];
-        //[buy.titleLabel setFont:[UIFont fontWithName: @"Helvetica" size: 24]];
-        //[buy.titleLabel setFont:[UIFont boldSystemFontOfSize:24]];
-        [self.view addSubview:login];
+//        UIButton * login = [UIButton buttonWithType:UIButtonTypeCustom];
+//        login.frame = CGRectMake(20, 98, 280, 35);
+//        [login setBackgroundImage:[[UIImage imageNamed:@"btn-red.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:0.0] forState:UIControlStateNormal];
+//        [login addTarget:self action:@selector(onLoginTap:) forControlEvents:UIControlEventTouchUpInside];
+//        [login setTitle:@"Login" forState:UIControlStateNormal];
+//        //[buy.titleLabel setFont:[UIFont fontWithName: @"Helvetica" size: 24]];
+//        //[buy.titleLabel setFont:[UIFont boldSystemFontOfSize:24]];
+//        [self.view addSubview:login];
     }
     return self;
 }
