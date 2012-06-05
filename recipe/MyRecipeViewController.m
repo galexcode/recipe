@@ -11,6 +11,7 @@
 
 @implementation MyRecipeViewController
 @synthesize recipes = _recipes;
+@synthesize tableView = _tableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,11 +37,13 @@
     [super viewDidLoad];
     NSDictionary* temp = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Articles" ofType:@"plist"]];
     self.recipes = [temp objectForKey:@"1Headlines"];
+    [self.tableView setBackgroundColor:[UIColor clearColor]];
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
 {
+    [self setTableView:nil];
     [super viewDidUnload];
     self.recipes = nil;
     // Release any retained subviews of the main view.
@@ -86,6 +89,7 @@
     
     cell.textLabel.text = [currentArticle objectForKey:@"Title"];
     cell.imageView.image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
+//    cell.backgroundColor = [UIColor clearColor];
     
     return cell;
 }

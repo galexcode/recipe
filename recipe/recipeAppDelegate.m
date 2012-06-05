@@ -67,6 +67,9 @@
     
     // Customize UISegment
     //[[UISegmentedControl appearance] setSelectedIma];
+    
+    UIImage *mainBackground = [[UIImage imageNamed:@"background"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    //[[UIView appearance] setBackgroundImage:mainBackground];
 }
 
 #pragma mark Application Lifecycle

@@ -10,4 +10,5 @@
 
 @interface StepListViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITableView *stepListTable;
 @end

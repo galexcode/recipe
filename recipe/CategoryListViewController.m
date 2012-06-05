@@ -54,7 +54,7 @@
     [[self navigationItem] setRightBarButtonItem:addButton];
     //[self.tableView setBackgroundColor:kVerticalTableBackgroundColor];
     [self setCategoryDictionary:[[NSMutableDictionary alloc] init]];
-    [self.tableView setBackgroundColor:[UIColor brownColor]];
+    [self.tableView setBackgroundColor:[UIColor clearColor]];
     self.tableView.rowHeight = kCellHeight + (kRowVerticalPadding * 0.5) + ((kRowVerticalPadding * 0.5) * 0.5);
     
     [self reload];

@@ -13,6 +13,7 @@
 @end
 
 @implementation StepListViewController
+@synthesize stepListTable;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,11 +27,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[self stepListTable] setBackgroundColor:[UIColor clearColor]];
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
 {
+    [self setStepListTable:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

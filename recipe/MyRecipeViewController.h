@@ -14,5 +14,6 @@
 }
 
 @property (nonatomic) NSMutableArray* recipes;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

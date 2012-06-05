@@ -87,7 +87,9 @@
 {
     [super viewDidLoad];
     loginViewController = [[LoginViewController alloc] initWithParentRef:self];
+    [loginViewController.view setBackgroundColor:[UIColor clearColor]];
     registerViewController = [[RegisterViewController alloc] initWithParentRef:self];
+    [registerViewController.view setBackgroundColor:[UIColor clearColor]];
     currentViewController = loginViewController;
     [containerView addSubview:loginViewController.view];
 }

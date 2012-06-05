@@ -94,16 +94,14 @@
                 NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
                 parser.delegate = handler;
                 [parser parse];
-                //    }else if(request.responseStatusCode == 404){
-                //        [_delegate didFinishVerifyUser:nil];
+//            }else if(request.responseStatusCode == 404){
             } else {
                 _user = nil;
                 [self didParsedLoggingUser];
             }
         }];
         [request setFailedBlock:^{
-            NSError *error = request.error;
-            NSLog(@"Error downloading image: %@", error.localizedDescription);
+            [self handleError:request.error];
         }];
         
         [request startAsynchronous];
@@ -116,6 +114,27 @@
         if ([[password text] length] == 0)
             [password setPlaceholder:@"Password is blank"];
     }
+}
+
+- (void)handleError:(NSError*)error
+{
+    NSLog(@"Error receiving respone for login request: %@", error.localizedDescription);
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    NSString *errorTitle;
+    NSString *errorMessage;
+    if ([error code] == 1) {
+        errorTitle = [[NSString alloc] initWithString:@"Internet Access Problem"];
+        errorMessage = [[NSString alloc] initWithString:@"Please check your internet access!"];
+    } else {
+        errorTitle = [[NSString alloc] initWithString:@"Error Ocurring"];
+        errorMessage = [[NSString alloc] initWithString:@"Unknown error"];
+    }
+    UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:errorTitle
+                                                                    message:errorMessage
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+    [errorAlertView show];
 }
 
 - (IBAction)dismissKeyboard{
@@ -149,7 +168,7 @@
         [_parentController.view setHidden:YES];
     } else {
         UIAlertView *failsAlertView = [[UIAlertView alloc] initWithTitle:@"Login Failed"
-                                                                   message:[NSString stringWithFormat:@", Username or Password is not correct"]
+                                                                   message:[NSString stringWithFormat:@"Username or Password is not correct"]
                                                                   delegate:nil
                                                          cancelButtonTitle:@"OK"
                                                          otherButtonTitles:nil];
