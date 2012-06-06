@@ -18,6 +18,9 @@
 #import "Recipe.h"
 #import "Category.h"
 
+//Custom Controls
+#import "RecipeNavigationLabel.h"
+
 //Macro
 #define trimSpaces( object ) [object stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ]
 

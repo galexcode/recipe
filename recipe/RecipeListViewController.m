@@ -9,6 +9,7 @@
 #import "RecipeListViewController.h"
 #import "RecipeViewController.h"
 #import "Recipe.h"
+#import "RecipeNavigationLabel.h"
 
 @interface RecipeListViewController ()
 
@@ -37,7 +38,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
+    [[self navigationItem] setTitleView:label];
 }
 
 - (void)viewDidUnload

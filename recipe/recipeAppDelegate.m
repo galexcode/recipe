@@ -13,6 +13,10 @@
 //static dispatch_queue_t serialQueue;
 
 @implementation recipeAppDelegate
+@synthesize navItem1;
+@synthesize navItem2;
+@synthesize navItem3;
+@synthesize navItem4;
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
@@ -50,15 +54,27 @@
 //                                       forBarMetrics:UIBarMetricsLandscapePhone];
     
     // Customize UIBarButtonItems 
-    UIImage *button30 = [[UIImage imageNamed:@"sbutton"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
+    UIImage *button30 = [[UIImage imageNamed:@"normal_button_30"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
 //    UIImage *button24 = [[UIImage imageNamed:@"button_textured_24"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
     [[UIBarButtonItem appearance] setBackgroundImage:button30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 //    [[UIBarButtonItem appearance] setBackgroundImage:button24 forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
+    
+    //UINavigationBar customization
     
     // Customize back button items differently
     UIImage *buttonBack30 = [[UIImage imageNamed:@"back_button_30"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 5)];
 //    UIImage *buttonBack24 = [[UIImage imageNamed:@"button_back_textured_24"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 12, 0, 5)];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:buttonBack30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f], UITextAttributeTextColor, 
+                                                          [UIColor blackColor], UITextAttributeTextShadowColor, 
+                                                          [NSValue valueWithUIOffset:UIOffsetMake(0, 1)], UITextAttributeTextShadowOffset, nil] 
+                                                 forState:UIControlStateNormal];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f], UITextAttributeTextColor, 
+                                                          [UIColor blackColor], UITextAttributeTextShadowColor, 
+                                                          [NSValue valueWithUIOffset:UIOffsetMake(0, 1)], UITextAttributeTextShadowOffset, nil] 
+                                                forState:UIControlStateHighlighted];
 //    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:buttonBack24 forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
     
     // Customize UITabbar
@@ -80,8 +96,7 @@
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                        [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f], UITextAttributeTextColor, 
                                                        [UIColor blackColor], UITextAttributeTextShadowColor, 
-                                                       [NSValue valueWithUIOffset:UIOffsetMake(0, 1)], UITextAttributeTextShadowOffset, 
-                                                       [UIFont fontWithName:@"Helvetica" size:0.0], UITextAttributeFont, nil] 
+                                                       [NSValue valueWithUIOffset:UIOffsetMake(0, 1)], UITextAttributeTextShadowOffset, nil] 
                                              forState:UIControlStateNormal];
 }
 
@@ -102,6 +117,15 @@
     [[self tabBarItem2] setFinishedSelectedImage:recipeTabIcon withFinishedUnselectedImage:recipeTabIcon];
     [[self tabBarItem3] setFinishedSelectedImage:todoTabIcon withFinishedUnselectedImage:todoTabIcon];
     [[self tabBarItem4] setFinishedSelectedImage:feedTabIcon withFinishedUnselectedImage:feedTabIcon];
+    
+    RecipeNavigationLabel *navLabel1 = [[RecipeNavigationLabel alloc] initWithTitle:[navItem1 title]];
+    [[self navItem1] setTitleView:navLabel1];
+    RecipeNavigationLabel *navLabel2 = [[RecipeNavigationLabel alloc] initWithTitle:[navItem2 title]];
+    [[self navItem2] setTitleView:navLabel2];
+    RecipeNavigationLabel *navLabel3 = [[RecipeNavigationLabel alloc] initWithTitle:[navItem3 title]];
+    [[self navItem3] setTitleView:navLabel3];
+    RecipeNavigationLabel *navLabel4 = [[RecipeNavigationLabel alloc] initWithTitle:[navItem4 title]];
+    [[self navItem4] setTitleView:navLabel4];
     
     _appService = [[ApplicationService alloc] init];
     

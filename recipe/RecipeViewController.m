@@ -9,6 +9,7 @@
 #import "RecipeViewController.h"
 #import "IngredientListViewController.h"
 #import "StepListViewController.h"
+#import "RecipeNavigationLabel.h"
 
 @implementation RecipeViewController
 @synthesize recipeDetailsTable;
@@ -37,6 +38,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
+    [[self navigationItem] setTitleView:label];
     [self.recipeDetailsTable setBackgroundColor:[UIColor clearColor]];
     // Do any additional setup after loading the view from its nib.
 }

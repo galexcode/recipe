@@ -7,6 +7,7 @@
 //
 
 #import "StepViewController.h"
+#import "RecipeNavigationLabel.h"
 
 @implementation StepViewController
 @synthesize steps = _steps;
@@ -33,6 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
+    [[self navigationItem] setTitleView:label];
     // Do any additional setup after loading the view from its nib.
 }
 

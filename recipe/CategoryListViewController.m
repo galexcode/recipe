@@ -69,7 +69,7 @@
 {
     NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/categories.xml"];
     
-    ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+    __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
     //    [request setPostValue:@"1" forKey:@"rw_app_id"];
     //    [request setPostValue:@"test" forKey:@"code"];
     //    [request setPostValue:@"test" forKey:@"device_id"];

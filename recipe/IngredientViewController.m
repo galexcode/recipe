@@ -7,6 +7,7 @@
 //
 
 #import "IngredientViewController.h"
+#import "RecipeNavigationLabel.h"
 
 @implementation IngredientViewController
 @synthesize containerView;
@@ -43,6 +44,8 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
+    [[self navigationItem] setTitleView:label];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }

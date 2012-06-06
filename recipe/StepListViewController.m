@@ -7,6 +7,7 @@
 //
 
 #import "StepListViewController.h"
+#import "RecipeNavigationLabel.h"
 
 @interface StepListViewController ()
 
@@ -27,6 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
+    [[self navigationItem] setTitleView:label];
     [[self stepListTable] setBackgroundColor:[UIColor clearColor]];
     // Do any additional setup after loading the view from its nib.
 }

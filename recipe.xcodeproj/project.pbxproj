@@ -180,6 +180,10 @@
 		9765D213157F0EA600935504 /* tbi_todo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9765D20B157F0EA500935504 /* tbi_todo.png */; };
 		9765D214157F0EA600935504 /* tbi_todo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9765D20C157F0EA500935504 /* tbi_todo@2x.png */; };
 		9765D218157F463F00935504 /* RecipeTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9765D217157F463F00935504 /* RecipeTextField.m */; };
+		9765D21B157F58C800935504 /* normal_button_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 9765D219157F58C700935504 /* normal_button_30.png */; };
+		9765D21C157F58C800935504 /* normal_button_30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9765D21A157F58C800935504 /* normal_button_30@2x.png */; };
+		9765D21F157F5FB800935504 /* RecipeNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9765D21E157F5FB800935504 /* RecipeNavigationItem.m */; };
+		9765D222157F66E800935504 /* RecipeNavigationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9765D221157F66E800935504 /* RecipeNavigationLabel.m */; };
 		976EF2C81575C6C50068FCF2 /* back_button_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 976EF2C61575C6C40068FCF2 /* back_button_30.png */; };
 		976EF2C91575C6C50068FCF2 /* back_button_30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 976EF2C71575C6C50068FCF2 /* back_button_30@2x.png */; };
 		976EF2CC1575CBC40068FCF2 /* tabbar_49.png in Resources */ = {isa = PBXBuildFile; fileRef = 976EF2CA1575CBC30068FCF2 /* tabbar_49.png */; };
@@ -437,6 +441,12 @@
 		9765D20C157F0EA500935504 /* tbi_todo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tbi_todo@2x.png"; sourceTree = "<group>"; };
 		9765D216157F463E00935504 /* RecipeTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTextField.h; sourceTree = "<group>"; };
 		9765D217157F463F00935504 /* RecipeTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTextField.m; sourceTree = "<group>"; };
+		9765D219157F58C700935504 /* normal_button_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normal_button_30.png; sourceTree = "<group>"; };
+		9765D21A157F58C800935504 /* normal_button_30@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "normal_button_30@2x.png"; sourceTree = "<group>"; };
+		9765D21D157F5FB800935504 /* RecipeNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeNavigationItem.h; sourceTree = "<group>"; };
+		9765D21E157F5FB800935504 /* RecipeNavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeNavigationItem.m; sourceTree = "<group>"; };
+		9765D220157F66E800935504 /* RecipeNavigationLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeNavigationLabel.h; sourceTree = "<group>"; };
+		9765D221157F66E800935504 /* RecipeNavigationLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeNavigationLabel.m; sourceTree = "<group>"; };
 		976EF2C61575C6C40068FCF2 /* back_button_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button_30.png; sourceTree = "<group>"; };
 		976EF2C71575C6C50068FCF2 /* back_button_30@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_button_30@2x.png"; sourceTree = "<group>"; };
 		976EF2CA1575CBC30068FCF2 /* tabbar_49.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_49.png; sourceTree = "<group>"; };
@@ -635,12 +645,12 @@
 				9747F323156A54B0009DA030 /* CategoryListViewController.h */,
 				9747F324156A54B1009DA030 /* CategoryListViewController.m */,
 				9747F325156A54B1009DA030 /* CategoryListViewController.xib */,
-				5A3828EC152C605800400A54 /* ResultViewController.h */,
-				5A3828ED152C605900400A54 /* ResultViewController.m */,
-				5A3828EE152C605B00400A54 /* ResultViewController.xib */,
 				908409B21521668400FA078B /* MyRecipeViewController.h */,
 				908409B31521668400FA078B /* MyRecipeViewController.m */,
 				908409B41521668400FA078B /* MyRecipeViewController.xib */,
+				5A3828EC152C605800400A54 /* ResultViewController.h */,
+				5A3828ED152C605900400A54 /* ResultViewController.m */,
+				5A3828EE152C605B00400A54 /* ResultViewController.xib */,
 				908409B7152166C100FA078B /* ToDoViewController.h */,
 				908409B8152166C100FA078B /* ToDoViewController.m */,
 				908409B9152166C100FA078B /* ToDoViewController.xib */,
@@ -712,6 +722,8 @@
 				976EF2CF1575CBDE0068FCF2 /* topbar_44@2x.png */,
 				976EF2C61575C6C40068FCF2 /* back_button_30.png */,
 				976EF2C71575C6C50068FCF2 /* back_button_30@2x.png */,
+				9765D219157F58C700935504 /* normal_button_30.png */,
+				9765D21A157F58C800935504 /* normal_button_30@2x.png */,
 				976EF2CA1575CBC30068FCF2 /* tabbar_49.png */,
 				976EF2CB1575CBC30068FCF2 /* tabbar_49@2x.png */,
 				97B198F1157D9D6E001A8E3F /* backgound.png */,
@@ -768,6 +780,10 @@
 				970C0E691574C749004844F8 /* HeaderButton.m */,
 				9765D216157F463E00935504 /* RecipeTextField.h */,
 				9765D217157F463F00935504 /* RecipeTextField.m */,
+				9765D21D157F5FB800935504 /* RecipeNavigationItem.h */,
+				9765D21E157F5FB800935504 /* RecipeNavigationItem.m */,
+				9765D220157F66E800935504 /* RecipeNavigationLabel.h */,
+				9765D221157F66E800935504 /* RecipeNavigationLabel.m */,
 			);
 			name = "custom control";
 			sourceTree = "<group>";
@@ -1049,6 +1065,8 @@
 				9765D212157F0EA600935504 /* tbi_recipe@2x.png in Resources */,
 				9765D213157F0EA600935504 /* tbi_todo.png in Resources */,
 				9765D214157F0EA600935504 /* tbi_todo@2x.png in Resources */,
+				9765D21B157F58C800935504 /* normal_button_30.png in Resources */,
+				9765D21C157F58C800935504 /* normal_button_30@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1112,6 +1130,8 @@
 				97A645ED157DE9320084F7A2 /* RegisterViewController.m in Sources */,
 				97A645F2157DF03E0084F7A2 /* TestLoginViewController.m in Sources */,
 				9765D218157F463F00935504 /* RecipeTextField.m in Sources */,
+				9765D21F157F5FB800935504 /* RecipeNavigationItem.m in Sources */,
+				9765D222157F66E800935504 /* RecipeNavigationLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
