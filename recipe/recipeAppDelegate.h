@@ -19,7 +19,11 @@
 
 @property (nonatomic) IBOutlet UIWindow *window;
 
-@property (nonatomic) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, weak) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, weak) IBOutlet UITabBarItem *tabBarItem1;
+@property (nonatomic, weak) IBOutlet UITabBarItem *tabBarItem2;
+@property (nonatomic, weak) IBOutlet UITabBarItem *tabBarItem3;
+@property (nonatomic, weak) IBOutlet UITabBarItem *tabBarItem4;
 
 -(ApplicationService*) appService;
 

@@ -62,7 +62,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self reload];
+    //[self reload];
 }
 
 - (void)reload
@@ -175,13 +175,17 @@
     
     NSArray *currentCategory = [self.categoryDictionary objectForKey:categoryName];
     
-    titleLabel.text = [categoryName substringFromIndex:1];
+    Category *thisCategory = (Category*)currentCategory;
+    
+    //titleLabel.text = [categoryName substringFromIndex:1];
+    [titleLabel setText:categoryName];
+    [titleLabel setTextColor:[UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f]];
     
     [customSectionHeaderView addSubview:titleLabel];
     
     //Add button for header
     headerButton = [[HeaderButton alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, kRegularSectionHeight)];
-    [headerButton setArray:currentCategory];
+    [headerButton setArray:[thisCategory latestRecipes]];
     [headerButton setBackgroundColor:[UIColor clearColor]];
     [headerButton addTarget:self action:@selector(tapOnHeader:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -207,11 +211,11 @@
     
     NSString *categoryName = [sortedCategories objectAtIndex:indexPath.section];
     
+    //NSLog(@"%@", categoryName);
+    
     NSMutableArray *currentCategory = [self.categoryDictionary objectForKey:categoryName];
     
     Category* thisCategory = (Category *)currentCategory;
-    
-    //NSLog(@"Category row: %d", [thisCategory.latestRecipes count]);
     
     cell.recipes = thisCategory.latestRecipes;
     

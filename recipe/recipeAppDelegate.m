@@ -16,6 +16,7 @@
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
+@synthesize tabBarItem1, tabBarItem2, tabBarItem3, tabBarItem4;
 
 #pragma  mark Global Variable
 - (User*) user
@@ -63,16 +64,25 @@
     // Customize UITabbar
     UIImage *tabBackground = [[UIImage imageNamed:@"tabbar_49"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     [[UITabBar appearance] setBackgroundImage:tabBackground];
-    [[UITabBar appearance] setSelectedImageTintColor:[UIColor yellowColor]];
+    //[[UITabBar appearance] setSelectedImageTintColor:[UIColor yellowColor]];
     
     // Custommize UITextField
     [[UITextField appearance] setBackgroundColor:[UIColor brownColor]];
+    //[[UITextField appearance] setValue:[UIColor darkGrayColor] forKeyPath:@"textField.placeholderLabel.textColor"];
     
     // Customize UISegment
     //[[UISegmentedControl appearance] setSelectedIma];
     
     //UIImage *mainBackground = [[UIImage imageNamed:@"background"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     //[[UIView appearance] setBackgroundImage:mainBackground];
+    
+    //UITabbarItem Title
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                       [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f], UITextAttributeTextColor, 
+                                                       [UIColor blackColor], UITextAttributeTextShadowColor, 
+                                                       [NSValue valueWithUIOffset:UIOffsetMake(0, 1)], UITextAttributeTextShadowOffset, 
+                                                       [UIFont fontWithName:@"Helvetica" size:0.0], UITextAttributeFont, nil] 
+                                             forState:UIControlStateNormal];
 }
 
 #pragma mark Application Lifecycle
@@ -82,6 +92,16 @@
     //[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
     [application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
     [self customizeAppearance];
+    
+    //Customize Tabbar Item
+    UIImage *homeTabIcon = [UIImage imageNamed:@"tbi_home"];
+    UIImage *recipeTabIcon = [UIImage imageNamed:@"tbi_recipe"];
+    UIImage *todoTabIcon = [UIImage imageNamed:@"tbi_todo"];
+    UIImage *feedTabIcon = [UIImage imageNamed:@"tbi_feed"];
+    [[self tabBarItem1] setFinishedSelectedImage:homeTabIcon withFinishedUnselectedImage:homeTabIcon];
+    [[self tabBarItem2] setFinishedSelectedImage:recipeTabIcon withFinishedUnselectedImage:recipeTabIcon];
+    [[self tabBarItem3] setFinishedSelectedImage:todoTabIcon withFinishedUnselectedImage:todoTabIcon];
+    [[self tabBarItem4] setFinishedSelectedImage:feedTabIcon withFinishedUnselectedImage:feedTabIcon];
     
     _appService = [[ApplicationService alloc] init];
     

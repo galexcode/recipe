@@ -82,10 +82,12 @@
     
     //NSArray *currentCategory = [self.articleDictionary objectForKey:categoryName];
     
-    NSDictionary *currentArticle = [self.recipes objectAtIndex:indexPath.row];
+    Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [currentArticle objectForKey:@"Title"];
-    cell.imageView.image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
+    //NSLog(@"%@", currentRecipe);
+    
+    cell.textLabel.text = [currentRecipe name];
+    cell.imageView.image = [UIImage imageNamed:@"OrangeJuice"];
     
     return cell;
 }
