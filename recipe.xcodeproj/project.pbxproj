@@ -182,7 +182,6 @@
 		9765D218157F463F00935504 /* RecipeTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9765D217157F463F00935504 /* RecipeTextField.m */; };
 		9765D21B157F58C800935504 /* normal_button_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 9765D219157F58C700935504 /* normal_button_30.png */; };
 		9765D21C157F58C800935504 /* normal_button_30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9765D21A157F58C800935504 /* normal_button_30@2x.png */; };
-		9765D21F157F5FB800935504 /* RecipeNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9765D21E157F5FB800935504 /* RecipeNavigationItem.m */; };
 		9765D222157F66E800935504 /* RecipeNavigationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9765D221157F66E800935504 /* RecipeNavigationLabel.m */; };
 		976EF2C81575C6C50068FCF2 /* back_button_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 976EF2C61575C6C40068FCF2 /* back_button_30.png */; };
 		976EF2C91575C6C50068FCF2 /* back_button_30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 976EF2C71575C6C50068FCF2 /* back_button_30@2x.png */; };
@@ -443,8 +442,6 @@
 		9765D217157F463F00935504 /* RecipeTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTextField.m; sourceTree = "<group>"; };
 		9765D219157F58C700935504 /* normal_button_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normal_button_30.png; sourceTree = "<group>"; };
 		9765D21A157F58C800935504 /* normal_button_30@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "normal_button_30@2x.png"; sourceTree = "<group>"; };
-		9765D21D157F5FB800935504 /* RecipeNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeNavigationItem.h; sourceTree = "<group>"; };
-		9765D21E157F5FB800935504 /* RecipeNavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeNavigationItem.m; sourceTree = "<group>"; };
 		9765D220157F66E800935504 /* RecipeNavigationLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeNavigationLabel.h; sourceTree = "<group>"; };
 		9765D221157F66E800935504 /* RecipeNavigationLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeNavigationLabel.m; sourceTree = "<group>"; };
 		976EF2C61575C6C40068FCF2 /* back_button_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button_30.png; sourceTree = "<group>"; };
@@ -780,8 +777,6 @@
 				970C0E691574C749004844F8 /* HeaderButton.m */,
 				9765D216157F463E00935504 /* RecipeTextField.h */,
 				9765D217157F463F00935504 /* RecipeTextField.m */,
-				9765D21D157F5FB800935504 /* RecipeNavigationItem.h */,
-				9765D21E157F5FB800935504 /* RecipeNavigationItem.m */,
 				9765D220157F66E800935504 /* RecipeNavigationLabel.h */,
 				9765D221157F66E800935504 /* RecipeNavigationLabel.m */,
 			);
@@ -1130,7 +1125,6 @@
 				97A645ED157DE9320084F7A2 /* RegisterViewController.m in Sources */,
 				97A645F2157DF03E0084F7A2 /* TestLoginViewController.m in Sources */,
 				9765D218157F463F00935504 /* RecipeTextField.m in Sources */,
-				9765D21F157F5FB800935504 /* RecipeNavigationItem.m in Sources */,
 				9765D222157F66E800935504 /* RecipeNavigationLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
