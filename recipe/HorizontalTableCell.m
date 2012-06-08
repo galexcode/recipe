@@ -93,9 +93,12 @@
     dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
     dispatch_async(concurrentQueue, ^{        
-        UIImage *image = nil;        
+        UIImage *image = nil;
+        NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/images/%@", [[currentRecipe imageList] objectAtIndex:0]];
+        NSURL *url = [NSURL URLWithString:link];
         //image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
-        image = [UIImage imageNamed:@"OrangeJuice"];
+        //image = [UIImage imageNamed:@"OrangeJuice"];
+        image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [cell.thumbnail setImage:image]; 
@@ -113,7 +116,8 @@
     ////get section and row to get specific recipe from dictionary
     
     RecipeViewController *viewControllerToPush = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
-    //[viewControllerToPush setHidesBottomBarWhenPushed:YES];
+    Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
+    [viewControllerToPush setRecipe:currentRecipe];
     [self.navController performSelector:@selector(pushViewController:animated:) withObject:viewControllerToPush];
 }
 

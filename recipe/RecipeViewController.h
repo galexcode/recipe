@@ -16,5 +16,9 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *recipeDetailsTable;
 @property (nonatomic) Recipe *recipe;
+@property (strong, nonatomic) IBOutlet UITableViewCell *slideShowCell;
+@property (strong, nonatomic) IBOutlet UIView *recipeHeaderView;
+@property (strong, nonatomic) IBOutlet UIView *recipeInfoView;
+@property (weak, nonatomic) IBOutlet UILabel *recipeNameLabel;
 
 @end

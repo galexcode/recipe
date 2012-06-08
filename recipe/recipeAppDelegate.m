@@ -86,8 +86,6 @@
     [[UITextField appearance] setBackgroundColor:[UIColor brownColor]];
     //[[UITextField appearance] setValue:[UIColor darkGrayColor] forKeyPath:@"textField.placeholderLabel.textColor"];
     
-    // Customize UISegment
-    //[[UISegmentedControl appearance] setSelectedIma];
     
     //UIImage *mainBackground = [[UIImage imageNamed:@"background"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     //[[UIView appearance] setBackgroundImage:mainBackground];
@@ -98,6 +96,30 @@
                                                        [UIColor blackColor], UITextAttributeTextShadowColor, 
                                                        [NSValue valueWithUIOffset:UIOffsetMake(0, 1)], UITextAttributeTextShadowOffset, nil] 
                                              forState:UIControlStateNormal];
+    
+    //UISegmentedControl appearance
+    UIImage *segmentSelected = [[UIImage imageNamed:@"seg_s.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
+    UIImage *segmentUnselected = [[UIImage imageNamed:@"seg_u.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
+    UIImage *segmentSelectedUnselected = [UIImage imageNamed:@"seg_s_u.png"];
+    UIImage *segUnselectedSelected = [UIImage imageNamed:@"seg_u_s.png"];
+    UIImage *segmentUnselectedUnselected = [UIImage imageNamed:@"seg_u_u.png"];
+    
+    [[UISegmentedControl appearance] setBackgroundImage:segmentUnselected forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UISegmentedControl appearance] setBackgroundImage:segmentSelected forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    
+    [[UISegmentedControl appearance] setDividerImage:segmentUnselectedUnselected forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UISegmentedControl appearance] setDividerImage:segmentSelectedUnselected forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UISegmentedControl appearance] setDividerImage:segUnselectedSelected forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    [[UISegmentedControl appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                       [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f], UITextAttributeTextColor, 
+                                                       [UIColor blackColor], UITextAttributeTextShadowColor, 
+                                                       [NSValue valueWithUIOffset:UIOffsetMake(0, 1)], UITextAttributeTextShadowOffset, nil] 
+                                             forState:UIControlStateNormal];
+    [[UISegmentedControl appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                             [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:0.75f], UITextAttributeTextColor, 
+                                                       [UIColor blackColor], UITextAttributeTextShadowColor, 
+                                                       [NSValue valueWithUIOffset:UIOffsetMake(0, 1)], UITextAttributeTextShadowOffset, nil] 
+                                             forState:UIControlStateHighlighted];
 }
 
 #pragma mark Application Lifecycle

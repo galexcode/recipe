@@ -14,13 +14,17 @@
 @implementation RecipeViewController
 @synthesize recipeDetailsTable;
 @synthesize recipe = _recipe;
+@synthesize slideShowCell;
+@synthesize recipeHeaderView;
+@synthesize recipeInfoView;
+@synthesize recipeNameLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        [self.navigationItem setTitle:@"Recipe Name Here"];
+        //[self.navigationItem setTitle:@"Missing Recipe Name"];
     }
     return self;
 }
@@ -38,15 +42,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
+    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:@"Recipe Details"];
     [[self navigationItem] setTitleView:label];
     [self.recipeDetailsTable setBackgroundColor:[UIColor clearColor]];
+    [[self recipeNameLabel] setText:[[self recipe] name]];
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
 {
     [self setRecipeDetailsTable:nil];
+    [self setSlideShowCell:nil];
+    [self setRecipeNameLabel:nil];
+    [self setRecipeHeaderView:nil];
+    [self setRecipeInfoView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -59,18 +68,40 @@
 }
 
 #pragma mark Table delegate methods
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 2;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
     if (section == 1) {
         return @"Ingredients and Step";
     }
     return nil;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 35.00f;
+    }
+    return 40.00f;
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return [self recipeHeaderView];
+    }
+    if (section == 1) {
+        return [self recipeInfoView];
+    }
+    return nil;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     if (section == 0) {
         return 1;
     }
@@ -85,7 +116,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0 && indexPath.row == 0) {
-        return 200.0;
+        return 201.0;
     }
     else {
         return 45;
@@ -98,9 +129,10 @@
     if (indexPath.section == 0) {
         UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:imageCell];
         if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:imageCell];
+            //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:imageCell];
+            cell = slideShowCell;
         }
-        [cell.textLabel setText:@"images go here(slide show)"];
+        //[cell.textLabel setText:@"images go here(slide show)"];
         return cell;
     }
     else{

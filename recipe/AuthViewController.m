@@ -43,7 +43,7 @@
         segmentedControl.unselectedItemColor = [UIColor darkGrayColor];
         segmentedControl.unSelectedItemBackgroundGradientColors = [NSArray arrayWithObjects:[UIColor grayColor] , [UIColor brownColor], nil];
         
-        [self.view addSubview:segmentedControl];
+        //[self.view addSubview:segmentedControl];
     }
     return self;
 }
