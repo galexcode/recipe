@@ -83,6 +83,7 @@
     //[[UITabBar appearance] setSelectedImageTintColor:[UIColor yellowColor]];
     
     // Custommize UITextField
+    //[[UITextField appearance] setValue:[UIColor redColor] forKey:@"insertionPointColor"];
     [[UITextField appearance] setBackgroundColor:[UIColor brownColor]];
     //[[UITextField appearance] setValue:[UIColor darkGrayColor] forKeyPath:@"textField.placeholderLabel.textColor"];
     

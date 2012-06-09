@@ -51,12 +51,9 @@
 						<string key="IBUIText"/>
 						<int key="IBUIBorderStyle">3</int>
 						<string key="IBUIPlaceholder">User Name</string>
-						<object class="NSColor" key="IBUITextColor">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MAA</bytes>
-							<object class="NSColorSpace" key="NSCustomColorSpace" id="824535999">
-								<int key="NSID">2</int>
-							</object>
+						<object class="NSColor" key="IBUITextColor" id="605223690">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MSAwLjUgMAA</bytes>
 						</object>
 						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 						<float key="IBUIMinimumFontSize">17</float>
@@ -87,24 +84,21 @@
 						<string key="IBUIText"/>
 						<int key="IBUIBorderStyle">3</int>
 						<string key="IBUIPlaceholder">Password</string>
-						<object class="NSColor" key="IBUITextColor">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MAA</bytes>
-							<reference key="NSCustomColorSpace" ref="824535999"/>
-						</object>
+						<reference key="IBUITextColor" ref="605223690"/>
 						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 						<float key="IBUIMinimumFontSize">17</float>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<bool key="IBUISecureTextEntry">YES</bool>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
+						<int key="IBUIClearButtonMode">1</int>
 						<reference key="IBUIFontDescription" ref="524629324"/>
 						<reference key="IBUIFont" ref="76752601"/>
 					</object>
 					<object class="IBUIButton" id="488146086">
 						<reference key="NSNextResponder" ref="1062845726"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 120}, {280, 37}}</string>
+						<string key="NSFrame">{{20, 119}, {280, 37}}</string>
 						<reference key="NSSuperview" ref="1062845726"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -119,8 +113,8 @@
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
 						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MSAwLjUgMAA</bytes>
+							<int key="NSColorSpace">2</int>
+							<bytes key="NSRGB">MC44MzkyMTU3NTU1IDAuNjExNzY0NzI5IDAuMzI5NDExNzc0OQA</bytes>
 						</object>
 						<object class="NSColor" key="IBUINormalTitleShadowColor">
 							<int key="NSColorSpace">3</int>
@@ -155,11 +149,7 @@
 						<string key="IBUIText"/>
 						<int key="IBUIBorderStyle">3</int>
 						<string key="IBUIPlaceholder">Email</string>
-						<object class="NSColor" key="IBUITextColor">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MAA</bytes>
-							<reference key="NSCustomColorSpace" ref="824535999"/>
-						</object>
+						<reference key="IBUITextColor" ref="605223690"/>
 						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 						<float key="IBUIMinimumFontSize">17</float>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
@@ -248,10 +238,10 @@
 						<int key="objectID">4</int>
 						<reference key="object" ref="1062845726"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="631896007"/>
 							<reference ref="369285512"/>
-							<reference ref="488146086"/>
 							<reference ref="421330846"/>
+							<reference ref="488146086"/>
+							<reference ref="631896007"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
