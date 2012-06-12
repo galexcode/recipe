@@ -116,6 +116,7 @@
     ////get section and row to get specific recipe from dictionary
     
     RecipeViewController *viewControllerToPush = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
+    [[viewControllerToPush navigationItem] setTitle:@"Recipe Details"];
     Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
     [viewControllerToPush setRecipe:currentRecipe];
     [self.navController performSelector:@selector(pushViewController:animated:) withObject:viewControllerToPush];

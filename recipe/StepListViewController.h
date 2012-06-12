@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface StepListViewController : UIViewController
+{
+    NSInteger selectedIndex;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *stepListTable;
 @end

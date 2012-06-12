@@ -9,6 +9,7 @@
 #import "IngredientListViewController.h"
 #import "IngredientViewController.h"
 #import "RecipeNavigationLabel.h"
+#import "IngredientCell.h"
 
 @interface IngredientListViewController ()
 
@@ -33,6 +34,7 @@
     RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
     [[self navigationItem] setTitleView:label];
     [[self ingredientListTable] setBackgroundColor:[UIColor clearColor]];
+    //[self.view addSubview:ingredientListTable];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -61,17 +63,29 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"IngredientCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    IngredientCell *cell = (IngredientCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) 
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        //NSArray* topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"IngredientCell" owner:nil options:nil];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"IngredientCell" owner:self options:nil];
+        
+        for (id currentObject in topLevelObjects) {
+            if ([currentObject isKindOfClass:[IngredientCell class]]) {
+                cell = (IngredientCell*)currentObject;
+                break;
+            }
+        }
     }
     
-    cell.textLabel.text = @"ingredient";
-    cell.imageView.image = [UIImage imageNamed:@"Aviation"];
+//    cell.textLabel.text = @"ingredient";
+//    cell.imageView.image = [UIImage imageNamed:@"Aviation"];
+    cell.unit.text = @"cup";
+    cell.quantity.text = @"1/2";
+    cell.thumb.image = [UIImage imageNamed:@"Aviation"];
+    cell.name.text = @"Ingredient Name Here";
     
     return cell;
 }

@@ -18,13 +18,10 @@
 #import "Recipe.h"
 #import "Category.h"
 
-//Custom Controls
-#import "RecipeNavigationLabel.h"
-
 //Macro
 #define trimSpaces( object ) [object stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ]
 
 //Application Service
-#define USER(currentUser) User* currentUser = [(recipeAppDelegate*)[[UIApplication sharedApplication] delegate] user]
+#define USER( currentUser ) User* currentUser = [(recipeAppDelegate*)[[UIApplication sharedApplication] delegate] user]
 //#define APP_SERVICE(appSrv) ApplicationService* appSrv = [(recipeAppDelegate*)[[UIApplication sharedApplication] delegate] appService]
 

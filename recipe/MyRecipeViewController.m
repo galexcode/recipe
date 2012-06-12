@@ -89,7 +89,8 @@
     
     cell.textLabel.text = [currentArticle objectForKey:@"Title"];
     cell.imageView.image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
-//    cell.backgroundColor = [UIColor clearColor];
+    cell.textLabel.textColor = [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }

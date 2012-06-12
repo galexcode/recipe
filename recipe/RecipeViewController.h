@@ -20,5 +20,11 @@
 @property (strong, nonatomic) IBOutlet UIView *recipeHeaderView;
 @property (strong, nonatomic) IBOutlet UIView *recipeInfoView;
 @property (weak, nonatomic) IBOutlet UILabel *recipeNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *recipeLikeCount;
+@property (strong, nonatomic) IBOutlet UITableViewCell *userInfoCell;
+@property (weak, nonatomic) IBOutlet UIImageView *userThumb;
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UILabel *timeSpanSinceCreated;
+@property (weak, nonatomic) IBOutlet UIScrollView *imageSlider;
 
 @end
