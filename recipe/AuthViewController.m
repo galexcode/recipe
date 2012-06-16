@@ -9,7 +9,6 @@
 #import "AuthViewController.h"
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
-#import "TestLoginViewController.h"
 #import "MCSegmentedControl.h"
 
 @implementation AuthViewController

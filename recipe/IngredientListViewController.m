@@ -127,7 +127,7 @@
     IngredientViewController *viewControllerToPush = [[IngredientViewController alloc] initWithNibName:@"IngredientViewController" bundle:nil];
     Ingredient *currentIngredient = (Ingredient*)[[self ingredients] objectAtIndex:indexPath.row];
     [viewControllerToPush setPageTitleText:[currentIngredient name]];
-    [self.navigationController pushViewController:viewControllerToPush animated:YES];
+    //[self.navigationController pushViewController:viewControllerToPush animated:YES];
 }
 
 @end
