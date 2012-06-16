@@ -229,6 +229,7 @@
             } else {
                 [cell.textLabel setText:[NSString stringWithFormat:@"%d Ingredients", [[[self recipe] ingredientList] count]]];
             }
+            ingredientTitleText = cell.textLabel.text;
         }
         else {
             if ([[[self recipe] stepList] count] == 1 || [[[self recipe] stepList] count] == 0) {
@@ -236,6 +237,7 @@
             } else {
                 [cell.textLabel setText:[NSString stringWithFormat:@"%d Steps", [[[self recipe] stepList] count]]];
             }
+            stepTitleText = cell.textLabel.text;
         }
         
         RecipeDisclosureIndicators *accessory = [RecipeDisclosureIndicators accessoryWithColor:[UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f]];
@@ -257,6 +259,7 @@
                 IngredientListViewController *viewControllerToPush = [[IngredientListViewController alloc] initWithNibName:@"IngredientListViewController" bundle:nil];
                 [viewControllerToPush.navigationItem setTitle:@"Ingredients"];
                 [viewControllerToPush setIngredients:[[self recipe] ingredientList]];
+                [viewControllerToPush setPageTitleText:ingredientTitleText];
                 [self.navigationController pushViewController:viewControllerToPush animated:YES];
             }
         } else if (indexPath.row == 1){
@@ -264,6 +267,7 @@
                 StepListViewController *viewControllerToPush = [[StepListViewController alloc] initWithNibName:@"StepListViewController" bundle:nil];
                 [viewControllerToPush.navigationItem setTitle:@"Steps"];
                 [viewControllerToPush setSteps:[[self recipe] stepList]];
+                [viewControllerToPush setPageTitleText:stepTitleText];
                 [self.navigationController pushViewController:viewControllerToPush animated:YES];
             }
             

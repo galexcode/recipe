@@ -8,6 +8,8 @@
 
 #import "MyRecipeViewController.h"
 #import "RecipeViewController.h"
+#import "RecipesXMLHandler.h"
+#import "GlobalStore.h"
 
 @implementation MyRecipeViewController
 @synthesize recipes = _recipes;
@@ -32,13 +34,65 @@
 
 #pragma mark - View lifecycle
 
+- (void)awakeFromNib
+{
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSDictionary* temp = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Articles" ofType:@"plist"]];
-    self.recipes = [temp objectForKey:@"1Headlines"];
+//    NSDictionary* temp = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Articles" ofType:@"plist"]];
+//    self.recipes = [temp objectForKey:@"1Headlines"];
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"%@", [[[GlobalStore sharedStore] loggedUser] name]);
+    if (![[[[GlobalStore sharedStore] loggedUser] name] isEqualToString:@"-1"]) {
+        NSLog(@"load recipes");
+        [self reload];
+    }
+}
+
+- (void)reload
+{
+    _recipes = nil;
+    _recipes = [[NSMutableArray alloc] init];
+    //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/categories.xml"];
+    NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/recipes"];
+    
+    __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+    [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
+    
+    [request setCompletionBlock:^{
+        NSLog(@"Recipes xml loaded.");
+        NSLog(@"status code: %d",request.responseStatusCode);
+        if (request.responseStatusCode == 200) {
+            RecipesXMLHandler* handler = [[RecipesXMLHandler alloc] initWithRecipeArray:_recipes];
+            [handler setEndDocumentTarget:self andAction:@selector(didParsedRecipes)];
+            NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+            parser.delegate = handler;
+            [parser parse];
+        }
+        else {
+            [self didParsedRecipes];
+        }
+    }];
+    [request setFailedBlock:^{
+        NSError *error = request.error;
+        NSLog(@"Error downloading image: %@", error.localizedDescription);
+    }];
+    
+    [request startAsynchronous];
+}
+
+-(void) didParsedRecipes
+{
+    if (_recipes != nil) {
+        [self.tableView reloadData];
+    }
 }
 
 - (void)viewDidUnload
@@ -64,6 +118,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    NSLog(@"%d", [[self recipes] count]);
     return [self.recipes count];
 }
 
@@ -85,12 +140,17 @@
     
     //NSArray *currentCategory = [self.articleDictionary objectForKey:categoryName];
     
-    NSDictionary *currentArticle = [self.recipes objectAtIndex:indexPath.row];
+//    NSDictionary *currentArticle = [self.recipes objectAtIndex:indexPath.row];
+//    
+//    cell.textLabel.text = [currentArticle objectForKey:@"Title"];
+//    cell.imageView.image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
+//    cell.textLabel.textColor = [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f];
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    cell.textLabel.text = [currentArticle objectForKey:@"Title"];
-    cell.imageView.image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
-    cell.textLabel.textColor = [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [currentRecipe name];
+    cell.imageView.image = [UIImage imageNamed:@"OrangeJuice"];
     
     return cell;
 }
@@ -98,7 +158,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RecipeViewController *viewControllerToPush = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
-    //[viewControllerToPush setHidesBottomBarWhenPushed:YES];
+    [viewControllerToPush setRecipe:[self.recipes objectAtIndex:indexPath.row]];
     [self.navigationController pushViewController:viewControllerToPush animated:YES];
 }
 

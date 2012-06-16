@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "recipeGlobal.h"
 
 @interface MyRecipeViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 {
@@ -15,5 +16,8 @@
 
 @property (nonatomic) NSMutableArray* recipes;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+-(void) reload;
+-(void) didParsedRecipes;
 
 @end

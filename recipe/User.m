@@ -23,11 +23,11 @@
 {
     self = [super init];
     if (self) {
-        _userId = nil;
+        _userId = [NSString stringWithString:@"-1"];
         _name = nil;
         _email = nil;
         _password = nil;
-        _avatarId = [[NSString alloc] initWithString:@"-1"];
+        _avatarId = [NSString stringWithString:@"-1"];
         _recipeCount = 0;
         _followingCount = 0;
         _followerCount = 0;

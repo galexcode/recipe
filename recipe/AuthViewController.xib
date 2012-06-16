@@ -58,10 +58,10 @@
 					<object class="IBUISegmentedControl" id="156218151">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 120}, {280, 44}}</string>
+						<string key="NSFrame">{{20, 90}, {280, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="767159085"/>
+						<reference key="NSNextKeyView" ref="177104270"/>
 						<string key="NSReuseIdentifierKey">_NS:262</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -96,10 +96,9 @@
 					<object class="IBUIView" id="70912314">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{0, 190}, {320, 270}}</string>
+						<string key="NSFrame">{{0, 148}, {320, 270}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:180</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -107,10 +106,10 @@
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
-					<object class="IBUIImageView" id="767159085">
+					<object class="IBUIImageView" id="177104270">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{10, 20}, {300, 82}}</string>
+						<string key="NSFrame">{{10, 0}, {300, 82}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="70912314"/>
@@ -185,7 +184,7 @@
 							<reference ref="70912314"/>
 							<reference ref="156218151"/>
 							<reference ref="382007792"/>
-							<reference ref="767159085"/>
+							<reference ref="177104270"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -217,7 +216,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
-						<reference key="object" ref="767159085"/>
+						<reference key="object" ref="177104270"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>

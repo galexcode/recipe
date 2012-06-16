@@ -17,6 +17,8 @@
 @end
 
 @implementation IngredientListViewController
+@synthesize pageTitle;
+@synthesize pageTitleText = _pageTitleText;
 @synthesize ingredientListTable;
 @synthesize ingredients = _ingredients;
 
@@ -37,6 +39,8 @@
     
     UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
     
+    [[self pageTitle] setText:[self pageTitleText]];
+    
     [[self navigationItem] setTitleView:headerView];
     
     [[self ingredientListTable] setBackgroundColor:[UIColor clearColor]];
@@ -47,6 +51,7 @@
 - (void)viewDidUnload
 {
     [self setIngredientListTable:nil];
+    [self setPageTitle:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -100,6 +105,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     IngredientViewController *viewControllerToPush = [[IngredientViewController alloc] initWithNibName:@"IngredientViewController" bundle:nil];
+    Ingredient *currentIngredient = (Ingredient*)[[self ingredients] objectAtIndex:indexPath.row];
+    [viewControllerToPush setPageTitleText:[currentIngredient name]];
     [self.navigationController pushViewController:viewControllerToPush animated:YES];
 }
 

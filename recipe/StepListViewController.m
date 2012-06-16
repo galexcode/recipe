@@ -20,6 +20,8 @@
 @end
 
 @implementation StepListViewController
+@synthesize pageTitle;
+@synthesize pageTitleText = _pageTitleText;
 @synthesize stepListTable;
 @synthesize steps = _steps;
 
@@ -40,6 +42,8 @@
     
     UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
     
+    [[self pageTitle] setText:[self pageTitleText]];
+    
     [[self navigationItem] setTitleView:headerView];
     
     [[self stepListTable] setBackgroundColor:[UIColor clearColor]];
@@ -51,6 +55,7 @@
 - (void)viewDidUnload
 {
     [self setStepListTable:nil];
+    [self setPageTitle:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

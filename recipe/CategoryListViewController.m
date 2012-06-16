@@ -13,6 +13,7 @@
 #import "ControlVariables.h"
 #import "HeaderButton.h"
 #import "RecipeListViewController.h"
+#import "GlobalStore.h"
 
 #define kHeadlineSectionHeight  26
 #define kRegularSectionHeight   18
@@ -61,20 +62,31 @@
 //    
 //    [[self navigationItem] setTitleView:headerView];
     
-    [self setCategoryDictionary:[[NSMutableDictionary alloc] init]];
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     self.tableView.rowHeight = kCellHeight + (kRowVerticalPadding * 0.5) + ((kRowVerticalPadding * 0.5) * 0.5);
     
     [self reload];
+//    NSLog(@"%@", [[[GlobalStore sharedStore] loggedUser] name]);
+//    if (![[[[GlobalStore sharedStore] loggedUser] name] isEqualToString:@"-1"]) {
+//        NSLog(@"load categories");
+//        [self reload];
+//    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    //[self reload];
+//    NSLog(@"%@", [[[GlobalStore sharedStore] loggedUser] name]);
+//    if (![[[[GlobalStore sharedStore] loggedUser] name] isEqualToString:@"-1"]) {
+//        NSLog(@"load categories");
+//        [self reload];
+//    }
 }
 
 - (void)reload
 {
+    
+    [self setCategoryDictionary:nil];
+    [self setCategoryDictionary:[[NSMutableDictionary alloc] init]];
     //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/categories.xml"];
     NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/categories"];
     
@@ -105,6 +117,13 @@
     }];
     
     [request startAsynchronous];
+}
+
+-(void) didParsedCategories
+{
+    if (_categoryDictionary != nil) {
+        [self.tableView reloadData];
+    }
 }
 
 - (void)viewDidLoad
@@ -139,6 +158,7 @@
     __weak HeaderButton* tempButton = (HeaderButton*)sender;
     RecipeListViewController* viewControllerToPush = [[RecipeListViewController alloc] initWithNibName:@"RecipeListViewController" bundle:nil];
     viewControllerToPush.recipes = tempButton.array;
+    viewControllerToPush.pageTitleText = tempButton.titleText;
     [self.navigationController pushViewController:viewControllerToPush animated:YES];
 }
 
@@ -197,6 +217,7 @@
     //Add button for header
     headerButton = [[HeaderButton alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, kRegularSectionHeight)];
     [headerButton setArray:[thisCategory latestRecipes]];
+    [headerButton setTitleText:categoryName];
     [headerButton setBackgroundColor:[UIColor clearColor]];
     [headerButton addTarget:self action:@selector(tapOnHeader:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -229,14 +250,6 @@
     cell.recipes = thisCategory.latestRecipes;
     
     return cell;
-}
-
-#pragma mark Application Service Delegate Methods
--(void) didParsedCategories
-{
-    if (_categoryDictionary != nil) {
-        [self.tableView reloadData];
-    }
 }
 
 //-(void) didFinishParsedCategories:(NSMutableDictionary *__weak)categoryDictionary

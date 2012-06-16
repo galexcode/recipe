@@ -10,6 +10,7 @@
 
 @implementation HeaderButton
 @synthesize array = _array;
+@synthesize titleText = _titleText;
 
 - (id)initWithFrame:(CGRect)frame
 {

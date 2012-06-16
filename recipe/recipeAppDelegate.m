@@ -8,6 +8,7 @@
 
 #import "recipeAppDelegate.h"
 #import "AuthViewController.h"
+#import "GlobalStore.h"
 
 //static ApplicationService *shared = nil;
 //static dispatch_queue_t serialQueue;
@@ -21,6 +22,7 @@
 @synthesize myRecipeBar;
 @synthesize todoBar;
 @synthesize feedBar;
+@synthesize headerImageView;
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
@@ -145,14 +147,16 @@
     [[self tabBarItem3] setFinishedSelectedImage:todoTabIcon withFinishedUnselectedImage:todoTabIcon];
     [[self tabBarItem4] setFinishedSelectedImage:feedTabIcon withFinishedUnselectedImage:feedTabIcon];
     
-    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
+    //UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
     
-    [[self navItem1] setTitleView:headerView];
-    [[self navItem2] setTitleView:headerView];
-    [[self navItem3] setTitleView:headerView];
-    [[self navItem4] setTitleView:headerView];
+    [[self navItem1] setTitleView:headerImageView];
+    [[self navItem2] setTitleView:headerImageView];
+    [[self navItem3] setTitleView:headerImageView];
+    [[self navItem4] setTitleView:headerImageView];
 
-    _appService = [[ApplicationService alloc] init];
+    //_appService = [[ApplicationService alloc] init];
+    GlobalStore *store = [GlobalStore sharedStore];
+    NSLog(@"%@", store.loggedUser);
     
     //_user = [[User alloc] init];
     

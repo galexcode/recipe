@@ -11,8 +11,10 @@
 @interface HeaderButton : UIButton
 {
     NSArray* _array;
+    NSString* _titleText;
 }
 
 @property (nonatomic) NSArray* array;
+@property (nonatomic) NSString* titleText;
 
 @end

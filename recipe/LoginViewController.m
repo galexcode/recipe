@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "MBProgressHUD.h"
 #import "ASIForm2DataRequest.h"
+#import "GlobalStore.h"
 
 @implementation LoginViewController
 @synthesize userName;
@@ -78,7 +79,7 @@
     if ([trimSpaces([userName text]) length] != 0 && [[password text] length] != 0) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [hud setLabelText:@"Checking..."];
-        _user = [[User alloc] init];
+        _user = [[GlobalStore sharedStore] loggedUser];
         
         //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/login.xml"];
         NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/login"];
@@ -161,15 +162,15 @@
 {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     if (_user != nil) {
-        if (![_user.userId isEqualToString:@"-1"]) {
+        if (![[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:@"-1"]) {
             UIAlertView *successAlertView = [[UIAlertView alloc] initWithTitle:@"Login Success"
-                                                                       message:[NSString stringWithFormat:@"Welcome back %@",_user.name]
+                                                                       message:[NSString stringWithFormat:@"Welcome back %@",[[[GlobalStore sharedStore] loggedUser] name] ]
                                                                       delegate:nil
                                                              cancelButtonTitle:@"OK"
                                                              otherButtonTitles:nil];
             [successAlertView show];
             [_parentController.view setHidden:YES];
-        } else if ([_user.userId isEqualToString:@"-1"]) {
+        } else if ([[[[GlobalStore sharedStore] loggedUser] userId]  isEqualToString:@"-1"]) {
             UIAlertView *failsAlertView = [[UIAlertView alloc] initWithTitle:@"Login Failed"
                                                                      message:[NSString stringWithFormat:@"Username or Password is not correct"]
                                                                     delegate:nil

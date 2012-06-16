@@ -12,8 +12,11 @@
 {
     NSInteger selectedIndex;
     NSArray* _steps;
+    NSString* _pageTitleText;
 }
 
+@property (nonatomic) NSString* pageTitleText;
+@property (weak, nonatomic) IBOutlet UILabel *pageTitle;
 @property (weak, nonatomic) IBOutlet UITableView *stepListTable;
 @property (nonatomic) NSArray* steps;
 @end

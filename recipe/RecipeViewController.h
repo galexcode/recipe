@@ -12,6 +12,8 @@
 @interface RecipeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     Recipe* _recipe;
+    NSString* ingredientTitleText;
+    NSString* stepTitleText;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *recipeDetailsTable;

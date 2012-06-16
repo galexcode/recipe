@@ -33,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UINavigationBar *myRecipeBar;
 @property (weak, nonatomic) IBOutlet UINavigationBar *todoBar;
 @property (weak, nonatomic) IBOutlet UINavigationBar *feedBar;
+@property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
 
 -(ApplicationService*) appService;
 

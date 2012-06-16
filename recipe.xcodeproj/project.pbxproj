@@ -71,10 +71,6 @@
 		9084A2F21522F83F00BDEDC4 /* kira.png in Resources */ = {isa = PBXBuildFile; fileRef = 9084A2F11522F83F00BDEDC4 /* kira.png */; };
 		9084A2F61523282000BDEDC4 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9084A2F41523281F00BDEDC4 /* RecipeViewController.m */; };
 		9084A2F71523282000BDEDC4 /* RecipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9084A2F51523281F00BDEDC4 /* RecipeViewController.xib */; };
-		9084A2FB152328E700BDEDC4 /* IngredientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9084A2F9152328E600BDEDC4 /* IngredientViewController.m */; };
-		9084A2FC152328E700BDEDC4 /* IngredientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9084A2FA152328E600BDEDC4 /* IngredientViewController.xib */; };
-		9084A3001523293D00BDEDC4 /* StepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9084A2FE1523293D00BDEDC4 /* StepViewController.m */; };
-		9084A3011523293D00BDEDC4 /* StepViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9084A2FF1523293D00BDEDC4 /* StepViewController.xib */; };
 		970C0E6A1574C749004844F8 /* HeaderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C0E691574C749004844F8 /* HeaderButton.m */; };
 		970F2C4C1564A74D00A787E5 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970F2C4A1564A74D00A787E5 /* FeedViewController.m */; };
 		970F2C4D1564A74D00A787E5 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 970F2C4B1564A74D00A787E5 /* FeedViewController.xib */; };
@@ -235,6 +231,8 @@
 		97B54CE01580AAF7001A44A5 /* seg_bar_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97B54CD61580AAF7001A44A5 /* seg_bar_full@2x.png */; };
 		97D6217415835DAC00B93E09 /* IngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D6217315835DAC00B93E09 /* IngredientCell.m */; };
 		97DA7C67157C973A002449FB /* SingletonSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA7C66157C973A002449FB /* SingletonSample.m */; };
+		97F77C65158C5C2600513CB4 /* GlobalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F77C64158C5C2600513CB4 /* GlobalStore.m */; };
+		97F77C69158C685C00513CB4 /* RecipesXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F77C68158C685C00513CB4 /* RecipesXMLHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -352,12 +350,6 @@
 		9084A2F31523281E00BDEDC4 /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
 		9084A2F41523281F00BDEDC4 /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
 		9084A2F51523281F00BDEDC4 /* RecipeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeViewController.xib; sourceTree = "<group>"; };
-		9084A2F8152328E600BDEDC4 /* IngredientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientViewController.h; sourceTree = "<group>"; };
-		9084A2F9152328E600BDEDC4 /* IngredientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientViewController.m; sourceTree = "<group>"; };
-		9084A2FA152328E600BDEDC4 /* IngredientViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientViewController.xib; sourceTree = "<group>"; };
-		9084A2FD1523293D00BDEDC4 /* StepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepViewController.h; sourceTree = "<group>"; };
-		9084A2FE1523293D00BDEDC4 /* StepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepViewController.m; sourceTree = "<group>"; };
-		9084A2FF1523293D00BDEDC4 /* StepViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StepViewController.xib; sourceTree = "<group>"; };
 		970C0E681574C749004844F8 /* HeaderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderButton.h; sourceTree = "<group>"; };
 		970C0E691574C749004844F8 /* HeaderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderButton.m; sourceTree = "<group>"; };
 		970F2C491564A74D00A787E5 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
@@ -536,6 +528,10 @@
 		97D6217315835DAC00B93E09 /* IngredientCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientCell.m; sourceTree = "<group>"; };
 		97DA7C65157C973A002449FB /* SingletonSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonSample.h; sourceTree = "<group>"; };
 		97DA7C66157C973A002449FB /* SingletonSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonSample.m; sourceTree = "<group>"; };
+		97F77C63158C5C2600513CB4 /* GlobalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalStore.h; sourceTree = "<group>"; };
+		97F77C64158C5C2600513CB4 /* GlobalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalStore.m; sourceTree = "<group>"; };
+		97F77C67158C685C00513CB4 /* RecipesXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesXMLHandler.h; sourceTree = "<group>"; };
+		97F77C68158C685C00513CB4 /* RecipesXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesXMLHandler.m; sourceTree = "<group>"; };
 		97FC03FF1582F0B8008E2755 /* linkGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = linkGlobal.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -585,6 +581,8 @@
 				5AD40507152EF4340045E74A /* BaseXMLHandler.m */,
 				979B4A911577241A00BD6A05 /* CategoriesXMLHandler.h */,
 				979B4A921577241A00BD6A05 /* CategoriesXMLHandler.m */,
+				97F77C67158C685C00513CB4 /* RecipesXMLHandler.h */,
+				97F77C68158C685C00513CB4 /* RecipesXMLHandler.m */,
 				5AD404EC152E81310045E74A /* RecipeXMLHandler.h */,
 				5AD404ED152E81310045E74A /* RecipeXMLHandler.m */,
 				5AD404EF152E81890045E74A /* IngredientXMLHandler.h */,
@@ -733,15 +731,9 @@
 				5AC54A1A152D86CF00C87E3E /* IngredientListViewController.h */,
 				5AC54A1B152D86D000C87E3E /* IngredientListViewController.m */,
 				5AC54A1C152D86D000C87E3E /* IngredientListViewController.xib */,
-				9084A2F8152328E600BDEDC4 /* IngredientViewController.h */,
-				9084A2F9152328E600BDEDC4 /* IngredientViewController.m */,
-				9084A2FA152328E600BDEDC4 /* IngredientViewController.xib */,
 				5AC54A20152D86F100C87E3E /* StepListViewController.h */,
 				5AC54A21152D86F100C87E3E /* StepListViewController.m */,
 				5AC54A22152D86F100C87E3E /* StepListViewController.xib */,
-				9084A2FD1523293D00BDEDC4 /* StepViewController.h */,
-				9084A2FE1523293D00BDEDC4 /* StepViewController.m */,
-				9084A2FF1523293D00BDEDC4 /* StepViewController.xib */,
 				5AC54A25152D8AE100C87E3E /* MapViewController.h */,
 				5AC54A26152D8AE200C87E3E /* MapViewController.m */,
 				5AC54A27152D8AE200C87E3E /* MapViewController.xib */,
@@ -775,6 +767,8 @@
 				5AEA8BEF153686250097C796 /* ApplicationService.m */,
 				97DA7C65157C973A002449FB /* SingletonSample.h */,
 				97DA7C66157C973A002449FB /* SingletonSample.m */,
+				97F77C63158C5C2600513CB4 /* GlobalStore.h */,
+				97F77C64158C5C2600513CB4 /* GlobalStore.m */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -1043,8 +1037,6 @@
 				908409BB152166C100FA078B /* ToDoViewController.xib in Resources */,
 				9084A2F21522F83F00BDEDC4 /* kira.png in Resources */,
 				9084A2F71523282000BDEDC4 /* RecipeViewController.xib in Resources */,
-				9084A2FC152328E700BDEDC4 /* IngredientViewController.xib in Resources */,
-				9084A3011523293D00BDEDC4 /* StepViewController.xib in Resources */,
 				5ADF1386152A9182008B521A /* RecipeListViewController.xib in Resources */,
 				5A3828F0152C605D00400A54 /* ResultViewController.xib in Resources */,
 				5AC54A1E152D86D000C87E3E /* IngredientListViewController.xib in Resources */,
@@ -1220,8 +1212,6 @@
 				908409D91521C3B900FA078B /* Step.m in Sources */,
 				908409DC1521C3E800FA078B /* User.m in Sources */,
 				9084A2F61523282000BDEDC4 /* RecipeViewController.m in Sources */,
-				9084A2FB152328E700BDEDC4 /* IngredientViewController.m in Sources */,
-				9084A3001523293D00BDEDC4 /* StepViewController.m in Sources */,
 				5ADF1385152A9182008B521A /* RecipeListViewController.m in Sources */,
 				5A3828EF152C605D00400A54 /* ResultViewController.m in Sources */,
 				5AC54A1D152D86D000C87E3E /* IngredientListViewController.m in Sources */,
@@ -1264,6 +1254,8 @@
 				976165B71585AA7300246CF3 /* RecipeDisclosureIndicators.m in Sources */,
 				976165BE1585E78300246CF3 /* StepCell.m in Sources */,
 				97507B491586DCB100D21415 /* StepDescriptionLabel.m in Sources */,
+				97F77C65158C5C2600513CB4 /* GlobalStore.m in Sources */,
+				97F77C69158C685C00513CB4 /* RecipesXMLHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,20 +17,15 @@
 
 @implementation RecipeListViewController
 @synthesize recipeTable;
+@synthesize pageTitle;
 @synthesize recipes = _recipes;
+@synthesize pageTitleText = _pageTitleText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-//        Recipe *recipe = [[Recipe alloc] init];
-//        [recipe setName:@"Test name"];
-//        recipeList = [[NSMutableArray alloc] init];
-//        for (NSInteger i = 0; i < 5; i++) {
-//            [recipeList addObject:recipe];
-//        }
-        [self.navigationItem setTitle:@"Recipe List"];
     }
     return self;
 }
@@ -40,6 +35,7 @@
     [super viewDidLoad];
 //    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
 //    [[self navigationItem] setTitleView:label];
+    [[self pageTitle] setText:[self pageTitleText]];
     
     UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
     
@@ -49,6 +45,7 @@
 - (void)viewDidUnload
 {
     [self setRecipeTable:nil];
+    [self setPageTitle:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -90,8 +87,6 @@
     
     Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
     
-    //NSLog(@"%@", currentRecipe);
-    
     cell.textLabel.text = [currentRecipe name];
     cell.imageView.image = [UIImage imageNamed:@"OrangeJuice"];
     
@@ -101,6 +96,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RecipeViewController *viewControllerToPush = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
+    [viewControllerToPush setRecipe:[self.recipes objectAtIndex:indexPath.row]];
     [self.navigationController pushViewController:viewControllerToPush animated:YES];
 }
 
