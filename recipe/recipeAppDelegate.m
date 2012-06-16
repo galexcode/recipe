@@ -145,17 +145,13 @@
     [[self tabBarItem3] setFinishedSelectedImage:todoTabIcon withFinishedUnselectedImage:todoTabIcon];
     [[self tabBarItem4] setFinishedSelectedImage:feedTabIcon withFinishedUnselectedImage:feedTabIcon];
     
-    RecipeNavigationLabel *navLabel1 = [[RecipeNavigationLabel alloc] initWithTitle:[navItem1 title]];
-    [[self navItem1] setTitleView:navLabel1];
-    RecipeNavigationLabel *navLabel2 = [[RecipeNavigationLabel alloc] initWithTitle:[navItem2 title]];
-    [[self navItem2] setTitleView:navLabel2];
-    RecipeNavigationLabel *navLabel3 = [[RecipeNavigationLabel alloc] initWithTitle:[navItem3 title]];
-    [[self navItem3] setTitleView:navLabel3];
-    RecipeNavigationLabel *navLabel4 = [[RecipeNavigationLabel alloc] initWithTitle:[navItem4 title]];
-    [[self navItem4] setTitleView:navLabel4];
-    
     UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
     
+    [[self navItem1] setTitleView:headerView];
+    [[self navItem2] setTitleView:headerView];
+    [[self navItem3] setTitleView:headerView];
+    [[self navItem4] setTitleView:headerView];
+
     _appService = [[ApplicationService alloc] init];
     
     //_user = [[User alloc] init];

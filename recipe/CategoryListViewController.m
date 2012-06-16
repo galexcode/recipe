@@ -57,9 +57,9 @@
     
     //RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
     //[[self navigationItem] setTitleView:label];
-    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
-    
-    [[self navigationItem] setTitleView:headerView];
+//    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
+//    
+//    [[self navigationItem] setTitleView:headerView];
     
     [self setCategoryDictionary:[[NSMutableDictionary alloc] init]];
     [self.tableView setBackgroundColor:[UIColor clearColor]];
