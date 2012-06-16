@@ -95,7 +95,7 @@
 
 - (void)loadImageSlider
 {
-    NSInteger count = 4;//[[[self recipe] imageList] count];
+    NSInteger count = [[[self recipe] imageList] count];
     CGFloat w = 300.00f;
     CGFloat y = 0.00f;
     CGFloat sx = 0.00f;
@@ -105,7 +105,9 @@
             [imageSlider addSubview:image];
             
             //NSURL *url = [[NSURL alloc] initWithString:@"http://www.perselab.com/recipe/images/Pizza.png"];
-            NSURL *url = [[NSURL alloc] initWithString:@"http://belve.perselab.com/images/617/0/475"];
+            //NSURL *url = [[NSURL alloc] initWithString:@"http://belve.perselab.com/images/617/0/475"];
+            NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@", [[[self recipe] imageList] objectAtIndex:i]];
+            NSURL *url = [[NSURL alloc] initWithString:link];
             
             __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
             [request setCompletionBlock:^{
