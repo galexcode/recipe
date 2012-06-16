@@ -51,8 +51,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
-    [[self navigationItem] setTitleView:label];
+    //RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
+    //[[self navigationItem] setTitleView:label];
+    
+    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
+    
+    [[self navigationItem] setTitleView:headerView];
+    
     [self.recipeDetailsTable setBackgroundColor:[UIColor clearColor]];
     [[self recipeNameLabel] setText:[[self recipe] name]];
     [[self userName] setText:[[[self recipe] owner] name]];

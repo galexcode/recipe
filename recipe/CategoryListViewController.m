@@ -48,12 +48,19 @@
 
 - (void)awakeFromNib
 {
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] 
-                                  initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
-                                  target:self 
-                                  action:@selector(reload)];
-    [[self navigationItem] setRightBarButtonItem:addButton];
+//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] 
+//                                  initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+//                                  target:self 
+//                                  action:@selector(reload)];
+//    [[self navigationItem] setRightBarButtonItem:addButton];
     //[self.tableView setBackgroundColor:kVerticalTableBackgroundColor];
+    
+    //RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
+    //[[self navigationItem] setTitleView:label];
+    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
+    
+    [[self navigationItem] setTitleView:headerView];
+    
     [self setCategoryDictionary:[[NSMutableDictionary alloc] init]];
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     self.tableView.rowHeight = kCellHeight + (kRowVerticalPadding * 0.5) + ((kRowVerticalPadding * 0.5) * 0.5);

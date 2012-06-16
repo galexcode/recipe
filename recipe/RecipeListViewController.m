@@ -38,8 +38,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
-    [[self navigationItem] setTitleView:label];
+//    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
+//    [[self navigationItem] setTitleView:label];
+    
+    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
+    
+    [[self navigationItem] setTitleView:headerView];
 }
 
 - (void)viewDidUnload

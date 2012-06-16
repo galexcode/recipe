@@ -29,6 +29,10 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem2;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem3;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem4;
+@property (weak, nonatomic) IBOutlet UINavigationBar *homeBar;
+@property (weak, nonatomic) IBOutlet UINavigationBar *myRecipeBar;
+@property (weak, nonatomic) IBOutlet UINavigationBar *todoBar;
+@property (weak, nonatomic) IBOutlet UINavigationBar *feedBar;
 
 -(ApplicationService*) appService;
 

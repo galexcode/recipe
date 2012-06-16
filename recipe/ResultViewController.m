@@ -26,6 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
+    
+    [[self navigationItem] setTitleView:headerView];
     // Do any additional setup after loading the view from its nib.
 }
 

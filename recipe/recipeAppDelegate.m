@@ -17,6 +17,10 @@
 @synthesize navItem2;
 @synthesize navItem3;
 @synthesize navItem4;
+@synthesize homeBar;
+@synthesize myRecipeBar;
+@synthesize todoBar;
+@synthesize feedBar;
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
@@ -149,6 +153,8 @@
     [[self navItem3] setTitleView:navLabel3];
     RecipeNavigationLabel *navLabel4 = [[RecipeNavigationLabel alloc] initWithTitle:[navItem4 title]];
     [[self navItem4] setTitleView:navLabel4];
+    
+    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
     
     _appService = [[ApplicationService alloc] init];
     

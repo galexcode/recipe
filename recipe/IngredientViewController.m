@@ -34,6 +34,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
+    
+    [[self navigationItem] setTitleView:headerView];
     // Do any additional setup after loading the view from its nib.
 //    detailsViewController = [[LoginViewController alloc] initWithParentRef:self];
 //    storeListViewController = [[RegisterViewController alloc] initWithParentRef:self];
@@ -44,8 +48,10 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
-    [[self navigationItem] setTitleView:label];
+//    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
+//    [[self navigationItem] setTitleView:label];
+    
+    
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
