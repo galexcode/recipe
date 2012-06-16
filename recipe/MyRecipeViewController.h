@@ -19,5 +19,6 @@
 
 -(void) reload;
 -(void) didParsedRecipes;
+-(IBAction)addRecipe:(id)sender;
 
 @end

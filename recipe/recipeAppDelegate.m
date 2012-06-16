@@ -48,7 +48,7 @@
     //[[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:44/255 green:14/255 blue:5/255 alpha:0]];
     
     // Create resizable images
-    UIImage *gradientImage44 = [[UIImage imageNamed:@"topbar"] 
+    UIImage *gradientImage44 = [[UIImage imageNamed:@"topbar_44"] 
                                 resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
 //    UIImage *gradientImage32 = [[UIImage imageNamed:@"surf_gradient_textured_32"] 
 //                                resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];

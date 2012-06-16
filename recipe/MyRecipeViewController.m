@@ -11,6 +11,7 @@
 #import "RecipesXMLHandler.h"
 #import "GlobalStore.h"
 #import "RecipeLongCell.h"
+#import "AddRecipeViewController.h"
 
 @implementation MyRecipeViewController
 @synthesize recipes = _recipes;
@@ -103,6 +104,11 @@
     self.recipes = nil;
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+-(IBAction)addRecipe:(id)sender{
+    AddRecipeViewController *viewControllerToPush = [[AddRecipeViewController alloc] initWithNibName:@"AddRecipeViewController" bundle:nil];
+    [[self navigationController] pushViewController:viewControllerToPush animated:YES];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

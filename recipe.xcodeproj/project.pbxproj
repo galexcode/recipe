@@ -221,6 +221,7 @@
 		97B54CDE1580AAF7001A44A5 /* icon_unlike@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97B54CD41580AAF7001A44A5 /* icon_unlike@2x.png */; };
 		97B54CDF1580AAF7001A44A5 /* seg_bar_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 97B54CD51580AAF7001A44A5 /* seg_bar_full.png */; };
 		97B54CE01580AAF7001A44A5 /* seg_bar_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97B54CD61580AAF7001A44A5 /* seg_bar_full@2x.png */; };
+		97CFD14A158CCC850097A111 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 97CFD149158CCC850097A111 /* plus.png */; };
 		97D6217415835DAC00B93E09 /* IngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D6217315835DAC00B93E09 /* IngredientCell.m */; };
 		97DA7C67157C973A002449FB /* SingletonSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA7C66157C973A002449FB /* SingletonSample.m */; };
 		97F77C65158C5C2600513CB4 /* GlobalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F77C64158C5C2600513CB4 /* GlobalStore.m */; };
@@ -229,6 +230,8 @@
 		97F77C6E158C80EB00513CB4 /* IngredientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97F77C6C158C80EA00513CB4 /* IngredientViewController.xib */; };
 		97F77C71158C86C600513CB4 /* RecipeLongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F77C70158C86C500513CB4 /* RecipeLongCell.m */; };
 		97F77C73158C86DB00513CB4 /* RecipeLongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97F77C72158C86DB00513CB4 /* RecipeLongCell.xib */; };
+		97F77C77158CAB6800513CB4 /* AddRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F77C75158CAB6300513CB4 /* AddRecipeViewController.m */; };
+		97F77C78158CAB6800513CB4 /* AddRecipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97F77C76158CAB6500513CB4 /* AddRecipeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -508,6 +511,7 @@
 		97B54CD41580AAF7001A44A5 /* icon_unlike@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_unlike@2x.png"; sourceTree = "<group>"; };
 		97B54CD51580AAF7001A44A5 /* seg_bar_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seg_bar_full.png; sourceTree = "<group>"; };
 		97B54CD61580AAF7001A44A5 /* seg_bar_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seg_bar_full@2x.png"; sourceTree = "<group>"; };
+		97CFD149158CCC850097A111 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		97D6217215835DAC00B93E09 /* IngredientCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientCell.h; sourceTree = "<group>"; };
 		97D6217315835DAC00B93E09 /* IngredientCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientCell.m; sourceTree = "<group>"; };
 		97DA7C65157C973A002449FB /* SingletonSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonSample.h; sourceTree = "<group>"; };
@@ -522,6 +526,9 @@
 		97F77C6F158C86C500513CB4 /* RecipeLongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeLongCell.h; sourceTree = "<group>"; };
 		97F77C70158C86C500513CB4 /* RecipeLongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeLongCell.m; sourceTree = "<group>"; };
 		97F77C72158C86DB00513CB4 /* RecipeLongCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeLongCell.xib; sourceTree = "<group>"; };
+		97F77C74158CAB6100513CB4 /* AddRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRecipeViewController.h; sourceTree = "<group>"; };
+		97F77C75158CAB6300513CB4 /* AddRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecipeViewController.m; sourceTree = "<group>"; };
+		97F77C76158CAB6500513CB4 /* AddRecipeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddRecipeViewController.xib; sourceTree = "<group>"; };
 		97FC03FF1582F0B8008E2755 /* linkGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = linkGlobal.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -718,6 +725,9 @@
 				5AC54A20152D86F100C87E3E /* StepListViewController.h */,
 				5AC54A21152D86F100C87E3E /* StepListViewController.m */,
 				5AC54A22152D86F100C87E3E /* StepListViewController.xib */,
+				97F77C74158CAB6100513CB4 /* AddRecipeViewController.h */,
+				97F77C75158CAB6300513CB4 /* AddRecipeViewController.m */,
+				97F77C76158CAB6500513CB4 /* AddRecipeViewController.xib */,
 			);
 			name = "controller + gui";
 			sourceTree = "<group>";
@@ -812,6 +822,7 @@
 				97455BA7158741820018FCD0 /* arrow@2x.png */,
 				97AE30DF158C3515004C7D83 /* logo.png */,
 				97AE30E2158C3963004C7D83 /* logo_header.png */,
+				97CFD149158CCC850097A111 /* plus.png */,
 				9742D778157362C7003B678D /* Articles.plist */,
 				9747F30D156A3B6C009DA030 /* btn-black.png */,
 				9747F30E156A3B6C009DA030 /* btn-red.png */,
@@ -1170,6 +1181,8 @@
 				97AE30E3158C3963004C7D83 /* logo_header.png in Resources */,
 				97F77C6E158C80EB00513CB4 /* IngredientViewController.xib in Resources */,
 				97F77C73158C86DB00513CB4 /* RecipeLongCell.xib in Resources */,
+				97F77C78158CAB6800513CB4 /* AddRecipeViewController.xib in Resources */,
+				97CFD14A158CCC850097A111 /* plus.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1236,6 +1249,7 @@
 				97F77C69158C685C00513CB4 /* RecipesXMLHandler.m in Sources */,
 				97F77C6D158C80EB00513CB4 /* IngredientViewController.m in Sources */,
 				97F77C71158C86C600513CB4 /* RecipeLongCell.m in Sources */,
+				97F77C77158CAB6800513CB4 /* AddRecipeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
