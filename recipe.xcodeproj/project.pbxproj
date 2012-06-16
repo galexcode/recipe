@@ -233,6 +233,10 @@
 		97DA7C67157C973A002449FB /* SingletonSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA7C66157C973A002449FB /* SingletonSample.m */; };
 		97F77C65158C5C2600513CB4 /* GlobalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F77C64158C5C2600513CB4 /* GlobalStore.m */; };
 		97F77C69158C685C00513CB4 /* RecipesXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F77C68158C685C00513CB4 /* RecipesXMLHandler.m */; };
+		97F77C6D158C80EB00513CB4 /* IngredientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F77C6B158C80E900513CB4 /* IngredientViewController.m */; };
+		97F77C6E158C80EB00513CB4 /* IngredientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97F77C6C158C80EA00513CB4 /* IngredientViewController.xib */; };
+		97F77C71158C86C600513CB4 /* RecipeLongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F77C70158C86C500513CB4 /* RecipeLongCell.m */; };
+		97F77C73158C86DB00513CB4 /* RecipeLongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97F77C72158C86DB00513CB4 /* RecipeLongCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -532,6 +536,12 @@
 		97F77C64158C5C2600513CB4 /* GlobalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalStore.m; sourceTree = "<group>"; };
 		97F77C67158C685C00513CB4 /* RecipesXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesXMLHandler.h; sourceTree = "<group>"; };
 		97F77C68158C685C00513CB4 /* RecipesXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesXMLHandler.m; sourceTree = "<group>"; };
+		97F77C6A158C80E800513CB4 /* IngredientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientViewController.h; sourceTree = "<group>"; };
+		97F77C6B158C80E900513CB4 /* IngredientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientViewController.m; sourceTree = "<group>"; };
+		97F77C6C158C80EA00513CB4 /* IngredientViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientViewController.xib; sourceTree = "<group>"; };
+		97F77C6F158C86C500513CB4 /* RecipeLongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeLongCell.h; sourceTree = "<group>"; };
+		97F77C70158C86C500513CB4 /* RecipeLongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeLongCell.m; sourceTree = "<group>"; };
+		97F77C72158C86DB00513CB4 /* RecipeLongCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeLongCell.xib; sourceTree = "<group>"; };
 		97FC03FF1582F0B8008E2755 /* linkGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = linkGlobal.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -731,6 +741,9 @@
 				5AC54A1A152D86CF00C87E3E /* IngredientListViewController.h */,
 				5AC54A1B152D86D000C87E3E /* IngredientListViewController.m */,
 				5AC54A1C152D86D000C87E3E /* IngredientListViewController.xib */,
+				97F77C6A158C80E800513CB4 /* IngredientViewController.h */,
+				97F77C6B158C80E900513CB4 /* IngredientViewController.m */,
+				97F77C6C158C80EA00513CB4 /* IngredientViewController.xib */,
 				5AC54A20152D86F100C87E3E /* StepListViewController.h */,
 				5AC54A21152D86F100C87E3E /* StepListViewController.m */,
 				5AC54A22152D86F100C87E3E /* StepListViewController.xib */,
@@ -869,6 +882,9 @@
 				9765D217157F463F00935504 /* RecipeTextField.m */,
 				9765D220157F66E800935504 /* RecipeNavigationLabel.h */,
 				9765D221157F66E800935504 /* RecipeNavigationLabel.m */,
+				97F77C6F158C86C500513CB4 /* RecipeLongCell.h */,
+				97F77C70158C86C500513CB4 /* RecipeLongCell.m */,
+				97F77C72158C86DB00513CB4 /* RecipeLongCell.xib */,
 				97D6217215835DAC00B93E09 /* IngredientCell.h */,
 				97D6217315835DAC00B93E09 /* IngredientCell.m */,
 				976165AE158595ED00246CF3 /* IngredientCell.xib */,
@@ -1188,6 +1204,8 @@
 				97455BA9158741820018FCD0 /* arrow@2x.png in Resources */,
 				97AE30E0158C3515004C7D83 /* logo.png in Resources */,
 				97AE30E3158C3963004C7D83 /* logo_header.png in Resources */,
+				97F77C6E158C80EB00513CB4 /* IngredientViewController.xib in Resources */,
+				97F77C73158C86DB00513CB4 /* RecipeLongCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1256,6 +1274,8 @@
 				97507B491586DCB100D21415 /* StepDescriptionLabel.m in Sources */,
 				97F77C65158C5C2600513CB4 /* GlobalStore.m in Sources */,
 				97F77C69158C685C00513CB4 /* RecipesXMLHandler.m in Sources */,
+				97F77C6D158C80EB00513CB4 /* IngredientViewController.m in Sources */,
+				97F77C71158C86C600513CB4 /* RecipeLongCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

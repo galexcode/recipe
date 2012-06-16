@@ -10,6 +10,7 @@
 #import "RecipeViewController.h"
 #import "RecipesXMLHandler.h"
 #import "GlobalStore.h"
+#import "RecipeLongCell.h"
 
 @implementation MyRecipeViewController
 @synthesize recipes = _recipes;
@@ -118,20 +119,37 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%d", [[self recipes] count]);
     return [self.recipes count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    RecipeLongCell *cell = (RecipeLongCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) 
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        //NSArray* topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"IngredientCell" owner:nil options:nil];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"RecipeLongCell" owner:self options:nil];
+        
+        for (id currentObject in topLevelObjects) {
+            if ([currentObject isKindOfClass:[RecipeLongCell class]]) {
+                cell = (RecipeLongCell*)currentObject;
+                break;
+            }
+        }
     }
+    
+//    if (cell == nil) 
+//    {
+//        cell = [[RecipeLongCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//    }
     
     //NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];
     //NSArray* sortedCategories = [self.articleDictionary.allKeys sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
@@ -149,8 +167,10 @@
     
     Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [currentRecipe name];
-    cell.imageView.image = [UIImage imageNamed:@"OrangeJuice"];
+//    cell.textLabel.text = [currentRecipe name];
+//    cell.imageView.image = [UIImage imageNamed:@"OrangeJuice"];
+    cell.recipeName.text = [currentRecipe name];
+    cell.thumb.image = [UIImage imageNamed:@"OrangeJuice"];
     
     return cell;
 }

@@ -12,7 +12,6 @@
 @interface CategoryListViewController : UITableViewController
 {
     NSMutableDictionary *_categoryDictionary;
-//    Boolean _loaded;
 }
 
 @property (nonatomic) NSMutableDictionary *categoryDictionary;
