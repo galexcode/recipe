@@ -23,7 +23,7 @@
 {
     self = [super init];
     if (self) {
-        _recipeId = nil;
+        _recipeId = [NSString stringWithString:@"-1"];
         _name = nil;
         _serving = 0;
         _likeCount = 0;

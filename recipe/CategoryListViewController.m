@@ -122,6 +122,7 @@
 -(void) didParsedCategories
 {
     if (_categoryDictionary != nil) {
+        [[GlobalStore sharedStore] setCategories:_categoryDictionary];
         [self.tableView reloadData];
     }
 }
@@ -190,8 +191,7 @@
     customSectionHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, kRegularSectionHeight)];
         
     titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, tableView.frame.size.width, kRegularSectionHeight)];
-
-    //customSectionHeaderView.backgroundColor = [UIColor colorWithRed:0 green:0.40784314 blue:0.21568627 alpha:0.95];
+    
     customSectionHeaderView.backgroundColor = [UIColor colorWithRed:0.44f green:0.11f blue:0.05f alpha:1.00f];;
     
     titleLabel.textAlignment = UITextAlignmentLeft;
@@ -208,7 +208,6 @@
     
     Category *thisCategory = (Category*)currentCategory;
     
-    //titleLabel.text = [categoryName substringFromIndex:1];
     [titleLabel setText:categoryName];
     [titleLabel setTextColor:[UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f]];
     
@@ -251,17 +250,6 @@
     
     return cell;
 }
-
-//-(void) didFinishParsedCategories:(NSMutableDictionary *__weak)categoryDictionary
-//{
-//    if (categoryDictionary != nil) {
-////        _categoryDictionary = categoryDictionary;
-//        [self.tableView reloadData];
-//        //APP_SERVICE(appSrv);
-////        NSLog(@"%@", _applicationService);
-////        [_applicationService setDelegate:nil];
-//    }
-//}
 
 /*
 // Override to support conditional editing of the table view.

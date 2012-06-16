@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "recipeGlobal.h"
 
-@interface RegisterViewController : UIViewController<ApplicationServiceDelegate>{
+@interface RegisterViewController : UIViewController<UITextFieldDelegate>{
     __weak UITextField *activeTextField;
     __weak UIViewController *_parentController;
     User* _user;

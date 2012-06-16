@@ -222,6 +222,8 @@
 		97B54CDF1580AAF7001A44A5 /* seg_bar_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 97B54CD51580AAF7001A44A5 /* seg_bar_full.png */; };
 		97B54CE01580AAF7001A44A5 /* seg_bar_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97B54CD61580AAF7001A44A5 /* seg_bar_full@2x.png */; };
 		97CFD14A158CCC850097A111 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 97CFD149158CCC850097A111 /* plus.png */; };
+		97CFD14F158CF0B20097A111 /* SelectCategoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CFD14D158CF0B20097A111 /* SelectCategoresViewController.m */; };
+		97CFD150158CF0B20097A111 /* SelectCategoresViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97CFD14E158CF0B20097A111 /* SelectCategoresViewController.xib */; };
 		97D6217415835DAC00B93E09 /* IngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D6217315835DAC00B93E09 /* IngredientCell.m */; };
 		97DA7C67157C973A002449FB /* SingletonSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA7C66157C973A002449FB /* SingletonSample.m */; };
 		97F77C65158C5C2600513CB4 /* GlobalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F77C64158C5C2600513CB4 /* GlobalStore.m */; };
@@ -512,6 +514,9 @@
 		97B54CD51580AAF7001A44A5 /* seg_bar_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seg_bar_full.png; sourceTree = "<group>"; };
 		97B54CD61580AAF7001A44A5 /* seg_bar_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seg_bar_full@2x.png"; sourceTree = "<group>"; };
 		97CFD149158CCC850097A111 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		97CFD14C158CF0B10097A111 /* SelectCategoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCategoresViewController.h; sourceTree = "<group>"; };
+		97CFD14D158CF0B20097A111 /* SelectCategoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCategoresViewController.m; sourceTree = "<group>"; };
+		97CFD14E158CF0B20097A111 /* SelectCategoresViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectCategoresViewController.xib; sourceTree = "<group>"; };
 		97D6217215835DAC00B93E09 /* IngredientCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientCell.h; sourceTree = "<group>"; };
 		97D6217315835DAC00B93E09 /* IngredientCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientCell.m; sourceTree = "<group>"; };
 		97DA7C65157C973A002449FB /* SingletonSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonSample.h; sourceTree = "<group>"; };
@@ -728,6 +733,9 @@
 				97F77C74158CAB6100513CB4 /* AddRecipeViewController.h */,
 				97F77C75158CAB6300513CB4 /* AddRecipeViewController.m */,
 				97F77C76158CAB6500513CB4 /* AddRecipeViewController.xib */,
+				97CFD14C158CF0B10097A111 /* SelectCategoresViewController.h */,
+				97CFD14D158CF0B20097A111 /* SelectCategoresViewController.m */,
+				97CFD14E158CF0B20097A111 /* SelectCategoresViewController.xib */,
 			);
 			name = "controller + gui";
 			sourceTree = "<group>";
@@ -1183,6 +1191,7 @@
 				97F77C73158C86DB00513CB4 /* RecipeLongCell.xib in Resources */,
 				97F77C78158CAB6800513CB4 /* AddRecipeViewController.xib in Resources */,
 				97CFD14A158CCC850097A111 /* plus.png in Resources */,
+				97CFD150158CF0B20097A111 /* SelectCategoresViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1250,6 +1259,7 @@
 				97F77C6D158C80EB00513CB4 /* IngredientViewController.m in Sources */,
 				97F77C71158C86C600513CB4 /* RecipeLongCell.m in Sources */,
 				97F77C77158CAB6800513CB4 /* AddRecipeViewController.m in Sources */,
+				97CFD14F158CF0B20097A111 /* SelectCategoresViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

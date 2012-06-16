@@ -8,10 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
+#import "RecipeTextField.h"
 
-@interface AddRecipeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+@interface AddRecipeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>{
     Recipe *recipe;
+    NSMutableArray *selectedCategories;
 }
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableViewCell *inputCell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *itemCell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *actionCell;
+
+- (IBAction)selectCategories:(id)sender;
+- (IBAction)cancelAction:(id)sender;
+- (IBAction)saveAction:(id)sender;
+- (IBAction)backgroundTap:(id)sender;
+
+@property (weak, nonatomic) IBOutlet RecipeTextField *recipeName;
+@property (weak, nonatomic) IBOutlet RecipeTextField *serving;
+
 @end

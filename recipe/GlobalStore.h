@@ -12,13 +12,17 @@
 @interface GlobalStore : NSObject
 {
     User* _loggedUser;
+    NSMutableDictionary *_categories;
 }
 
 @property (nonatomic) User *loggedUser;
 
-+(GlobalStore *) sharedStore;
++ (GlobalStore *) sharedStore;
 
--(void)setLoggedUser:(User *)loggedUser;
--(User*)loggedUser;
+- (void)setLoggedUser:(User *)loggedUser;
+- (User*)loggedUser;
+
+- (void)setCategories:(NSMutableDictionary *)categories;
+- (NSMutableDictionary *)categories;
 
 @end

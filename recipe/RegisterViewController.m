@@ -148,21 +148,27 @@
     [errorAlertView show];
 }
 
-- (IBAction)dismissKeyboard{
-    if (activeTextField != nil) {
-        [activeTextField resignFirstResponder];
-    }
-}
-
 #pragma mark - Text Fields Delegate Methods
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     activeTextField = textField;
+    if ([textField tag] == 1) {
+        [textField setKeyboardType:UIKeyboardTypeDefault];
+    }
+    if ([textField tag] == 2) {
+        [textField setKeyboardType:UIKeyboardTypeEmailAddress];
+    }
     return YES;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
+}
+
+- (IBAction)dismissKeyboard{
+    if (activeTextField != nil) {
+        [activeTextField resignFirstResponder];
+    }
 }
 
 #pragma mark Application Service Delegate Methods

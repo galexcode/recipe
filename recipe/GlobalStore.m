@@ -45,10 +45,12 @@ static GlobalStore *sharedStore = nil;
     @synchronized(self) {
         self = [super init];
         _loggedUser = [[User alloc] init];
+        _categories = [[NSMutableDictionary alloc] init];
         return self;
     }
 }
 
+#pragma mark Global Logged User
 - (void)setLoggedUser:(User *)loggedUser
 {
     @synchronized(self) {
@@ -65,5 +67,24 @@ static GlobalStore *sharedStore = nil;
         return _loggedUser;
     }
 }
+
+#pragma mark Global category list
+- (void)setCategories:(NSMutableDictionary *)categories
+{
+    @synchronized(self) {
+        if (_categories != categories) {
+            _categories = nil;
+            _categories = categories;
+        }
+    }
+}
+
+- (NSMutableDictionary *)categories
+{
+    @synchronized(self) {
+        return _categories;
+    }
+}
+
 
 @end
