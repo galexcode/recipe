@@ -66,6 +66,7 @@
     [[self recipeLikeCount] setText:[NSString stringWithFormat:@"%d", [[self recipe] likeCount]]];
     
     [self loadImageSlider];
+    [self loadUserAvatar];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -93,6 +94,25 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)loadUserAvatar
+{
+    if (![[[[self recipe] owner] avatarId] isEqualToString:@"-1"]) {
+        NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@", [[[self recipe] owner] avatarId]];
+        NSURL *url = [[NSURL alloc] initWithString:link];
+        
+        __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
+        [request setCompletionBlock:^{
+            NSData *data = request.responseData;
+            [userThumb setImage:[[UIImage alloc] initWithData:data]];
+        }];
+        [request setFailedBlock:^{
+            NSError *error = request.error;
+            NSLog(@"Error downloading image: %@", error.localizedDescription);
+        }];
+        [request startAsynchronous];
+    }
+}
+
 - (void)loadImageSlider
 {
     NSInteger count = [[[self recipe] imageList] count];
@@ -111,7 +131,6 @@
             
             __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
             [request setCompletionBlock:^{
-                NSLog(@"Image downloaded.");
                 NSData *data = request.responseData;
                 [image setImage:[[UIImage alloc] initWithData:data]];
                 //[[NSNotificationCenter defaultCenter] postNotificationName:@"com.razeware.imagegrabber.imageupdated" object:self];

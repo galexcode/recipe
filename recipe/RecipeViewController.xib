@@ -227,7 +227,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 							</object>
 							<object class="IBUIButton" id="110048950">
 								<reference key="NSNextResponder" ref="324209223"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">-2147483356</int>
 								<string key="NSFrame">{{223, 5}, {64, 38}}</string>
 								<reference key="NSSuperview" ref="324209223"/>
 								<reference key="NSWindow"/>

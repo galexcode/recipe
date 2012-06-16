@@ -21,7 +21,7 @@
         _ingredientId = nil;
         _name = nil;
         _desc = nil;
-        _imagePath = nil;
+        _imagePath = [NSString stringWithString:@"-1"];
     }
     
     return self;

@@ -24,7 +24,7 @@
         _name = nil;
         _desc = nil;
         _note = nil;
-        _imagePath = nil;
+        _imagePath = [NSString stringWithString:@"-1"];
         _order = 0;
     }
     

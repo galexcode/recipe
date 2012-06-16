@@ -11,6 +11,7 @@
 #import "RecipeNavigationLabel.h"
 #import "IngredientCell.h"
 #import "Ingredient.h"
+#import "ASI2HTTPRequest.h"
 
 @interface IngredientListViewController ()
 
@@ -97,8 +98,27 @@
 //    cell.imageView.image = [UIImage imageNamed:@"Aviation"];
     cell.unit.text = @"cup";
     cell.quantity.text = @"1/2";
+    cell.name.text = [currentIngredient name];
+    
+    //need to remove
     cell.thumb.image = [UIImage imageNamed:@"Aviation"];
-    cell.name.text = [currentIngredient name];;
+    
+    
+    if (![[currentIngredient imagePath] isEqualToString:@"-1"]) {
+        NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@", [currentIngredient imagePath]];
+        NSURL *url = [[NSURL alloc] initWithString:link];
+        
+        __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
+        [request setCompletionBlock:^{
+            NSData *data = request.responseData;
+            [cell.thumb setImage:[[UIImage alloc] initWithData:data]];
+        }];
+        [request setFailedBlock:^{
+            NSError *error = request.error;
+            NSLog(@"Error downloading image: %@", error.localizedDescription);
+        }];
+        [request startAsynchronous];
+    }
     
     return cell;
 }

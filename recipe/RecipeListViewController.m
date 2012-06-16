@@ -11,6 +11,7 @@
 #import "Recipe.h"
 #import "RecipeLongCell.h"
 #import "RecipeNavigationLabel.h"
+#import "ASI2HTTPRequest.h"
 
 @interface RecipeListViewController ()
 
@@ -112,6 +113,22 @@
 //    cell.imageView.image = [UIImage imageNamed:@"OrangeJuice"];
     cell.recipeName.text = [currentRecipe name];
     cell.thumb.image = [UIImage imageNamed:@"OrangeJuice"];
+    
+    if ([[currentRecipe imageList] count] > 0) {
+        NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@", [[currentRecipe imageList] objectAtIndex:0]];
+        NSURL *url = [[NSURL alloc] initWithString:link];
+        
+        __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
+        [request setCompletionBlock:^{
+            NSData *data = request.responseData;
+            [cell.thumb setImage:[[UIImage alloc] initWithData:data]];
+        }];
+        [request setFailedBlock:^{
+            NSError *error = request.error;
+            NSLog(@"Error downloading image: %@", error.localizedDescription);
+        }];
+        [request startAsynchronous];
+    }
     
     return cell;
 }
