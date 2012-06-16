@@ -10,8 +10,6 @@
 		4929F521155124A900D60AEF /* NSStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4929F520155124A900D60AEF /* NSStringUtil.m */; };
 		5A0AD4CB1536C24E00D057A9 /* ASIForm2DataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0AD4CA1536C24E00D057A9 /* ASIForm2DataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5A0AD4CE1536C62800D057A9 /* ASI2HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0AD4CD1536C62800D057A9 /* ASI2HTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5A3828EF152C605D00400A54 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3828ED152C605900400A54 /* ResultViewController.m */; };
-		5A3828F0152C605D00400A54 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A3828EE152C605B00400A54 /* ResultViewController.xib */; };
 		5A3B818115367AE0007BD9ED /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A3B818015367AE0007BD9ED /* MobileCoreServices.framework */; };
 		5A3B818315367AF5007BD9ED /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A3B818215367AF5007BD9ED /* SystemConfiguration.framework */; };
 		5A3B818515367B04007BD9ED /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A3B818415367B04007BD9ED /* CFNetwork.framework */; };
@@ -20,8 +18,6 @@
 		5AC54A1E152D86D000C87E3E /* IngredientListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC54A1C152D86D000C87E3E /* IngredientListViewController.xib */; };
 		5AC54A23152D86F200C87E3E /* StepListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC54A21152D86F100C87E3E /* StepListViewController.m */; };
 		5AC54A24152D86F200C87E3E /* StepListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC54A22152D86F100C87E3E /* StepListViewController.xib */; };
-		5AC54A28152D8AE200C87E3E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC54A26152D8AE200C87E3E /* MapViewController.m */; };
-		5AC54A29152D8AE200C87E3E /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC54A27152D8AE200C87E3E /* MapViewController.xib */; };
 		5ACB0912154A4EE600C0FFCB /* user.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5ACB0911154A4EE600C0FFCB /* user.xml */; };
 		5AD404EE152E81310045E74A /* RecipeXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404ED152E81310045E74A /* RecipeXMLHandler.m */; };
 		5AD404F1152E81890045E74A /* IngredientXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404F0152E81890045E74A /* IngredientXMLHandler.m */; };
@@ -56,8 +52,6 @@
 		902964C5152039BF002BAC2D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902964C3152039BF002BAC2D /* LoginViewController.m */; };
 		902964C6152039BF002BAC2D /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902964C4152039BF002BAC2D /* LoginViewController.xib */; };
 		90829C271522C22C00E6BFC9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90829C261522C22B00E6BFC9 /* CoreLocation.framework */; };
-		908409AF1521666300FA078B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409AD1521666300FA078B /* HomeViewController.m */; };
-		908409B01521666300FA078B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908409AE1521666300FA078B /* HomeViewController.xib */; };
 		908409B51521668400FA078B /* MyRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409B31521668400FA078B /* MyRecipeViewController.m */; };
 		908409B61521668400FA078B /* MyRecipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908409B41521668400FA078B /* MyRecipeViewController.xib */; };
 		908409BA152166C100FA078B /* ToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908409B8152166C100FA078B /* ToDoViewController.m */; };
@@ -207,8 +201,6 @@
 		979B4A931577241A00BD6A05 /* CategoriesXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 979B4A921577241A00BD6A05 /* CategoriesXMLHandler.m */; };
 		97A645ED157DE9320084F7A2 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A645EB157DE9320084F7A2 /* RegisterViewController.m */; };
 		97A645EE157DE9320084F7A2 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A645EC157DE9320084F7A2 /* RegisterViewController.xib */; };
-		97A645F2157DF03E0084F7A2 /* TestLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A645F0157DF03E0084F7A2 /* TestLoginViewController.m */; };
-		97A645F3157DF03E0084F7A2 /* TestLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A645F1157DF03E0084F7A2 /* TestLoginViewController.xib */; };
 		97A645F8157E05A60084F7A2 /* sbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A645F4157E05A20084F7A2 /* sbutton.png */; };
 		97A645F9157E05A60084F7A2 /* sbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A645F5157E05A30084F7A2 /* sbutton@2x.png */; };
 		97A645FA157E05A60084F7A2 /* sbuttonp.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A645F6157E05A40084F7A2 /* sbuttonp.png */; };
@@ -246,9 +238,6 @@
 		5A0AD4CA1536C24E00D057A9 /* ASIForm2DataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIForm2DataRequest.m; sourceTree = "<group>"; };
 		5A0AD4CC1536C62800D057A9 /* ASI2HTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASI2HTTPRequest.h; sourceTree = "<group>"; };
 		5A0AD4CD1536C62800D057A9 /* ASI2HTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASI2HTTPRequest.m; sourceTree = "<group>"; };
-		5A3828EC152C605800400A54 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
-		5A3828ED152C605900400A54 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
-		5A3828EE152C605B00400A54 /* ResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		5A3B818015367AE0007BD9ED /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		5A3B818215367AF5007BD9ED /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5A3B818415367B04007BD9ED /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -263,9 +252,6 @@
 		5AC54A20152D86F100C87E3E /* StepListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepListViewController.h; sourceTree = "<group>"; };
 		5AC54A21152D86F100C87E3E /* StepListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepListViewController.m; sourceTree = "<group>"; };
 		5AC54A22152D86F100C87E3E /* StepListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StepListViewController.xib; sourceTree = "<group>"; };
-		5AC54A25152D8AE100C87E3E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		5AC54A26152D8AE200C87E3E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		5AC54A27152D8AE200C87E3E /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		5ACB0911154A4EE600C0FFCB /* user.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = user.xml; sourceTree = "<group>"; };
 		5AD404EC152E81310045E74A /* RecipeXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeXMLHandler.h; sourceTree = "<group>"; };
 		5AD404ED152E81310045E74A /* RecipeXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeXMLHandler.m; sourceTree = "<group>"; };
@@ -328,9 +314,6 @@
 		902964C3152039BF002BAC2D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		902964C4152039BF002BAC2D /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		90829C261522C22B00E6BFC9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		908409AC1521666300FA078B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HomeViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		908409AD1521666300FA078B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HomeViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		908409AE1521666300FA078B /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		908409B21521668400FA078B /* MyRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRecipeViewController.h; sourceTree = "<group>"; };
 		908409B31521668400FA078B /* MyRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRecipeViewController.m; sourceTree = "<group>"; };
 		908409B41521668400FA078B /* MyRecipeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyRecipeViewController.xib; sourceTree = "<group>"; };
@@ -505,9 +488,6 @@
 		97A645EA157DE9320084F7A2 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		97A645EB157DE9320084F7A2 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		97A645EC157DE9320084F7A2 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
-		97A645EF157DF03E0084F7A2 /* TestLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLoginViewController.h; sourceTree = "<group>"; };
-		97A645F0157DF03E0084F7A2 /* TestLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLoginViewController.m; sourceTree = "<group>"; };
-		97A645F1157DF03E0084F7A2 /* TestLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestLoginViewController.xib; sourceTree = "<group>"; };
 		97A645F4157E05A20084F7A2 /* sbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbutton.png; sourceTree = "<group>"; };
 		97A645F5157E05A30084F7A2 /* sbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sbutton@2x.png"; sourceTree = "<group>"; };
 		97A645F6157E05A40084F7A2 /* sbuttonp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbuttonp.png; sourceTree = "<group>"; };
@@ -705,27 +685,18 @@
 				902964BD15201E24002BAC2D /* AuthViewController.h */,
 				902964BE15201E24002BAC2D /* AuthViewController.m */,
 				902964BF15201E24002BAC2D /* AuthViewController.xib */,
-				97A645EF157DF03E0084F7A2 /* TestLoginViewController.h */,
-				97A645F0157DF03E0084F7A2 /* TestLoginViewController.m */,
-				97A645F1157DF03E0084F7A2 /* TestLoginViewController.xib */,
 				902964C2152039BF002BAC2D /* LoginViewController.h */,
 				902964C3152039BF002BAC2D /* LoginViewController.m */,
 				902964C4152039BF002BAC2D /* LoginViewController.xib */,
 				97A645EA157DE9320084F7A2 /* RegisterViewController.h */,
 				97A645EB157DE9320084F7A2 /* RegisterViewController.m */,
 				97A645EC157DE9320084F7A2 /* RegisterViewController.xib */,
-				908409AC1521666300FA078B /* HomeViewController.h */,
-				908409AD1521666300FA078B /* HomeViewController.m */,
-				908409AE1521666300FA078B /* HomeViewController.xib */,
 				9747F323156A54B0009DA030 /* CategoryListViewController.h */,
 				9747F324156A54B1009DA030 /* CategoryListViewController.m */,
 				9747F325156A54B1009DA030 /* CategoryListViewController.xib */,
 				908409B21521668400FA078B /* MyRecipeViewController.h */,
 				908409B31521668400FA078B /* MyRecipeViewController.m */,
 				908409B41521668400FA078B /* MyRecipeViewController.xib */,
-				5A3828EC152C605800400A54 /* ResultViewController.h */,
-				5A3828ED152C605900400A54 /* ResultViewController.m */,
-				5A3828EE152C605B00400A54 /* ResultViewController.xib */,
 				908409B7152166C100FA078B /* ToDoViewController.h */,
 				908409B8152166C100FA078B /* ToDoViewController.m */,
 				908409B9152166C100FA078B /* ToDoViewController.xib */,
@@ -747,9 +718,6 @@
 				5AC54A20152D86F100C87E3E /* StepListViewController.h */,
 				5AC54A21152D86F100C87E3E /* StepListViewController.m */,
 				5AC54A22152D86F100C87E3E /* StepListViewController.xib */,
-				5AC54A25152D8AE100C87E3E /* MapViewController.h */,
-				5AC54A26152D8AE200C87E3E /* MapViewController.m */,
-				5AC54A27152D8AE200C87E3E /* MapViewController.xib */,
 			);
 			name = "controller + gui";
 			sourceTree = "<group>";
@@ -1048,16 +1016,13 @@
 				902964AB152014B0002BAC2D /* MainWindow.xib in Resources */,
 				902964C115201E24002BAC2D /* AuthViewController.xib in Resources */,
 				902964C6152039BF002BAC2D /* LoginViewController.xib in Resources */,
-				908409B01521666300FA078B /* HomeViewController.xib in Resources */,
 				908409B61521668400FA078B /* MyRecipeViewController.xib in Resources */,
 				908409BB152166C100FA078B /* ToDoViewController.xib in Resources */,
 				9084A2F21522F83F00BDEDC4 /* kira.png in Resources */,
 				9084A2F71523282000BDEDC4 /* RecipeViewController.xib in Resources */,
 				5ADF1386152A9182008B521A /* RecipeListViewController.xib in Resources */,
-				5A3828F0152C605D00400A54 /* ResultViewController.xib in Resources */,
 				5AC54A1E152D86D000C87E3E /* IngredientListViewController.xib in Resources */,
 				5AC54A24152D86F200C87E3E /* StepListViewController.xib in Resources */,
-				5AC54A29152D8AE200C87E3E /* MapViewController.xib in Resources */,
 				5AD404FC152EC5B50045E74A /* xml.xml in Resources */,
 				5AD40516152F08530045E74A /* beef.jpg in Resources */,
 				5ACB0912154A4EE600C0FFCB /* user.xml in Resources */,
@@ -1161,7 +1126,6 @@
 				9757D682157DE6F400B13BFB /* buttonp.png in Resources */,
 				9757D683157DE6F400B13BFB /* buttonp@2x.png in Resources */,
 				97A645EE157DE9320084F7A2 /* RegisterViewController.xib in Resources */,
-				97A645F3157DF03E0084F7A2 /* TestLoginViewController.xib in Resources */,
 				97A645F8157E05A60084F7A2 /* sbutton.png in Resources */,
 				97A645F9157E05A60084F7A2 /* sbutton@2x.png in Resources */,
 				97A645FA157E05A60084F7A2 /* sbuttonp.png in Resources */,
@@ -1220,7 +1184,6 @@
 				902964A8152014B0002BAC2D /* recipeAppDelegate.m in Sources */,
 				902964C015201E24002BAC2D /* AuthViewController.m in Sources */,
 				902964C5152039BF002BAC2D /* LoginViewController.m in Sources */,
-				908409AF1521666300FA078B /* HomeViewController.m in Sources */,
 				908409B51521668400FA078B /* MyRecipeViewController.m in Sources */,
 				908409BA152166C100FA078B /* ToDoViewController.m in Sources */,
 				908409CD1521C2E800FA078B /* Category.m in Sources */,
@@ -1231,10 +1194,8 @@
 				908409DC1521C3E800FA078B /* User.m in Sources */,
 				9084A2F61523282000BDEDC4 /* RecipeViewController.m in Sources */,
 				5ADF1385152A9182008B521A /* RecipeListViewController.m in Sources */,
-				5A3828EF152C605D00400A54 /* ResultViewController.m in Sources */,
 				5AC54A1D152D86D000C87E3E /* IngredientListViewController.m in Sources */,
 				5AC54A23152D86F200C87E3E /* StepListViewController.m in Sources */,
-				5AC54A28152D8AE200C87E3E /* MapViewController.m in Sources */,
 				5AD404EE152E81310045E74A /* RecipeXMLHandler.m in Sources */,
 				5AD404F1152E81890045E74A /* IngredientXMLHandler.m in Sources */,
 				5AD404F4152E819E0045E74A /* StepXMLHandler.m in Sources */,
@@ -1265,7 +1226,6 @@
 				979B4A931577241A00BD6A05 /* CategoriesXMLHandler.m in Sources */,
 				97DA7C67157C973A002449FB /* SingletonSample.m in Sources */,
 				97A645ED157DE9320084F7A2 /* RegisterViewController.m in Sources */,
-				97A645F2157DF03E0084F7A2 /* TestLoginViewController.m in Sources */,
 				9765D218157F463F00935504 /* RecipeTextField.m in Sources */,
 				9765D222157F66E800935504 /* RecipeNavigationLabel.m in Sources */,
 				97D6217415835DAC00B93E09 /* IngredientCell.m in Sources */,
