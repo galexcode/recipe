@@ -10,6 +10,7 @@
 #import "IngredientViewController.h"
 #import "RecipeNavigationLabel.h"
 #import "IngredientCell.h"
+#import "Ingredient.h"
 
 @interface IngredientListViewController ()
 
@@ -57,8 +58,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //return [self.ingredients count];
-    return 10;
+    return [self.ingredients count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -66,6 +66,9 @@
     static NSString *CellIdentifier = @"IngredientCell";
     
     IngredientCell *cell = (IngredientCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    Ingredient *currentIngredient = (Ingredient*)[[self ingredients] objectAtIndex:indexPath.row];
+    
     
     if (cell == nil) 
     {
@@ -85,7 +88,7 @@
     cell.unit.text = @"cup";
     cell.quantity.text = @"1/2";
     cell.thumb.image = [UIImage imageNamed:@"Aviation"];
-    cell.name.text = @"Ingredient Name Here";
+    cell.name.text = [currentIngredient name];;
     
     return cell;
 }

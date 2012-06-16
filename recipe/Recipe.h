@@ -7,13 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
 
 @interface Recipe : NSObject
 
+@property (nonatomic) User *owner;
 @property (nonatomic) NSString *recipeId;
 @property (nonatomic) NSString *name;
 @property (nonatomic) int serving;
-@property (nonatomic) NSData *createDate;
+@property (nonatomic) int likeCount;
+@property (nonatomic) NSDate *createDate;
 @property (nonatomic) NSMutableArray *imageList;
 @property (nonatomic) NSMutableArray *ingredientList;
 @property (nonatomic) NSMutableArray *stepList;

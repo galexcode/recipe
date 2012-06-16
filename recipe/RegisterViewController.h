@@ -24,5 +24,6 @@
 - (IBAction)onRegisterTap;
 
 - (id)initWithParentRef:(UIViewController*)parentViewController;
+- (void) didFinishRegisterUser;
 
 @end

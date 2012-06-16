@@ -11,7 +11,9 @@
 @interface StepListViewController : UIViewController
 {
     NSInteger selectedIndex;
+    NSArray* _steps;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *stepListTable;
+@property (nonatomic) NSArray* steps;
 @end

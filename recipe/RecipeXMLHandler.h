@@ -13,6 +13,7 @@
     Recipe* _currentRecipe;
     Ingredient* _currentIngredient;
     Step* _currentStep;
+    User* _currentUser;
     NSNumber* _total;
     NSMutableArray* _recipeArray;
 }

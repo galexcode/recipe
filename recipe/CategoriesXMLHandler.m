@@ -29,7 +29,9 @@
         _currentObject = nil;
         _currentCategory = nil;
         _currentRecipe = nil;
-//        _categoryArray = nil;
+        _currentUser = nil;
+        _currentIngredient = nil;
+        _currentStep = nil;
         _categoryDictionary = categoryDictionary;
         _total = nil;
     }
@@ -52,13 +54,33 @@
         _currentObject = [[Recipe alloc] init];
         return self;
     }
-    if ([elementName isEqualToString:@"images"]) {
+    if ([elementName isEqualToString:@"owner"]){
+        _currentObject = [[User alloc] init];
+        return self;
+    }
+    if ([elementName isEqualToString:@"ingredients"]){
+        return self;
+    }
+    if ([elementName isEqualToString:@"ingredient"]){
+        _currentObject = [[Ingredient alloc] init];
+        return self;
+    }
+    if ([elementName isEqualToString:@"steps"]){
+        return self;
+    }
+    if ([elementName isEqualToString:@"step"]){
+        _currentObject = [[Step alloc] init];
         return self;
     }
     if ([elementName isEqualToString:@"name"]
         || [elementName isEqualToString:@"serving"]
+        || [elementName isEqualToString:@"likeCount"]
         || [elementName isEqualToString:@"createDate"]
-        || [elementName isEqualToString:@"imageId"])
+        || [elementName isEqualToString:@"desc"]
+        || [elementName isEqualToString:@"note"]
+        || [elementName isEqualToString:@"imageId"]
+        || [elementName isEqualToString:@"images"]
+        || [elementName isEqualToString:@"avatarId"])
     {
         return self;
     }
@@ -76,6 +98,20 @@
         if ([_currentObject isKindOfClass:[Recipe class]])
             _currentRecipe = (Recipe *)_currentObject;
     }
+    if ([elementName isEqualToString:@"owner"]) {
+        if ([_currentObject isKindOfClass:[User class]]){
+            _currentUser = (User *)_currentObject;
+            [_currentUser setUserId:[[NSString alloc] initWithString:[attributeDict objectForKey:@"id"]]];
+        }
+    }
+    if ([elementName isEqualToString:@"ingredient"]) {
+        if ([_currentObject isKindOfClass:[Ingredient class]])
+            _currentIngredient = (Ingredient *)_currentObject;
+    }
+    if ([elementName isEqualToString:@"step"]) {
+        if ([_currentObject isKindOfClass:[Step class]])
+            _currentStep = (Step *)_currentObject;
+    }
 }
 
 -(void) afterElementEnding:(NSString *)elementName{
@@ -84,18 +120,63 @@
             [_currentCategory setName:_chars];
         if ([_currentObject isKindOfClass:[Recipe class]])
             [_currentRecipe setName:_chars];
+        if ([_currentObject isKindOfClass:[User class]])
+            [_currentUser setName:_chars];
+        if ([_currentObject isKindOfClass:[Ingredient class]])
+            [_currentIngredient setName:_chars];
+        if ([_currentObject isKindOfClass:[Step class]])
+            [_currentStep setName:_chars];
     }
     if ([elementName isEqualToString:@"serving"])
         [_currentRecipe setServing:[_chars intValue]];
-    if ([elementName isEqualToString:@"imageId"])
-        [[_currentRecipe imageList] addObject:_chars];
+    if ([elementName isEqualToString:@"likeCount"])
+        [_currentRecipe setLikeCount:[_chars intValue]];
+    if ([elementName isEqualToString:@"desc"]){
+//        if ([_currentObject isKindOfClass:[Recipe class]])
+//            [[_currentRecipe imageList] addObject:_chars];
+        if ([_currentObject isKindOfClass:[Ingredient class]])
+            [_currentIngredient setDesc:_chars];
+        if ([_currentObject isKindOfClass:[Step class]])
+            [_currentStep setDesc:_chars];
+    }
+    if ([elementName isEqualToString:@"note"])
+        [_currentStep setNote:_chars];
+    if ([elementName isEqualToString:@"avatarId"])
+        [_currentUser setAvatarId:_chars];
+    if ([elementName isEqualToString:@"createDate"]) {
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [_currentRecipe setCreateDate:[dateFormat dateFromString:_chars]]; 
+    }
+    if ([elementName isEqualToString:@"imageId"]){
+        if ([_currentObject isKindOfClass:[Recipe class]])
+            [[_currentRecipe imageList] addObject:_chars];
+        if ([_currentObject isKindOfClass:[Ingredient class]])
+        [_currentIngredient setImagePath:_chars];
+        if ([_currentObject isKindOfClass:[Step class]])
+        [_currentStep setImagePath:_chars];
+    }
+    if ([elementName isEqualToString:@"ingredient"]) {
+        [[_currentRecipe ingredientList] addObject:_currentIngredient];
+        _currentIngredient = nil;
+        _currentObject = nil;
+    }
+    if ([elementName isEqualToString:@"step"]) {
+        [[_currentRecipe stepList] addObject:_currentStep];
+        _currentStep = nil;
+        _currentObject = nil;
+    }
+    if ([elementName isEqualToString:@"owner"]) {
+        [_currentRecipe setOwner:_currentUser];
+        _currentUser = nil;
+        _currentObject = nil;
+    }
     if ([elementName isEqualToString:@"recipe"]) {
         [[_currentCategory latestRecipes] addObject:_currentRecipe];
         _currentRecipe = nil;
         _currentObject = nil;
     }
     if ([elementName isEqualToString:@"category"]) {
-//        [_categoryArray addObject:_currentCategory];
         [_categoryDictionary setObject:_currentCategory forKey:_currentCategory.name];
 		_currentCategory = nil;
         _currentObject = nil;

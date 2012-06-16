@@ -19,4 +19,15 @@
     return [emailTest evaluateWithObject:checkString];
 }
 
++ (NSString *)formatDate:(NSDate*)date usingFormat:(NSString *)dateFormat
+{
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:dateFormat];
+    [formatter setCalendar:cal];
+    [formatter setLocale:[NSLocale currentLocale]];
+    NSString *ret = [formatter stringFromDate:date];
+    return ret;
+}
+
 @end

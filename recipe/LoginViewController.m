@@ -80,15 +80,17 @@
         [hud setLabelText:@"Checking..."];
         _user = [[User alloc] init];
         
-        NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/login.xml"];
+        //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/login.xml"];
+        NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/login"];
         
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
-        //    [request setPostValue:[loggingUser name] forKey:@"u"];
-        //    [request setPostValue:[loggingUser password] forKey:@"p"];
+        [request setPostValue:[userName text] forKey:@"un"];
+        [request setPostValue:[password text] forKey:@"pw"];
         
         [request setCompletionBlock:^{
             NSLog(@"Login xml loaded.");
             if (request.responseStatusCode == 200) {
+                NSLog(@"%d", request.responseStatusCode);
                 UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
                 [handler setEndDocumentTarget:self andAction:@selector(didParsedLoggingUser)];
                 NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
@@ -159,20 +161,22 @@
 {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     if (_user != nil) {
-        UIAlertView *successAlertView = [[UIAlertView alloc] initWithTitle:@"Successful Login"
-                                                                   message:[NSString stringWithFormat:@"Welcome back %@",[_user name]]
-                                                                  delegate:nil
-                                                         cancelButtonTitle:@"OK"
-                                                         otherButtonTitles:nil];
-        [successAlertView show];
-        [_parentController.view setHidden:YES];
-    } else {
-        UIAlertView *failsAlertView = [[UIAlertView alloc] initWithTitle:@"Login Failed"
-                                                                   message:[NSString stringWithFormat:@"Username or Password is not correct"]
-                                                                  delegate:nil
-                                                         cancelButtonTitle:@"OK"
-                                                         otherButtonTitles:nil];
-        [failsAlertView show];
+        if (![_user.userId isEqualToString:@"-1"]) {
+            UIAlertView *successAlertView = [[UIAlertView alloc] initWithTitle:@"Login Success"
+                                                                       message:[NSString stringWithFormat:@"Welcome back %@",_user.name]
+                                                                      delegate:nil
+                                                             cancelButtonTitle:@"OK"
+                                                             otherButtonTitles:nil];
+            [successAlertView show];
+            [_parentController.view setHidden:YES];
+        } else if ([_user.userId isEqualToString:@"-1"]) {
+            UIAlertView *failsAlertView = [[UIAlertView alloc] initWithTitle:@"Login Failed"
+                                                                     message:[NSString stringWithFormat:@"Username or Password is not correct"]
+                                                                    delegate:nil
+                                                           cancelButtonTitle:@"OK"
+                                                           otherButtonTitles:nil];
+            [failsAlertView show];
+        }
     }
 }
     

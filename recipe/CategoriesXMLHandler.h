@@ -10,12 +10,17 @@
 #import "BaseXMLHandler.h"
 #import "Recipe.h"
 #import "Category.h"
+#import "Ingredient.h"
+#import "Step.h"
 
 @interface CategoriesXMLHandler : BaseXMLHandler
 {
     NSObject* _currentObject;
     Category* _currentCategory;
     Recipe* _currentRecipe;
+    User* _currentUser;
+    Ingredient* _currentIngredient;
+    Step* _currentStep;
     NSNumber* _total;
 //    NSMutableArray* _categoryArray;
     NSMutableDictionary* _categoryDictionary;

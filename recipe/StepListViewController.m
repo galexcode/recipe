@@ -13,6 +13,7 @@
 #import "StepListViewController.h"
 #import "RecipeNavigationLabel.h"
 #import "StepCell.h"
+#import "Step.h"
 
 @interface StepListViewController ()
 
@@ -20,6 +21,7 @@
 
 @implementation StepListViewController
 @synthesize stepListTable;
+@synthesize steps = _steps;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,7 +39,7 @@
     [[self navigationItem] setTitleView:label];
     [[self stepListTable] setBackgroundColor:[UIColor clearColor]];
     
-    selectedIndex = -1;
+    selectedIndex = 0;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -65,18 +67,9 @@
                                 constrainedToSize:maximumSize
                                     lineBreakMode:UILineBreakModeWordWrap];
     
-    //
-    NSString *testString;
+    Step *currentStep = [[self steps] objectAtIndex:index];
     
-    for(int ii = 0; ii < 4; ii++)
-    {
-        testString = [NSString stringWithString:@"Test comment. Test comment."];
-        for (int jj = 0; jj < ii; jj++) {
-            testString = [NSString stringWithFormat:@"%@ %@", testString, testString];
-        }
-    }
-    
-    CGSize labelHeighSize = [testString sizeWithFont: [UIFont fontWithName:@"Helvetica" size:17.0f]
+    CGSize labelHeighSize = [[currentStep desc] sizeWithFont: [UIFont fontWithName:@"Helvetica" size:17.0f]
                                                         constrainedToSize:maximumSize
                                                             lineBreakMode:UILineBreakModeWordWrap];
     return labelHeighSize.height + heighOfOneLine.height*2;
@@ -88,36 +81,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //return [self.ingredients count];
-    return 10;
+    return [self.steps count];
 }
-
-//- (UIImage*) rotateUIImage:(UIImage*)src angleDegrees:(float)angleDegrees  {   
-//    UIView* rotatedViewBox = [[UIView alloc] initWithFrame: CGRectMake(0, 0, src.size.width, src.size.height)];
-//    float angleRadians = angleDegrees * ((float)M_PI / 180.0f);
-//    CGAffineTransform t = CGAffineTransformMakeRotation(angleRadians);
-//    rotatedViewBox.transform = t;
-//    CGSize rotatedSize = rotatedViewBox.frame.size;
-//    
-//    UIGraphicsBeginImageContext(rotatedSize);
-//    CGContextRef bitmap = UIGraphicsGetCurrentContext();
-//    CGContextTranslateCTM(bitmap, rotatedSize.width/2, rotatedSize.height/2);
-//    CGContextRotateCTM(bitmap, angleRadians);
-//    
-//    CGContextScaleCTM(bitmap, 1.0, -1.0);
-//    CGContextDrawImage(bitmap, CGRectMake(-src.size.width / 2, -src.size.height / 2, src.size.width, src.size.height), [src CGImage]);
-//    
-//    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    
-//    return newImage;
-//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"StepCell";
     
     StepCell *cell = (StepCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    Step *currentStep = [[self steps] objectAtIndex:indexPath.row];
     
     if (cell == nil) 
     {
@@ -136,15 +109,15 @@
     //    cell.imageView.image = [UIImage imageNamed:@"Aviation"];
     
     //If this is the selected index then calculate the height of the cell based on the amount of text we have
-    NSString *testString = [NSString stringWithString:@"Test comment. Test comment."];
-    
-    for(int ii = 0; ii < 4; ii++)
-    {
-        testString = [NSString stringWithString:@"Test comment. Test comment."];
-        for (int jj = 0; jj < ii; jj++) {
-            testString = [NSString stringWithFormat:@"%@ %@", testString, testString];
-        }
-    }
+//    NSString *testString = [NSString stringWithString:@"Test comment. Test comment."];
+//    
+//    for(int ii = 0; ii < 4; ii++)
+//    {
+//        testString = [NSString stringWithString:@"Test comment. Test comment."];
+//        for (int jj = 0; jj < ii; jj++) {
+//            testString = [NSString stringWithFormat:@"%@ %@", testString, testString];
+//        }
+//    }
     
     if(selectedIndex == indexPath.row)
     {
@@ -162,10 +135,8 @@
                                                      cell.stepDescription.frame.size.width, 
                                                      labelHeight);
     
-    NSLog(@"x = %f, y = %f", cell.stepDescription.frame.origin.x, cell.stepDescription.frame.origin.y);
-    
     cell.stepIndentifier.text = [NSString stringWithFormat:@"Step %d", indexPath.row+1];
-    cell.stepDescription.text  = testString;
+    cell.stepDescription.text  = [currentStep desc];
     
     
     return cell;
@@ -189,7 +160,6 @@
 -(NSIndexPath*)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //We only don't want to allow selection on any cells which cannot be expanded
-    NSLog(@"%f", [self getLabelHeightForIndex:indexPath.row]);
     if([self getLabelHeightForIndex:indexPath.row] > COMMENT_LABEL_MIN_HEIGHT)
     {
         return indexPath;

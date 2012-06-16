@@ -12,10 +12,12 @@
 @synthesize recipeId = _recipeId;
 @synthesize name = _name;
 @synthesize serving = _serving;
+@synthesize likeCount = _likeCount;
 @synthesize createDate = _createDate;
 @synthesize imageList = _imageList;
 @synthesize ingredientList = _ingredientList;
 @synthesize stepList = _stepList;
+@synthesize owner = _owner;
 
 - (id)init
 {
@@ -24,10 +26,12 @@
         _recipeId = nil;
         _name = nil;
         _serving = 0;
+        _likeCount = 0;
         _createDate = nil;
         _imageList = [[NSMutableArray alloc] init];
         _ingredientList = [[NSMutableArray alloc] init];
         _stepList = [[NSMutableArray alloc] init];
+        _owner = nil;
     }
     
     return self;

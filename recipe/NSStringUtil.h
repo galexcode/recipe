@@ -11,5 +11,6 @@
 @interface NSStringUtil : NSObject
 
 + (Boolean)stringIsValidEmail:(NSString *)checkString;
++ (NSString *)formatDate:(NSDate*)date usingFormat:(NSString *)dateFormat;
 
 @end

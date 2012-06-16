@@ -94,11 +94,11 @@
     
     dispatch_async(concurrentQueue, ^{        
         UIImage *image = nil;
-        NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/images/%@", [[currentRecipe imageList] objectAtIndex:0]];
-        NSURL *url = [NSURL URLWithString:link];
+        //NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/images/%@", [[currentRecipe imageList] objectAtIndex:0]];
+        //NSURL *url = [NSURL URLWithString:link];
         //image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
         //image = [UIImage imageNamed:@"OrangeJuice"];
-        image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+        //image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [cell.thumbnail setImage:image]; 

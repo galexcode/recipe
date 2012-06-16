@@ -7,6 +7,7 @@
 //
 
 #import "RecipeViewController.h"
+#import "NSStringUtil.h"
 #import "IngredientListViewController.h"
 #import "StepListViewController.h"
 #import "RecipeNavigationLabel.h"
@@ -54,8 +55,10 @@
     [[self navigationItem] setTitleView:label];
     [self.recipeDetailsTable setBackgroundColor:[UIColor clearColor]];
     [[self recipeNameLabel] setText:[[self recipe] name]];
+    [[self userName] setText:[[[self recipe] owner] name]];
+    [[self timeSpanSinceCreated] setText:[NSStringUtil formatDate:[[self recipe] createDate] usingFormat:@"yyyy-MM-dd"]];
     
-    [[self recipeLikeCount] setText:@"100"];
+    [[self recipeLikeCount] setText:[NSString stringWithFormat:@"%d", [[self recipe] likeCount]]];
     
     [self loadImageSlider];
     // Do any additional setup after loading the view from its nib.
@@ -96,7 +99,8 @@
             UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(sx, y, w, 200.00f)];
             [imageSlider addSubview:image];
             
-            NSURL *url = [[NSURL alloc] initWithString:@"http://www.perselab.com/recipe/images/Pizza.png"];
+            //NSURL *url = [[NSURL alloc] initWithString:@"http://www.perselab.com/recipe/images/Pizza.png"];
+            NSURL *url = [[NSURL alloc] initWithString:@"http://belve.perselab.com/images/617/0/475"];
             
             __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
             [request setCompletionBlock:^{
@@ -216,16 +220,16 @@
         }
         if (indexPath.row == 0) {
             if ([[[self recipe] ingredientList] count] == 1 || [[[self recipe] ingredientList] count] == 0) {
-                [cell.textLabel setText:[NSString stringWithString:@"1/0 Ingredient"]];
+                [cell.textLabel setText:[NSString stringWithFormat:@"%d Ingredient", [[[self recipe] ingredientList] count]]];
             } else {
-                [cell.textLabel setText:[NSString stringWithFormat:@"%d Ingredients", 5]];
+                [cell.textLabel setText:[NSString stringWithFormat:@"%d Ingredients", [[[self recipe] ingredientList] count]]];
             }
         }
         else {
-            if ([[[self recipe] ingredientList] count] == 1 || [[[self recipe] ingredientList] count] == 0) {
-                [cell.textLabel setText:[NSString stringWithString:@"1/0 Step"]];
+            if ([[[self recipe] stepList] count] == 1 || [[[self recipe] stepList] count] == 0) {
+                [cell.textLabel setText:[NSString stringWithFormat:@"%d Step", [[[self recipe] stepList] count]]];
             } else {
-                [cell.textLabel setText:[NSString stringWithFormat:@"%d Steps", 5]];
+                [cell.textLabel setText:[NSString stringWithFormat:@"%d Steps", [[[self recipe] stepList] count]]];
             }
         }
         
@@ -244,15 +248,17 @@
 {
     if (indexPath.section == 2) {
         if (indexPath.row == 0) {
-            if ([[[self recipe] ingredientList] count] == 0){
+            if ([[[self recipe] ingredientList] count] > 0){
                 IngredientListViewController *viewControllerToPush = [[IngredientListViewController alloc] initWithNibName:@"IngredientListViewController" bundle:nil];
                 [viewControllerToPush.navigationItem setTitle:@"Ingredients"];
+                [viewControllerToPush setIngredients:[[self recipe] ingredientList]];
                 [self.navigationController pushViewController:viewControllerToPush animated:YES];
             }
         } else if (indexPath.row == 1){
-            if ([[[self recipe] ingredientList] count] == 0){
+            if ([[[self recipe] stepList] count] > 0){
                 StepListViewController *viewControllerToPush = [[StepListViewController alloc] initWithNibName:@"StepListViewController" bundle:nil];
                 [viewControllerToPush.navigationItem setTitle:@"Steps"];
+                [viewControllerToPush setSteps:[[self recipe] stepList]];
                 [self.navigationController pushViewController:viewControllerToPush animated:YES];
             }
             

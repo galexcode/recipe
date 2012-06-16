@@ -97,7 +97,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RecipeViewController *viewControllerToPush = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
-    //[viewControllerToPush setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:viewControllerToPush animated:YES];
 }
 

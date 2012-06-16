@@ -8,6 +8,7 @@
 
 #import "CategoryListViewController.h"
 #import "ASIForm2DataRequest.h"
+#import "ASI2HTTPRequest.h"
 #import "HorizontalTableCell.h"
 #import "ControlVariables.h"
 #import "HeaderButton.h"
@@ -67,15 +68,18 @@
 
 - (void)reload
 {
-    NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/categories.xml"];
+    //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/categories.xml"];
+    NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/categories"];
     
     __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+    NSLog(@"%@", request.requestHeaders);
     //    [request setPostValue:@"1" forKey:@"rw_app_id"];
     //    [request setPostValue:@"test" forKey:@"code"];
     //    [request setPostValue:@"test" forKey:@"device_id"];
     
     [request setCompletionBlock:^{
         NSLog(@"Categories xml loaded.");
+        NSLog(@"status code: %d",request.responseStatusCode);
         if (request.responseStatusCode == 200) {
             CategoriesXMLHandler* handler = [[CategoriesXMLHandler alloc] initWithCategoryDictionary:_categoryDictionary];
             [handler setEndDocumentTarget:self andAction:@selector(didParsedCategories)];
@@ -210,8 +214,6 @@
     NSArray* sortedCategories = [self.categoryDictionary.allKeys sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     
     NSString *categoryName = [sortedCategories objectAtIndex:indexPath.section];
-    
-    //NSLog(@"%@", categoryName);
     
     NSMutableArray *currentCategory = [self.categoryDictionary objectForKey:categoryName];
     
