@@ -81,7 +81,7 @@
 {
     static NSString *CellIdentifier = @"RecipeCell";
     
-    __block RecipeCell *cell = (RecipeCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    __block RecipeCell *cell;// = (RecipeCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) 
     {
