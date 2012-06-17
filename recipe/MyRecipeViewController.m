@@ -170,31 +170,56 @@
 //    cell.imageView.image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
 //    cell.textLabel.textColor = [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f];
 //    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
-    
-//    cell.textLabel.text = [currentRecipe name];
-//    cell.imageView.image = [UIImage imageNamed:@"OrangeJuice"];
-    cell.recipeName.text = [currentRecipe name];
-    
-    //need to remove
-    cell.thumb.image = [UIImage imageNamed:@"default_recipe.jpg"];
- 
-    if ([[currentRecipe imageList] count] > 0) {
-        NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@/100", [[currentRecipe imageList] objectAtIndex:0]];
-        NSURL *url = [[NSURL alloc] initWithString:link];
+    if ([self.recipes count] > 0) {
+        Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
         
-        __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
-        [request setCompletionBlock:^{
-            NSData *data = request.responseData;
-            [cell.thumb setImage:[[UIImage alloc] initWithData:data]];
-        }];
-        [request setFailedBlock:^{
-            NSError *error = request.error;
-            NSLog(@"Error downloading image: %@", error.localizedDescription);
-        }];
-        [request startAsynchronous];
+        //    cell.textLabel.text = [currentRecipe name];
+        //    cell.imageView.image = [UIImage imageNamed:@"OrangeJuice"];
+        cell.recipeName.text = [currentRecipe name];
+        
+        //need to remove
+        cell.thumb.image = [UIImage imageNamed:@"default_recipe.jpg"];
+        
+        if ([[currentRecipe imageList] count] > 0) {
+            NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@/100", [[currentRecipe imageList] objectAtIndex:0]];
+            NSURL *url = [[NSURL alloc] initWithString:link];
+            
+            __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
+            [request setCompletionBlock:^{
+                NSData *data = request.responseData;
+                [cell.thumb setImage:[[UIImage alloc] initWithData:data]];
+            }];
+            [request setFailedBlock:^{
+                NSError *error = request.error;
+                NSLog(@"Error downloading image: %@", error.localizedDescription);
+            }];
+            [request startAsynchronous];
+        }
     }
+//    Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
+//    
+////    cell.textLabel.text = [currentRecipe name];
+////    cell.imageView.image = [UIImage imageNamed:@"OrangeJuice"];
+//    cell.recipeName.text = [currentRecipe name];
+//    
+//    //need to remove
+//    cell.thumb.image = [UIImage imageNamed:@"default_recipe.jpg"];
+// 
+//    if ([[currentRecipe imageList] count] > 0) {
+//        NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@/100", [[currentRecipe imageList] objectAtIndex:0]];
+//        NSURL *url = [[NSURL alloc] initWithString:link];
+//        
+//        __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
+//        [request setCompletionBlock:^{
+//            NSData *data = request.responseData;
+//            [cell.thumb setImage:[[UIImage alloc] initWithData:data]];
+//        }];
+//        [request setFailedBlock:^{
+//            NSError *error = request.error;
+//            NSLog(@"Error downloading image: %@", error.localizedDescription);
+//        }];
+//        [request startAsynchronous];
+//    }
     return cell;
 }
 
