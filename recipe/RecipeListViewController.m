@@ -115,7 +115,7 @@
     cell.thumb.image = [UIImage imageNamed:@"OrangeJuice"];
     
     if ([[currentRecipe imageList] count] > 0) {
-        NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@", [[currentRecipe imageList] objectAtIndex:0]];
+        NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@/100", [[currentRecipe imageList] objectAtIndex:0]];
         NSURL *url = [[NSURL alloc] initWithString:link];
         
         __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
