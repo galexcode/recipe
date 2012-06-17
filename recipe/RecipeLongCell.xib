@@ -46,6 +46,7 @@
 								<string key="NSFrame">{{290, 21}, {18, 18}}</string>
 								<reference key="NSSuperview" ref="390515088"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -60,6 +61,7 @@
 								<string key="NSFrameSize">{59, 59}</string>
 								<reference key="NSSuperview" ref="390515088"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="323348096"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -70,13 +72,14 @@
 								<string key="NSFrame">{{67, 6}, {215, 48}}</string>
 								<reference key="NSSuperview" ref="390515088"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="747561674"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Label</string>
+								<string key="IBUIText">Loading...</string>
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">2</int>
 									<bytes key="NSRGB">MC44MzkyMTU3NTU1IDAuNjExNzY0NzI5IDAuMzI5NDExNzc0OQA</bytes>
@@ -104,6 +107,7 @@
 								<string key="NSFrame">{{67, 20}, {215, 39}}</string>
 								<reference key="NSSuperview" ref="390515088"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="941611598"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -133,6 +137,7 @@
 						<string key="NSFrameSize">{320, 59}</string>
 						<reference key="NSSuperview" ref="261867042"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="745415536"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor" id="295475363">
 							<int key="NSColorSpace">3</int>
