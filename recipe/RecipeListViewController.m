@@ -112,7 +112,7 @@
 //    cell.textLabel.text = [currentRecipe name];
 //    cell.imageView.image = [UIImage imageNamed:@"OrangeJuice"];
     cell.recipeName.text = [currentRecipe name];
-    cell.thumb.image = [UIImage imageNamed:@"OrangeJuice"];
+    cell.thumb.image = [UIImage imageNamed:@"default_recipe.jpg"];
     
     if ([[currentRecipe imageList] count] > 0) {
         NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@/100", [[currentRecipe imageList] objectAtIndex:0]];

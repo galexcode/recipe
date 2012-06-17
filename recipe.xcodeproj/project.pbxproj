@@ -18,13 +18,11 @@
 		5AC54A1E152D86D000C87E3E /* IngredientListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC54A1C152D86D000C87E3E /* IngredientListViewController.xib */; };
 		5AC54A23152D86F200C87E3E /* StepListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC54A21152D86F100C87E3E /* StepListViewController.m */; };
 		5AC54A24152D86F200C87E3E /* StepListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC54A22152D86F100C87E3E /* StepListViewController.xib */; };
-		5ACB0912154A4EE600C0FFCB /* user.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5ACB0911154A4EE600C0FFCB /* user.xml */; };
 		5AD404EE152E81310045E74A /* RecipeXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404ED152E81310045E74A /* RecipeXMLHandler.m */; };
 		5AD404F1152E81890045E74A /* IngredientXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404F0152E81890045E74A /* IngredientXMLHandler.m */; };
 		5AD404F4152E819E0045E74A /* StepXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404F3152E819E0045E74A /* StepXMLHandler.m */; };
 		5AD404F7152E81B60045E74A /* StoreXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404F6152E81B60045E74A /* StoreXMLHandler.m */; };
 		5AD404FA152E82900045E74A /* UserXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404F9152E82900045E74A /* UserXMLHandler.m */; };
-		5AD404FC152EC5B50045E74A /* xml.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5AD404FB152EC5B50045E74A /* xml.xml */; };
 		5AD40508152EF4340045E74A /* BaseXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD40507152EF4340045E74A /* BaseXMLHandler.m */; };
 		5AD40516152F08530045E74A /* beef.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AD40515152F08530045E74A /* beef.jpg */; };
 		5ADF1385152A9182008B521A /* RecipeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADF1383152A9182008B521A /* RecipeListViewController.m */; };
@@ -198,6 +196,7 @@
 		976EF2D11575CBDE0068FCF2 /* topbar_44@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 976EF2CF1575CBDE0068FCF2 /* topbar_44@2x.png */; };
 		978359071565FED900200699 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 978359051565FED900200699 /* home.png */; };
 		978359081565FED900200699 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 978359061565FED900200699 /* home@2x.png */; };
+		97962C99158DB8E3004B0E58 /* default_recipe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97962C98158DB8E3004B0E58 /* default_recipe.jpg */; };
 		979B4A931577241A00BD6A05 /* CategoriesXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 979B4A921577241A00BD6A05 /* CategoriesXMLHandler.m */; };
 		97A645ED157DE9320084F7A2 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A645EB157DE9320084F7A2 /* RegisterViewController.m */; };
 		97A645EE157DE9320084F7A2 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A645EC157DE9320084F7A2 /* RegisterViewController.xib */; };
@@ -259,7 +258,6 @@
 		5AC54A20152D86F100C87E3E /* StepListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepListViewController.h; sourceTree = "<group>"; };
 		5AC54A21152D86F100C87E3E /* StepListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepListViewController.m; sourceTree = "<group>"; };
 		5AC54A22152D86F100C87E3E /* StepListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StepListViewController.xib; sourceTree = "<group>"; };
-		5ACB0911154A4EE600C0FFCB /* user.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = user.xml; sourceTree = "<group>"; };
 		5AD404EC152E81310045E74A /* RecipeXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeXMLHandler.h; sourceTree = "<group>"; };
 		5AD404ED152E81310045E74A /* RecipeXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeXMLHandler.m; sourceTree = "<group>"; };
 		5AD404EF152E81890045E74A /* IngredientXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientXMLHandler.h; sourceTree = "<group>"; };
@@ -270,7 +268,6 @@
 		5AD404F6152E81B60045E74A /* StoreXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreXMLHandler.m; sourceTree = "<group>"; };
 		5AD404F8152E82900045E74A /* UserXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserXMLHandler.h; sourceTree = "<group>"; };
 		5AD404F9152E82900045E74A /* UserXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserXMLHandler.m; sourceTree = "<group>"; };
-		5AD404FB152EC5B50045E74A /* xml.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = xml.xml; sourceTree = "<group>"; };
 		5AD40506152EF4340045E74A /* BaseXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseXMLHandler.h; sourceTree = "<group>"; };
 		5AD40507152EF4340045E74A /* BaseXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseXMLHandler.m; sourceTree = "<group>"; };
 		5AD40515152F08530045E74A /* beef.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beef.jpg; sourceTree = "<group>"; };
@@ -490,6 +487,7 @@
 		976EF2CF1575CBDE0068FCF2 /* topbar_44@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topbar_44@2x.png"; sourceTree = "<group>"; };
 		978359051565FED900200699 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		978359061565FED900200699 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
+		97962C98158DB8E3004B0E58 /* default_recipe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_recipe.jpg; sourceTree = "<group>"; };
 		979B4A911577241A00BD6A05 /* CategoriesXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesXMLHandler.h; sourceTree = "<group>"; };
 		979B4A921577241A00BD6A05 /* CategoriesXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesXMLHandler.m; sourceTree = "<group>"; };
 		97A645EA157DE9320084F7A2 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -780,8 +778,7 @@
 			isa = PBXGroup;
 			children = (
 				9742D77B157362E0003B678D /* Article Images */,
-				5AD404FB152EC5B50045E74A /* xml.xml */,
-				5ACB0911154A4EE600C0FFCB /* user.xml */,
+				97962C98158DB8E3004B0E58 /* default_recipe.jpg */,
 				976EF2CE1575CBDE0068FCF2 /* topbar_44.png */,
 				976EF2CF1575CBDE0068FCF2 /* topbar_44@2x.png */,
 				976EF2C61575C6C40068FCF2 /* back_button_30.png */,
@@ -1048,9 +1045,7 @@
 				5ADF1386152A9182008B521A /* RecipeListViewController.xib in Resources */,
 				5AC54A1E152D86D000C87E3E /* IngredientListViewController.xib in Resources */,
 				5AC54A24152D86F200C87E3E /* StepListViewController.xib in Resources */,
-				5AD404FC152EC5B50045E74A /* xml.xml in Resources */,
 				5AD40516152F08530045E74A /* beef.jpg in Resources */,
-				5ACB0912154A4EE600C0FFCB /* user.xml in Resources */,
 				970F2C4D1564A74D00A787E5 /* FeedViewController.xib in Resources */,
 				978359071565FED900200699 /* home.png in Resources */,
 				978359081565FED900200699 /* home@2x.png in Resources */,
@@ -1200,6 +1195,7 @@
 				97CFD150158CF0B20097A111 /* SelectCategoresViewController.xib in Resources */,
 				97CFD157158D21670097A111 /* add_photo.png in Resources */,
 				97CFD158158D21670097A111 /* plus_round.png in Resources */,
+				97962C99158DB8E3004B0E58 /* default_recipe.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
