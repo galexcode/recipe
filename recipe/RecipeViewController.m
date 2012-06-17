@@ -6,6 +6,7 @@
 //  Copyright 2012 Perselab. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "RecipeViewController.h"
 #import "NSStringUtil.h"
 #import "IngredientListViewController.h"
@@ -65,6 +66,9 @@
     
     [[self recipeLikeCount] setText:[NSString stringWithFormat:@"%d", [[self recipe] likeCount]]];
     
+    [[[self userThumb] layer] setCornerRadius:8.0];
+    [[[self userThumb] layer] setMasksToBounds:YES];
+    
     [self loadImageSlider];
     [self loadUserAvatar];
     // Do any additional setup after loading the view from its nib.
@@ -97,7 +101,7 @@
 - (void)loadUserAvatar
 {
     if (![[[[self recipe] owner] avatarId] isEqualToString:@"-1"]) {
-        NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@", [[[self recipe] owner] avatarId]];
+        NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@/100", [[[self recipe] owner] avatarId]];
         NSURL *url = [[NSURL alloc] initWithString:link];
         
         __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
@@ -126,7 +130,7 @@
             
             //NSURL *url = [[NSURL alloc] initWithString:@"http://www.perselab.com/recipe/images/Pizza.png"];
             //NSURL *url = [[NSURL alloc] initWithString:@"http://belve.perselab.com/images/617/0/475"];
-            NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@", [[[self recipe] imageList] objectAtIndex:i]];
+            NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@/300", [[[self recipe] imageList] objectAtIndex:i]];
             NSURL *url = [[NSURL alloc] initWithString:link];
             
             __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];

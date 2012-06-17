@@ -84,7 +84,6 @@
 
 - (void)reload
 {
-    
     [self setCategoryDictionary:nil];
     [self setCategoryDictionary:[[NSMutableDictionary alloc] init]];
     //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/categories.xml"];
@@ -172,8 +171,8 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self.categoryDictionary.allKeys count];
     NSLog(@"section: %d", [self.categoryDictionary.allKeys count]);
+    return [self.categoryDictionary.allKeys count];    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -229,24 +228,26 @@
 {    
     static NSString *CellIdentifier = @"HorizontalCell";
     
-    HorizontalTableCell *cell = (HorizontalTableCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    //HorizontalTableCell *cell = (HorizontalTableCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    HorizontalTableCell *cell;
     
     if (cell == nil)
     {
         cell = [[HorizontalTableCell alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, tableView.frame.size.height)];
         cell.navController = self.navigationController;
     }
+        NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];
+        NSArray* sortedCategories = [self.categoryDictionary.allKeys sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     
-    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];
-    NSArray* sortedCategories = [self.categoryDictionary.allKeys sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+        NSString *categoryName = [sortedCategories objectAtIndex:indexPath.section];
     
-    NSString *categoryName = [sortedCategories objectAtIndex:indexPath.section];
+        NSMutableArray *currentCategory = [self.categoryDictionary objectForKey:categoryName];
     
-    NSMutableArray *currentCategory = [self.categoryDictionary objectForKey:categoryName];
+        Category* thisCategory = (Category *)currentCategory;
+        
+        NSLog(@"Category: %@ has %d recipes", categoryName, [thisCategory.latestRecipes count]);
     
-    Category* thisCategory = (Category *)currentCategory;
-    
-    cell.recipes = thisCategory.latestRecipes;
+        cell.recipes = thisCategory.latestRecipes;
     
     return cell;
 }
