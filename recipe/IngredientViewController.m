@@ -17,6 +17,7 @@
 @synthesize pageTitle;
 @synthesize pageTitleText = _pageTitleText;
 @synthesize imageIngredient = _imageIngredient;
+@synthesize ingredientDesc = _ingredientDesc;
 @synthesize ingredient = _ingredient;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -33,9 +34,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.pageTitle.text = self.ingredient.name;
+    self.ingredientDesc.text = self.ingredient.desc;
     NSLog(@"iid: %@", [[self ingredient] ingredientId]);
     
-    NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/1/310", self.ingredient.imagePath];
+    NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@/306", self.ingredient.imagePath];
     NSURL *url = [[NSURL alloc] initWithString:link];
     
     __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
@@ -55,6 +57,7 @@
 {
     [self setPageTitle:nil];
     [self setImageIngredient:nil];
+    [self setIngredientDesc:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

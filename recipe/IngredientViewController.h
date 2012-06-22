@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *pageTitle;
 @property (nonatomic) NSString* pageTitleText;
 @property (weak, nonatomic) IBOutlet UIImageView *imageIngredient;
+@property (weak, nonatomic) IBOutlet UITextView *ingredientDesc;
 
 @end
