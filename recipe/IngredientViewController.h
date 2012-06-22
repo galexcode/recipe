@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Ingredient.h"
 
 @interface IngredientViewController : UIViewController{
     NSString* _pageTitleText;
+    Ingredient *_ingredient;
 }
-
+@property (nonatomic) Ingredient *ingredient;
 @property (weak, nonatomic) IBOutlet UILabel *pageTitle;
 @property (nonatomic) NSString* pageTitleText;
+@property (weak, nonatomic) IBOutlet UIImageView *imageIngredient;
 
 @end

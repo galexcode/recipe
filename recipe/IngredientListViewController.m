@@ -126,8 +126,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     IngredientViewController *viewControllerToPush = [[IngredientViewController alloc] initWithNibName:@"IngredientViewController" bundle:nil];
     Ingredient *currentIngredient = (Ingredient*)[[self ingredients] objectAtIndex:indexPath.row];
+    [viewControllerToPush setIngredient:currentIngredient];
     [viewControllerToPush setPageTitleText:[currentIngredient name]];
-    //[self.navigationController pushViewController:viewControllerToPush animated:YES];
+    [self.navigationController pushViewController:viewControllerToPush animated:YES];
 }
 
 @end

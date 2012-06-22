@@ -7,6 +7,7 @@
 //
 
 #import "IngredientViewController.h"
+#import "ASI2HTTPRequest.h"
 
 @interface IngredientViewController ()
 
@@ -15,6 +16,8 @@
 @implementation IngredientViewController
 @synthesize pageTitle;
 @synthesize pageTitleText = _pageTitleText;
+@synthesize imageIngredient = _imageIngredient;
+@synthesize ingredient = _ingredient;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,11 +32,29 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.pageTitle.text = self.ingredient.name;
+    NSLog(@"iid: %@", [[self ingredient] ingredientId]);
+    
+    NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/1/310", self.ingredient.imagePath];
+    NSURL *url = [[NSURL alloc] initWithString:link];
+    
+    __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
+    [request setCompletionBlock:^{
+        NSData *data = request.responseData;
+        [self.imageIngredient setImage:[[UIImage alloc] initWithData:data]];
+    }];
+    [request setFailedBlock:^{
+        NSError *error = request.error;
+        NSLog(@"Error downloading image: %@", error.localizedDescription);
+    }];
+    [request startAsynchronous];
+
 }
 
 - (void)viewDidUnload
 {
     [self setPageTitle:nil];
+    [self setImageIngredient:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
