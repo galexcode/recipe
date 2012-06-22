@@ -78,8 +78,10 @@
         [_currentUser setUserId:[[NSString alloc] initWithString:[attributeDict objectForKey:@"id"]]];
     }
     if ([elementName isEqualToString:@"recipe"]) {
-        if ([_currentObject isKindOfClass:[Recipe class]])
+        if ([_currentObject isKindOfClass:[Recipe class]]){
             _currentRecipe = (Recipe *)_currentObject;
+            [_currentRecipe setRecipeId:[NSString stringWithString:[attributeDict objectForKey:@"id"]]];
+        }
     }
     if ([elementName isEqualToString:@"owner"]) {
         if ([_currentObject isKindOfClass:[User class]]){
@@ -88,12 +90,16 @@
         }
     }
     if ([elementName isEqualToString:@"ingredient"]) {
-        if ([_currentObject isKindOfClass:[Ingredient class]])
+        if ([_currentObject isKindOfClass:[Ingredient class]]){
             _currentIngredient = (Ingredient *)_currentObject;
+            [_currentIngredient setIngredientId:[[NSString alloc] initWithString:[attributeDict objectForKey:@"id"]]];
+        }
     }
     if ([elementName isEqualToString:@"step"]) {
-        if ([_currentObject isKindOfClass:[Step class]])
+        if ([_currentObject isKindOfClass:[Step class]]){
             _currentStep = (Step *)_currentObject;
+            [_currentStep setStepId:[[NSString alloc] initWithString:[attributeDict objectForKey:@"id"]]];
+        }
     }
 }
 
