@@ -229,7 +229,8 @@
             //userInfoCell set
             cell = userInfoCell;
         }
-        //[cell.textLabel setText:@"images go here(slide show)"];
+        
+        [cell setBackgroundView:[[UIView alloc] initWithFrame:CGRectZero]];
         
         return cell;
     }
@@ -239,7 +240,8 @@
             //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:imageCell];
             cell = slideShowCell;
         }
-        //[cell.textLabel setText:@"images go here(slide show)"];
+    
+        [cell setBackgroundView:[[UIView alloc] initWithFrame:CGRectZero]];
         
         return cell;
     }
