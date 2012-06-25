@@ -24,6 +24,7 @@
 
 @implementation CategoryListViewController
 @synthesize categoryDictionary = _categoryDictionary;
+@synthesize navController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +33,10 @@
 //        APP_SERVICE(appSrv);
 //        NSLog(@"%@", appSrv);
 //        _applicationService = appSrv;
+        [self.tableView setBackgroundColor:[UIColor clearColor]];
+        self.tableView.rowHeight = kCellHeight + (kRowVerticalPadding * 0.5) + ((kRowVerticalPadding * 0.5) * 0.5);
+        
+        [self reload];
     }
     return self;
 }
@@ -159,7 +164,8 @@
     RecipeListViewController* viewControllerToPush = [[RecipeListViewController alloc] initWithNibName:@"RecipeListViewController" bundle:nil];
     viewControllerToPush.recipes = tempButton.array;
     viewControllerToPush.pageTitleText = tempButton.titleText;
-    [self.navigationController pushViewController:viewControllerToPush animated:YES];
+    UINavigationController *nav = (UINavigationController*)self.navController;
+    [nav pushViewController:viewControllerToPush animated:YES];
 }
 
 #pragma mark - Table view data source
@@ -234,7 +240,8 @@
     if (cell == nil)
     {
         cell = [[HorizontalTableCell alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, tableView.frame.size.height)];
-        cell.navController = self.navigationController;
+        //cell.navController = self.navigationController;
+        cell.navController = self.navController;
     }
         NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];
         NSArray* sortedCategories = [self.categoryDictionary.allKeys sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];

@@ -61,6 +61,8 @@
         || [elementName isEqualToString:@"likeCount"]
         || [elementName isEqualToString:@"serving"]
         || [elementName isEqualToString:@"desc"]
+        || [elementName isEqualToString:@"quantity"]
+        || [elementName isEqualToString:@"unit"]
         || [elementName isEqualToString:@"note"]
         || [elementName isEqualToString:@"createDate"]
         || [elementName isEqualToString:@"images"]
@@ -144,6 +146,10 @@
         if ([_currentObject isKindOfClass:[Step class]])
             [_currentStep setDesc:_chars];
     }
+    if ([elementName isEqualToString:@"quantity"])
+        [_currentIngredient setQuantity:_chars];
+    if ([elementName isEqualToString:@"unit"])
+        [_currentIngredient setUnit:_chars];
     if ([elementName isEqualToString:@"serving"])
         [_currentRecipe setServing:[_chars intValue]];
     if ([elementName isEqualToString:@"likeCount"])

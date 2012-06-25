@@ -57,6 +57,8 @@
         || [elementName isEqualToString:@"likeCount"]
         || [elementName isEqualToString:@"createDate"]
         || [elementName isEqualToString:@"desc"]
+        || [elementName isEqualToString:@"quantity"]
+        || [elementName isEqualToString:@"unit"]
         || [elementName isEqualToString:@"note"]
         || [elementName isEqualToString:@"imageId"]
         || [elementName isEqualToString:@"images"]
@@ -127,6 +129,10 @@
         if ([_currentObject isKindOfClass:[Step class]])
             [_currentStep setDesc:_chars];
     }
+    if ([elementName isEqualToString:@"quantity"])
+        [_currentIngredient setQuantity:_chars];
+    if ([elementName isEqualToString:@"unit"])
+        [_currentIngredient setUnit:_chars];
     if ([elementName isEqualToString:@"note"])
         [_currentStep setNote:_chars];
     if ([elementName isEqualToString:@"imageId"]){

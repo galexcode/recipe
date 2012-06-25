@@ -12,6 +12,8 @@
 @synthesize ingredientId = _ingredientId;
 @synthesize name = _name;
 @synthesize desc = _desc;
+@synthesize quantity = _quantity;
+@synthesize unit = _unit;
 @synthesize imagePath = _imagePath;
 
 - (id)init
@@ -21,6 +23,8 @@
         _ingredientId = nil;
         _name = nil;
         _desc = nil;
+        _quantity = nil;
+        _unit = nil;
         _imagePath = [NSString stringWithString:@"-1"];
     }
     

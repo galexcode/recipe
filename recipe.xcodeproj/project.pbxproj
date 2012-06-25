@@ -157,6 +157,8 @@
 		9747F310156A3B6C009DA030 /* btn-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 9747F30E156A3B6C009DA030 /* btn-red.png */; };
 		9747F326156A54B2009DA030 /* CategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9747F324156A54B1009DA030 /* CategoryListViewController.m */; };
 		9747F327156A54B2009DA030 /* CategoryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9747F325156A54B1009DA030 /* CategoryListViewController.xib */; };
+		974C1D5A159844070056B894 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974C1D58159844070056B894 /* HomeViewController.m */; };
+		974C1D5B159844070056B894 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 974C1D59159844070056B894 /* HomeViewController.xib */; };
 		97507B491586DCB100D21415 /* StepDescriptionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97507B481586DCB100D21415 /* StepDescriptionLabel.m */; };
 		97512EF515806D15005C0C43 /* seg_s_u.png in Resources */ = {isa = PBXBuildFile; fileRef = 97512EEB15806D15005C0C43 /* seg_s_u.png */; };
 		97512EF615806D15005C0C43 /* seg_s_u@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97512EEC15806D15005C0C43 /* seg_s_u@2x.png */; };
@@ -443,6 +445,9 @@
 		9747F323156A54B0009DA030 /* CategoryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryListViewController.h; sourceTree = "<group>"; };
 		9747F324156A54B1009DA030 /* CategoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryListViewController.m; sourceTree = "<group>"; };
 		9747F325156A54B1009DA030 /* CategoryListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryListViewController.xib; sourceTree = "<group>"; };
+		974C1D57159844070056B894 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		974C1D58159844070056B894 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		974C1D59159844070056B894 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		97507B471586DCB100D21415 /* StepDescriptionLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepDescriptionLabel.h; sourceTree = "<group>"; };
 		97507B481586DCB100D21415 /* StepDescriptionLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepDescriptionLabel.m; sourceTree = "<group>"; };
 		97512EEB15806D15005C0C43 /* seg_s_u.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seg_s_u.png; sourceTree = "<group>"; };
@@ -589,14 +594,14 @@
 				97F77C68158C685C00513CB4 /* RecipesXMLHandler.m */,
 				5AD404EC152E81310045E74A /* RecipeXMLHandler.h */,
 				5AD404ED152E81310045E74A /* RecipeXMLHandler.m */,
+				5AD404F8152E82900045E74A /* UserXMLHandler.h */,
+				5AD404F9152E82900045E74A /* UserXMLHandler.m */,
 				5AD404EF152E81890045E74A /* IngredientXMLHandler.h */,
 				5AD404F0152E81890045E74A /* IngredientXMLHandler.m */,
 				5AD404F2152E819E0045E74A /* StepXMLHandler.h */,
 				5AD404F3152E819E0045E74A /* StepXMLHandler.m */,
 				5AD404F5152E81B60045E74A /* StoreXMLHandler.h */,
 				5AD404F6152E81B60045E74A /* StoreXMLHandler.m */,
-				5AD404F8152E82900045E74A /* UserXMLHandler.h */,
-				5AD404F9152E82900045E74A /* UserXMLHandler.m */,
 			);
 			name = Parser;
 			sourceTree = "<group>";
@@ -705,6 +710,9 @@
 				97A645EA157DE9320084F7A2 /* RegisterViewController.h */,
 				97A645EB157DE9320084F7A2 /* RegisterViewController.m */,
 				97A645EC157DE9320084F7A2 /* RegisterViewController.xib */,
+				974C1D57159844070056B894 /* HomeViewController.h */,
+				974C1D58159844070056B894 /* HomeViewController.m */,
+				974C1D59159844070056B894 /* HomeViewController.xib */,
 				9747F323156A54B0009DA030 /* CategoryListViewController.h */,
 				9747F324156A54B1009DA030 /* CategoryListViewController.m */,
 				9747F325156A54B1009DA030 /* CategoryListViewController.xib */,
@@ -1196,6 +1204,7 @@
 				97CFD157158D21670097A111 /* add_photo.png in Resources */,
 				97CFD158158D21670097A111 /* plus_round.png in Resources */,
 				97962C99158DB8E3004B0E58 /* default_recipe.jpg in Resources */,
+				974C1D5B159844070056B894 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1264,6 +1273,7 @@
 				97F77C71158C86C600513CB4 /* RecipeLongCell.m in Sources */,
 				97F77C77158CAB6800513CB4 /* AddRecipeViewController.m in Sources */,
 				97CFD14F158CF0B20097A111 /* SelectCategoresViewController.m in Sources */,
+				974C1D5A159844070056B894 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
