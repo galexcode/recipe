@@ -167,9 +167,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 35.00f;
-    }
+//    if (section == 0) {
+//        return 35.00f;
+//    }
     if (section == 2) {
         return 40.00f;
     }
@@ -178,9 +178,9 @@
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return [self recipeHeaderView];
-    }
+//    if (section == 0) {
+//        return [self recipeHeaderView];
+//    }
     if (section == 2) {
         return [self recipeInfoView];
     }

@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UIImageView *formBackgound;
 
 - (IBAction)dismissKeyboard;
 - (IBAction)onLoginTap:(id)sender;

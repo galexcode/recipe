@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *repassword;
 
+@property (weak, nonatomic) IBOutlet UIImageView *formBackground;
 
 - (IBAction)dismissKeyboard;
 - (IBAction)onRegisterTap;
