@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1296</int>
-		<string key="IBDocument.SystemVersion">11E53</string>
+		<string key="IBDocument.SystemVersion">11D50</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2182</string>
-		<string key="IBDocument.AppKitVersion">1138.47</string>
-		<string key="IBDocument.HIToolboxVersion">569.00</string>
+		<string key="IBDocument.AppKitVersion">1138.32</string>
+		<string key="IBDocument.HIToolboxVersion">568.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">1181</string>
@@ -490,7 +490,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 					<object class="IBUILabel" id="812067806">
 						<reference key="NSNextResponder" ref="187835840"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{249, 5}, {54, 22}}</string>
+						<string key="NSFrame">{{246, 5}, {54, 22}}</string>
 						<reference key="NSSuperview" ref="187835840"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -499,7 +499,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">Twitter</string>
+						<string key="IBUIText">Share</string>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4yNzgzODU0MTY3IDAuMTMyNTEzNjYwMyAwLjEwNTIwMTY1MDQAA</bytes>
@@ -750,8 +750,8 @@ AAgACAAIAAEAAQABAAE</bytes>
 							<reference ref="282170168"/>
 							<reference ref="694061580"/>
 							<reference ref="270699637"/>
-							<reference ref="812067806"/>
 							<reference ref="1053391420"/>
+							<reference ref="812067806"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Recipe Info View</string>
