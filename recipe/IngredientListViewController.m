@@ -95,8 +95,8 @@
     
 //    cell.textLabel.text = @"ingredient";
 //    cell.imageView.image = [UIImage imageNamed:@"Aviation"];
-    cell.unit.text = @"cup";
-    cell.quantity.text = @"1/2";
+    cell.unit.text = [currentIngredient unit];
+    cell.quantity.text = [currentIngredient quantity];
     cell.name.text = [currentIngredient name];
     
     //need to remove
