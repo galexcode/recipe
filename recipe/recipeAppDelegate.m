@@ -90,8 +90,13 @@
     
     // Custommize UITextField
     //[[UITextField appearance] setValue:[UIColor redColor] forKey:@"insertionPointColor"];
-    [[UITextField appearance] setBackgroundColor:[UIColor brownColor]];
+    //[[UITextField appearance] setBackgroundColor:[UIColor brownColor]];
     //[[UITextField appearance] setValue:[UIColor darkGrayColor] forKeyPath:@"textField.placeholderLabel.textColor"];
+    
+    [[UITextField appearance] setBorderStyle:UITextBorderStyleNone];
+    
+    UIImage *textFieldBackground = [UIImage imageNamed:@"tf_bg"];// resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
+    [[UITextField appearance] setBackground:textFieldBackground];
     
     
     //UIImage *mainBackground = [[UIImage imageNamed:@"background"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];

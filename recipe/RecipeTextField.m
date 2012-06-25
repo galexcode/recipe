@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 OngSoft. All rights reserved.
 //
 
+#define padding 10
+
 #import "RecipeTextField.h"
 
 @implementation RecipeTextField
@@ -14,7 +16,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
     }
     return self;
 }
@@ -23,6 +24,16 @@
 {
     [[UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f] setFill];
     [[self placeholder] drawInRect:rect withFont:[UIFont systemFontOfSize:14.00f]];
+}
+
+- (CGRect)textRectForBounds:(CGRect)bounds
+{
+    return CGRectMake(bounds.origin.x + padding, bounds.origin.y, bounds.size.width, bounds.size.height);
+}
+
+- (CGRect)editingRectForBounds:(CGRect)bounds
+{
+    return CGRectMake(bounds.origin.x + padding, bounds.origin.y, bounds.size.width, bounds.size.height);
 }
 
 /*
