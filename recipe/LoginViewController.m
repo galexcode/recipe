@@ -14,6 +14,7 @@
 @implementation LoginViewController
 @synthesize userName;
 @synthesize password;
+@synthesize formBackground;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,14 +54,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    UIImage *imageFormBackground = [[UIImage imageNamed:@"form_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(11, 0, 11, 0)];
+    [[self formBackground] setImage:imageFormBackground];
 }
 
 - (void)viewDidUnload
 {
     [self setUserName:nil];
     [self setPassword:nil];
+    [self setFormBackground:nil];
     [super viewDidUnload];
+
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }

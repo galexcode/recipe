@@ -16,9 +16,9 @@
 #define kTableLength                                320
 
 // Width of the cells of the embedded table view (after rotation, which means it controls the rowHeight property)
-#define kCellWidth                                  106
+#define kCellWidth                                  92
 // Height of the cells of the embedded table view (after rotation, which would be the table's width)
-#define kCellHeight                                 106
+#define kCellHeight                                 92
 
 // Padding for the Cell containing the article image and title
 #define kArticleCellVerticalInnerPadding            3

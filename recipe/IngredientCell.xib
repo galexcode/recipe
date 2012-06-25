@@ -58,7 +58,7 @@
 							<object class="IBUILabel" id="772230156">
 								<reference key="NSNextResponder" ref="1042467070"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{49, 22}, {45, 21}}</string>
+								<string key="NSFrame">{{46, 22}, {50, 21}}</string>
 								<reference key="NSSuperview" ref="1042467070"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="404624988"/>
@@ -131,7 +131,10 @@
 								<string key="NSFrame">{{104, 3}, {173, 40}}</string>
 								<reference key="NSSuperview" ref="1042467070"/>
 								<reference key="NSWindow"/>
+<<<<<<< HEAD
 								<reference key="NSNextKeyView" ref="1068473804"/>
+=======
+>>>>>>> login/register form backgound
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -168,7 +171,10 @@
 								<string key="NSFrame">{{290, 13}, {18, 18}}</string>
 								<reference key="NSSuperview" ref="1042467070"/>
 								<reference key="NSWindow"/>
+<<<<<<< HEAD
 								<reference key="NSNextKeyView"/>
+=======
+>>>>>>> login/register form backgound
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
