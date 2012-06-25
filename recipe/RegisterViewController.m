@@ -14,6 +14,7 @@
 @synthesize userName;
 @synthesize email;
 @synthesize password;
+@synthesize repassword;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,6 +54,7 @@
     [self setUserName:nil];
     [self setEmail:nil];
     [self setPassword:nil];
+    [self setRepassword:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -74,42 +76,47 @@
         && [NSStringUtil stringIsValidEmail:[email text]]
         && [[password text] length] != 0)
     {
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [hud setLabelText:@"Registering..."];
-        _user = [[User alloc] init];
-        [_user setName:[userName text]];
-        [_user setPassword:[password text]];
-        [_user setEmail:[email text]];
+        if([self.repassword.text isEqualToString:self.password.text])
+        {
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [hud setLabelText:@"Registering..."];
+            _user = [[User alloc] init];
+            [_user setName:[userName text]];
+            [_user setPassword:[password text]];
+            [_user setEmail:[email text]];
         
-        //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/register.xml"];
-        NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/register"];
+            //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/register.xml"];
+            NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/register"];
         
-        __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
-        [request setPostValue:[userName text] forKey:@"un"];
-        [request setPostValue:[password text] forKey:@"pw"];
-        [request setPostValue:[email text] forKey:@"em"];
+            __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+            [request setPostValue:[userName text] forKey:@"un"];
+            [request setPostValue:[password text] forKey:@"pw"];
+            [request setPostValue:[email text] forKey:@"em"];
         
-        [request setCompletionBlock:^{
-            NSLog(@"Register xml loaded.");
-            if (request.responseStatusCode == 200) {
-                NSLog(@"%d", request.responseStatusCode);
-                UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
-                [handler setEndDocumentTarget:self andAction:@selector(didFinishRegisterUser)];
-                NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
-                parser.delegate = handler;
-                [parser parse];
+            [request setCompletionBlock:^{
+                NSLog(@"Register xml loaded.");
+                if (request.responseStatusCode == 200) {
+                    NSLog(@"%d", request.responseStatusCode);
+                    UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
+                    [handler setEndDocumentTarget:self andAction:@selector(didFinishRegisterUser)];
+                    NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+                    parser.delegate = handler;
+                    [parser parse];
                 //            }else if(request.responseStatusCode == 404){
-            } else {
-                _user = nil;
-                [self didFinishRegisterUser];
-            }
-        }];
-        [request setFailedBlock:^{
-            [self handleError:request.error];
-        }];
+                } else {
+                    _user = nil;
+                    [self didFinishRegisterUser];
+                }
+            }];
+            [request setFailedBlock:^{
+                [self handleError:request.error];
+            }];
         
-        [request startAsynchronous];
-        
+            [request startAsynchronous];
+        }else {
+            [repassword setText:@""];
+            [repassword setPlaceholder:@"re-password does not match"];
+        }
     }else {
         if ([trimSpaces([userName text]) length] == 0)
             [userName setText:@""];
