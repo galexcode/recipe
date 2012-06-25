@@ -57,9 +57,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ([self.recipes count] > 6) {
-        return 6;
-    }
+    NSLog(@"Number of recipe: %d of %@", [self.recipes count], @"category");
     return [self.recipes count];
 }
 
@@ -114,7 +112,7 @@
     dispatch_async(concurrentQueue, ^{        
         UIImage *image = nil;
         if ([[currentRecipe imageList] count] > 0) {
-            NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@/184", [[currentRecipe imageList] objectAtIndex:0]];
+            NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@/250", [[currentRecipe imageList] objectAtIndex:0]];
             NSURL *url = [NSURL URLWithString:link];
             //image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
             //image = [UIImage imageNamed:@"OrangeJuice"];
