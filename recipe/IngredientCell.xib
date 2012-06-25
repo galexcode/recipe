@@ -50,6 +50,10 @@
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">ingredient.png</string>
+								</object>
 							</object>
 							<object class="IBUILabel" id="772230156">
 								<reference key="NSNextResponder" ref="1042467070"/>
@@ -127,6 +131,7 @@
 								<string key="NSFrame">{{104, 3}, {173, 40}}</string>
 								<reference key="NSSuperview" ref="1042467070"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="1068473804"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -163,6 +168,7 @@
 								<string key="NSFrame">{{290, 13}, {18, 18}}</string>
 								<reference key="NSSuperview" ref="1042467070"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -257,11 +263,11 @@
 						<int key="objectID">2</int>
 						<reference key="object" ref="612902744"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="153683489"/>
 							<reference ref="772230156"/>
 							<reference ref="682249083"/>
 							<reference ref="404624988"/>
 							<reference ref="1068473804"/>
+							<reference ref="153683489"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -354,10 +360,10 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">arrow.png</string>
-			<string key="NS.object.0">{18, 18}</string>
-		</object>
+		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="arrow.png">{18, 18}</string>
+			<string key="ingredient.png">{43, 43}</string>
+		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>
 </archive>

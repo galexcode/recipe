@@ -237,6 +237,8 @@
 		97F77C73158C86DB00513CB4 /* RecipeLongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97F77C72158C86DB00513CB4 /* RecipeLongCell.xib */; };
 		97F77C77158CAB6800513CB4 /* AddRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F77C75158CAB6300513CB4 /* AddRecipeViewController.m */; };
 		97F77C78158CAB6800513CB4 /* AddRecipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97F77C76158CAB6500513CB4 /* AddRecipeViewController.xib */; };
+		C5C31A0115986172009FE7B6 /* ingredient.png in Resources */ = {isa = PBXBuildFile; fileRef = C5C31A0015986172009FE7B6 /* ingredient.png */; };
+		C5C31A041598617C009FE7B6 /* ingredient@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5C31A031598617C009FE7B6 /* ingredient@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -542,6 +544,8 @@
 		97F77C75158CAB6300513CB4 /* AddRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecipeViewController.m; sourceTree = "<group>"; };
 		97F77C76158CAB6500513CB4 /* AddRecipeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddRecipeViewController.xib; sourceTree = "<group>"; };
 		97FC03FF1582F0B8008E2755 /* linkGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = linkGlobal.h; sourceTree = "<group>"; };
+		C5C31A0015986172009FE7B6 /* ingredient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ingredient.png; path = ../../../../../Volumes/USB20FD/ingredient.png; sourceTree = "<group>"; };
+		C5C31A031598617C009FE7B6 /* ingredient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ingredient@2x.png"; path = "../../../../../Volumes/USB20FD/ingredient@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -859,6 +863,8 @@
 				978359061565FED900200699 /* home@2x.png */,
 				5AD40515152F08530045E74A /* beef.jpg */,
 				9084A2F11522F83F00BDEDC4 /* kira.png */,
+				C5C31A0015986172009FE7B6 /* ingredient.png */,
+				C5C31A031598617C009FE7B6 /* ingredient@2x.png */,
 			);
 			name = resource;
 			sourceTree = "<group>";
@@ -1205,6 +1211,8 @@
 				97CFD158158D21670097A111 /* plus_round.png in Resources */,
 				97962C99158DB8E3004B0E58 /* default_recipe.jpg in Resources */,
 				974C1D5B159844070056B894 /* HomeViewController.xib in Resources */,
+				C5C31A0115986172009FE7B6 /* ingredient.png in Resources */,
+				C5C31A041598617C009FE7B6 /* ingredient@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

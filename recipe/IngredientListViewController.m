@@ -99,10 +99,6 @@
     cell.quantity.text = [currentIngredient quantity];
     cell.name.text = [currentIngredient name];
     
-    //need to remove
-    cell.thumb.image = [UIImage imageNamed:@"Aviation"];
-    
-    
     if (![[currentIngredient imagePath] isEqualToString:@"-1"]) {
         NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@", [currentIngredient imagePath]];
         NSURL *url = [[NSURL alloc] initWithString:link];
