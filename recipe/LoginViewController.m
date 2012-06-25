@@ -163,12 +163,12 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     if (_user != nil) {
         if (![[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:@"-1"]) {
-            UIAlertView *successAlertView = [[UIAlertView alloc] initWithTitle:@"Login Success"
-                                                                       message:[NSString stringWithFormat:@"Welcome back %@",[[[GlobalStore sharedStore] loggedUser] name] ]
-                                                                      delegate:nil
-                                                             cancelButtonTitle:@"OK"
-                                                             otherButtonTitles:nil];
-            [successAlertView show];
+//            UIAlertView *successAlertView = [[UIAlertView alloc] initWithTitle:@"Login Success"
+//                                                                       message:[NSString stringWithFormat:@"Welcome back %@",[[[GlobalStore sharedStore] loggedUser] name] ]
+//                                                                      delegate:nil
+//                                                             cancelButtonTitle:@"OK"
+//                                                             otherButtonTitles:nil];
+            //[successAlertView show];
             [_parentController.view setHidden:YES];
         } else if ([[[[GlobalStore sharedStore] loggedUser] userId]  isEqualToString:@"-1"]) {
             UIAlertView *failsAlertView = [[UIAlertView alloc] initWithTitle:@"Login Failed"

@@ -14,6 +14,7 @@
 @end
 
 @implementation HomeViewController
+@synthesize searchBar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +28,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //[[self searchBar] setTintColor:[UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f]];
+    [[self searchBar] setTintColor:[UIColor clearColor]];
+    
     CategoryListViewController *tableViewController = [[CategoryListViewController alloc] initWithNibName:@"CategoryListViewController" bundle:nil];
     CGRect frame = CGRectMake(0, 44, 320, 446);
     [tableViewController.view setFrame:frame];
@@ -36,6 +41,7 @@
 
 - (void)viewDidUnload
 {
+    [self setSearchBar:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

@@ -35,14 +35,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
-//    [[self navigationItem] setTitleView:label];
+    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
+    [[self navigationItem] setTitleView:label];
     
-    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
+//    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
+//    [[self pageTitle] setText:[self pageTitleText]];
     
-    [[self pageTitle] setText:[self pageTitleText]];
-    
-    [[self navigationItem] setTitleView:headerView];
+//    [[self navigationItem] setTitleView:headerView];
     
     [[self ingredientListTable] setBackgroundColor:[UIColor clearColor]];
     //[self.view addSubview:ingredientListTable];
@@ -126,8 +125,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     IngredientViewController *viewControllerToPush = [[IngredientViewController alloc] initWithNibName:@"IngredientViewController" bundle:nil];
     Ingredient *currentIngredient = (Ingredient*)[[self ingredients] objectAtIndex:indexPath.row];
+    [[viewControllerToPush navigationItem] setTitle:[currentIngredient name]];
     [viewControllerToPush setIngredient:currentIngredient];
-    [viewControllerToPush setPageTitleText:[currentIngredient name]];
+//    [viewControllerToPush setPageTitleText:[currentIngredient name]];
     [self.navigationController pushViewController:viewControllerToPush animated:YES];
 }
 

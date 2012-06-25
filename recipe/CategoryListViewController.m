@@ -163,7 +163,8 @@
     __weak HeaderButton* tempButton = (HeaderButton*)sender;
     RecipeListViewController* viewControllerToPush = [[RecipeListViewController alloc] initWithNibName:@"RecipeListViewController" bundle:nil];
     viewControllerToPush.recipes = tempButton.array;
-    viewControllerToPush.pageTitleText = tempButton.titleText;
+//    viewControllerToPush.pageTitleText = tempButton.titleText;
+    [[viewControllerToPush navigationItem] setTitle:tempButton.titleText];
     UINavigationController *nav = (UINavigationController*)self.navController;
     [nav pushViewController:viewControllerToPush animated:YES];
 }

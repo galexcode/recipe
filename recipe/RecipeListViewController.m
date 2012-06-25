@@ -35,13 +35,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
-//    [[self navigationItem] setTitleView:label];
+    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
+    [[self navigationItem] setTitleView:label];
     [[self pageTitle] setText:[self pageTitleText]];
     
-    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
-    
-    [[self navigationItem] setTitleView:headerView];
+//    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
+//    
+//    [[self navigationItem] setTitleView:headerView];
 }
 
 - (void)viewDidUnload
@@ -135,8 +135,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Recipe* currentRecipe = (Recipe*)[self.recipes objectAtIndex:indexPath.row];
     RecipeViewController *viewControllerToPush = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
-    [viewControllerToPush setRecipe:[self.recipes objectAtIndex:indexPath.row]];
+    [[viewControllerToPush navigationItem] setTitle:[currentRecipe name]];
+    [viewControllerToPush setRecipe:currentRecipe];
     [self.navigationController pushViewController:viewControllerToPush animated:YES];
 }
 

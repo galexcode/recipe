@@ -52,12 +52,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
-    //[[self navigationItem] setTitleView:label];
+    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
+    [[self navigationItem] setTitleView:label];
     
-    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
-    
-    [[self navigationItem] setTitleView:headerView];
+//    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
+//    [[self navigationItem] setTitleView:headerView];
     
     [self.recipeDetailsTable setBackgroundColor:[UIColor clearColor]];
     [[self recipeNameLabel] setText:[[self recipe] name]];
@@ -284,17 +283,17 @@
         if (indexPath.row == 0) {
             if ([[[self recipe] ingredientList] count] > 0){
                 IngredientListViewController *viewControllerToPush = [[IngredientListViewController alloc] initWithNibName:@"IngredientListViewController" bundle:nil];
-                [viewControllerToPush.navigationItem setTitle:@"Ingredients"];
+                [viewControllerToPush.navigationItem setTitle:ingredientTitleText];
                 [viewControllerToPush setIngredients:[[self recipe] ingredientList]];
-                [viewControllerToPush setPageTitleText:ingredientTitleText];
+//                [viewControllerToPush setPageTitleText:ingredientTitleText];
                 [self.navigationController pushViewController:viewControllerToPush animated:YES];
             }
         } else if (indexPath.row == 1){
             if ([[[self recipe] stepList] count] > 0){
                 StepListViewController *viewControllerToPush = [[StepListViewController alloc] initWithNibName:@"StepListViewController" bundle:nil];
-                [viewControllerToPush.navigationItem setTitle:@"Steps"];
+                [viewControllerToPush.navigationItem setTitle:ingredientTitleText];
                 [viewControllerToPush setSteps:[[self recipe] stepList]];
-                [viewControllerToPush setPageTitleText:stepTitleText];
+//                [viewControllerToPush setPageTitleText:stepTitleText];
                 [self.navigationController pushViewController:viewControllerToPush animated:YES];
             }
             

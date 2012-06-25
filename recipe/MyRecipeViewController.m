@@ -225,8 +225,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Recipe *currentRecipe = (Recipe*)[[self recipes] objectAtIndex:indexPath.row];
     RecipeViewController *viewControllerToPush = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
-    [viewControllerToPush setRecipe:[self.recipes objectAtIndex:indexPath.row]];
+    [viewControllerToPush setRecipe:currentRecipe];
+    [[viewControllerToPush navigationItem] setTitle:[currentRecipe name]];
     [self.navigationController pushViewController:viewControllerToPush animated:YES];
 }
 
