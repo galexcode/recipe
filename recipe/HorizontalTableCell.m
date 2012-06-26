@@ -7,6 +7,7 @@
 //
 
 #import "HorizontalTableCell.h"
+#import "GlobalStore.h"
 #import "RecipeCell.h"
 #import "RecipeTitleLabel.h"
 #import "ControlVariables.h"
@@ -90,7 +91,6 @@
         cell = [[RecipeCell alloc] initWithFrame:CGRectMake(0, 0, kCellWidth, kCellHeight)];
     }
     
-    //__block NSDictionary *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
     __block Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
     
     dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -114,8 +114,7 @@
     dispatch_async(concurrentQueue, ^{        
         UIImage *image = nil;
         if ([[currentRecipe imageList] count] > 0) {
-            NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@/184", [[currentRecipe imageList] objectAtIndex:0]];
-            NSURL *url = [NSURL URLWithString:link];
+            NSURL *url = [NSURL URLWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:184 andHeight:0]];
             //image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
             //image = [UIImage imageNamed:@"OrangeJuice"];
             image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];

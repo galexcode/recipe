@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 OngSoft. All rights reserved.
 //
 
+#define BASE_URL @"http://www.perselab.com/recipe"
+
 #import "GlobalStore.h"
 
 static GlobalStore *sharedStore = nil;
@@ -48,6 +50,32 @@ static GlobalStore *sharedStore = nil;
         _categories = [[NSMutableDictionary alloc] init];
         return self;
     }
+}
+
+#pragma mark Link Preconfig
++ (NSString*)imageLinkWithImageId:(NSString *)imageId forWidth:(NSInteger)width andHeight:(NSInteger)height
+{
+    NSString *size;
+    
+    if (width > 0 && height > 0) {
+        size = [NSString stringWithFormat:@"%d/%d", width, height];
+    } else if (height == 0 && width == 0) {
+        size = @"";
+    } else if (height == 0) {
+        size = [NSString stringWithFormat:@"%d", width];
+    } else {
+        size = [NSString stringWithFormat:@"0/%d", height];
+    }
+    
+    if ([size isEqualToString:@""]) {
+        return [NSString stringWithFormat:@"%@/image/%@", BASE_URL, imageId];
+    }
+    return [NSString stringWithFormat:@"%@/image/%@/%@", BASE_URL, imageId, size];
+}
+
++ (NSString*) loginLink
+{
+    return [NSString stringWithFormat:@"%@/login", BASE_URL];
 }
 
 #pragma mark Global Logged User

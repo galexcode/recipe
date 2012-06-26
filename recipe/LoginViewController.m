@@ -84,8 +84,7 @@
         [hud setLabelText:@"Checking..."];
         _user = [[GlobalStore sharedStore] loggedUser];
         
-        //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/login.xml"];
-        NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/login"];
+        NSURL *url = [NSURL URLWithString:[GlobalStore loginLink]];
         
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[userName text] forKey:@"un"];

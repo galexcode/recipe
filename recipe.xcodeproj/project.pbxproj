@@ -553,7 +553,6 @@
 		97F77C74158CAB6100513CB4 /* AddRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRecipeViewController.h; sourceTree = "<group>"; };
 		97F77C75158CAB6300513CB4 /* AddRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecipeViewController.m; sourceTree = "<group>"; };
 		97F77C76158CAB6500513CB4 /* AddRecipeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddRecipeViewController.xib; sourceTree = "<group>"; };
-		97FC03FF1582F0B8008E2755 /* linkGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = linkGlobal.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -687,7 +686,6 @@
 				902964A7152014B0002BAC2D /* recipeAppDelegate.m */,
 				902964A9152014B0002BAC2D /* MainWindow.xib */,
 				908409DE1521C60200FA078B /* recipeGlobal.h */,
-				97FC03FF1582F0B8008E2755 /* linkGlobal.h */,
 				9742D81715737807003B678D /* ControlVariables.h */,
 				9084A2EB1522ECD900BDEDC4 /* custom control */,
 				908409DD1521C4C300FA078B /* service */,

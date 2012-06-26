@@ -19,6 +19,9 @@
 
 + (GlobalStore *) sharedStore;
 
++ (NSString*) imageLinkWithImageId:(NSString*)imageId forWidth:(NSInteger)width andHeight:(NSInteger)height;
++ (NSString*) loginLink;
+
 - (void)setLoggedUser:(User *)loggedUser;
 - (User*)loggedUser;
 
