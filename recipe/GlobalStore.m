@@ -78,6 +78,21 @@ static GlobalStore *sharedStore = nil;
     return [NSString stringWithFormat:@"%@/login", BASE_URL];
 }
 
++ (NSString*) registerLink
+{
+    return [NSString stringWithFormat:@"%@/register", BASE_URL];
+}
+
++ (NSString*) categoriesLink
+{
+    return [NSString stringWithFormat:@"%@/categories", BASE_URL];
+}
+
++ (NSString*) searchLink
+{
+    return [NSString stringWithFormat:@"%@/search", BASE_URL];
+}
+
 #pragma mark Global Logged User
 - (void)setLoggedUser:(User *)loggedUser
 {

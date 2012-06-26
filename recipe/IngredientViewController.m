@@ -7,6 +7,7 @@
 //
 
 #import "IngredientViewController.h"
+#import "GlobalStore.h"
 #import "RecipeNavigationLabel.h"
 #import "ASI2HTTPRequest.h"
 
@@ -43,8 +44,7 @@
     self.ingredientDesc.text = self.ingredient.desc;
     NSLog(@"iid: %@", [[self ingredient] ingredientId]);
     
-    NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@/306", self.ingredient.imagePath];
-    NSURL *url = [[NSURL alloc] initWithString:link];
+    NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[self ingredient] imagePath] forWidth:600 andHeight:0]];
     
     __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
     [request setCompletionBlock:^{

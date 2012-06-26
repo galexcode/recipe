@@ -181,8 +181,8 @@
         cell.thumb.image = [UIImage imageNamed:@"default_recipe.jpg"];
         
         if ([[currentRecipe imageList] count] > 0) {
-            NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@/100", [[currentRecipe imageList] objectAtIndex:0]];
-            NSURL *url = [[NSURL alloc] initWithString:link];
+            
+            NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:120 andHeight:0]];
             
             __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
             [request setCompletionBlock:^{

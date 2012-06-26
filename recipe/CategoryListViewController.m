@@ -91,8 +91,8 @@
 {
     [self setCategoryDictionary:nil];
     [self setCategoryDictionary:[[NSMutableDictionary alloc] init]];
-    //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/categories.xml"];
-    NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/categories"];
+    
+    NSURL *url = [NSURL URLWithString:[GlobalStore categoriesLink]];
     
     __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
     NSLog(@"%@", request.requestHeaders);

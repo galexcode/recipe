@@ -8,6 +8,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "RecipeViewController.h"
+#import "GlobalStore.h"
 #import "NSStringUtil.h"
 #import "IngredientListViewController.h"
 #import "StepListViewController.h"
@@ -100,8 +101,7 @@
 - (void)loadUserAvatar
 {
     if (![[[[self recipe] owner] avatarId] isEqualToString:@"-1"]) {
-        NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@/100", [[[self recipe] owner] avatarId]];
-        NSURL *url = [[NSURL alloc] initWithString:link];
+        NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[[self recipe] owner] avatarId] forWidth:100 andHeight:0]];
         
         __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
         [request setCompletionBlock:^{
@@ -126,11 +126,8 @@
         for (NSInteger i = 0; i < count; i++) {
             UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(sx, y, w, 200.00f)];
             [imageSlider addSubview:image];
-            
-            //NSURL *url = [[NSURL alloc] initWithString:@"http://www.perselab.com/recipe/images/Pizza.png"];
-            //NSURL *url = [[NSURL alloc] initWithString:@"http://belve.perselab.com/images/617/0/475"];
-            NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@/300", [[[self recipe] imageList] objectAtIndex:i]];
-            NSURL *url = [[NSURL alloc] initWithString:link];
+
+            NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[[self recipe] imageList] objectAtIndex:i] forWidth:600 andHeight:0]];
             
             __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
             [request setCompletionBlock:^{

@@ -14,7 +14,7 @@
 }
 
 @property (nonatomic) NSMutableArray *recipes;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UISearchBar *mySearchBar;
 @property (nonatomic, weak) UIViewController* navController;
 - (void)didParsedSearchRecipes;
 @end

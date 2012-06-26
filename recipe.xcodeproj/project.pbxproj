@@ -234,7 +234,6 @@
 		97CFD157158D21670097A111 /* add_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 97CFD155158D21670097A111 /* add_photo.png */; };
 		97CFD158158D21670097A111 /* plus_round.png in Resources */ = {isa = PBXBuildFile; fileRef = 97CFD156158D21670097A111 /* plus_round.png */; };
 		97D6217415835DAC00B93E09 /* IngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D6217315835DAC00B93E09 /* IngredientCell.m */; };
-		97DA7C67157C973A002449FB /* SingletonSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA7C66157C973A002449FB /* SingletonSample.m */; };
 		97F77C65158C5C2600513CB4 /* GlobalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F77C64158C5C2600513CB4 /* GlobalStore.m */; };
 		97F77C69158C685C00513CB4 /* RecipesXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F77C68158C685C00513CB4 /* RecipesXMLHandler.m */; };
 		97F77C6D158C80EB00513CB4 /* IngredientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F77C6B158C80E900513CB4 /* IngredientViewController.m */; };
@@ -538,8 +537,6 @@
 		97CFD156158D21670097A111 /* plus_round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_round.png; sourceTree = "<group>"; };
 		97D6217215835DAC00B93E09 /* IngredientCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientCell.h; sourceTree = "<group>"; };
 		97D6217315835DAC00B93E09 /* IngredientCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientCell.m; sourceTree = "<group>"; };
-		97DA7C65157C973A002449FB /* SingletonSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonSample.h; sourceTree = "<group>"; };
-		97DA7C66157C973A002449FB /* SingletonSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonSample.m; sourceTree = "<group>"; };
 		97F77C63158C5C2600513CB4 /* GlobalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalStore.h; sourceTree = "<group>"; };
 		97F77C64158C5C2600513CB4 /* GlobalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalStore.m; sourceTree = "<group>"; };
 		97F77C67158C685C00513CB4 /* RecipesXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesXMLHandler.h; sourceTree = "<group>"; };
@@ -784,8 +781,6 @@
 			children = (
 				5AEA8BEE153686250097C796 /* ApplicationService.h */,
 				5AEA8BEF153686250097C796 /* ApplicationService.m */,
-				97DA7C65157C973A002449FB /* SingletonSample.h */,
-				97DA7C66157C973A002449FB /* SingletonSample.m */,
 				97F77C63158C5C2600513CB4 /* GlobalStore.h */,
 				97F77C64158C5C2600513CB4 /* GlobalStore.m */,
 			);
@@ -1281,7 +1276,6 @@
 				9742D81A1573794C003B678D /* HorizontalTableCell.m in Sources */,
 				970C0E6A1574C749004844F8 /* HeaderButton.m in Sources */,
 				979B4A931577241A00BD6A05 /* CategoriesXMLHandler.m in Sources */,
-				97DA7C67157C973A002449FB /* SingletonSample.m in Sources */,
 				97A645ED157DE9320084F7A2 /* RegisterViewController.m in Sources */,
 				9765D218157F463F00935504 /* RecipeTextField.m in Sources */,
 				9765D222157F66E800935504 /* RecipeNavigationLabel.m in Sources */,

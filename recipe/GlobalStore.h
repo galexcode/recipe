@@ -21,6 +21,11 @@
 
 + (NSString*) imageLinkWithImageId:(NSString*)imageId forWidth:(NSInteger)width andHeight:(NSInteger)height;
 + (NSString*) loginLink;
++ (NSString*) registerLink;
++ (NSString*) categoriesLink;
+
++ (NSString*) searchLink;
+
 
 - (void)setLoggedUser:(User *)loggedUser;
 - (User*)loggedUser;

@@ -7,6 +7,7 @@
 //
 
 #import "IngredientListViewController.h"
+#import "GlobalStore.h"
 #import "IngredientViewController.h"
 #import "RecipeNavigationLabel.h"
 #import "IngredientCell.h"
@@ -100,8 +101,7 @@
     cell.name.text = [currentIngredient name];
     
     if (![[currentIngredient imagePath] isEqualToString:@"-1"]) {
-        NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@", [currentIngredient imagePath]];
-        NSURL *url = [[NSURL alloc] initWithString:link];
+        NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[currentIngredient imagePath] forWidth:60 andHeight:0]];
         
         __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
         [request setCompletionBlock:^{

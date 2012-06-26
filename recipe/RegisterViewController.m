@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "GlobalStore.h"
 #import "MBProgressHUD.h"
 #import "NSStringUtil.h"
 
@@ -87,9 +88,8 @@
             [_user setName:[userName text]];
             [_user setPassword:[password text]];
             [_user setEmail:[email text]];
-        
-            //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/register.xml"];
-            NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/register"];
+
+             NSURL *url = [NSURL URLWithString:[GlobalStore registerLink]];
         
             __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
             [request setPostValue:[userName text] forKey:@"un"];
