@@ -9,14 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface RecipeListViewController : UIViewController <UITabBarDelegate, UITableViewDataSource>{
-    NSArray* _recipes;
+    NSMutableArray* _recipes;
     NSString* _pageTitleText;
 }
 
 
 @property (weak, nonatomic) IBOutlet UITableView *recipeTable;
 @property (weak, nonatomic) IBOutlet UILabel *pageTitle;
-@property (nonatomic) NSArray* recipes;
+@property (nonatomic) NSMutableArray* recipes;
 @property (nonatomic) NSString* pageTitleText;
 
 @end

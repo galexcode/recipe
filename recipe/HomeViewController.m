@@ -8,6 +8,9 @@
 
 #import "HomeViewController.h"
 #import "CategoryListViewController.h"
+#import "RecipesXMLHandler.h"
+#import "GlobalStore.h"
+#import "RecipeListViewController.h"
 
 @interface HomeViewController ()
 
@@ -15,6 +18,8 @@
 
 @implementation HomeViewController
 @synthesize searchBar;
+@synthesize recipes = _recipes;
+@synthesize navController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,4 +57,68 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    NSLog(@"Button click search: %@", self.searchBar.text);
+    _recipes = nil;
+    _recipes = [[NSMutableArray alloc] init];
+    //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/categories.xml"];
+    NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/search"];
+    
+    __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+    [request setPostValue:searchBar.text forKey:@"key"];
+    
+    [request setCompletionBlock:^{
+        NSLog(@"Recipes xml loaded.");
+        NSLog(@"status code: %d",request.responseStatusCode);
+        if (request.responseStatusCode == 200) {
+            RecipesXMLHandler* handler = [[RecipesXMLHandler alloc] initWithRecipeArray:_recipes];
+            [handler setEndDocumentTarget:self andAction:@selector(didParsedSearchRecipes)];
+            NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+            parser.delegate = handler;
+            [parser parse];
+        }
+        else {
+            //[self didParsedRecipes];
+        }
+    }];
+    [request setFailedBlock:^{
+        NSError *error = request.error;
+        NSLog(@"Error downloading image: %@", error.localizedDescription);
+    }];
+    
+    [request startAsynchronous];
+
+}
+
+- (void)didParsedSearchRecipes
+{
+    if(_recipes != nil && [_recipes count] > 0)
+    {
+        NSLog(@"Load len cai view moi");
+        RecipeListViewController* viewControllerToPush = [[RecipeListViewController alloc] initWithNibName:@"RecipeListViewController" bundle:nil];
+        viewControllerToPush.recipes = _recipes;
+        [[viewControllerToPush navigationItem] setTitle:searchBar.text];
+        [[self navigationController] pushViewController:viewControllerToPush animated:YES];
+    } else {
+        [[self searchBar] resignFirstResponder];
+        [[self searchBar] setShowsCancelButton:NO animated:YES];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Message" message:[NSString stringWithFormat:@"No result for \"%@\"", searchBar.text] delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+        [[self searchBar] setText:@""];
+        [alertView show];
+    }
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    //searchBar.showsCancelButton = YES;
+    [searchBar setShowsCancelButton:YES animated:NO];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    //searchBar.showsCancelButton = NO;
+    [searchBar setShowsCancelButton:NO animated:YES];
+    [searchBar resignFirstResponder];
+}
 @end

@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeViewController : UIViewController <UISearchBarDelegate>
+{
+    NSMutableArray *_recipes;
+}
 
+@property (nonatomic) NSMutableArray *recipes;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, weak) UIViewController* navController;
+- (void)didParsedSearchRecipes;
 @end
