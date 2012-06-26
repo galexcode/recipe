@@ -251,6 +251,7 @@
 		97F77C78158CAB6800513CB4 /* AddRecipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97F77C76158CAB6500513CB4 /* AddRecipeViewController.xib */; };
 		C5776C711599A0D200188248 /* arrow_pull_refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = C5776C701599A0D200188248 /* arrow_pull_refresh.png */; };
 		C5776C741599A3E800188248 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5776C731599A3E700188248 /* QuartzCore.framework */; };
+		C5776C7F1599AC3C00188248 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5776C7E1599AC3C00188248 /* PullRefreshTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -568,6 +569,8 @@
 		97F77C76158CAB6500513CB4 /* AddRecipeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddRecipeViewController.xib; sourceTree = "<group>"; };
 		C5776C701599A0D200188248 /* arrow_pull_refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_pull_refresh.png; sourceTree = "<group>"; };
 		C5776C731599A3E700188248 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C5776C7D1599AC3C00188248 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
+		C5776C7E1599AC3C00188248 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -932,6 +935,8 @@
 				97507B481586DCB100D21415 /* StepDescriptionLabel.m */,
 				976165B51585AA7300246CF3 /* RecipeDisclosureIndicators.h */,
 				976165B61585AA7300246CF3 /* RecipeDisclosureIndicators.m */,
+				C5776C7D1599AC3C00188248 /* PullRefreshTableViewController.h */,
+				C5776C7E1599AC3C00188248 /* PullRefreshTableViewController.m */,
 			);
 			name = "custom control";
 			sourceTree = "<group>";
@@ -1326,6 +1331,7 @@
 				97F77C77158CAB6800513CB4 /* AddRecipeViewController.m in Sources */,
 				97CFD14F158CF0B20097A111 /* SelectCategoresViewController.m in Sources */,
 				974C1D5A159844070056B894 /* HomeViewController.m in Sources */,
+				C5776C7F1599AC3C00188248 /* PullRefreshTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
