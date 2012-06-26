@@ -242,6 +242,8 @@
 		97F77C73158C86DB00513CB4 /* RecipeLongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97F77C72158C86DB00513CB4 /* RecipeLongCell.xib */; };
 		97F77C77158CAB6800513CB4 /* AddRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F77C75158CAB6300513CB4 /* AddRecipeViewController.m */; };
 		97F77C78158CAB6800513CB4 /* AddRecipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97F77C76158CAB6500513CB4 /* AddRecipeViewController.xib */; };
+		C5776C711599A0D200188248 /* arrow_pull_refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = C5776C701599A0D200188248 /* arrow_pull_refresh.png */; };
+		C5776C741599A3E800188248 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5776C731599A3E700188248 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -550,6 +552,8 @@
 		97F77C74158CAB6100513CB4 /* AddRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRecipeViewController.h; sourceTree = "<group>"; };
 		97F77C75158CAB6300513CB4 /* AddRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecipeViewController.m; sourceTree = "<group>"; };
 		97F77C76158CAB6500513CB4 /* AddRecipeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddRecipeViewController.xib; sourceTree = "<group>"; };
+		C5776C701599A0D200188248 /* arrow_pull_refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_pull_refresh.png; sourceTree = "<group>"; };
+		C5776C731599A3E700188248 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -565,6 +569,7 @@
 				9029649A152014AF002BAC2D /* Foundation.framework in Frameworks */,
 				90829C271522C22C00E6BFC9 /* CoreLocation.framework in Frameworks */,
 				9029649C152014AF002BAC2D /* CoreGraphics.framework in Frameworks */,
+				C5776C741599A3E800188248 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +651,7 @@
 		90296488152014AF002BAC2D = {
 			isa = PBXGroup;
 			children = (
+				C5776C731599A3E700188248 /* QuartzCore.framework */,
 				9029649D152014AF002BAC2D /* recipe */,
 				90296496152014AF002BAC2D /* Frameworks */,
 				90296494152014AF002BAC2D /* Products */,
@@ -870,6 +876,7 @@
 				978359061565FED900200699 /* home@2x.png */,
 				5AD40515152F08530045E74A /* beef.jpg */,
 				9084A2F11522F83F00BDEDC4 /* kira.png */,
+				C5776C701599A0D200188248 /* arrow_pull_refresh.png */,
 			);
 			name = resource;
 			sourceTree = "<group>";
@@ -1222,6 +1229,7 @@
 				97B5ED9E159883790026A84E /* form_bg@2x.png in Resources */,
 				977D1ECD159893ED00F0D590 /* tf_bg.png in Resources */,
 				977D1ECE159893ED00F0D590 /* tf_bg@2x.png in Resources */,
+				C5776C711599A0D200188248 /* arrow_pull_refresh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
