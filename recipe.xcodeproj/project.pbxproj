@@ -668,7 +668,6 @@
 		90296488152014AF002BAC2D = {
 			isa = PBXGroup;
 			children = (
-				C5776C731599A3E700188248 /* QuartzCore.framework */,
 				9029649D152014AF002BAC2D /* recipe */,
 				90296496152014AF002BAC2D /* Frameworks */,
 				90296494152014AF002BAC2D /* Products */,
@@ -687,6 +686,7 @@
 			isa = PBXGroup;
 			children = (
 				5A3B818615367B2A007BD9ED /* libz.1.2.5.dylib */,
+				C5776C731599A3E700188248 /* QuartzCore.framework */,
 				5A3B818415367B04007BD9ED /* CFNetwork.framework */,
 				5A3B818215367AF5007BD9ED /* SystemConfiguration.framework */,
 				5A3B818015367AE0007BD9ED /* MobileCoreServices.framework */,
