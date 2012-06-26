@@ -1249,9 +1249,7 @@
 				97B5ED9E159883790026A84E /* form_bg@2x.png in Resources */,
 				977D1ECD159893ED00F0D590 /* tf_bg.png in Resources */,
 				977D1ECE159893ED00F0D590 /* tf_bg@2x.png in Resources */,
-<<<<<<< HEAD
 				C5776C711599A0D200188248 /* arrow_pull_refresh.png in Resources */,
-=======
 				9744DC1615999A7300555698 /* plain_bar_bg_44.png in Resources */,
 				9744DC1715999A7300555698 /* plain_bar_bg_44@2x.png in Resources */,
 				9744DC1B15999F4900555698 /* logo_header.png in Resources */,
@@ -1260,7 +1258,6 @@
 				9744DC201599A08600555698 /* search@2x.png in Resources */,
 				9744DC231599AB1B00555698 /* search_tf_bg.png in Resources */,
 				9744DC241599AB1B00555698 /* search_tf_bg@2x.png in Resources */,
->>>>>>> change search bar appearance 1
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
