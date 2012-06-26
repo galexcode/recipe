@@ -50,13 +50,27 @@
     // Create resizable images
     UIImage *gradientImage44 = [[UIImage imageNamed:@"topbar_44"] 
                                 resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    UIImage *plain_bar44 = [[UIImage imageNamed:@"plain_bar_bg_44"] 
+                            resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    UIImage *searchIcon = [UIImage imageNamed:@"search"];
+    UIImage *searchTextFieldBackbround = [[UIImage imageNamed:@"search_tf_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 20, 0, 20)];
 //    UIImage *gradientImage32 = [[UIImage imageNamed:@"surf_gradient_textured_32"] 
 //                                resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     
     // Set the background image for *all* UINavigationBars
     [[UINavigationBar appearance] setBackgroundImage:gradientImage44 
                                        forBarMetrics:UIBarMetricsDefault];
-//    [[UINavigationBar appearance] setBackgroundImage:gradientImage32 
+    [[UISearchBar appearance] setBackgroundImage:plain_bar44];
+    [[UISearchBar appearance] setImage:searchIcon forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+    [[UISearchBar appearance] setSearchFieldBackgroundImage:searchTextFieldBackbround forState:UIControlStateNormal];
+//    [[UISearchBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+//                                                       [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f], UITextAttributeTextColor, 
+//                                                       [UIColor blackColor], UITextAttributeTextShadowColor, 
+//                                                       [NSValue valueWithUIOffset:UIOffsetMake(0, 1)], UITextAttributeTextShadowOffset, nil] 
+//                                             forState:UIControlStateNormal];
+    
+    
+//    [UINavigationBar appearance] setBackgroundImage:gradientImage32 
 //                                       forBarMetrics:UIBarMetricsLandscapePhone];
     
     // Customize UIBarButtonItems 
