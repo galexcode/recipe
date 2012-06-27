@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "recipeGlobal.h"
 
-@interface MyRecipeViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface MyRecipeViewController : UIViewController
 {
     NSMutableArray* _recipes;
     Boolean loaded;
@@ -18,8 +18,8 @@
 @property (nonatomic) NSMutableArray* recipes;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
--(void) reload;
--(void) didParsedRecipes;
+//-(void) reload;
+//-(void) didParsedRecipes;
 -(IBAction)addRecipe:(id)sender;
 
 @end

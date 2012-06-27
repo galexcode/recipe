@@ -22,7 +22,6 @@
 @synthesize myRecipeBar;
 @synthesize todoBar;
 @synthesize feedBar;
-@synthesize headerImageView;
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
@@ -162,17 +161,22 @@
     UIImage *recipeTabIcon = [UIImage imageNamed:@"tbi_recipe"];
     UIImage *todoTabIcon = [UIImage imageNamed:@"tbi_todo"];
     UIImage *feedTabIcon = [UIImage imageNamed:@"tbi_feed"];
+    UIImage *navLogo = [UIImage imageNamed:@"logo_header"];
     [[self tabBarItem1] setFinishedSelectedImage:homeTabIcon withFinishedUnselectedImage:homeTabIcon];
     [[self tabBarItem2] setFinishedSelectedImage:recipeTabIcon withFinishedUnselectedImage:recipeTabIcon];
     [[self tabBarItem3] setFinishedSelectedImage:todoTabIcon withFinishedUnselectedImage:todoTabIcon];
     [[self tabBarItem4] setFinishedSelectedImage:feedTabIcon withFinishedUnselectedImage:feedTabIcon];
     
-    //UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
+    UIImageView *headerView1 = [[UIImageView alloc] initWithImage:navLogo];
+    UIImageView *headerView2 = [[UIImageView alloc] initWithImage:navLogo];
+    UIImageView *headerView3 = [[UIImageView alloc] initWithImage:navLogo];
+    UIImageView *headerView4 = [[UIImageView alloc] initWithImage:navLogo];
     
-    [[self navItem1] setTitleView:headerImageView];
-    [[self navItem2] setTitleView:headerImageView];
-    [[self navItem3] setTitleView:headerImageView];
-    [[self navItem4] setTitleView:headerImageView];
+    
+    [[self navItem1] setTitleView:headerView1];
+    [[self navItem2] setTitleView:headerView2];
+    [[self navItem3] setTitleView:headerView3];
+    [[self navItem4] setTitleView:headerView4];
 
     //_appService = [[ApplicationService alloc] init];
     GlobalStore *store = [GlobalStore sharedStore];

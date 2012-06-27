@@ -204,6 +204,8 @@
 		976EF2CD1575CBC40068FCF2 /* tabbar_49@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 976EF2CB1575CBC30068FCF2 /* tabbar_49@2x.png */; };
 		976EF2D01575CBDE0068FCF2 /* topbar_44.png in Resources */ = {isa = PBXBuildFile; fileRef = 976EF2CE1575CBDE0068FCF2 /* topbar_44.png */; };
 		976EF2D11575CBDE0068FCF2 /* topbar_44@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 976EF2CF1575CBDE0068FCF2 /* topbar_44@2x.png */; };
+		97741456159AA5510054411E /* RecipesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97741454159AA5500054411E /* RecipesTableViewController.m */; };
+		97741457159AA5510054411E /* RecipesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97741455159AA5500054411E /* RecipesTableViewController.xib */; };
 		977D1ECD159893ED00F0D590 /* tf_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 977D1ECB159893EC00F0D590 /* tf_bg.png */; };
 		977D1ECE159893ED00F0D590 /* tf_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 977D1ECC159893ED00F0D590 /* tf_bg@2x.png */; };
 		978359071565FED900200699 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 978359051565FED900200699 /* home.png */; };
@@ -513,6 +515,9 @@
 		976EF2CB1575CBC30068FCF2 /* tabbar_49@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_49@2x.png"; sourceTree = "<group>"; };
 		976EF2CE1575CBDE0068FCF2 /* topbar_44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topbar_44.png; sourceTree = "<group>"; };
 		976EF2CF1575CBDE0068FCF2 /* topbar_44@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topbar_44@2x.png"; sourceTree = "<group>"; };
+		97741453159AA5500054411E /* RecipesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesTableViewController.h; sourceTree = "<group>"; };
+		97741454159AA5500054411E /* RecipesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesTableViewController.m; sourceTree = "<group>"; };
+		97741455159AA5500054411E /* RecipesTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipesTableViewController.xib; sourceTree = "<group>"; };
 		977D1ECB159893EC00F0D590 /* tf_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tf_bg.png; sourceTree = "<group>"; };
 		977D1ECC159893ED00F0D590 /* tf_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tf_bg@2x.png"; sourceTree = "<group>"; };
 		978359051565FED900200699 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
@@ -758,6 +763,9 @@
 				5ADF1382152A9182008B521A /* RecipeListViewController.h */,
 				5ADF1383152A9182008B521A /* RecipeListViewController.m */,
 				5ADF1384152A9182008B521A /* RecipeListViewController.xib */,
+				97741453159AA5500054411E /* RecipesTableViewController.h */,
+				97741454159AA5500054411E /* RecipesTableViewController.m */,
+				97741455159AA5500054411E /* RecipesTableViewController.xib */,
 				9084A2F31523281E00BDEDC4 /* RecipeViewController.h */,
 				9084A2F41523281F00BDEDC4 /* RecipeViewController.m */,
 				9084A2F51523281F00BDEDC4 /* RecipeViewController.xib */,
@@ -1263,6 +1271,7 @@
 				9744DC201599A08600555698 /* search@2x.png in Resources */,
 				9744DC231599AB1B00555698 /* search_tf_bg.png in Resources */,
 				9744DC241599AB1B00555698 /* search_tf_bg@2x.png in Resources */,
+				97741457159AA5510054411E /* RecipesTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1332,6 +1341,7 @@
 				97CFD14F158CF0B20097A111 /* SelectCategoresViewController.m in Sources */,
 				974C1D5A159844070056B894 /* HomeViewController.m in Sources */,
 				C5776C7F1599AC3C00188248 /* PullRefreshTableViewController.m in Sources */,
+				97741456159AA5510054411E /* RecipesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

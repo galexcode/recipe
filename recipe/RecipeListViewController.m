@@ -83,7 +83,6 @@
     
     if (cell == nil) 
     {
-        //NSArray* topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"IngredientCell" owner:nil options:nil];
         NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"RecipeLongCell" owner:self options:nil];
         
         for (id currentObject in topLevelObjects) {
@@ -94,24 +93,8 @@
         }
     }
     
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    
-//    if (cell == nil) 
-//    {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//    }
-    
-    //NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];
-    //NSArray* sortedCategories = [self.articleDictionary.allKeys sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-    
-    //NSString *categoryName = [sortedCategories objectAtIndex:indexPath.section];
-    
-    //NSArray *currentCategory = [self.articleDictionary objectForKey:categoryName];
-    
     Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
-    
-//    cell.textLabel.text = [currentRecipe name];
-//    cell.imageView.image = [UIImage imageNamed:@"OrangeJuice"];
+
     cell.recipeName.text = [currentRecipe name];
     cell.thumb.image = [UIImage imageNamed:@"default_recipe.jpg"];
     

@@ -11,6 +11,7 @@
 #import "RecipesXMLHandler.h"
 #import "GlobalStore.h"
 #import "RecipeLongCell.h"
+#import "RecipesTableViewController.h"
 #import "AddRecipeViewController.h"
 
 @implementation MyRecipeViewController
@@ -44,65 +45,73 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.tableView setBackgroundColor:[UIColor clearColor]];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] 
+                                   initWithTitle:@"Add"                                            
+                                   style:UIBarButtonItemStyleBordered 
+                                   target:self 
+                                   action:@selector(addRecipe:)];
+    self.navigationItem.rightBarButtonItem = addButton;
+    
+    RecipesTableViewController *recipesTable = [[RecipesTableViewController alloc] initWithUser:[[GlobalStore sharedStore] loggedUser]];
+    [recipesTable setNavController:[self navigationController]];
+    [[self view] addSubview:recipesTable.view];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    if (loaded == NO) {
-        if (![[[[GlobalStore sharedStore] loggedUser] name] isEqualToString:@"-1"]) {
-            loaded = YES;
-            [self reload];
-        }
-    }
-}
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    if (loaded == NO) {
+//        if (![[[[GlobalStore sharedStore] loggedUser] name] isEqualToString:@"-1"]) {
+//            loaded = YES;
+////            [self reload];
+//        }
+//    }
+//}
 
-- (void)reload
-{
-    _recipes = nil;
-    _recipes = [[NSMutableArray alloc] init];
-    
-    NSURL *url = [NSURL URLWithString:[GlobalStore recipesLink]];
-    
-    __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
-    [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
-    
-    [request setCompletionBlock:^{
-        NSLog(@"Recipes xml loaded.");
-        NSLog(@"status code: %d",request.responseStatusCode);
-        if (request.responseStatusCode == 200) {
-            RecipesXMLHandler* handler = [[RecipesXMLHandler alloc] initWithRecipeArray:_recipes];
-            [handler setEndDocumentTarget:self andAction:@selector(didParsedRecipes)];
-            NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
-            parser.delegate = handler;
-            [parser parse];
-        }
-        else {
-            [self didParsedRecipes];
-        }
-    }];
-    [request setFailedBlock:^{
-        NSError *error = request.error;
-        NSLog(@"Error downloading image: %@", error.localizedDescription);
-    }];
-    
-    [request startAsynchronous];
-}
+//- (void)reload
+//{
+//    _recipes = nil;
+//    _recipes = [[NSMutableArray alloc] init];
+//    
+//    NSURL *url = [NSURL URLWithString:[GlobalStore recipesLink]];
+//    
+//    __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+//    [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
+//    
+//    [request setCompletionBlock:^{
+//        NSLog(@"Recipes xml loaded.");
+//        NSLog(@"status code: %d",request.responseStatusCode);
+//        if (request.responseStatusCode == 200) {
+//            RecipesXMLHandler* handler = [[RecipesXMLHandler alloc] initWithRecipeArray:_recipes];
+//            [handler setEndDocumentTarget:self andAction:@selector(didParsedRecipes)];
+//            NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+//            parser.delegate = handler;
+//            [parser parse];
+//        }
+//        else {
+//            [self didParsedRecipes];
+//        }
+//    }];
+//    [request setFailedBlock:^{
+//        NSError *error = request.error;
+//        NSLog(@"Error downloading image: %@", error.localizedDescription);
+//    }];
+//    
+//    [request startAsynchronous];
+//    //[self performSelector:@selector(stopLoading) withObject:nil afterDelay:0.5];
+//}
 
--(void) didParsedRecipes
-{
-    if (_recipes != nil) {
-        [self.tableView reloadData];
-    }
-}
+//-(void) didParsedRecipes
+//{
+//    if (_recipes != nil) {
+//        [self.tableView reloadData];
+//    }
+//}
 
 - (void)viewDidUnload
 {
     [self setTableView:nil];
-    [super viewDidUnload];
     self.recipes = nil;
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    [super viewDidUnload];
 }
 
 -(IBAction)addRecipe:(id)sender{
@@ -117,84 +126,66 @@
 }
 
 #pragma mark - Table Delegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.recipes count];
-}
-
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 //{
-//    return 60;
+//    return 1;
 //}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    
-    RecipeLongCell *cell = (RecipeLongCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) 
-    {
-        //NSArray* topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"IngredientCell" owner:nil options:nil];
-        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"RecipeLongCell" owner:self options:nil];
-        
-        for (id currentObject in topLevelObjects) {
-            if ([currentObject isKindOfClass:[RecipeLongCell class]]) {
-                cell = (RecipeLongCell*)currentObject;
-                break;
-            }
-        }
-    }
-    
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    return [self.recipes count];
+//}
+//
+////- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+////{
+////    return 60;
+////}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    static NSString *CellIdentifier = @"Cell";
+//    
+//    RecipeLongCell *cell = (RecipeLongCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    
 //    if (cell == nil) 
 //    {
-//        cell = [[RecipeLongCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//        //NSArray* topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"IngredientCell" owner:nil options:nil];
+//        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"RecipeLongCell" owner:self options:nil];
+//        
+//        for (id currentObject in topLevelObjects) {
+//            if ([currentObject isKindOfClass:[RecipeLongCell class]]) {
+//                cell = (RecipeLongCell*)currentObject;
+//                break;
+//            }
+//        }
 //    }
-    
-    //NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];
-    //NSArray* sortedCategories = [self.articleDictionary.allKeys sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-    
-    //NSString *categoryName = [sortedCategories objectAtIndex:indexPath.section];
-    
-    //NSArray *currentCategory = [self.articleDictionary objectForKey:categoryName];
-    
-//    NSDictionary *currentArticle = [self.recipes objectAtIndex:indexPath.row];
 //    
-//    cell.textLabel.text = [currentArticle objectForKey:@"Title"];
-//    cell.imageView.image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
-//    cell.textLabel.textColor = [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f];
-//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    if ([self.recipes count] > 0) {
-        Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
-        
-        //    cell.textLabel.text = [currentRecipe name];
-        //    cell.imageView.image = [UIImage imageNamed:@"OrangeJuice"];
-        cell.recipeName.text = [currentRecipe name];
-        
-        //need to remove
-        cell.thumb.image = [UIImage imageNamed:@"default_recipe.jpg"];
-        
-        if ([[currentRecipe imageList] count] > 0) {
-            
-            NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:120 andHeight:0]];
-            
-            __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
-            [request setCompletionBlock:^{
-                NSData *data = request.responseData;
-                [cell.thumb setImage:[[UIImage alloc] initWithData:data]];
-            }];
-            [request setFailedBlock:^{
-                NSError *error = request.error;
-                NSLog(@"Error downloading image: %@", error.localizedDescription);
-            }];
-            [request startAsynchronous];
-        }
-    }
+//    if ([self.recipes count] > 0) {
+//        Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
+//        
+//        //    cell.textLabel.text = [currentRecipe name];
+//        //    cell.imageView.image = [UIImage imageNamed:@"OrangeJuice"];
+//        cell.recipeName.text = [currentRecipe name];
+//        
+//        //need to remove
+//        cell.thumb.image = [UIImage imageNamed:@"default_recipe.jpg"];
+//        
+//        if ([[currentRecipe imageList] count] > 0) {
+//            
+//            NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:120 andHeight:0]];
+//            
+//            __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
+//            [request setCompletionBlock:^{
+//                NSData *data = request.responseData;
+//                [cell.thumb setImage:[[UIImage alloc] initWithData:data]];
+//            }];
+//            [request setFailedBlock:^{
+//                NSError *error = request.error;
+//                NSLog(@"Error downloading image: %@", error.localizedDescription);
+//            }];
+//            [request startAsynchronous];
+//        }
+//    }
 //    Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
 //    
 ////    cell.textLabel.text = [currentRecipe name];
@@ -219,16 +210,16 @@
 //        }];
 //        [request startAsynchronous];
 //    }
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Recipe *currentRecipe = (Recipe*)[[self recipes] objectAtIndex:indexPath.row];
-    RecipeViewController *viewControllerToPush = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
-    [viewControllerToPush setRecipe:currentRecipe];
-    [[viewControllerToPush navigationItem] setTitle:[currentRecipe name]];
-    [self.navigationController pushViewController:viewControllerToPush animated:YES];
-}
+//    return cell;
+//}
+//
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    Recipe *currentRecipe = (Recipe*)[[self recipes] objectAtIndex:indexPath.row];
+//    RecipeViewController *viewControllerToPush = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
+//    [viewControllerToPush setRecipe:currentRecipe];
+//    [[viewControllerToPush navigationItem] setTitle:[currentRecipe name]];
+//    [self.navigationController pushViewController:viewControllerToPush animated:YES];
+//}
 
 @end

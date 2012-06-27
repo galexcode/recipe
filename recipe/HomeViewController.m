@@ -12,6 +12,7 @@
 #import "GlobalStore.h"
 #import "recipeGlobal.h"
 #import "RecipeListViewController.h"
+#import "RecipesTableViewController.h"
 
 @interface HomeViewController ()
 
@@ -33,14 +34,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-//    
-//    for (__strong UIView *subview in [[self mySearchBar] subviews]) {
-//        if ([subview isKindOfClass:[UITextField class]])
-//        {
-//        }
-//    }
-    
+    [super viewDidLoad];    
     CategoryListViewController *tableViewController = [[CategoryListViewController alloc] initWithNibName:@"CategoryListViewController" bundle:nil];
     CGRect frame = CGRectMake(0, 44, 320, 446);
     [tableViewController.view setFrame:frame];
@@ -63,7 +57,6 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    //NSLog(@"Button click search: %@", [[self mySearchBar] text]);
     if ([trimSpaces([searchBar text]) length] > 0) {
         _recipes = nil;
         _recipes = [[NSMutableArray alloc] init];
@@ -74,8 +67,6 @@
         [request setPostValue:searchBar.text forKey:@"key"];
         
         [request setCompletionBlock:^{
-            NSLog(@"Recipes xml loaded.");
-            NSLog(@"status code: %d",request.responseStatusCode);
             if (request.responseStatusCode == 200) {
                 RecipesXMLHandler* handler = [[RecipesXMLHandler alloc] initWithRecipeArray:_recipes];
                 [handler setEndDocumentTarget:self andAction:@selector(didParsedSearchRecipes)];
@@ -102,10 +93,13 @@
 {
     if(_recipes != nil && [_recipes count] > 0)
     {
-        NSLog(@"Load len cai view moi");
-        RecipeListViewController* viewControllerToPush = [[RecipeListViewController alloc] initWithNibName:@"RecipeListViewController" bundle:nil];
-        viewControllerToPush.recipes = _recipes;
+//        RecipeListViewController* viewControllerToPush = [[RecipeListViewController alloc] initWithNibName:@"RecipeListViewController" bundle:nil];
+//        viewControllerToPush.recipes = _recipes;
+//        [[viewControllerToPush navigationItem] setTitle:[[self mySearchBar] text]];
+        RecipesTableViewController *viewControllerToPush = [[RecipesTableViewController alloc] initWithKeyword:[[self mySearchBar] text]];
+        [viewControllerToPush setRecipes:_recipes];
         [[viewControllerToPush navigationItem] setTitle:[[self mySearchBar] text]];
+        //[viewControllerToPush setNavController:nil];
         [[self navigationController] pushViewController:viewControllerToPush animated:YES];
     } else {
         [[self mySearchBar] resignFirstResponder];

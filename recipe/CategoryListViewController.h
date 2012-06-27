@@ -19,7 +19,6 @@
 @property (nonatomic, weak) UIViewController* navController;
 
 -(void)tapOnHeader:(id)sender;
--(void)reload;
 -(void) didParsedCategories;
 
 @end
