@@ -25,6 +25,7 @@
 
 @implementation CategoryListViewController
 @synthesize categoryDictionary = _categoryDictionary;
+@synthesize reusableCells = _reusableCells;
 @synthesize navController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -69,8 +70,6 @@
     //    [request setPostValue:@"1" forKey:@"rw_app_id"];
     
     [request setCompletionBlock:^{
-        NSLog(@"Categories xml loaded.");
-        NSLog(@"status code: %d",request.responseStatusCode);
         if (request.responseStatusCode == 200) {
             CategoriesXMLHandler* handler = [[CategoriesXMLHandler alloc] initWithCategoryDictionary:_categoryDictionary];
             [handler setEndDocumentTarget:self andAction:@selector(didParsedCategories)];
@@ -85,7 +84,7 @@
     }];
     [request setFailedBlock:^{
         NSError *error = request.error;
-        NSLog(@"Error downloading image: %@", error.localizedDescription);
+        NSLog(@"Error downloading categories: %@", error.localizedDescription);
     }];
     
     [request startAsynchronous];
@@ -96,7 +95,8 @@
 {
     if (_categoryDictionary != nil && [[_categoryDictionary allKeys] count] > 0) {
         [[GlobalStore sharedStore] setCategories:_categoryDictionary];
-        [self.tableView reloadData];
+        [self initResuableCells];
+        //[self.tableView reloadData];
     }
 }
 
@@ -105,12 +105,38 @@
     [super viewDidLoad];
 }
 
+- (void)initResuableCells
+{
+    [self setReusableCells:nil];
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];
+    NSArray* sortedCategories = [self.categoryDictionary.allKeys sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    self.reusableCells = [NSMutableArray array];
+    
+    for (int i = 0; i < [self.categoryDictionary.allKeys count]; i++)
+    {                        
+        HorizontalTableCell *cell = [[HorizontalTableCell alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
+        cell.navController = self.navController;
+        
+        NSString *categoryName = [sortedCategories objectAtIndex:i];
+        
+        NSMutableArray *currentCategory = [self.categoryDictionary objectForKey:categoryName];
+        
+        Category* thisCategory = (Category *)currentCategory;
+        
+        cell.recipes = thisCategory.latestRecipes;
+        
+        [self.reusableCells addObject:cell];
+    }
+    
+    [self.tableView reloadData];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     self.categoryDictionary = nil;
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    self.reusableCells = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -123,7 +149,6 @@
     __weak HeaderButton* tempButton = (HeaderButton*)sender;
     RecipeListViewController* viewControllerToPush = [[RecipeListViewController alloc] initWithNibName:@"RecipeListViewController" bundle:nil];
     viewControllerToPush.recipes = tempButton.array;
-//    viewControllerToPush.pageTitleText = tempButton.titleText;
     [[viewControllerToPush navigationItem] setTitle:tempButton.titleText];
     UINavigationController *nav = (UINavigationController*)self.navController;
     [nav pushViewController:viewControllerToPush animated:YES];
@@ -138,13 +163,15 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSLog(@"section: %d", [self.categoryDictionary.allKeys count]);
     return [self.categoryDictionary.allKeys count];    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    if ([[[self categoryDictionary] allKeys] count] > 0) {
+        return 1;
+    }
+    return 0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -196,34 +223,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    HorizontalTableCell *cell = [self.reusableCells objectAtIndex:indexPath.section];
     
-    static NSString *CellIdentifier = @"HorizontalCell";
-    
-    //HorizontalTableCell *cell = (HorizontalTableCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    HorizontalTableCell *cell;
-    
-    if ([self.categoryDictionary.allKeys count] > 0) {
-        if (cell == nil)
-        {
-            cell = [[HorizontalTableCell alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, tableView.frame.size.height)];
-            cell.navController = self.navController;
-        }
-        NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];
-        NSArray* sortedCategories = [self.categoryDictionary.allKeys sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-        
-        NSString *categoryName = [sortedCategories objectAtIndex:indexPath.section];
-        
-        NSMutableArray *currentCategory = [self.categoryDictionary objectForKey:categoryName];
-        
-        Category* thisCategory = (Category *)currentCategory;
-        
-        NSLog(@"Category: %@ has %d recipes", categoryName, [thisCategory.latestRecipes count]);
-        
-        cell.recipes = thisCategory.latestRecipes;
-    } else {
-        cell = [[HorizontalTableCell alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
-        cell.navController = self.navController;
-    }
     return cell;
 }
 

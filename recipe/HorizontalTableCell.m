@@ -64,69 +64,34 @@
     return [self.recipes count];
 }
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    static NSString *cellIdentifier = @"ArticleCell";
-//    
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-//    
-//    if (cell == nil) 
-//    {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-//    }
-//    
-//    cell.textLabel.text = @"The title of the cell in the table within the table :O";
-//    
-//    return cell;
-//}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"RecipeCell";
+    static NSString *CellIdentifier = @"RecipeSquareCell";
     
-    __block RecipeCell *cell;// = (RecipeCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    __block RecipeCell *cell = (RecipeCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) 
     {
         cell = [[RecipeCell alloc] initWithFrame:CGRectMake(0, 0, kCellWidth, kCellHeight)];
-    }
     
-    __block Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
-    
-    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    
-//    if ([cell.thumbnail image] == nil) {
-//        dispatch_async(concurrentQueue, ^{        
-//            UIImage *image = nil;
-//            if ([[currentRecipe imageList] count] > 0) {
-//                NSString *link = [NSString stringWithFormat:@"http://www.perselab.com/recipe/image/%@/250", [[currentRecipe imageList] objectAtIndex:0]];
-//                NSURL *url = [NSURL URLWithString:link];
-//                //image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
-//                //image = [UIImage imageNamed:@"OrangeJuice"];
-//                image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-//            }
-//            
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [cell.thumbnail setImage:image]; 
-//            });
-//        }); 
-//    }
-    dispatch_async(concurrentQueue, ^{        
-        UIImage *image = nil;
-        if ([[currentRecipe imageList] count] > 0) {
-            NSURL *url = [NSURL URLWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:184 andHeight:0]];
-            //image = [UIImage imageNamed:[currentArticle objectForKey:@"ImageName"]];
-            //image = [UIImage imageNamed:@"OrangeJuice"];
-            image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-        }
+        __block Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [cell.thumbnail setImage:image]; 
-        });
-    }); 
-    
-    //cell.titleLabel.text = [currentRecipe objectForKey:@"Title"];
-    cell.titleLabel.text = [currentRecipe name];
+        dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        
+        dispatch_async(concurrentQueue, ^{        
+            UIImage *image = nil;
+            if ([[currentRecipe imageList] count] > 0) {
+                NSURL *url = [NSURL URLWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:184 andHeight:0]];
+                image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [cell.thumbnail setImage:image]; 
+            });
+        }); 
+        
+        cell.titleLabel.text = [currentRecipe name];
+    }
     
     return cell;
 }

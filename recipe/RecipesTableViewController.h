@@ -18,12 +18,14 @@
     Category* _category;
     NSString* _keyword;
     Boolean loaded;
+    NSMutableArray* _resuableCells;
 }
 
 @property (nonatomic) NSMutableArray* recipes;
 @property (nonatomic) User *user;
 @property (nonatomic) Category *category;
 @property (nonatomic) NSString *keyword;
+@property (nonatomic) NSMutableArray* reusableCells;
 @property (nonatomic, weak) UIViewController* navController;
 
 

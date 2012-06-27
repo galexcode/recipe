@@ -23,6 +23,7 @@
 @synthesize user = _user;
 @synthesize category = _category;
 @synthesize keyword = _keyword;
+@synthesize reusableCells = _reusableCells;
 @synthesize navController;
 
 - (id)initWithUser:(User *)currentUser
@@ -154,14 +155,61 @@
     }];
     
     [request startAsynchronous];
-    [self performSelector:@selector(stopLoading) withObject:nil afterDelay:0.5];
+    //[self performSelector:@selector(stopLoading) withObject:nil afterDelay:0.5];
 }
 
 -(void) didParsedRecipes
 {
     if (_recipes != nil && [_recipes count] > 0) {
-        [self.tableView reloadData];
+        [self initResuableCells];
+        [self performSelector:@selector(stopLoading) withObject:nil afterDelay:0.2];
+        //[self.tableView reloadData];
     }
+}
+
+-(void)initResuableCells{
+    
+    [self setReusableCells:nil];
+     self.reusableCells = [NSMutableArray array];
+    
+    for (int i = 0; i < [[self recipes] count]; i++) {
+        
+        RecipeLongCell *cell;
+        
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"RecipeLongCell" owner:self options:nil];
+        
+        for (id currentObject in topLevelObjects) {
+            if ([currentObject isKindOfClass:[RecipeLongCell class]]) {
+                cell = (RecipeLongCell*)currentObject;
+                break;
+            }
+        }
+        
+        Recipe *currentRecipe = [self.recipes objectAtIndex:i];
+        
+        cell.recipeName.text = [currentRecipe name];
+        cell.thumb.image = [UIImage imageNamed:@"default_recipe.jpg"];
+        
+        if ([[currentRecipe imageList] count] > 0) {
+            NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:120 andHeight:0]];
+            
+            __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
+            [request setCompletionBlock:^{
+                NSData *data = request.responseData;
+                if (data != nil)
+                    [cell.thumb setImage:[[UIImage alloc] initWithData:data]];
+            }];
+            [request setFailedBlock:^{
+                NSError *error = request.error;
+                NSLog(@"Error downloading image: %@", error.localizedDescription);
+            }];
+            [request startAsynchronous];
+        }
+        
+        [[self reusableCells] addObject:cell];;
+    }
+    
+    [[self tableView] reloadData];
 }
 
 #pragma mark - Table view data source
@@ -178,49 +226,67 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"RecipeLongCell";
+    RecipeLongCell *cell = [self.reusableCells objectAtIndex:indexPath.row];
     
-    RecipeLongCell *cell = (RecipeLongCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    NSLog(@"number of recipes %d", [[self recipes] count]);
-    
-    if (cell == nil) 
-    {
-        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"RecipeLongCell" owner:self options:nil];
-        
-        for (id currentObject in topLevelObjects) {
-            if ([currentObject isKindOfClass:[RecipeLongCell class]]) {
-                cell = (RecipeLongCell*)currentObject;
-                break;
-            }
-        }
-    }
-    
-    if ([[self recipes] count] > 0) {
-        Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
-        
-        cell.recipeName.text = [currentRecipe name];
-        
-        //cell.thumb.image = [UIImage imageNamed:@"default_recipe.jpg"];
-        
-        if ([[currentRecipe imageList] count] > 0) {
-            
-            NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:120 andHeight:0]];
-            
-            __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
-            [request setCompletionBlock:^{
-                NSData *data = request.responseData;
-                [cell.thumb setImage:[[UIImage alloc] initWithData:data]];
-            }];
-            [request setFailedBlock:^{
-                NSError *error = request.error;
-                NSLog(@"Error downloading image: %@", error.localizedDescription);
-            }];
-            [request startAsynchronous];
-        }
-    }
-
     return cell;
+//    static NSString *CellIdentifier = @"RecipeLongCell";
+//    
+//    RecipeLongCell *cell = (RecipeLongCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    
+//    if (cell == nil) 
+//    {
+//        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"RecipeLongCell" owner:self options:nil];
+//        
+//        for (id currentObject in topLevelObjects) {
+//            if ([currentObject isKindOfClass:[RecipeLongCell class]]) {
+//                cell = (RecipeLongCell*)currentObject;
+//                break;
+//            }
+//        }
+//        
+//        if ([[self recipes] count] > 0) {
+//            Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
+//            
+//            cell.recipeName.text = [currentRecipe name];
+//            
+//            //cell.thumb.image = [UIImage imageNamed:@"default_recipe.jpg"];
+//            
+//            if ([[currentRecipe imageList] count] > 0) {
+//                if (cell.thumb.image == nil) {
+//                    NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:120 andHeight:0]];
+//                    
+//                    __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
+//                    [request setCompletionBlock:^{
+//                        NSData *data = request.responseData;
+//                        if (data != nil) {
+//                            [cell.thumb setImage:[[UIImage alloc] initWithData:data]];
+//                        } else {
+//                            cell.thumb.image = [UIImage imageNamed:@"default_recipe.jpg"];
+//                        }
+//                    }];
+//                    [request setFailedBlock:^{
+//                        NSError *error = request.error;
+//                        NSLog(@"Error downloading image: %@", error.localizedDescription);
+//                    }];
+//                    [request startAsynchronous];
+//                }
+////                NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:120 andHeight:0]];
+////                
+////                __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
+////                [request setCompletionBlock:^{
+////                    NSData *data = request.responseData;
+////                    [cell.thumb setImage:[[UIImage alloc] initWithData:data]];
+////                }];
+////                [request setFailedBlock:^{
+////                    NSError *error = request.error;
+////                    NSLog(@"Error downloading image: %@", error.localizedDescription);
+////                }];
+////                [request startAsynchronous];
+//            }
+//        }        
+//    }
+//    
+//    return cell;
 }
 
 /*

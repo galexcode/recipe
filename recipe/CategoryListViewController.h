@@ -13,9 +13,11 @@
 @interface CategoryListViewController : PullRefreshTableViewController
 {
     NSMutableDictionary *_categoryDictionary;
+    NSMutableArray *_reusableCells;
 }
 
 @property (nonatomic) NSMutableDictionary *categoryDictionary;
+@property (nonatomic) NSMutableArray *reusableCells;
 @property (nonatomic, weak) UIViewController* navController;
 
 -(void)tapOnHeader:(id)sender;

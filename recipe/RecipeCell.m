@@ -17,7 +17,7 @@
 
 - (NSString *)reuseIdentifier 
 {
-    return @"RecipeCell";
+    return @"RecipeSquareCell";
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
