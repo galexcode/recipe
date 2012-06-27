@@ -14,6 +14,7 @@
     Recipe *recipe;
     NSMutableArray *selectedCategories;
     UIImagePickerController *imagePicker;
+    NSMutableArray* _images;
 }
 
 @property (strong, nonatomic) IBOutlet UITableViewCell *inputCell;

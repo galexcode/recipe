@@ -39,6 +39,8 @@
     RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
     [[self navigationItem] setTitleView:label];
     
+    _images = [NSMutableArray array];
+    
 //    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
 //    [[self navigationItem] setTitleView:headerView];
     
@@ -88,28 +90,35 @@
 - (IBAction)saveAction:(id)sender
 {
     if ([self validateInputInformation]) {
-        NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/recipe/add"];
+        
+        //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/recipe/add"];
+        NSURL *url = [NSURL URLWithString:@"http://192.168.0.102/recipe_php/recipe/add"];
         
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
-        [request setPostValue:[recipeName text] forKey:@"name"];
-        [request setPostValue:[serving text] forKey:@"serving"];
+        [request setPostValue:[recipeName text] forKey:@"rn"];
+        [request setPostValue:[serving text] forKey:@"rs"];
+        for (NSInteger i = 0; i < [_images count]; i++) {
+            [request addData:[_images objectAtIndex:i] forKey:@"ri"];
+        }
+        [request setPostValue:@"1" forKey:@"cid"];
+        
         //[request setPostValue:[password text] forKey:@"pw"];
         
         [request setCompletionBlock:^{
-//            NSLog(@"Complete Post Recipe.");
-//            if (request.responseStatusCode == 200) {
-//                NSLog(@"%d", request.responseStatusCode);
-//                UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
-//                [handler setEndDocumentTarget:self andAction:@selector(didParsedLoggingUser)];
-//                NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
-//                parser.delegate = handler;
-//                [parser parse];
-//                //            }else if(request.responseStatusCode == 404){
-//            } else {
-//                _user = nil;
-//                [self didParsedLoggingUser];
-//            }
+            NSLog(@"Complete Post Recipe.");
+            if (request.responseStatusCode == 200) {
+                NSLog(@"%d", request.responseStatusCode);
+                //UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
+                //[handler setEndDocumentTarget:self andAction:@selector(didParsedLoggingUser)];
+                //NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+                //parser.delegate = handler;
+                //[parser parse];
+                //            }else if(request.responseStatusCode == 404){
+            } else {
+                //_user = nil;
+                //[self didParsedLoggingUser];
+            }
         }];
         [request setFailedBlock:^{
 //            [self handleError:request.error];
@@ -243,6 +252,11 @@
     NSLog(@"Nhay vao delegate set Image");
     //[btnAddImage setBackgroundImage:image forState:UIControlStateNormal];
     [btnImagePicker setImage:image forState:UIControlStateNormal];
+    
+    NSData *imageData = UIImagePNGRepresentation(image);
+    
+    [_images addObject:imageData];
+    
     [picker dismissModalViewControllerAnimated:YES];
 }
 @end
