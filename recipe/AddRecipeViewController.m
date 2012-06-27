@@ -16,6 +16,8 @@
 @end
 
 @implementation AddRecipeViewController
+@synthesize imagePicker;
+@synthesize btnImagePicker;
 @synthesize recipeName;
 @synthesize serving;
 @synthesize inputCell;
@@ -41,6 +43,15 @@
 //    [[self navigationItem] setTitleView:headerView];
     
     selectedCategories = [[NSMutableArray alloc] init];
+    
+    imagePicker = [[UIImagePickerController alloc] init];
+    //[imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    //[imagePicker setShowsCameraControls:YES];
+    imagePicker.allowsEditing = NO;
+    imagePicker.delegate = self;
+        
+    [self presentModalViewController:self.imagePicker animated:NO];
+
 }
 
 - (void)viewDidUnload
@@ -50,6 +61,7 @@
     [self setActionCell:nil];
     [self setRecipeName:nil];
     [self setServing:nil];
+    [self setBtnImagePicker:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -220,4 +232,16 @@
     }
 }
 
+- (IBAction)btnSelectImage:(id)sender
+{
+    [self presentModalViewController:imagePicker animated:YES];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
+{
+    NSLog(@"Nhay vao delegate set Image");
+    //[btnAddImage setBackgroundImage:image forState:UIControlStateNormal];
+    [btnImagePicker setImage:image forState:UIControlStateNormal];
+    [picker dismissModalViewControllerAnimated:YES];
+}
 @end

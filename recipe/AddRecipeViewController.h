@@ -10,9 +10,10 @@
 #import "Recipe.h"
 #import "RecipeTextField.h"
 
-@interface AddRecipeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>{
+@interface AddRecipeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>{
     Recipe *recipe;
     NSMutableArray *selectedCategories;
+    UIImagePickerController *imagePicker;
 }
 
 @property (strong, nonatomic) IBOutlet UITableViewCell *inputCell;
@@ -23,7 +24,9 @@
 - (IBAction)cancelAction:(id)sender;
 - (IBAction)saveAction:(id)sender;
 - (IBAction)backgroundTap:(id)sender;
-
+- (IBAction)btnSelectImage:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnImagePicker;
+@property (nonatomic) UIImagePickerController *imagePicker;
 @property (weak, nonatomic) IBOutlet RecipeTextField *recipeName;
 @property (weak, nonatomic) IBOutlet RecipeTextField *serving;
 
