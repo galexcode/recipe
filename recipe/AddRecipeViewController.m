@@ -45,13 +45,13 @@
     selectedCategories = [[NSMutableArray alloc] init];
     
     imagePicker = [[UIImagePickerController alloc] init];
-    //[imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    
+//    [imagePicker setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
     //[imagePicker setShowsCameraControls:YES];
     imagePicker.allowsEditing = NO;
     imagePicker.delegate = self;
         
-    [self presentModalViewController:self.imagePicker animated:NO];
-
+    //[self presentModalViewController:self.imagePicker animated:NO];
 }
 
 - (void)viewDidUnload
@@ -62,6 +62,7 @@
     [self setRecipeName:nil];
     [self setServing:nil];
     [self setBtnImagePicker:nil];
+    [self setImagePicker:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

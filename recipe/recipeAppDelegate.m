@@ -43,9 +43,6 @@
 #pragma mark Customization UI
 - (void)customizeAppearance
 {
-    //Testing
-    //[[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:44/255 green:14/255 blue:5/255 alpha:0]];
-    
     // Create resizable images
     UIImage *gradientImage44 = [[UIImage imageNamed:@"topbar_44"] 
                                 resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
@@ -57,21 +54,15 @@
 //                                resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     
     // Set the background image for *all* UINavigationBars
-    [[UINavigationBar appearance] setBackgroundImage:gradientImage44 
-                                       forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:gradientImage44 forBarMetrics:UIBarMetricsDefault];
+//    [UINavigationBar appearance] setBackgroundImage:gradientImage32 forBarMetrics:UIBarMetricsLandscapePhone];
+    
+    //[[UILabel appearanceWhenContainedIn:[UIToolbar class], nil] setColor:[UIColor redColor]];
+    
     [[UISearchBar appearance] setBackgroundImage:plain_bar44];
     [[UISearchBar appearance] setImage:searchIcon forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
     [[UISearchBar appearance] setSearchFieldBackgroundImage:searchTextFieldBackbround forState:UIControlStateNormal];
     [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setTextColor:[UIColor colorWithRed:0.27f green:0.13f blue:0.05f alpha:1.00f]];
-//    [[UISearchBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-//                                                       [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f], UITextAttributeTextColor, 
-//                                                       [UIColor blackColor], UITextAttributeTextShadowColor, 
-//                                                       [NSValue valueWithUIOffset:UIOffsetMake(0, 1)], UITextAttributeTextShadowOffset, nil] 
-//                                             forState:UIControlStateNormal];
-    
-    
-//    [UINavigationBar appearance] setBackgroundImage:gradientImage32 
-//                                       forBarMetrics:UIBarMetricsLandscapePhone];
     
     // Customize UIBarButtonItems 
     UIImage *button30 = [[UIImage imageNamed:@"normal_button_30"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
