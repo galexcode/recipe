@@ -23,6 +23,7 @@
 + (NSString*) loginLink;
 + (NSString*) registerLink;
 + (NSString*) categoriesLink;
++ (NSString*) recipesLink;
 
 + (NSString*) searchLink;
 

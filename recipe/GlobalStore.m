@@ -88,6 +88,11 @@ static GlobalStore *sharedStore = nil;
     return [NSString stringWithFormat:@"%@/categories", BASE_URL];
 }
 
++ (NSString*) recipesLink
+{
+    return [NSString stringWithFormat:@"%@/recipes", BASE_URL];
+}
+
 + (NSString*) searchLink
 {
     return [NSString stringWithFormat:@"%@/search", BASE_URL];

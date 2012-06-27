@@ -21,7 +21,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        loaded = NO;
     }
     return self;
 }
@@ -38,23 +38,22 @@
 
 - (void)awakeFromNib
 {
+    loaded = NO;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    NSDictionary* temp = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Articles" ofType:@"plist"]];
-//    self.recipes = [temp objectForKey:@"1Headlines"];
     [self.tableView setBackgroundColor:[UIColor clearColor]];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"%@", [[[GlobalStore sharedStore] loggedUser] name]);
-    if (![[[[GlobalStore sharedStore] loggedUser] name] isEqualToString:@"-1"]) {
-        NSLog(@"load recipes");
-        [self reload];
+    if (loaded == NO) {
+        if (![[[[GlobalStore sharedStore] loggedUser] name] isEqualToString:@"-1"]) {
+            loaded = YES;
+            [self reload];
+        }
     }
 }
 
@@ -62,8 +61,8 @@
 {
     _recipes = nil;
     _recipes = [[NSMutableArray alloc] init];
-    //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/xml/categories.xml"];
-    NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/recipes"];
+    
+    NSURL *url = [NSURL URLWithString:[GlobalStore recipesLink]];
     
     __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
     [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];

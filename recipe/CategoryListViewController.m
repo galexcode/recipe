@@ -32,13 +32,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-//        APP_SERVICE(appSrv);
-//        NSLog(@"%@", appSrv);
-//        _applicationService = appSrv;
-        [self setupStrings];
         [self.tableView setBackgroundColor:[UIColor clearColor]];
         self.tableView.rowHeight = kCellHeight + (kRowVerticalPadding * 0.5) + ((kRowVerticalPadding * 0.5) * 0.5);
-        
         [self reload];
     }
     return self;
@@ -48,46 +43,20 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-//        APP_SERVICE(appSrv);
-//        NSLog(@"%@", appSrv);
-//        _applicationService = appSrv;
     }
     return self;
 }
 
 - (void)awakeFromNib
 {
-//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] 
-//                                  initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
-//                                  target:self 
-//                                  action:@selector(reload)];
-//    [[self navigationItem] setRightBarButtonItem:addButton];
-    //[self.tableView setBackgroundColor:kVerticalTableBackgroundColor];
-    
-    //RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
-    //[[self navigationItem] setTitleView:label];
-//    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
-//    
-//    [[self navigationItem] setTitleView:headerView];
-    
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     self.tableView.rowHeight = kCellHeight + (kRowVerticalPadding * 0.5) + ((kRowVerticalPadding * 0.5) * 0.5);
     
     [self reload];
-//    NSLog(@"%@", [[[GlobalStore sharedStore] loggedUser] name]);
-//    if (![[[[GlobalStore sharedStore] loggedUser] name] isEqualToString:@"-1"]) {
-//        NSLog(@"load categories");
-//        [self reload];
-//    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-//    NSLog(@"%@", [[[GlobalStore sharedStore] loggedUser] name]);
-//    if (![[[[GlobalStore sharedStore] loggedUser] name] isEqualToString:@"-1"]) {
-//        NSLog(@"load categories");
-//        [self reload];
-//    }
 }
 
 - (void)reload

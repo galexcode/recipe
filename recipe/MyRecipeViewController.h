@@ -12,6 +12,7 @@
 @interface MyRecipeViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 {
     NSMutableArray* _recipes;
+    Boolean loaded;
 }
 
 @property (nonatomic) NSMutableArray* recipes;
