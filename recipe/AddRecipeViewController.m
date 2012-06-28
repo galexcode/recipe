@@ -99,9 +99,15 @@
         [request setPostValue:[recipeName text] forKey:@"rn"];
         [request setPostValue:[serving text] forKey:@"rs"];
         for (NSInteger i = 0; i < [_images count]; i++) {
-            [request addData:[_images objectAtIndex:i] forKey:@"ri"];
+            NSLog(@"post image: %d",i);
+            [request addData:[_images objectAtIndex:i] forKey:@"ri[]"];
+            
         }
-        [request setPostValue:@"1" forKey:@"cid"];
+        //multiple category
+        //[request setPostValue:@"2" forKey:@"cid[]"];
+        //[request setPostValue:@"1" forKey:@"cid[]"];
+        [request addPostValue:@"1" forKey:@"cid[]"];
+        [request addPostValue:@"2" forKey:@"cid[]"];
         
         //[request setPostValue:[password text] forKey:@"pw"];
         
@@ -252,7 +258,7 @@
     NSLog(@"Nhay vao delegate set Image");
     //[btnAddImage setBackgroundImage:image forState:UIControlStateNormal];
     [btnImagePicker setImage:image forState:UIControlStateNormal];
-    
+
     NSData *imageData = UIImagePNGRepresentation(image);
     
     [_images addObject:imageData];
