@@ -8,6 +8,8 @@
 
 #import "AddRecipeViewController.h"
 #import "SelectCategoresViewController.h"
+#import "AddIngredientViewController.h"
+#import "AddStepViewController.h"
 #import "ASIForm2DataRequest.h"
 #import "GlobalStore.h"
 
@@ -20,6 +22,9 @@
 @synthesize btnImagePicker;
 @synthesize recipeName;
 @synthesize serving;
+@synthesize btnSaveRecipe;
+@synthesize btnAddIngredient;
+@synthesize btnAddStep;
 @synthesize inputCell;
 @synthesize itemCell;
 @synthesize actionCell;
@@ -28,7 +33,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        recipe = [[Recipe alloc] init];
     }
     return self;
 }
@@ -52,7 +57,8 @@
     //[imagePicker setShowsCameraControls:YES];
     imagePicker.allowsEditing = NO;
     imagePicker.delegate = self;
-        
+
+    [self reloadPage];
     //[self presentModalViewController:self.imagePicker animated:NO];
 }
 
@@ -65,6 +71,9 @@
     [self setServing:nil];
     [self setBtnImagePicker:nil];
     [self setImagePicker:nil];
+    [self setBtnSaveRecipe:nil];
+    [self setBtnAddIngredient:nil];
+    [self setBtnAddStep:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -82,6 +91,21 @@
     [[self navigationController] pushViewController:viewControllerToPush animated:YES];
 }
 
+- (IBAction)selectIngredient:(id)sender {
+    AddIngredientViewController *addIngredientViewController = [[AddIngredientViewController alloc] initWithNibName:@"AddIngredientViewController" bundle:nil];
+    [addIngredientViewController setTitle:@"Add Ingredient"];
+    [addIngredientViewController setRecipe:recipe];
+    [[self navigationController] pushViewController:addIngredientViewController animated:YES];
+}
+
+- (IBAction)selectSteps:(id)sender {
+    AddStepViewController *addStepViewController = [[AddStepViewController alloc] initWithNibName:@"AddStepViewController" bundle:nil];
+    
+    [addStepViewController setTitle:@"Add Ingredient"];
+    [addStepViewController setRecipe:recipe];
+    [[self navigationController] pushViewController:addStepViewController animated:YES];
+}
+
 - (IBAction)cancelAction:(id)sender
 {
     [[self navigationController] popViewControllerAnimated:YES];
@@ -89,48 +113,10 @@
 
 - (IBAction)saveAction:(id)sender
 {
-    if ([self validateInputInformation]) {
-        
-        //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/recipe/add"];
-        NSURL *url = [NSURL URLWithString:@"http://192.168.0.102/recipe_php/recipe/add"];
-        
-        __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
-        [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
-        [request setPostValue:[recipeName text] forKey:@"rn"];
-        [request setPostValue:[serving text] forKey:@"rs"];
-        for (NSInteger i = 0; i < [_images count]; i++) {
-            NSLog(@"post image: %d",i);
-            [request addData:[_images objectAtIndex:i] forKey:@"ri[]"];
-            
-        }
-        //multiple category
-        //[request setPostValue:@"2" forKey:@"cid[]"];
-        //[request setPostValue:@"1" forKey:@"cid[]"];
-        [request addPostValue:@"1" forKey:@"cid[]"];
-        [request addPostValue:@"2" forKey:@"cid[]"];
-        
-        //[request setPostValue:[password text] forKey:@"pw"];
-        
-        [request setCompletionBlock:^{
-            NSLog(@"Complete Post Recipe.");
-            if (request.responseStatusCode == 200) {
-                NSLog(@"%d", request.responseStatusCode);
-                //UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
-                //[handler setEndDocumentTarget:self andAction:@selector(didParsedLoggingUser)];
-                //NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
-                //parser.delegate = handler;
-                //[parser parse];
-                //            }else if(request.responseStatusCode == 404){
-            } else {
-                //_user = nil;
-                //[self didParsedLoggingUser];
-            }
-        }];
-        [request setFailedBlock:^{
-//            [self handleError:request.error];
-        }];
-        
-        [request startAsynchronous];
+    if([recipe recipeId] == @"-1"){
+        [self insertNewRecipe];
+    } else {
+        [self updateRecipe];
     }
 }
 
@@ -265,4 +251,128 @@
     
     [picker dismissModalViewControllerAnimated:YES];
 }
+
+- (void)reloadPage
+{
+    NSLog(@"nhay vao ham reloadpage");
+    if([recipe recipeId] == @"-1"){
+        [btnSaveRecipe setTitle:@"Save" forState:UIControlStateNormal];
+        //[btnAddIngredient setEnabled:NO];
+        //[btnAddStep setEnabled:NO];
+    } else {
+        [btnSaveRecipe setTitle:@"Update" forState:UIControlStateNormal];
+        [btnSaveRecipe setEnabled:NO];
+        [btnAddIngredient setEnabled:YES];
+        [btnAddStep setEnabled:YES];
+    }
+}
+
+- (void)insertNewRecipe
+{
+    if ([self validateInputInformation]) {
+        
+        //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/recipe/add"];
+        NSURL *url = [NSURL URLWithString:@"http://192.168.0.102/recipe_php/recipe/add"];
+        
+        __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+        [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
+        [request setPostValue:[recipeName text] forKey:@"rn"];
+        [request setPostValue:[serving text] forKey:@"rs"];
+        for (NSInteger i = 0; i < [_images count]; i++) {
+            NSLog(@"post image: %d",i);
+            [request addData:[_images objectAtIndex:i] forKey:@"ri[]"];
+            
+        }
+        //multiple category
+        //[request setPostValue:@"2" forKey:@"cid[]"];
+        //[request setPostValue:@"1" forKey:@"cid[]"];
+        [request addPostValue:@"1" forKey:@"cid[]"];
+        [request addPostValue:@"2" forKey:@"cid[]"];
+        
+        //[request setPostValue:[password text] forKey:@"pw"];
+        
+        [request setCompletionBlock:^{
+            NSLog(@"Complete Post Recipe.");
+            if (request.responseStatusCode == 200) {
+                NSLog(@"%d", request.responseStatusCode);
+                [recipe setRecipeId:request.responseString];
+                //NSLog(@"recipe id: %s", [request.responseData bytes]);
+                NSLog(@"recipe id: %@", request.responseString);
+                NSLog(@"set recipe id : %@",[recipe recipeId]);
+                //UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
+                //[handler setEndDocumentTarget:self andAction:@selector(didParsedLoggingUser)];
+                //NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+                //parser.delegate = handler;
+                //[parser parse];
+                //            }else if(request.responseStatusCode == 404){
+                [self reloadPage];
+            } else {
+                //_user = nil;
+                //[self didParsedLoggingUser];
+            }
+        }];
+        [request setFailedBlock:^{
+            //            [self handleError:request.error];
+        }];
+        
+        [request startAsynchronous];
+    }
+}
+
+- (void)updateRecipe
+{
+    if ([self validateInputInformation]) {
+        
+        //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/recipe/update"];
+        NSURL *url = [NSURL URLWithString:@"http://192.168.0.102/recipe_php/recipe/update"];
+        
+        __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+        //[request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
+        [request setPostValue:[recipeName text] forKey:@"rn"];
+        [request setPostValue:[serving text] forKey:@"rs"];
+        
+        if([_images count] > 0){
+            for (NSInteger i = 0; i < [_images count]; i++) {
+                NSLog(@"post image: %d",i);
+                [request addData:[_images objectAtIndex:i] forKey:@"ri[]"];
+                
+            }
+        }
+        
+        //multiple category
+        //[request setPostValue:@"2" forKey:@"cid[]"];
+        //[request setPostValue:@"1" forKey:@"cid[]"];
+        [request addPostValue:@"1" forKey:@"cid[]"];
+        [request addPostValue:@"2" forKey:@"cid[]"];
+        
+        //[request setPostValue:[password text] forKey:@"pw"];
+        
+        [request setCompletionBlock:^{
+            NSLog(@"Complete Post Recipe.");
+            if (request.responseStatusCode == 200) {
+                NSLog(@"%d", request.responseStatusCode);
+                [recipe setRecipeId:request.responseString];
+                //NSLog(@"recipe id: %s", [request.responseData bytes]);
+                NSLog(@"recipe id: %@", request.responseString);
+                NSLog(@"set recipe id : %@",[recipe recipeId]);
+                //UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
+                //[handler setEndDocumentTarget:self andAction:@selector(didParsedLoggingUser)];
+                //NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+                //parser.delegate = handler;
+                //[parser parse];
+                //            }else if(request.responseStatusCode == 404){
+                [self reloadPage];
+            } else {
+                //_user = nil;
+                //[self didParsedLoggingUser];
+            }
+        }];
+        [request setFailedBlock:^{
+            //            [self handleError:request.error];
+        }];
+        
+        [request startAsynchronous];
+    }
+}
+
 @end

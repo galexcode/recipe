@@ -22,6 +22,8 @@
 @property (strong, nonatomic) IBOutlet UITableViewCell *actionCell;
 
 - (IBAction)selectCategories:(id)sender;
+- (IBAction)selectIngredient:(id)sender;
+- (IBAction)selectSteps:(id)sender;
 - (IBAction)cancelAction:(id)sender;
 - (IBAction)saveAction:(id)sender;
 - (IBAction)backgroundTap:(id)sender;
@@ -30,5 +32,8 @@
 @property (nonatomic) UIImagePickerController *imagePicker;
 @property (weak, nonatomic) IBOutlet RecipeTextField *recipeName;
 @property (weak, nonatomic) IBOutlet RecipeTextField *serving;
+@property (weak, nonatomic) IBOutlet UIButton *btnSaveRecipe;
+@property (weak, nonatomic) IBOutlet UIButton *btnAddIngredient;
+@property (weak, nonatomic) IBOutlet UIButton *btnAddStep;
 
 @end

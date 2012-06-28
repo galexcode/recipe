@@ -254,6 +254,10 @@
 		C5776C711599A0D200188248 /* arrow_pull_refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = C5776C701599A0D200188248 /* arrow_pull_refresh.png */; };
 		C5776C741599A3E800188248 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5776C731599A3E700188248 /* QuartzCore.framework */; };
 		C5776C7F1599AC3C00188248 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5776C7E1599AC3C00188248 /* PullRefreshTableViewController.m */; };
+		C5C90159159C40E6002367EA /* AddIngredientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C90157159C40E6002367EA /* AddIngredientViewController.m */; };
+		C5C9015A159C40E6002367EA /* AddIngredientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5C90158159C40E6002367EA /* AddIngredientViewController.xib */; };
+		C5C9015F159C43D1002367EA /* AddStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C9015D159C43D1002367EA /* AddStepViewController.m */; };
+		C5C90160159C43D1002367EA /* AddStepViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5C9015E159C43D1002367EA /* AddStepViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -576,6 +580,12 @@
 		C5776C731599A3E700188248 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C5776C7D1599AC3C00188248 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
 		C5776C7E1599AC3C00188248 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
+		C5C90156159C40E6002367EA /* AddIngredientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddIngredientViewController.h; sourceTree = "<group>"; };
+		C5C90157159C40E6002367EA /* AddIngredientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddIngredientViewController.m; sourceTree = "<group>"; };
+		C5C90158159C40E6002367EA /* AddIngredientViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddIngredientViewController.xib; sourceTree = "<group>"; };
+		C5C9015C159C43D1002367EA /* AddStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStepViewController.h; sourceTree = "<group>"; };
+		C5C9015D159C43D1002367EA /* AddStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStepViewController.m; sourceTree = "<group>"; };
+		C5C9015E159C43D1002367EA /* AddStepViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddStepViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -781,6 +791,12 @@
 				97F77C74158CAB6100513CB4 /* AddRecipeViewController.h */,
 				97F77C75158CAB6300513CB4 /* AddRecipeViewController.m */,
 				97F77C76158CAB6500513CB4 /* AddRecipeViewController.xib */,
+				C5C90156159C40E6002367EA /* AddIngredientViewController.h */,
+				C5C90157159C40E6002367EA /* AddIngredientViewController.m */,
+				C5C90158159C40E6002367EA /* AddIngredientViewController.xib */,
+				C5C9015C159C43D1002367EA /* AddStepViewController.h */,
+				C5C9015D159C43D1002367EA /* AddStepViewController.m */,
+				C5C9015E159C43D1002367EA /* AddStepViewController.xib */,
 				97CFD14C158CF0B10097A111 /* SelectCategoresViewController.h */,
 				97CFD14D158CF0B20097A111 /* SelectCategoresViewController.m */,
 				97CFD14E158CF0B20097A111 /* SelectCategoresViewController.xib */,
@@ -1272,6 +1288,8 @@
 				9744DC231599AB1B00555698 /* search_tf_bg.png in Resources */,
 				9744DC241599AB1B00555698 /* search_tf_bg@2x.png in Resources */,
 				97741457159AA5510054411E /* RecipesTableViewController.xib in Resources */,
+				C5C9015A159C40E6002367EA /* AddIngredientViewController.xib in Resources */,
+				C5C90160159C43D1002367EA /* AddStepViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1342,6 +1360,8 @@
 				974C1D5A159844070056B894 /* HomeViewController.m in Sources */,
 				C5776C7F1599AC3C00188248 /* PullRefreshTableViewController.m in Sources */,
 				97741456159AA5510054411E /* RecipesTableViewController.m in Sources */,
+				C5C90159159C40E6002367EA /* AddIngredientViewController.m in Sources */,
+				C5C9015F159C43D1002367EA /* AddStepViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
