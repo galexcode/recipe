@@ -109,8 +109,8 @@
                                              forState:UIControlStateNormal];
     
     //UISegmentedControl appearance
-    UIImage *segmentSelected = [[UIImage imageNamed:@"seg_s.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
-    UIImage *segmentUnselected = [[UIImage imageNamed:@"seg_u.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
+    UIImage *segmentSelected = [[UIImage imageNamed:@"seg_s.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 8, 0, 8)];
+    UIImage *segmentUnselected = [[UIImage imageNamed:@"seg_u.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 8, 0, 8)];
     UIImage *segmentSelectedUnselected = [UIImage imageNamed:@"seg_s_u.png"];
     UIImage *segUnselectedSelected = [UIImage imageNamed:@"seg_u_s.png"];
     UIImage *segmentUnselectedUnselected = [UIImage imageNamed:@"seg_u_u.png"];

@@ -46,7 +46,7 @@
 						<string key="NSFrame">{{-11, -35}, {342, 538}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="156218151"/>
+						<reference key="NSNextKeyView" ref="177104270"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -58,13 +58,14 @@
 					<object class="IBUISegmentedControl" id="156218151">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 90}, {280, 44}}</string>
+						<string key="NSFrame">{{10, 90}, {300, 30}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="177104270"/>
+						<reference key="NSNextKeyView" ref="70912314"/>
 						<string key="NSReuseIdentifierKey">_NS:262</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<int key="IBSegmentControlStyle">2</int>
 						<int key="IBNumberOfSegments">2</int>
 						<int key="IBSelectedSegmentIndex">0</int>
 						<object class="NSArray" key="IBSegmentTitles">
@@ -96,7 +97,7 @@
 					<object class="IBUIView" id="70912314">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{0, 148}, {320, 270}}</string>
+						<string key="NSFrame">{{0, 132}, {320, 270}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:180</string>
@@ -109,10 +110,10 @@
 					<object class="IBUIImageView" id="177104270">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{10, 0}, {300, 82}}</string>
+						<string key="NSFrame">{{10, 8}, {300, 82}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="70912314"/>
+						<reference key="NSNextKeyView" ref="156218151"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -182,9 +183,9 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="70912314"/>
-							<reference ref="156218151"/>
 							<reference ref="382007792"/>
 							<reference ref="177104270"/>
+							<reference ref="156218151"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>

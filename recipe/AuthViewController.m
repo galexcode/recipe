@@ -27,7 +27,7 @@
         MCSegmentedControl *segmentedControl = [[MCSegmentedControl alloc] initWithItems:items];
         
         // set frame, add to view, set target and action for value change as usual
-        segmentedControl.frame = CGRectMake(20.0f, 20.0f, 280.0f, 44.0f);
+        segmentedControl.frame = CGRectMake(20.0f, 20.0f, 280.0f, 30.0f);
         //[self.view addSubview:segmentedControl];
         [segmentedControl addTarget:self action:@selector(segmentControlChanged:) forControlEvents:UIControlEventValueChanged];
         
