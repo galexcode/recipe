@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StepsTableViewController.h"
 #import "Recipe.h"
 
 @interface AddStepViewController : UIViewController
 {
     Recipe *_recipe;
+    StepsTableViewController *stepsTable;
+    UIBarButtonItem *barButton;
 }
 @property (nonatomic) Recipe *recipe;
+@property (strong, nonatomic) IBOutlet UIView *stepForm;
 
 - (IBAction)selectImage:(id)sender;
 @end

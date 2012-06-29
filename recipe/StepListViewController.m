@@ -45,8 +45,6 @@
     
 //    [[self navigationItem] setTitleView:headerView];
     
-    [[self stepListTable] setBackgroundColor:[UIColor clearColor]];
-    
     selectedIndex = 0;
     // Do any additional setup after loading the view from its nib.
 }
@@ -113,20 +111,6 @@
             }
         }
     }
-    
-    //    cell.textLabel.text = @"ingredient";
-    //    cell.imageView.image = [UIImage imageNamed:@"Aviation"];
-    
-    //If this is the selected index then calculate the height of the cell based on the amount of text we have
-//    NSString *testString = [NSString stringWithString:@"Test comment. Test comment."];
-//    
-//    for(int ii = 0; ii < 4; ii++)
-//    {
-//        testString = [NSString stringWithString:@"Test comment. Test comment."];
-//        for (int jj = 0; jj < ii; jj++) {
-//            testString = [NSString stringWithFormat:@"%@ %@", testString, testString];
-//        }
-//    }
     
     if(selectedIndex == indexPath.row)
     {

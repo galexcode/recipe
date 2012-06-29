@@ -7,6 +7,8 @@
 //
 
 #import "AddIngredientViewController.h"
+#import "RecipeNavigationLabel.h"
+#import "IngredientsTableViewController.h"
 
 @interface AddIngredientViewController ()
 
@@ -14,6 +16,7 @@
 
 @implementation AddIngredientViewController
 @synthesize imagePicker;
+@synthesize ingredientForm;
 @synthesize recipe=_recipe;
 @synthesize inputCell;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -28,7 +31,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
+    [[self navigationItem] setTitleView:label];
+    barButton = [[UIBarButtonItem alloc] 
+                                  initWithTitle:@"Add"                                            
+                                  style:UIBarButtonItemStyleBordered 
+                                  target:self 
+                                  action:@selector(addIngredient:)];
+    self.navigationItem.rightBarButtonItem = barButton;
+    
+    ingredientTable = [[IngredientsTableViewController alloc] initWithNibName:@"IngredientsTableViewController" bundle:nil];
+    [ingredientTable setIngredients:[_recipe ingredientList]];
+    [ingredientTable setNavController:[self navigationController]];
+    //[[ingredientTable navigationItem] setTitle:@"Ingredients"];
+    
+    [self.view addSubview:ingredientTable.view];
+    [self.view addSubview:ingredientForm];
+    [ingredientForm setHidden:YES];
+    
     NSLog(@"recipe id: %@", [[self recipe] recipeId]);
     
     imagePicker = [[UIImagePickerController alloc] init];
@@ -42,6 +62,7 @@
 - (void)viewDidUnload
 {
     [self setInputCell:nil];
+    [self setIngredientForm:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -50,6 +71,20 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)addIngredient:(id)sender
+{
+    [barButton setTitle:@"Cancel"];
+    [barButton setAction:@selector(cancelAddIngredient:)];
+    [ingredientForm setHidden:NO];
+}
+
+- (void)cancelAddIngredient:(id)sender
+{
+    [barButton setTitle:@"Add"];
+    [barButton setAction:@selector(addIngredient:)];
+    [ingredientForm setHidden:YES];
 }
 
 - (IBAction)btnSelectImage:(id)sender

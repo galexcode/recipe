@@ -93,7 +93,7 @@
 
 - (IBAction)selectIngredient:(id)sender {
     AddIngredientViewController *addIngredientViewController = [[AddIngredientViewController alloc] initWithNibName:@"AddIngredientViewController" bundle:nil];
-    [addIngredientViewController setTitle:@"Add Ingredient"];
+    [addIngredientViewController setTitle:@"Ingredients"];
     [addIngredientViewController setRecipe:recipe];
     [[self navigationController] pushViewController:addIngredientViewController animated:YES];
 }
@@ -101,7 +101,7 @@
 - (IBAction)selectSteps:(id)sender {
     AddStepViewController *addStepViewController = [[AddStepViewController alloc] initWithNibName:@"AddStepViewController" bundle:nil];
     
-    [addStepViewController setTitle:@"Add Ingredient"];
+    [addStepViewController setTitle:@"Steps"];
     [addStepViewController setRecipe:recipe];
     [[self navigationController] pushViewController:addStepViewController animated:YES];
 }

@@ -57,7 +57,6 @@
     if (self) {
         loaded = NO;
         _keyword = keyword;
-        NSLog(@"search key is: %@", _keyword);
         _user = nil;
         _category = nil;
     }
@@ -88,14 +87,17 @@
 {
     [super viewDidLoad];
 
+    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
+    [[self navigationItem] setTitleView:label];
+    
+    [self initResuableCells];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
-    [[self navigationItem] setTitleView:label];
 }
 
 - (void)viewDidUnload

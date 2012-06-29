@@ -11,7 +11,9 @@
 #import "GlobalStore.h"
 #import "NSStringUtil.h"
 #import "IngredientListViewController.h"
+#import "IngredientsTableViewController.h"
 #import "StepListViewController.h"
+#import "StepsTableViewController.h"
 #import "RecipeNavigationLabel.h"
 #import "ASI2HTTPRequest.h"
 #import "RecipeDisclosureIndicators.h"
@@ -26,6 +28,7 @@
 @synthesize recipeLikeCount;
 @synthesize userInfoCell;
 @synthesize userThumb;
+@synthesize borderThumb;
 @synthesize userName;
 @synthesize timeSpanSinceCreated;
 @synthesize imageSlider;
@@ -68,6 +71,8 @@
     
     [[[self userThumb] layer] setCornerRadius:8.0];
     [[[self userThumb] layer] setMasksToBounds:YES];
+    [[[self borderThumb] layer] setCornerRadius:8.0];
+    [[[self borderThumb] layer] setMasksToBounds:YES];
     
     [self loadImageSlider];
     [self loadUserAvatar];
@@ -87,6 +92,7 @@
     [self setTimeSpanSinceCreated:nil];
     [self setUserInfoCell:nil];
     [self setImageSlider:nil];
+    [self setBorderThumb:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -279,21 +285,27 @@
     if (indexPath.section == 2) {
         if (indexPath.row == 0) {
             if ([[[self recipe] ingredientList] count] > 0){
-                IngredientListViewController *viewControllerToPush = [[IngredientListViewController alloc] initWithNibName:@"IngredientListViewController" bundle:nil];
+//                IngredientListViewController *viewControllerToPush = [[IngredientListViewController alloc] initWithNibName:@"IngredientListViewController" bundle:nil];
+//                [viewControllerToPush.navigationItem setTitle:ingredientTitleText];
+//                [viewControllerToPush setIngredients:[[self recipe] ingredientList]];
+//                [self.navigationController pushViewController:viewControllerToPush animated:YES];
+                IngredientsTableViewController *viewControllerToPush = [[IngredientsTableViewController alloc] initWithNibName:@"IngredientsTableViewController" bundle:nil];
                 [viewControllerToPush.navigationItem setTitle:ingredientTitleText];
                 [viewControllerToPush setIngredients:[[self recipe] ingredientList]];
-//                [viewControllerToPush setPageTitleText:ingredientTitleText];
                 [self.navigationController pushViewController:viewControllerToPush animated:YES];
+                
             }
         } else if (indexPath.row == 1){
             if ([[[self recipe] stepList] count] > 0){
-                StepListViewController *viewControllerToPush = [[StepListViewController alloc] initWithNibName:@"StepListViewController" bundle:nil];
-                [viewControllerToPush.navigationItem setTitle:ingredientTitleText];
+//                StepListViewController *viewControllerToPush = [[StepListViewController alloc] initWithNibName:@"StepListViewController" bundle:nil];
+//                [viewControllerToPush.navigationItem setTitle:ingredientTitleText];
+//                [viewControllerToPush setSteps:[[self recipe] stepList]];
+//                [self.navigationController pushViewController:viewControllerToPush animated:YES];
+                StepsTableViewController *viewControllerToPush = [[StepsTableViewController alloc] initWithNibName:@"StepsTableViewController" bundle:nil];
+                [viewControllerToPush.navigationItem setTitle:stepTitleText];
                 [viewControllerToPush setSteps:[[self recipe] stepList]];
-//                [viewControllerToPush setPageTitleText:stepTitleText];
                 [self.navigationController pushViewController:viewControllerToPush animated:YES];
             }
-            
         }
     }
 }

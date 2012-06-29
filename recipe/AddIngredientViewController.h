@@ -8,16 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
+#import "IngredientsTableViewController.h"
 
-@interface AddIngredientViewController : UIViewController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface AddIngredientViewController : UIViewController <UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     Recipe *_recipe;
     UIImagePickerController *imagePicker;
     NSMutableArray* _images;
+    UIBarButtonItem *barButton;
+    IngredientsTableViewController *ingredientTable;
 }
 @property (nonatomic) Recipe *recipe;
 @property (strong, nonatomic) IBOutlet UITableViewCell *inputCell;
 
 @property (nonatomic) UIImagePickerController *imagePicker;
+@property (strong, nonatomic) IBOutlet UIView *ingredientForm;
 - (IBAction)btnSelectImage:(id)sender;
 @end

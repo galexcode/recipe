@@ -116,6 +116,7 @@
 
 -(IBAction)addRecipe:(id)sender{
     AddRecipeViewController *viewControllerToPush = [[AddRecipeViewController alloc] initWithNibName:@"AddRecipeViewController" bundle:nil];
+    [[viewControllerToPush navigationItem] setTitle:@"Add Recipe"];
     [[self navigationController] pushViewController:viewControllerToPush animated:YES];
 }
 
