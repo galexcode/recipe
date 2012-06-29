@@ -8,14 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
-#import "ApplicationService.h"
 #import "RecipeNavigationLabel.h"
 //#import "recipeGlobal.h"
 
 @interface recipeAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate>{
     UIViewController *authViewController;
     User* _user;
-    ApplicationService *_appService;
 }
 
 @property (nonatomic) IBOutlet UIWindow *window;
@@ -33,10 +31,6 @@
 @property (weak, nonatomic) IBOutlet UINavigationBar *myRecipeBar;
 @property (weak, nonatomic) IBOutlet UINavigationBar *todoBar;
 @property (weak, nonatomic) IBOutlet UINavigationBar *feedBar;
-
--(ApplicationService*) appService;
-
-//+(ApplicationService*) sharedApplicationService;
 
 -(User*) user;
 

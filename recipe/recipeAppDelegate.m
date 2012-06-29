@@ -33,12 +33,6 @@
     return _user;
 }
 
-#pragma mark Services Accessor
-- (ApplicationService*) appService
-{
-    return _appService;
-}
-
 // Change default appearance of UI Control Element
 #pragma mark Customization UI
 - (void)customizeAppearance

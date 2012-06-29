@@ -15,10 +15,10 @@
     Step* _currentStep;
     User* _currentUser;
     NSNumber* _total;
-    NSMutableArray* _recipeArray;
+    Recipe* _recipe;
 }
 
--(id) initWithRecipeArray:(NSMutableArray*)recipeArray;
+-(id) initWithRecipe:(Recipe *)recipe;
 -(void) afterElementStarting:(NSString *)elementName withAttributes:(NSDictionary *)attributeDict;
 -(void) afterElementEnding:(NSString *)elementName;
 -(NSString*) getWrappedRootNode;

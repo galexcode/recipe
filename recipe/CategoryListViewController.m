@@ -15,6 +15,7 @@
 #import "ControlVariables.h"
 #import "HeaderButton.h"
 #import "GlobalStore.h"
+#import "CategoriesXMLHandler.h"
 
 #define kHeadlineSectionHeight  26
 #define kRegularSectionHeight   18

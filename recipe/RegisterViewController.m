@@ -10,6 +10,8 @@
 #import "GlobalStore.h"
 #import "MBProgressHUD.h"
 #import "NSStringUtil.h"
+#import "ASIForm2DataRequest.h"
+#import "UserXMLHandler.h"
 
 @implementation RegisterViewController
 @synthesize userName;

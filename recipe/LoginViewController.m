@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "MBProgressHUD.h"
 #import "ASIForm2DataRequest.h"
+#import "UserXMLHandler.h"
 #import "GlobalStore.h"
 
 @implementation LoginViewController

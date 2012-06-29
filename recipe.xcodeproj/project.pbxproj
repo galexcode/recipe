@@ -21,7 +21,6 @@
 		5AD404FA152E82900045E74A /* UserXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD404F9152E82900045E74A /* UserXMLHandler.m */; };
 		5AD40508152EF4340045E74A /* BaseXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD40507152EF4340045E74A /* BaseXMLHandler.m */; };
 		5AD40516152F08530045E74A /* beef.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AD40515152F08530045E74A /* beef.jpg */; };
-		5AEA8BF0153686250097C796 /* ApplicationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA8BEF153686250097C796 /* ApplicationService.m */; };
 		5AEA8C12153688C50097C796 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA8C11153688C50097C796 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5AEA8C2715368D900097C796 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA8C1415368D900097C796 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5AEA8C2815368D900097C796 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA8C1715368D900097C796 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -280,8 +279,6 @@
 		5AD40506152EF4340045E74A /* BaseXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseXMLHandler.h; sourceTree = "<group>"; };
 		5AD40507152EF4340045E74A /* BaseXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseXMLHandler.m; sourceTree = "<group>"; };
 		5AD40515152F08530045E74A /* beef.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beef.jpg; sourceTree = "<group>"; };
-		5AEA8BEE153686250097C796 /* ApplicationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationService.h; sourceTree = "<group>"; };
-		5AEA8BEF153686250097C796 /* ApplicationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationService.m; sourceTree = "<group>"; };
 		5AEA8C10153688C50097C796 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		5AEA8C11153688C50097C796 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		5AEA8C1315368D900097C796 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -786,8 +783,6 @@
 		908409DD1521C4C300FA078B /* service */ = {
 			isa = PBXGroup;
 			children = (
-				5AEA8BEE153686250097C796 /* ApplicationService.h */,
-				5AEA8BEF153686250097C796 /* ApplicationService.m */,
 				97F77C63158C5C2600513CB4 /* GlobalStore.h */,
 				97F77C64158C5C2600513CB4 /* GlobalStore.m */,
 			);
@@ -1290,7 +1285,6 @@
 				5AD404F7152E81B60045E74A /* StoreXMLHandler.m in Sources */,
 				5AD404FA152E82900045E74A /* UserXMLHandler.m in Sources */,
 				5AD40508152EF4340045E74A /* BaseXMLHandler.m in Sources */,
-				5AEA8BF0153686250097C796 /* ApplicationService.m in Sources */,
 				5AEA8C12153688C50097C796 /* MBProgressHUD.m in Sources */,
 				5AEA8C2715368D900097C796 /* ASIAuthenticationDialog.m in Sources */,
 				5AEA8C2815368D900097C796 /* ASIDataCompressor.m in Sources */,

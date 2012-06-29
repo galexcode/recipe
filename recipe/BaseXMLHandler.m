@@ -81,9 +81,7 @@
 - (void) parserDidEndDocument:(NSXMLParser *)parser
 {
 	if (_target && [_target respondsToSelector:_action])
-    {
 		[_target performSelector:_action];
-	}
 }
 
 -(void) setEndDocumentTarget:(id)target andAction: (SEL)action

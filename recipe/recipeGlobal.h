@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ApplicationService.h"
 #import "recipeAppDelegate.h"
 
 #import "BaseXMLHandler.h"

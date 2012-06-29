@@ -10,25 +10,25 @@
 
 @implementation RecipeXMLHandler
 
--(id) initWithRecipeArray:(NSMutableArray*)recipeArray{
+-(id) initWithRecipe:(Recipe *)recipe{
     if (self = [super init]) {
         _currentObject = nil;
         _currentRecipe = nil;
         _currentUser = nil;
         _currentIngredient = nil;
         _currentStep = nil;
-        _recipeArray = recipeArray;
+        _recipe = recipe;
         _total = nil;
     }
     return self;
 }
 
 -(id) initObjectAfterElementStarting:(NSString *)elementName{
-    if ([elementName isEqualToString:@"recipes"]){
-        return self;
-    }
     if ([elementName isEqualToString:@"recipe"]){
-        _currentObject = [[Recipe alloc] init];
+        if (_recipe == nil) {
+            _recipe = [[Recipe alloc] init];
+        }
+        _currentObject = _recipe;
         return self;
     }
     if ([elementName isEqualToString:@"owner"]){
@@ -70,12 +70,11 @@
 }
 
 -(void) afterElementStarting:(NSString *)elementName withAttributes:(NSDictionary *)attributeDict{
-    if ([elementName isEqualToString:@"recipes"] || [elementName isEqualToString:@"ingredients"] || [elementName isEqualToString:@"steps"])
+    if ([elementName isEqualToString:@"ingredients"] || [elementName isEqualToString:@"steps"])
         _total = [[NSNumber alloc] initWithInteger:[[attributeDict objectForKey:@"total"] intValue]];
     if ([elementName isEqualToString:@"recipe"]) {
         if ([_currentObject isKindOfClass:[Recipe class]]){
-            _currentRecipe = (Recipe *)_currentObject;
-            [_currentRecipe setRecipeId:[NSString stringWithString:[attributeDict objectForKey:@"id"]]];
+            [_recipe setRecipeId:[NSString stringWithString:[attributeDict objectForKey:@"id"]]];
         }
     }
     if ([elementName isEqualToString:@"owner"]) {
@@ -102,7 +101,7 @@
     
     if ([elementName isEqualToString:@"name"]){
         if ([_currentObject isKindOfClass:[Recipe class]])
-            [_currentRecipe setName:_chars];
+            [_recipe setName:_chars];
         if ([_currentObject isKindOfClass:[User class]])
             [_currentUser setName:_chars];
         if ([_currentObject isKindOfClass:[Ingredient class]])
@@ -111,19 +110,17 @@
             [_currentStep setName:_chars];
     }
     if ([elementName isEqualToString:@"serving"])
-        [_currentRecipe setServing:[_chars intValue]];
+        [_recipe setServing:[_chars intValue]];
     if ([elementName isEqualToString:@"likeCount"])
-        [_currentRecipe setLikeCount:[_chars intValue]];
+        [_recipe setLikeCount:[_chars intValue]];
     if ([elementName isEqualToString:@"createDate"]) {
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-        [_currentRecipe setCreateDate:[dateFormat dateFromString:_chars]]; 
+        [_recipe setCreateDate:[dateFormat dateFromString:_chars]]; 
     }
     if ([elementName isEqualToString:@"avatarId"])
         [_currentUser setAvatarId:_chars];
     if ([elementName isEqualToString:@"desc"]){
-        //        if ([_currentObject isKindOfClass:[Recipe class]])
-        //            [[_currentRecipe imageList] addObject:_chars];
         if ([_currentObject isKindOfClass:[Ingredient class]])
             [_currentIngredient setDesc:_chars];
         if ([_currentObject isKindOfClass:[Step class]])
@@ -137,32 +134,32 @@
         [_currentStep setNote:_chars];
     if ([elementName isEqualToString:@"imageId"]){
         if ([_currentObject isKindOfClass:[Recipe class]])
-            [[_currentRecipe imageList] addObject:_chars];
+            [[_recipe imageList] addObject:_chars];
         if ([_currentObject isKindOfClass:[Ingredient class]])
             [_currentIngredient setImagePath:_chars];
         if ([_currentObject isKindOfClass:[Step class]])
             [_currentStep setImagePath:_chars];
     }
+    if ([elementName isEqualToString:@"owner"]) {
+        [_recipe setOwner:_currentUser];
+        _currentUser = nil;
+        _currentObject = nil;
+    }
     if ([elementName isEqualToString:@"ingredient"]) {
-        [[_currentRecipe ingredientList] addObject:_currentIngredient];
+        [[_recipe ingredientList] addObject:_currentIngredient];
         _currentIngredient = nil;
         _currentObject = nil;
     }
     if ([elementName isEqualToString:@"step"]) {
-        [[_currentRecipe stepList] addObject:_currentStep];
+        [[_recipe stepList] addObject:_currentStep];
         _currentStep = nil;
-        _currentObject = nil;
-    }
-    if ([elementName isEqualToString:@"recipe"]) {
-        [_recipeArray addObject:_currentRecipe];
-        _currentRecipe = nil;
         _currentObject = nil;
     }
 }
 
 -(NSString*) getWrappedRootNode
 {
-	return @"recipes";
+	return @"recipe";
 }
 
 @end
