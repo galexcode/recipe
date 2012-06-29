@@ -13,6 +13,7 @@
 //#import "AddIngredientViewController.h"
 //#import "AddStepViewController.h"
 #import "ASIForm2DataRequest.h"
+#import "RecipeXMLHandler.h"
 #import "GlobalStore.h"
 
 @interface AddRecipeViewController ()
@@ -283,7 +284,7 @@
     if ([self validateInputInformation]) {
         
         //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/recipe/add"];
-        NSURL *url = [NSURL URLWithString:@"http://192.168.0.102/recipe_php/recipe/add"];
+        NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/recipe/add"];
         
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
@@ -310,16 +311,19 @@
                 //NSLog(@"recipe id: %s", [request.responseData bytes]);
                 NSLog(@"recipe id: %@", request.responseString);
                 NSLog(@"set recipe id : %@",[recipe recipeId]);
-                //UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
-                //[handler setEndDocumentTarget:self andAction:@selector(didParsedLoggingUser)];
-                //NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
-                //parser.delegate = handler;
-                //[parser parse];
-                //            }else if(request.responseStatusCode == 404){
+                
+                RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:recipe];
+                
+                [handler setEndDocumentTarget:self andAction:@selector(didParsedInsertRecipe)];
+                NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+                parser.delegate = handler;
+                [parser parse];
+                
                 [self reloadPage];
+                //}else if(request.responseStatusCode == 404){
             } else {
                 //_user = nil;
-                //[self didParsedLoggingUser];
+                [self didParsedInsertRecipe];
             }
         }];
         [request setFailedBlock:^{
@@ -328,6 +332,11 @@
         
         [request startAsynchronous];
     }
+}
+
+- (void)didParsedInsertRecipe
+{
+    
 }
 
 - (void)updateRecipe

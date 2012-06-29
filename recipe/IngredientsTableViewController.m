@@ -58,7 +58,7 @@
         [self.view addSubview:ingredientForm];
         [ingredientForm setHidden:YES];
     }
-
+    NSLog(@"new recipe Id: %@",[_recipe recipeId]);
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
