@@ -206,6 +206,9 @@
 		979B162E159D478800329E51 /* IngredientsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 979B162C159D478800329E51 /* IngredientsTableViewController.xib */; };
 		979B1633159D5ADB00329E51 /* StepsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 979B1631159D5ADA00329E51 /* StepsTableViewController.m */; };
 		979B1634159D5ADB00329E51 /* StepsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 979B1632159D5ADA00329E51 /* StepsTableViewController.xib */; };
+		979B1638159D9A9D00329E51 /* refresh_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 979B1636159D9A9D00329E51 /* refresh_arrow.png */; };
+		979B1639159D9A9D00329E51 /* refresh_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 979B1637159D9A9D00329E51 /* refresh_arrow@2x.png */; };
+		979B163B159D9E0D00329E51 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 979B163A159D9E0D00329E51 /* logo@2x.png */; };
 		979B4A931577241A00BD6A05 /* CategoriesXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 979B4A921577241A00BD6A05 /* CategoriesXMLHandler.m */; };
 		97A645ED157DE9320084F7A2 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A645EB157DE9320084F7A2 /* RegisterViewController.m */; };
 		97A645EE157DE9320084F7A2 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A645EC157DE9320084F7A2 /* RegisterViewController.xib */; };
@@ -510,6 +513,9 @@
 		979B1630159D5ADA00329E51 /* StepsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepsTableViewController.h; sourceTree = "<group>"; };
 		979B1631159D5ADA00329E51 /* StepsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepsTableViewController.m; sourceTree = "<group>"; };
 		979B1632159D5ADA00329E51 /* StepsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StepsTableViewController.xib; sourceTree = "<group>"; };
+		979B1636159D9A9D00329E51 /* refresh_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh_arrow.png; sourceTree = "<group>"; };
+		979B1637159D9A9D00329E51 /* refresh_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh_arrow@2x.png"; sourceTree = "<group>"; };
+		979B163A159D9E0D00329E51 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		979B4A911577241A00BD6A05 /* CategoriesXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesXMLHandler.h; sourceTree = "<group>"; };
 		979B4A921577241A00BD6A05 /* CategoriesXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesXMLHandler.m; sourceTree = "<group>"; };
 		97A645EA157DE9320084F7A2 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -847,6 +853,7 @@
 				97455BA6158741820018FCD0 /* arrow.png */,
 				97455BA7158741820018FCD0 /* arrow@2x.png */,
 				97AE30DF158C3515004C7D83 /* logo.png */,
+				979B163A159D9E0D00329E51 /* logo@2x.png */,
 				97CFD149158CCC850097A111 /* plus.png */,
 				97CFD155158D21670097A111 /* add_photo.png */,
 				97CFD156158D21670097A111 /* plus_round.png */,
@@ -860,6 +867,8 @@
 				9744DC1E1599A08600555698 /* search@2x.png */,
 				9744DC211599AB1B00555698 /* search_tf_bg.png */,
 				9744DC221599AB1B00555698 /* search_tf_bg@2x.png */,
+				979B1636159D9A9D00329E51 /* refresh_arrow.png */,
+				979B1637159D9A9D00329E51 /* refresh_arrow@2x.png */,
 				9742D778157362C7003B678D /* Articles.plist */,
 				9747F30D156A3B6C009DA030 /* btn-black.png */,
 				9747F30E156A3B6C009DA030 /* btn-red.png */,
@@ -1257,6 +1266,9 @@
 				97741457159AA5510054411E /* RecipesTableViewController.xib in Resources */,
 				979B162E159D478800329E51 /* IngredientsTableViewController.xib in Resources */,
 				979B1634159D5ADB00329E51 /* StepsTableViewController.xib in Resources */,
+				979B1638159D9A9D00329E51 /* refresh_arrow.png in Resources */,
+				979B1639159D9A9D00329E51 /* refresh_arrow@2x.png in Resources */,
+				979B163B159D9E0D00329E51 /* logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

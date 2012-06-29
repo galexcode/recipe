@@ -204,15 +204,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    IngredientViewController *viewControllerToPush = [[IngredientViewController alloc] initWithNibName:@"IngredientViewController" bundle:nil];
-    Ingredient *currentIngredient = (Ingredient*)[[self ingredients] objectAtIndex:indexPath.row];
-    [[viewControllerToPush navigationItem] setTitle:[currentIngredient name]];
-    [viewControllerToPush setIngredient:currentIngredient];
-    if ([self navController] != nil) {
-        UINavigationController *parentNav = (UINavigationController *)[self navController];
-        [parentNav pushViewController:viewControllerToPush animated:YES];
-    } else {
-        [[self navigationController] pushViewController:viewControllerToPush animated:YES];
+    if ([[self ingredients] count] > 0) {
+        IngredientViewController *viewControllerToPush = [[IngredientViewController alloc] initWithNibName:@"IngredientViewController" bundle:nil];
+        Ingredient *currentIngredient = (Ingredient*)[[self ingredients] objectAtIndex:indexPath.row];
+        [[viewControllerToPush navigationItem] setTitle:[currentIngredient name]];
+        [viewControllerToPush setIngredient:currentIngredient];
+        if ([self navController] != nil) {
+            UINavigationController *parentNav = (UINavigationController *)[self navController];
+            [parentNav pushViewController:viewControllerToPush animated:YES];
+        } else {
+            [[self navigationController] pushViewController:viewControllerToPush animated:YES];
+        }
     }
 }
 

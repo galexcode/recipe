@@ -71,10 +71,10 @@
     refreshLabel.textAlignment = UITextAlignmentCenter;
     refreshLabel.textColor = [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:0.75f];
     
-    refreshArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow_pull_refresh.png"]];
-    refreshArrow.frame = CGRectMake(floorf((REFRESH_HEADER_HEIGHT - 27) / 2),
-                                    (floorf(REFRESH_HEADER_HEIGHT - 44) / 2),
-                                    27, 44);
+    refreshArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"refresh_arrow.png"]];
+    refreshArrow.frame = CGRectMake(floorf((REFRESH_HEADER_HEIGHT - 30) / 2),
+                                    (floorf(REFRESH_HEADER_HEIGHT - 30) / 2),
+                                    30, 30);
     
     refreshSpinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     refreshSpinner.frame = CGRectMake(floorf(floorf(REFRESH_HEADER_HEIGHT - 20) / 2), floorf((REFRESH_HEADER_HEIGHT - 20) / 2), 20, 20);
