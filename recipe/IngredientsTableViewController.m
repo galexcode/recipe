@@ -13,16 +13,25 @@
 #import "RecipeNavigationLabel.h"
 #import "IngredientCell.h"
 #import "ASI2HTTPRequest.h"
+#import "ASIForm2DataRequest.h"
 
 @interface IngredientsTableViewController ()
 
 @end
 
 @implementation IngredientsTableViewController
+@synthesize btnSelectImage;
+@synthesize txtIngredientName;
+@synthesize txtIngredientDescription;
 @synthesize recipe = _recipe;
 @synthesize ingredients = _ingredients;
 @synthesize navController;
 @synthesize ingredientForm;
+@synthesize imagePicker;
+
+- (IBAction)btnSelectImage:(id)sender {
+    [self presentModalViewController:imagePicker animated:YES];
+}
 
 - (id)initWithEditableTable
 {
@@ -64,6 +73,13 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    imagePicker = [[UIImagePickerController alloc] init];
+    
+    //    [imagePicker setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
+    //[imagePicker setShowsCameraControls:YES];
+    imagePicker.allowsEditing = NO;
+    imagePicker.delegate = self;
+    
 }
 
 - (void)addIngredient:(id)sender
@@ -78,19 +94,130 @@
     [barButton setTitle:@"Add"];
     [barButton setAction:@selector(addIngredient:)];
     [ingredientForm setHidden:YES];
+    [self dismissKeyboard:self];
+}
+
+- (IBAction)dismissKeyboard:(id)sender{
+    if (activeTextField != nil) {
+        [activeTextField resignFirstResponder];
+    }
+    if (activeTextView != nil) {
+        [activeTextView resignFirstResponder];
+    }
+}
+
+- (IBAction)insertIngredient:(id)sender {
+    NSLog(@"Insert Ingredient");
+//    if ([self validateInputInformation]) {
+//        
+//        //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/recipe/add"];
+//        NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/recipe/add"];
+//        
+//        __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+//        [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
+//        [request setPostValue:[recipeName text] forKey:@"rn"];
+//        [request setPostValue:[serving text] forKey:@"rs"];
+//        for (NSInteger i = 0; i < [_images count]; i++) {
+//            NSLog(@"post image: %d",i);
+//            [request addData:[_images objectAtIndex:i] forKey:@"ri[]"];
+//            
+//        }
+//        //multiple category
+//        //[request setPostValue:@"2" forKey:@"cid[]"];
+//        //[request setPostValue:@"1" forKey:@"cid[]"];
+//        [request addPostValue:@"1" forKey:@"cid[]"];
+//        [request addPostValue:@"2" forKey:@"cid[]"];
+//        
+//        //[request setPostValue:[password text] forKey:@"pw"];
+//        
+//        [request setCompletionBlock:^{
+//            NSLog(@"Complete Post Recipe.");
+//            if (request.responseStatusCode == 200) {
+//                NSLog(@"%d", request.responseStatusCode);
+//                [recipe setRecipeId:request.responseString];
+//                //NSLog(@"recipe id: %s", [request.responseData bytes]);
+//                NSLog(@"recipe id: %@", request.responseString);
+//                NSLog(@"set recipe id : %@",[recipe recipeId]);
+//                
+//                RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:recipe];
+//                
+//                [handler setEndDocumentTarget:self andAction:@selector(didParsedInsertRecipe)];
+//                NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+//                parser.delegate = handler;
+//                [parser parse];
+//                
+//                [self reloadPage];
+//                //}else if(request.responseStatusCode == 404){
+//            } else {
+//                //_user = nil;
+//                [self didParsedInsertRecipe];
+//            }
+//        }];
+//        [request setFailedBlock:^{
+//            //            [self handleError:request.error];
+//        }];
+//        
+//        [request startAsynchronous];
+//    }
+}
+
+- (Boolean)validateInputInformation
+{
+    Boolean flag = YES;
+    
+    if ([trimSpaces([txtIngredientName text]) length] == 0){
+        [txtIngredientName setText:@""];
+        [txtIngredientName setPlaceholder:@"Recipe name is blank"];
+        flag = NO;
+    }
+    if ([trimSpaces([txtIngredientDescription text]) length] == 0){
+        flag = NO;
+    }
+    return flag;
 }
 
 - (void)viewDidUnload
 {
     [self setIngredientForm:nil];
+    [self setBtnSelectImage:nil];
+    [self setTxtIngredientName:nil];
+    [self setTxtIngredientDescription:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
+{
+    [btnSelectImage setImage:image forState:UIControlStateNormal];
+    
+    //NSData *imageData = UIImagePNGRepresentation(image);
+    _image = image;
+    //[_images addObject:imageData];
+    
+    [picker dismissModalViewControllerAnimated:YES];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Text Fields Delegate Methods
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    activeTextField = textField;
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    activeTextView = textView;
+    return YES;
 }
 
 #pragma mark - Table view data source
