@@ -20,7 +20,18 @@
 @end
 
 @implementation StepsTableViewController
+@synthesize recipe = _recipe;
 @synthesize steps = _steps;
+@synthesize stepForm;
+
+- (id)initWithEditableTable
+{
+    self = [super initWithNibName:@"StepsTableViewController" bundle:nil];
+    if (self) {
+        ediable = YES;
+    }
+    return self;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -38,10 +49,18 @@
     RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
     [[self navigationItem] setTitleView:label];
     
-    [[self tableView] setBackgroundColor:[UIColor clearColor]];
-    
-    
     selectedIndex = 0;
+    
+    if (ediable) {
+        barButton = [[UIBarButtonItem alloc] 
+                     initWithTitle:@"Add"                                            
+                     style:UIBarButtonItemStyleBordered 
+                     target:self 
+                     action:@selector(addStep:)];
+        self.navigationItem.rightBarButtonItem = barButton;
+        [self.view addSubview:stepForm];
+        [stepForm setHidden:YES];
+    }
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -50,8 +69,23 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)addStep:(id)sender
+{
+    [barButton setTitle:@"Cancel"];
+    [barButton setAction:@selector(cancelAddStep:)];
+    [stepForm setHidden:NO];
+}
+
+- (void)cancelAddStep:(id)sender
+{
+    [barButton setTitle:@"Add"];
+    [barButton setAction:@selector(addStep:)];
+    [stepForm setHidden:YES];
+}
+
 - (void)viewDidUnload
 {
+    [self setStepForm:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

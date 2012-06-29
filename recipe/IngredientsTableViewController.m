@@ -7,11 +7,11 @@
 //
 
 #import "IngredientsTableViewController.h"
+#import "Ingredient.h"
 #import "GlobalStore.h"
 #import "IngredientViewController.h"
 #import "RecipeNavigationLabel.h"
 #import "IngredientCell.h"
-#import "Ingredient.h"
 #import "ASI2HTTPRequest.h"
 
 @interface IngredientsTableViewController ()
@@ -19,8 +19,19 @@
 @end
 
 @implementation IngredientsTableViewController
+@synthesize recipe = _recipe;
 @synthesize ingredients = _ingredients;
 @synthesize navController;
+@synthesize ingredientForm;
+
+- (id)initWithEditableTable
+{
+    self = [super initWithNibName:@"IngredientsTableViewController" bundle:nil];
+    if (self) {
+        editable = YES;
+    }
+    return self;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -36,6 +47,17 @@
     [super viewDidLoad];
     RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
     [[self navigationItem] setTitleView:label];
+    
+    if (editable) {
+        barButton = [[UIBarButtonItem alloc] 
+                     initWithTitle:@"Add"                                            
+                     style:UIBarButtonItemStyleBordered 
+                     target:self 
+                     action:@selector(addIngredient:)];
+        self.navigationItem.rightBarButtonItem = barButton;
+        [self.view addSubview:ingredientForm];
+        [ingredientForm setHidden:YES];
+    }
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -44,8 +66,23 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)addIngredient:(id)sender
+{
+    [barButton setTitle:@"Cancel"];
+    [barButton setAction:@selector(cancelAddIngredient:)];
+    [ingredientForm setHidden:NO];
+}
+
+- (void)cancelAddIngredient:(id)sender
+{
+    [barButton setTitle:@"Add"];
+    [barButton setAction:@selector(addIngredient:)];
+    [ingredientForm setHidden:YES];
+}
+
 - (void)viewDidUnload
 {
+    [self setIngredientForm:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

@@ -8,8 +8,10 @@
 
 #import "AddRecipeViewController.h"
 #import "SelectCategoresViewController.h"
-#import "AddIngredientViewController.h"
-#import "AddStepViewController.h"
+#import "IngredientsTableViewController.h"
+#import "StepsTableViewController.h"
+//#import "AddIngredientViewController.h"
+//#import "AddStepViewController.h"
 #import "ASIForm2DataRequest.h"
 #import "GlobalStore.h"
 
@@ -92,18 +94,27 @@
 }
 
 - (IBAction)selectIngredient:(id)sender {
-    AddIngredientViewController *addIngredientViewController = [[AddIngredientViewController alloc] initWithNibName:@"AddIngredientViewController" bundle:nil];
-    [addIngredientViewController setTitle:@"Ingredients"];
-    [addIngredientViewController setRecipe:recipe];
-    [[self navigationController] pushViewController:addIngredientViewController animated:YES];
+//    AddIngredientViewController *addIngredientViewController = [[AddIngredientViewController alloc] initWithNibName:@"AddIngredientViewController" bundle:nil];
+//    [addIngredientViewController setTitle:@"Ingredients"];
+//    [addIngredientViewController setRecipe:recipe];
+//    [[self navigationController] pushViewController:addIngredientViewController animated:YES];
+    IngredientsTableViewController *viewControllerToPush = [[IngredientsTableViewController alloc] initWithEditableTable];
+    [viewControllerToPush setTitle:@"Ingredients"];
+    [viewControllerToPush setRecipe:recipe];
+    [viewControllerToPush setIngredients:[recipe ingredientList]];
+    [[self navigationController] pushViewController:viewControllerToPush animated:YES];
 }
 
 - (IBAction)selectSteps:(id)sender {
-    AddStepViewController *addStepViewController = [[AddStepViewController alloc] initWithNibName:@"AddStepViewController" bundle:nil];
-    
-    [addStepViewController setTitle:@"Steps"];
-    [addStepViewController setRecipe:recipe];
-    [[self navigationController] pushViewController:addStepViewController animated:YES];
+//    AddStepViewController *addStepViewController = [[AddStepViewController alloc] initWithNibName:@"AddStepViewController" bundle:nil];
+//    [addStepViewController setTitle:@"Steps"];
+//    [addStepViewController setRecipe:recipe];
+//    [[self navigationController] pushViewController:addStepViewController animated:YES];
+    StepsTableViewController *viewControllerToPush = [[StepsTableViewController alloc] initWithEditableTable];
+    [viewControllerToPush setTitle:@"Steps"];
+    [viewControllerToPush setRecipe:recipe];
+    [viewControllerToPush setSteps:[recipe stepList]];
+    [[self navigationController] pushViewController:viewControllerToPush animated:YES];
 }
 
 - (IBAction)cancelAction:(id)sender

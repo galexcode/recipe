@@ -8,12 +8,12 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "CategoryListViewController.h"
+#import "RecipesTableViewController.h"
 #import "ASIForm2DataRequest.h"
 #import "ASI2HTTPRequest.h"
 #import "HorizontalTableCell.h"
 #import "ControlVariables.h"
 #import "HeaderButton.h"
-#import "RecipeListViewController.h"
 #import "GlobalStore.h"
 
 #define kHeadlineSectionHeight  26
@@ -147,8 +147,13 @@
 - (void)tapOnHeader:(id)sender
 {
     __weak HeaderButton* tempButton = (HeaderButton*)sender;
-    RecipeListViewController* viewControllerToPush = [[RecipeListViewController alloc] initWithNibName:@"RecipeListViewController" bundle:nil];
-    viewControllerToPush.recipes = tempButton.array;
+//    RecipeListViewController* viewControllerToPush = [[RecipeListViewController alloc] initWithNibName:@"RecipeListViewController" bundle:nil];
+//    viewControllerToPush.recipes = tempButton.array;
+//    [[viewControllerToPush navigationItem] setTitle:tempButton.titleText];
+//    UINavigationController *nav = (UINavigationController*)self.navController;
+//    [nav pushViewController:viewControllerToPush animated:YES];
+    RecipesTableViewController *viewControllerToPush = [[RecipesTableViewController alloc] initWithCategory:[tempButton category]];
+    [viewControllerToPush setRecipes:[[tempButton category] latestRecipes]];
     [[viewControllerToPush navigationItem] setTitle:tempButton.titleText];
     UINavigationController *nav = (UINavigationController*)self.navController;
     [nav pushViewController:viewControllerToPush animated:YES];
@@ -209,6 +214,7 @@
         
         //Add button for header
         headerButton = [[HeaderButton alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, kRegularSectionHeight)];
+        [headerButton setCategory:thisCategory];
         [headerButton setArray:[thisCategory latestRecipes]];
         [headerButton setTitleText:categoryName];
         [headerButton setBackgroundColor:[UIColor clearColor]];

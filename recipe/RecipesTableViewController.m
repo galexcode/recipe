@@ -12,6 +12,7 @@
 #import "RecipeLongCell.h"
 #import "RecipeNavigationLabel.h"
 #import "RecipesXMLHandler.h"
+#import "AddRecipeViewController.h"
 #import "ASI2HTTPRequest.h"
 
 @interface RecipesTableViewController ()
@@ -25,6 +26,39 @@
 @synthesize keyword = _keyword;
 @synthesize reusableCells = _reusableCells;
 @synthesize navController;
+
+- (void)awakeFromNib
+{
+    loaded = NO;
+    _user = nil;
+    _category = nil;
+    _keyword = nil;
+    editable = YES;
+    isMyRecipe = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (!loaded && isMyRecipe) {
+        _user = [[GlobalStore sharedStore] loggedUser];
+        [self refresh];
+        loaded = YES;
+    }
+}
+
+- (id)initWithEditableTable
+{
+    self = [super initWithNibName:@"ReciepsTableViewController" bundle:nil];
+    if (self) {
+        loaded = NO;
+        _user = [[GlobalStore sharedStore] loggedUser];
+        _category = nil;
+        _keyword = nil;
+        editable = YES;
+        [self refresh];
+    }
+    return self;
+}
 
 - (id)initWithUser:(User *)currentUser
 {
@@ -68,8 +102,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         loaded = NO;
-//        [self.tableView setBackgroundColor:[UIColor clearColor]];
-//        [self refresh];
     }
     return self;
 }
@@ -90,6 +122,15 @@
     RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
     [[self navigationItem] setTitleView:label];
     
+    if (editable) {
+        barButton = [[UIBarButtonItem alloc] 
+         initWithTitle:@"Add"                                            
+         style:UIBarButtonItemStyleBordered 
+         target:self 
+         action:@selector(addRecipe:)];
+        self.navigationItem.rightBarButtonItem = barButton;
+    }
+    
     [self initResuableCells];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -98,6 +139,12 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+}
+
+-(IBAction)addRecipe:(id)sender{
+    AddRecipeViewController *viewControllerToPush = [[AddRecipeViewController alloc] initWithNibName:@"AddRecipeViewController" bundle:nil];
+    [[viewControllerToPush navigationItem] setTitle:@"Add Recipe"];
+    [[self navigationController] pushViewController:viewControllerToPush animated:YES];
 }
 
 - (void)viewDidUnload
@@ -157,15 +204,13 @@
     }];
     
     [request startAsynchronous];
-    //[self performSelector:@selector(stopLoading) withObject:nil afterDelay:0.5];
+    [self performSelector:@selector(stopLoading) withObject:nil afterDelay:0.5];
 }
 
 -(void) didParsedRecipes
 {
     if (_recipes != nil && [_recipes count] > 0) {
         [self initResuableCells];
-        [self performSelector:@selector(stopLoading) withObject:nil afterDelay:0.2];
-        //[self.tableView reloadData];
     }
 }
 

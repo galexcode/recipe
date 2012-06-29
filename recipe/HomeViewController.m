@@ -11,7 +11,6 @@
 #import "RecipesXMLHandler.h"
 #import "GlobalStore.h"
 #import "recipeGlobal.h"
-#import "RecipeListViewController.h"
 #import "RecipesTableViewController.h"
 
 @interface HomeViewController ()

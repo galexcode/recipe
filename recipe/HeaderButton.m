@@ -9,6 +9,7 @@
 #import "HeaderButton.h"
 
 @implementation HeaderButton
+@synthesize category = _category;
 @synthesize array = _array;
 @synthesize titleText = _titleText;
 

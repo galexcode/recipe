@@ -55,6 +55,7 @@
 						<int key="NSvFlags">1298</int>
 						<string key="NSFrameSize">{320, 480}</string>
 						<reference key="NSSuperview" ref="380026005"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -85,9 +86,9 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<bool key="IBUIHorizontal">NO</bool>
-				<object class="IBUINavigationController" key="IBUISelectedViewController" id="705039890">
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="89582207">
-						<string key="IBUITitle">Home</string>
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="451561983">
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="834573364">
+						<string key="IBUITitle">My Recipes</string>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 					<reference key="IBUIParentViewController" ref="1034742383"/>
@@ -98,7 +99,7 @@
 					</object>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					<bool key="IBUIHorizontal">NO</bool>
-					<object class="IBUINavigationBar" key="IBUINavigationBar" id="283000735">
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="209971947">
 						<nil key="NSNextResponder"/>
 						<int key="NSvFlags">256</int>
 						<string key="NSFrameSize">{0, 0}</string>
@@ -110,13 +111,13 @@
 					</object>
 					<object class="NSMutableArray" key="IBUIViewControllers">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="IBUIViewController" id="609409406">
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="918825932">
-								<string key="IBUITitle">Home</string>
+						<object class="IBUIViewController" id="1068633807">
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="147760124">
+								<string key="IBUITitle">My Recipes</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
-							<reference key="IBUIParentViewController" ref="705039890"/>
-							<string key="IBUINibName">HomeViewController</string>
+							<reference key="IBUIParentViewController" ref="451561983"/>
+							<string key="IBUINibName">RecipesTableViewController</string>
 							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 								<int key="IBUIInterfaceOrientation">1</int>
 								<int key="interfaceOrientation">1</int>
@@ -128,10 +129,9 @@
 				</object>
 				<object class="NSMutableArray" key="IBUIViewControllers">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<reference ref="705039890"/>
-					<object class="IBUINavigationController" id="451561983">
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="834573364">
-							<string key="IBUITitle">My Recipes</string>
+					<object class="IBUINavigationController" id="705039890">
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="89582207">
+							<string key="IBUITitle">Home</string>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
 						<reference key="IBUIParentViewController" ref="1034742383"/>
@@ -142,7 +142,7 @@
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIHorizontal">NO</bool>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="209971947">
+						<object class="IBUINavigationBar" key="IBUINavigationBar" id="283000735">
 							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrameSize">{0, 0}</string>
@@ -154,13 +154,13 @@
 						</object>
 						<object class="NSMutableArray" key="IBUIViewControllers">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIViewController" id="1068633807">
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="147760124">
-									<string key="IBUITitle">My Recipes</string>
+							<object class="IBUIViewController" id="609409406">
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="918825932">
+									<string key="IBUITitle">Home</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIParentViewController" ref="451561983"/>
-								<string key="IBUINibName">MyRecipeViewController</string>
+								<reference key="IBUIParentViewController" ref="705039890"/>
+								<string key="IBUINibName">HomeViewController</string>
 								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 									<int key="IBUIInterfaceOrientation">1</int>
 									<int key="interfaceOrientation">1</int>
@@ -170,6 +170,7 @@
 							</object>
 						</object>
 					</object>
+					<reference ref="451561983"/>
 					<object class="IBUINavigationController" id="720135478">
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="283505172">
 							<string key="IBUITitle">To Do</string>
@@ -259,6 +260,7 @@
 					<int key="NSvFlags">266</int>
 					<string key="NSFrame">{{0, 431}, {320, 49}}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSNextKeyView"/>
 					<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				</object>
@@ -653,7 +655,7 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>MyRecipeViewController</string>
+					<string>RecipesTableViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

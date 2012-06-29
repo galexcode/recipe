@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Category.h"
 
 @interface HeaderButton : UIButton
 {
+    Category* _category;
     NSMutableArray* _array;
     NSString* _titleText;
 }
 
+@property (nonatomic) Category* category;
 @property (nonatomic) NSMutableArray* array;
 @property (nonatomic) NSString* titleText;
 

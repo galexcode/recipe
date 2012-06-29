@@ -23,13 +23,6 @@
     return self;
 }
 
-//- (void)awakeFromNib
-//{
-////    RecipeDisclosureIndicators *accessory = [RecipeDisclosureIndicators accessoryWithColor:[UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f]];
-////    [accessory setHighlightedColor:[UIColor orangeColor]];
-////    [self setAccessoryView:accessory];
-//}
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];

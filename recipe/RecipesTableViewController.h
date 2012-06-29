@@ -19,6 +19,9 @@
     NSString* _keyword;
     Boolean loaded;
     NSMutableArray* _resuableCells;
+    Boolean isMyRecipe;
+    Boolean editable;
+    UIBarButtonItem *barButton;
 }
 
 @property (nonatomic) NSMutableArray* recipes;
@@ -28,7 +31,7 @@
 @property (nonatomic) NSMutableArray* reusableCells;
 @property (nonatomic, weak) UIViewController* navController;
 
-
+- (id)initWithEditableTable;
 - (id)initWithUser:(User *)currentUser;
 - (id)initWithCategory:(Category *)currentCategory;
 - (id)initWithKeyword:(NSString *)keyword;
