@@ -896,6 +896,7 @@
 		9084A2EB1522ECD900BDEDC4 /* custom control */ = {
 			isa = PBXGroup;
 			children = (
+				5A0AD4CF1536E3D700D057A9 /* HUD */,
 				9747F302156A27F9009DA030 /* MCSegmentedControl.h */,
 				9747F303156A27F9009DA030 /* MCSegmentedControl.m */,
 				9742D814157377E5003B678D /* RecipeTitleLabel.h */,
@@ -934,7 +935,6 @@
 			children = (
 				4929F51F155124A800D60AEF /* NSStringUtil.h */,
 				4929F520155124A900D60AEF /* NSStringUtil.m */,
-				5A0AD4CF1536E3D700D057A9 /* HUD */,
 				5A0AD4C71536C1BB00D057A9 /* CustomASIHTTPRequest */,
 				5A3B81651536771C007BD9ED /* ASIHTTPRequest */,
 				5A995EB915259E0F00B8292E /* HttpRequest.h */,

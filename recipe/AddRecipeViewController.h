@@ -15,6 +15,8 @@
     NSMutableArray *selectedCategories;
     UIImagePickerController *imagePicker;
     NSMutableArray* _images;
+    Boolean isCallFromAddIngredient;
+    Boolean isCallFromAddStep;
 }
 
 @property (strong, nonatomic) IBOutlet UITableViewCell *inputCell;

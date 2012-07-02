@@ -14,6 +14,7 @@
 //#import "AddStepViewController.h"
 #import "ASIForm2DataRequest.h"
 #import "RecipeXMLHandler.h"
+#import "MBProgressHUD.h"
 #import "GlobalStore.h"
 
 @interface AddRecipeViewController ()
@@ -99,11 +100,17 @@
 //    [addIngredientViewController setTitle:@"Ingredients"];
 //    [addIngredientViewController setRecipe:recipe];
 //    [[self navigationController] pushViewController:addIngredientViewController animated:YES];
-    IngredientsTableViewController *viewControllerToPush = [[IngredientsTableViewController alloc] initWithEditableTable];
-    [viewControllerToPush setTitle:@"Ingredients"];
-    [viewControllerToPush setRecipe:recipe];
-    //[viewControllerToPush setIngredients:[recipe ingredientList]];
-    [[self navigationController] pushViewController:viewControllerToPush animated:YES];
+
+    if([recipe recipeId] == @"-1"){
+        isCallFromAddIngredient = YES;
+        [self insertNewRecipe];
+    } else {
+        IngredientsTableViewController *viewControllerToPush = [[IngredientsTableViewController alloc] initWithEditableTable];
+        [viewControllerToPush setTitle:@"Ingredients"];
+        [viewControllerToPush setRecipe:recipe];
+        //[viewControllerToPush setIngredients:[recipe ingredientList]];
+        [[self navigationController] pushViewController:viewControllerToPush animated:YES];
+    }
 }
 
 - (IBAction)selectSteps:(id)sender {
@@ -111,11 +118,16 @@
 //    [addStepViewController setTitle:@"Steps"];
 //    [addStepViewController setRecipe:recipe];
 //    [[self navigationController] pushViewController:addStepViewController animated:YES];
-    StepsTableViewController *viewControllerToPush = [[StepsTableViewController alloc] initWithEditableTable];
-    [viewControllerToPush setTitle:@"Steps"];
-    [viewControllerToPush setRecipe:recipe];
-    [viewControllerToPush setSteps:[recipe stepList]];
-    [[self navigationController] pushViewController:viewControllerToPush animated:YES];
+    if( [recipe recipeId] == @"-1" ){
+        isCallFromAddStep = YES;
+        [self insertNewRecipe];
+    } else {
+        StepsTableViewController *viewControllerToPush = [[StepsTableViewController alloc] initWithEditableTable];
+        [viewControllerToPush setTitle:@"Steps"];
+        [viewControllerToPush setRecipe:recipe];
+        //[viewControllerToPush setSteps:[recipe stepList]];
+        [[self navigationController] pushViewController:viewControllerToPush animated:YES];
+    }
 }
 
 - (IBAction)cancelAction:(id)sender
@@ -128,7 +140,8 @@
     if([recipe recipeId] == @"-1"){
         [self insertNewRecipe];
     } else {
-        [self updateRecipe];
+        NSLog(@"Update Recipe");
+        //[self updateRecipe];
     }
 }
 
@@ -273,16 +286,17 @@
         //[btnAddStep setEnabled:NO];
     } else {
         [btnSaveRecipe setTitle:@"Update" forState:UIControlStateNormal];
-        [btnSaveRecipe setEnabled:NO];
-        [btnAddIngredient setEnabled:YES];
-        [btnAddStep setEnabled:YES];
+        //[btnSaveRecipe setEnabled:NO];
+        //[btnAddIngredient setEnabled:YES];
+        //[btnAddStep setEnabled:YES];
     }
 }
 
 - (void)insertNewRecipe
 {
     if ([self validateInputInformation]) {
-        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [hud setLabelText:@"Saving Recipe..."];
         //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/recipe/add"];
         NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/recipe/add"];
         
@@ -334,7 +348,16 @@
 
 - (void)didParsedInsertRecipe
 {
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     
+    if (isCallFromAddIngredient) {
+        isCallFromAddIngredient = NO;
+        IngredientsTableViewController *viewControllerToPush = [[IngredientsTableViewController alloc] initWithEditableTable];
+        [viewControllerToPush setTitle:@"Ingredients"];
+        [viewControllerToPush setRecipe:recipe];
+        //[viewControllerToPush setIngredients:[recipe ingredientList]];
+        [[self navigationController] pushViewController:viewControllerToPush animated:YES];
+    }
 }
 
 - (void)updateRecipe

@@ -11,9 +11,13 @@
 #define COMMENT_LABEL_PADDING 10
 
 #import "StepsTableViewController.h"
+#import "recipeGlobal.h"
 #import "RecipeNavigationLabel.h"
 #import "StepCell.h"
 #import "Step.h"
+#import "ASI2HTTPRequest.h"
+#import "ASIForm2DataRequest.h"
+#import "RecipeXMLHandler.h"
 
 @interface StepsTableViewController ()
 
@@ -23,6 +27,8 @@
 @synthesize recipe = _recipe;
 @synthesize steps = _steps;
 @synthesize stepForm;
+@synthesize txtStepName;
+@synthesize txtStepDescription;
 
 - (id)initWithEditableTable
 {
@@ -31,6 +37,76 @@
         ediable = YES;
     }
     return self;
+}
+
+- (IBAction)dismissKeyboard:(id)sender {
+    if (activeTextField != nil) {
+        [activeTextField resignFirstResponder];
+    }
+    if (activeTextView != nil) {
+        [activeTextView resignFirstResponder];
+    }
+}
+
+- (IBAction)insertStep:(id)sender {
+    NSLog(@"Insert Ingredient");
+    if ([self validateInputInformation]) {
+        
+        NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/step/add"];
+        
+        __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+        //[request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
+        [request setPostValue:[[self recipe] recipeId] forKey:@"rid"];
+        [request setPostValue:[txtStepName text] forKey:@"sname"];
+        [request setPostValue:[txtStepDescription text] forKey:@"sdesc"];
+        
+        [request setCompletionBlock:^{
+            NSLog(@"Complete Post Step.");
+            if (request.responseStatusCode == 200) {
+                NSLog(@"%@", request.responseString);
+                [[self recipe] setIngredientList:nil];
+                [[self recipe] setIngredientList:[NSMutableArray array]];
+                RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:_recipe];
+                
+                [handler setEndDocumentTarget:self andAction:@selector(didParsedInsertStep)];
+                NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+                parser.delegate = handler;
+                [parser parse];
+                
+                [self cancelAddStep:self];
+                //[self reloadPage];
+                //}else if(request.responseStatusCode == 404){
+            } else {
+                //_user = nil;
+                [self didParsedInsertStep];
+            }
+        }];
+        [request setFailedBlock:^{
+            //            [self handleError:request.error];
+        }];
+        
+        [request startAsynchronous];
+    }
+}
+
+- (BOOL)validateInputInformation
+{
+    Boolean flag = YES;
+    
+    if ([trimSpaces([txtStepName text]) length] == 0){
+        [txtStepName setText:@""];
+        [txtStepName setPlaceholder:@"Recipe name is blank"];
+        flag = NO;
+    }
+    if ([trimSpaces([txtStepDescription text]) length] == 0){
+        flag = NO;
+    }
+    return flag;
+}
+
+- (void)didParsedInsertStep
+{
+    [[self tableView] reloadData];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -67,6 +143,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSLog(@"recipe ID: %@",[[self recipe] recipeId]);
 }
 
 - (void)addStep:(id)sender
@@ -86,6 +163,8 @@
 - (void)viewDidUnload
 {
     [self setStepForm:nil];
+    [self setTxtStepName:nil];
+    [self setTxtStepDescription:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -250,6 +329,22 @@
     }
 }
 
+#pragma mark - Text Fields Delegate Methods
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    activeTextField = textField;
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    activeTextView = textView;
+    return YES;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
