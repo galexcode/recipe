@@ -51,6 +51,8 @@
 - (IBAction)insertStep:(id)sender {
     NSLog(@"Insert Ingredient");
     if ([self validateInputInformation]) {
+        [[self recipe] setStepList:nil];
+        [[self recipe] setStepList:[NSMutableArray array]];
         
         NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/step/add"];
         
@@ -158,8 +160,16 @@
     [barButton setTitle:@"Add"];
     [barButton setAction:@selector(addStep:)];
     [stepForm setHidden:YES];
+    
+    [self dismissKeyboard:self];
+    [self formReset];
 }
 
+- (void)formReset
+{
+    txtStepName.text = @"";
+    txtStepDescription.text = @"";
+}
 - (void)viewDidUnload
 {
     [self setStepForm:nil];
@@ -173,7 +183,7 @@
 //This just a convenience function to get the height of the label based on the comment text
 -(CGFloat)getLabelHeightForIndex:(NSInteger)index
 {
-    if ([[self steps] count] > 0) {
+    if ([[[self recipe] stepList] count] > 0) {
         CGSize maximumSize = CGSizeMake(COMMENT_LABEL_WIDTH, 10000);
         
         NSString *oneLine = [NSString stringWithString:@"1 line"];
@@ -182,7 +192,7 @@
                                     constrainedToSize:maximumSize
                                         lineBreakMode:UILineBreakModeWordWrap];
         
-        Step *currentStep = [[self steps] objectAtIndex:index];
+        Step *currentStep = [[[self recipe] stepList] objectAtIndex:index];
         
         CGSize labelHeighSize = [[currentStep desc] sizeWithFont: [UIFont fontWithName:@"Helvetica" size:17.0f]
                                                constrainedToSize:maximumSize
@@ -206,19 +216,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ([[self steps] count] > 0)
-        return [self.steps count];
+    if ([[[self recipe] stepList] count] > 0)
+        return [[[self recipe] stepList] count];
     return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[self steps] count] > 0) {
+    if ([[[self recipe] stepList] count] > 0) {
         static NSString *CellIdentifier = @"StepCell";
         
         StepCell *cell = (StepCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
-        Step *currentStep = [[self steps] objectAtIndex:indexPath.row];
+        Step *currentStep = [[[self recipe] stepList] objectAtIndex:indexPath.row];
         
         if (cell == nil) 
         {
@@ -272,7 +282,7 @@
 {
     //If this is the selected index we need to return the height of the cell
     //in relation to the label height otherwise we just return the minimum label height with padding
-    if ([[self steps] count] > 0) {
+    if ([[[self recipe] stepList] count] > 0) {
         if(selectedIndex == indexPath.row)
         {
             return [self getLabelHeightForIndex:indexPath.row] + COMMENT_LABEL_MIN_HEIGHT;
@@ -289,7 +299,7 @@
 -(NSIndexPath*)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //We only don't want to allow selection on any cells which cannot be expanded
-    if ([[self steps] count] > 0) {
+    if ([[[self recipe] stepList] count] > 0) {
         if([self getLabelHeightForIndex:indexPath.row] > COMMENT_LABEL_MIN_HEIGHT)
         {
             return indexPath;
@@ -303,7 +313,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[self steps] count] > 0) {
+    if ([[[self recipe] stepList] count] > 0) {
         //The user is selecting the cell which is currently expanded
         //we want to minimize it back
         if(selectedIndex == indexPath.row)

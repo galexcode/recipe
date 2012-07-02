@@ -302,7 +302,8 @@
 //                [self.navigationController pushViewController:viewControllerToPush animated:YES];
                 StepsTableViewController *viewControllerToPush = [[StepsTableViewController alloc] initWithNibName:@"StepsTableViewController" bundle:nil];
                 [viewControllerToPush.navigationItem setTitle:stepTitleText];
-                [viewControllerToPush setSteps:[[self recipe] stepList]];
+                [viewControllerToPush setRecipe:[self recipe]];
+                //[viewControllerToPush setSteps:[[self recipe] stepList]];
                 [self.navigationController pushViewController:viewControllerToPush animated:YES];
             }
         }
