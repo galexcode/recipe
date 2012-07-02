@@ -31,6 +31,12 @@
         _currentObject = [[Recipe alloc] init];
         return self;
     }
+    if ([elementName isEqualToString:@"recat"]) {
+        return self;
+    }
+    if ([elementName isEqualToString:@"cat"]) {
+        return self;
+    }
     if ([elementName isEqualToString:@"owner"]){
         _currentObject = [[User alloc] init];
         return self;
@@ -157,6 +163,9 @@
         [_currentRecipe setOwner:_currentUser];
         _currentUser = nil;
         _currentObject = nil;
+    }
+    if ([elementName isEqualToString:@"cat"]) {
+        [[_currentRecipe categoryList] addObject:_chars];
     }
     if ([elementName isEqualToString:@"recipe"]) {
         [_recipeArray addObject:_currentRecipe];

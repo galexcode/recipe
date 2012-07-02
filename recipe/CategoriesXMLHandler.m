@@ -54,6 +54,12 @@
         _currentObject = [[Recipe alloc] init];
         return self;
     }
+    if ([elementName isEqualToString:@"recat"]) {
+        return self;
+    }
+    if ([elementName isEqualToString:@"cat"]) {
+        return self;
+    }
     if ([elementName isEqualToString:@"owner"]){
         _currentObject = [[User alloc] init];
         return self;
@@ -93,8 +99,10 @@
     if ([elementName isEqualToString:@"categories"])
         _total = [[NSNumber alloc] initWithInteger:[[attributeDict objectForKey:@"total"] intValue]];
     if ([elementName isEqualToString:@"category"]){
-        if ([_currentObject isKindOfClass:[Category class]])
+        if ([_currentObject isKindOfClass:[Category class]]){
             _currentCategory = (Category *)_currentObject;
+            [_currentCategory setCategoryId:[NSString stringWithString:[attributeDict objectForKey:@"id"]]];
+        }
     }
     if ([elementName isEqualToString:@"recipe"]) {
         if ([_currentObject isKindOfClass:[Recipe class]]){
@@ -183,7 +191,11 @@
         _currentUser = nil;
         _currentObject = nil;
     }
+    if ([elementName isEqualToString:@"cat"]) {
+        [[_currentRecipe categoryList] addObject:_chars];
+    }
     if ([elementName isEqualToString:@"recipe"]) {
+        //NSLog(@"recipe name: %@ listed in %d category", [_currentRecipe name], [[_currentRecipe categoryList] count]);
         [[_currentCategory latestRecipes] addObject:_currentRecipe];
         _currentRecipe = nil;
         _currentObject = nil;

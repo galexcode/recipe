@@ -20,5 +20,6 @@
 @property (nonatomic) NSMutableArray *imageList;
 @property (nonatomic) NSMutableArray *ingredientList;
 @property (nonatomic) NSMutableArray *stepList;
+@property (nonatomic) NSMutableArray *categoryList;
 
 @end

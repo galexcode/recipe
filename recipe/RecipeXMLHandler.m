@@ -31,6 +31,12 @@
         _currentObject = _recipe;
         return self;
     }
+    if ([elementName isEqualToString:@"recat"]) {
+        return self;
+    }
+    if ([elementName isEqualToString:@"cat"]) {
+        return self;
+    }
     if ([elementName isEqualToString:@"owner"]){
         _currentObject = [[User alloc] init];
         return self;
@@ -154,6 +160,9 @@
         [[_recipe stepList] addObject:_currentStep];
         _currentStep = nil;
         _currentObject = nil;
+    }
+    if ([elementName isEqualToString:@"cat"]) {
+        [[_recipe categoryList] addObject:_chars];
     }
 }
 

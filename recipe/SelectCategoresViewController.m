@@ -16,6 +16,7 @@
 
 @implementation SelectCategoresViewController
 @synthesize selectedCategories = _selectedCategories;
+@synthesize recipe = _recipe;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -70,8 +71,15 @@
     NSArray* sortedCategories = [[[[GlobalStore sharedStore] categories] allKeys] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     
     NSString *categoryName = [sortedCategories objectAtIndex:indexPath.row];
-    //Category *currentCategory = (Category*)[[[GlobalStore sharedStore] categories] objectForKey:categoryName];
-    //cell.articles = [NSArray arrayWithArray:currentCategory];
+    Category *currentCategory = (Category*)[[[GlobalStore sharedStore] categories] objectForKey:categoryName];
+    
+    for (int i = 0; i < [[[self recipe] categoryList] count]; i++) {
+        NSLog(@"current cat id: %@", [currentCategory categoryId]);
+        NSLog(@"this cat id: %@", [[[self recipe] categoryList] objectAtIndex:i]);
+        if ([[currentCategory categoryId] isEqualToString:[[[self recipe] categoryList] objectAtIndex:i]]) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+    }
     
     
     cell.backgroundColor = [UIColor clearColor];

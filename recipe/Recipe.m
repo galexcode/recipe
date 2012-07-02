@@ -17,6 +17,7 @@
 @synthesize imageList = _imageList;
 @synthesize ingredientList = _ingredientList;
 @synthesize stepList = _stepList;
+@synthesize categoryList = _categoryList;
 @synthesize owner = _owner;
 
 - (id)init
@@ -31,6 +32,7 @@
         _imageList = [[NSMutableArray alloc] init];
         _ingredientList = [[NSMutableArray alloc] init];
         _stepList = [[NSMutableArray alloc] init];
+        _categoryList = [[NSMutableArray alloc] init];
         _owner = nil;
     }
     

@@ -92,6 +92,8 @@
 - (IBAction)selectCategories:(id)sender
 {
     SelectCategoresViewController *viewControllerToPush = [[SelectCategoresViewController alloc] initWithNibName:@"SelectCategoresViewController" bundle:nil];
+    NSLog(@"current recipe id: %@", [recipe recipeId]);
+    [viewControllerToPush setRecipe:recipe];
     [[self navigationController] pushViewController:viewControllerToPush animated:YES];
 }
 
@@ -348,6 +350,7 @@
 
 - (void)didParsedInsertRecipe
 {
+    NSLog(@"after insert number of category is: %d", [[recipe categoryList] count]);
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     if (isCallFromAddIngredient) {

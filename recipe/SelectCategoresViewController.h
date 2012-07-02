@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h"
 
 @interface SelectCategoresViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>{
     __weak NSMutableArray* _selectedCategories;
+    Recipe* _recipe;
 }
 
 @property (nonatomic, weak) NSMutableArray *selectedCategories;
+@property (nonatomic) Recipe *recipe;
 
 @end
