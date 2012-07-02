@@ -14,6 +14,7 @@
 #import "IngredientCell.h"
 #import "ASI2HTTPRequest.h"
 #import "ASIForm2DataRequest.h"
+#import "RecipeXMLHandler.h"
 
 @interface IngredientsTableViewController ()
 
@@ -95,6 +96,7 @@
     [barButton setAction:@selector(addIngredient:)];
     [ingredientForm setHidden:YES];
     [self dismissKeyboard:self];
+    [self formReset];
 }
 
 - (IBAction)dismissKeyboard:(id)sender{
@@ -108,57 +110,55 @@
 
 - (IBAction)insertIngredient:(id)sender {
     NSLog(@"Insert Ingredient");
-//    if ([self validateInputInformation]) {
-//        
-//        //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/recipe/add"];
-//        NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/recipe/add"];
-//        
-//        __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
-//        [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
-//        [request setPostValue:[recipeName text] forKey:@"rn"];
-//        [request setPostValue:[serving text] forKey:@"rs"];
-//        for (NSInteger i = 0; i < [_images count]; i++) {
-//            NSLog(@"post image: %d",i);
-//            [request addData:[_images objectAtIndex:i] forKey:@"ri[]"];
-//            
-//        }
-//        //multiple category
-//        //[request setPostValue:@"2" forKey:@"cid[]"];
-//        //[request setPostValue:@"1" forKey:@"cid[]"];
-//        [request addPostValue:@"1" forKey:@"cid[]"];
-//        [request addPostValue:@"2" forKey:@"cid[]"];
-//        
-//        //[request setPostValue:[password text] forKey:@"pw"];
-//        
-//        [request setCompletionBlock:^{
-//            NSLog(@"Complete Post Recipe.");
-//            if (request.responseStatusCode == 200) {
-//                NSLog(@"%d", request.responseStatusCode);
-//                [recipe setRecipeId:request.responseString];
-//                //NSLog(@"recipe id: %s", [request.responseData bytes]);
-//                NSLog(@"recipe id: %@", request.responseString);
-//                NSLog(@"set recipe id : %@",[recipe recipeId]);
-//                
-//                RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:recipe];
-//                
-//                [handler setEndDocumentTarget:self andAction:@selector(didParsedInsertRecipe)];
-//                NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
-//                parser.delegate = handler;
-//                [parser parse];
-//                
-//                [self reloadPage];
-//                //}else if(request.responseStatusCode == 404){
-//            } else {
-//                //_user = nil;
-//                [self didParsedInsertRecipe];
-//            }
-//        }];
-//        [request setFailedBlock:^{
-//            //            [self handleError:request.error];
-//        }];
-//        
-//        [request startAsynchronous];
-//    }
+    if ([self validateInputInformation]) {
+        
+        //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/recipe/add"];
+        NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/ingredient/add"];
+        
+        __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+        [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
+        [request setPostValue:[[self recipe] recipeId] forKey:@"rid"];
+        [request setPostValue:[txtIngredientName text] forKey:@"in"];
+        [request setPostValue:[txtIngredientDescription text] forKey:@"idesc"];
+        if( imageData != nil ){
+            [request addData:imageData forKey:@"ii"];
+        }
+        
+        [request setPostValue:@"1/2" forKey:@"iqty"];
+        [request setPostValue:@"cup" forKey:@"iunit"];
+        
+        [request setCompletionBlock:^{
+            NSLog(@"Complete Post Ingredient.");
+            if (request.responseStatusCode == 200) {
+                NSLog(@"%@", request.responseString);
+                [[self recipe] setIngredientList:nil];
+                [[self recipe] setIngredientList:[NSMutableArray array]];
+                RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:_recipe];
+                
+                [handler setEndDocumentTarget:self andAction:@selector(didParsedInsertIngredient)];
+                NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+                parser.delegate = handler;
+                [parser parse];
+                
+                [self cancelAddIngredient:self];
+                //[self reloadPage];
+                //}else if(request.responseStatusCode == 404){
+            } else {
+                //_user = nil;
+                [self didParsedInsertIngredient];
+            }
+        }];
+        [request setFailedBlock:^{
+            //            [self handleError:request.error];
+        }];
+        
+        [request startAsynchronous];
+    }
+}
+
+- (void)didParsedInsertIngredient
+{
+    [[self tableView] reloadData];
 }
 
 - (Boolean)validateInputInformation
@@ -176,6 +176,13 @@
     return flag;
 }
 
+- (void)formReset
+{
+    txtIngredientName.text = @"";
+    txtIngredientDescription.text = @"";
+    imageData = nil;
+    [btnSelectImage setImage:[UIImage imageNamed:@"add_photo"] forState:UIControlStateNormal];
+}
 - (void)viewDidUnload
 {
     [self setIngredientForm:nil];
@@ -191,9 +198,7 @@
 {
     [btnSelectImage setImage:image forState:UIControlStateNormal];
     
-    //NSData *imageData = UIImagePNGRepresentation(image);
-    _image = image;
-    //[_images addObject:imageData];
+    imageData = UIImagePNGRepresentation(image);
     
     [picker dismissModalViewControllerAnimated:YES];
 }
@@ -229,20 +234,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ([[self ingredients] count] > 0)
-        return [self.ingredients count];
+    if ([[[self recipe] ingredientList] count] > 0)
+        return [[[self recipe] ingredientList] count];
     return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[self ingredients] count] > 0) {
+    if ([[[self recipe] ingredientList] count] > 0) {
         static NSString *CellIdentifier = @"IngredientCell";
         
         IngredientCell *cell = (IngredientCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
-        Ingredient *currentIngredient = (Ingredient*)[[self ingredients] objectAtIndex:indexPath.row];
-        
+        Ingredient *currentIngredient = (Ingredient*)[[[self recipe] ingredientList] objectAtIndex:indexPath.row];
         
         if (cell == nil) 
         {
@@ -331,9 +335,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[self ingredients] count] > 0) {
+    if ([[[self recipe] ingredientList] count] > 0) {
         IngredientViewController *viewControllerToPush = [[IngredientViewController alloc] initWithNibName:@"IngredientViewController" bundle:nil];
-        Ingredient *currentIngredient = (Ingredient*)[[self ingredients] objectAtIndex:indexPath.row];
+        Ingredient *currentIngredient = (Ingredient*)[[[self recipe] ingredientList] objectAtIndex:indexPath.row];
         [[viewControllerToPush navigationItem] setTitle:[currentIngredient name]];
         [viewControllerToPush setIngredient:currentIngredient];
         if ([self navController] != nil) {

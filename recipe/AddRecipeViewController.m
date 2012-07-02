@@ -102,7 +102,7 @@
     IngredientsTableViewController *viewControllerToPush = [[IngredientsTableViewController alloc] initWithEditableTable];
     [viewControllerToPush setTitle:@"Ingredients"];
     [viewControllerToPush setRecipe:recipe];
-    [viewControllerToPush setIngredients:[recipe ingredientList]];
+    //[viewControllerToPush setIngredients:[recipe ingredientList]];
     [[self navigationController] pushViewController:viewControllerToPush animated:YES];
 }
 
@@ -291,7 +291,6 @@
         [request setPostValue:[recipeName text] forKey:@"rn"];
         [request setPostValue:[serving text] forKey:@"rs"];
         for (NSInteger i = 0; i < [_images count]; i++) {
-            NSLog(@"post image: %d",i);
             [request addData:[_images objectAtIndex:i] forKey:@"ri[]"];
             
         }
@@ -307,10 +306,9 @@
             NSLog(@"Complete Post Recipe.");
             if (request.responseStatusCode == 200) {
                 NSLog(@"%d", request.responseStatusCode);
-                [recipe setRecipeId:request.responseString];
+                //[recipe setRecipeId:request.responseString];
                 //NSLog(@"recipe id: %s", [request.responseData bytes]);
                 NSLog(@"recipe id: %@", request.responseString);
-                NSLog(@"set recipe id : %@",[recipe recipeId]);
                 
                 RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:recipe];
                 

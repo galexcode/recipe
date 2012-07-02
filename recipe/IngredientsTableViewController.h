@@ -17,8 +17,8 @@
     __weak UITextField *activeTextField;
     __weak UITextView *activeTextView;
     UIImagePickerController *imagePicker;
-    UIImage *_image;
-    //NSMutableArray* _images;
+    //UIImage *_image;
+    NSData *imageData;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *txtIngredientName;

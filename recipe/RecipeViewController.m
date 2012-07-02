@@ -289,7 +289,8 @@
 //                [self.navigationController pushViewController:viewControllerToPush animated:YES];
                 IngredientsTableViewController *viewControllerToPush = [[IngredientsTableViewController alloc] initWithNibName:@"IngredientsTableViewController" bundle:nil];
                 [viewControllerToPush.navigationItem setTitle:ingredientTitleText];
-                [viewControllerToPush setIngredients:[[self recipe] ingredientList]];
+                [viewControllerToPush setRecipe:[self recipe]];
+                //[viewControllerToPush setIngredients:[[self recipe] ingredientList]];
                 [self.navigationController pushViewController:viewControllerToPush animated:YES];
                 
             }
