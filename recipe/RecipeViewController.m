@@ -15,6 +15,7 @@
 #import "RecipeNavigationLabel.h"
 #import "ASI2HTTPRequest.h"
 #import "RecipeDisclosureIndicators.h"
+#import "HJManagedImageV.h"
 
 @implementation RecipeViewController
 @synthesize recipeDetailsTable;
@@ -128,23 +129,24 @@
     CGFloat sx = 0.00f;
     if (count > 0) {
         for (NSInteger i = 0; i < count; i++) {
-            UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(sx, y, w, 200.00f)];
+            HJManagedImageV *image = [[HJManagedImageV alloc] initWithFrame:CGRectMake(sx,y,w,200)];
             [imageSlider addSubview:image];
 
-            NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[[self recipe] imageList] objectAtIndex:i] forWidth:600 andHeight:0]];
+            image.url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[[self recipe] imageList] objectAtIndex:i] forWidth:600 andHeight:400]];
             
-            __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
-            [request setCompletionBlock:^{
-                NSData *data = request.responseData;
-                [image setImage:[[UIImage alloc] initWithData:data]];
-                //[[NSNotificationCenter defaultCenter] postNotificationName:@"com.razeware.imagegrabber.imageupdated" object:self];
-            }];
-            [request setFailedBlock:^{
-                NSError *error = request.error;
-                NSLog(@"Error downloading image: %@", error.localizedDescription);
-            }];
-            [request startAsynchronous];
+//            __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
+//            [request setCompletionBlock:^{
+//                NSData *data = request.responseData;
+//                [image setImage:[[UIImage alloc] initWithData:data]];
+//                //[[NSNotificationCenter defaultCenter] postNotificationName:@"com.razeware.imagegrabber.imageupdated" object:self];
+//            }];
+//            [request setFailedBlock:^{
+//                NSError *error = request.error;
+//                NSLog(@"Error downloading image: %@", error.localizedDescription);
+//            }];
+//            [request startAsynchronous];
             
+            [[[GlobalStore sharedStore] objectManager] manage:image];
             sx += w;
         }
     }
