@@ -33,6 +33,9 @@
     RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
     [[self navigationItem] setTitleView:label];
     
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];
+    sortedCategories = [[[[GlobalStore sharedStore] categories] allKeys] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
 //    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
 //    [[self navigationItem] setTitleView:headerView];
 }
@@ -67,9 +70,6 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:normalCell];
     }
     
-    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];
-    NSArray* sortedCategories = [[[[GlobalStore sharedStore] categories] allKeys] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-    
     NSString *categoryName = [sortedCategories objectAtIndex:indexPath.row];
     Category *currentCategory = (Category*)[[[GlobalStore sharedStore] categories] objectForKey:categoryName];
     
@@ -94,10 +94,15 @@
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
+    NSString *categoryName = [sortedCategories objectAtIndex:indexPath.row];
+    Category *currentCategory = (Category*)[[[GlobalStore sharedStore] categories] objectForKey:categoryName];
+    
     if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
         cell.accessoryType = UITableViewCellAccessoryNone;
+        [[[self recipe] categoryList] removeObject:[currentCategory categoryId]];
     } else {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [[[self recipe] categoryList] addObject:[currentCategory categoryId]];
     }
 }
 

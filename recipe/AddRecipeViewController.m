@@ -168,6 +168,16 @@
         [serving setPlaceholder:@"Serving is blank"];
         flag = NO;
     }
+    if ( flag == YES && [[recipe categoryList] count] == 0 ){
+        UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Message"
+                                                                 message:[NSString stringWithFormat:@"Category is not available"]
+                                                                delegate:nil
+                                                       cancelButtonTitle:@"OK"
+                                                       otherButtonTitles:nil];
+        [errorAlertView show];
+
+        flag = NO;
+    }
     
     return flag;
 }
@@ -311,10 +321,11 @@
             
         }
         //multiple category
-        //[request setPostValue:@"2" forKey:@"cid[]"];
-        //[request setPostValue:@"1" forKey:@"cid[]"];
-        [request addPostValue:@"1" forKey:@"cid[]"];
-        [request addPostValue:@"2" forKey:@"cid[]"];
+        for ( NSInteger i = 0; i < [[recipe categoryList] count]; i++ ){
+            [request addPostValue:[[recipe categoryList] objectAtIndex:i]  forKey:@"cid[]"];
+        }
+        //[request addPostValue:@"1" forKey:@"cid[]"];
+        //[request addPostValue:@"2" forKey:@"cid[]"];
         
         //[request setPostValue:[password text] forKey:@"pw"];
         

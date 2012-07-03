@@ -12,6 +12,7 @@
 @interface SelectCategoresViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>{
     __weak NSMutableArray* _selectedCategories;
     Recipe* _recipe;
+    NSArray* sortedCategories;
 }
 
 @property (nonatomic, weak) NSMutableArray *selectedCategories;
