@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HJObjManager.h"
 #import "recipeGlobal.h"
 
 @interface GlobalStore : NSObject
 {
     User* _loggedUser;
+    HJObjManager* _objMan;
     NSMutableDictionary *_categories;
 }
 
@@ -30,6 +32,8 @@
 
 - (void)setLoggedUser:(User *)loggedUser;
 - (User*)loggedUser;
+
+- (HJObjManager*)objectManager;
 
 - (void)setCategories:(NSMutableDictionary *)categories;
 - (NSMutableDictionary *)categories;

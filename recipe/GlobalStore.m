@@ -47,6 +47,17 @@ static GlobalStore *sharedStore = nil;
     @synchronized(self) {
         self = [super init];
         _loggedUser = [[User alloc] init];
+        _objMan = [[HJObjManager alloc] initWithLoadingBufferSize:6 memCacheSize:20];
+        NSString* cacheDirectory = [NSHomeDirectory() stringByAppendingString:@"/Library/Caches/imgcache/recipe/"];
+        
+        HJMOFileCache* fileCache = [[HJMOFileCache alloc] initWithRootPath:cacheDirectory];
+        _objMan.fileCache = fileCache;
+        
+        // Have the file cache trim itself down to a size & age limit, so it doesn't grow forever
+        fileCache.fileCountLimit = 100;
+        fileCache.fileAgeLimit = 60*60*24*7; //1 week
+        [fileCache trimCacheUsingBackgroundThread];
+        
         _categories = [[NSMutableDictionary alloc] init];
         return self;
     }
@@ -113,6 +124,13 @@ static GlobalStore *sharedStore = nil;
 {
     @synchronized(self) {
         return _loggedUser;
+    }
+}
+
+- (HJObjManager*)objectManager
+{
+    @synchronized(self) {
+        return _objMan;
     }
 }
 
