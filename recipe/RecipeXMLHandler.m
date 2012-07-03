@@ -18,9 +18,24 @@
         _currentIngredient = nil;
         _currentStep = nil;
         _recipe = recipe;
+        if (_recipe != nil) {
+            [self resetList];
+        }
         _total = nil;
     }
     return self;
+}
+
+-(void)resetList
+{
+    [_recipe setImageList:nil];
+    [_recipe setImageList:[NSMutableArray array]];
+    [_recipe setIngredientList:nil];
+    [_recipe setIngredientList:[NSMutableArray array]];
+    [_recipe setStepList:nil];
+    [_recipe setStepList:[NSMutableArray array]];
+    [_recipe setCategoryList:nil];
+    [_recipe setCategoryList:[NSMutableArray array]];
 }
 
 -(id) initObjectAfterElementStarting:(NSString *)elementName{

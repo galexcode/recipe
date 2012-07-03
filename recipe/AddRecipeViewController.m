@@ -143,7 +143,7 @@
         [self insertNewRecipe];
     } else {
         NSLog(@"Update Recipe");
-        //[self updateRecipe];
+        [self updateRecipe];
     }
 }
 
@@ -377,53 +377,58 @@
 - (void)updateRecipe
 {
     if ([self validateInputInformation]) {
-        
+        NSLog(@"Bat dau update recipe");
         //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/recipe/update"];
-        NSURL *url = [NSURL URLWithString:@"http://192.168.0.102/recipe_php/recipe/update"];
+        NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/recipe/update"];
         
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
-        //[request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
+        [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
+        [request setPostValue:[recipe recipeId] forKey:@"rid"];
         [request setPostValue:[recipeName text] forKey:@"rn"];
         [request setPostValue:[serving text] forKey:@"rs"];
         
-        if([_images count] > 0){
-            for (NSInteger i = 0; i < [_images count]; i++) {
-                NSLog(@"post image: %d",i);
-                [request addData:[_images objectAtIndex:i] forKey:@"ri[]"];
-                
-            }
-        }
+//        if([_images count] > 0){
+//            for (NSInteger i = 0; i < [_images count]; i++) {
+//                NSLog(@"post image: %d",i);
+//                [request addData:[_images objectAtIndex:i] forKey:@"ri[]"];
+//                
+//            }
+//        }
         
         //multiple category
-        //[request setPostValue:@"2" forKey:@"cid[]"];
-        //[request setPostValue:@"1" forKey:@"cid[]"];
-        [request addPostValue:@"1" forKey:@"cid[]"];
-        [request addPostValue:@"2" forKey:@"cid[]"];
+        for ( NSInteger i = 0; i < [[recipe categoryList] count]; i++ ){
+            [request addPostValue:[[recipe categoryList] objectAtIndex:i]  forKey:@"cid[]"];
+            NSLog(@"update post: %@",[[recipe categoryList] objectAtIndex:i]);
+        }
         
         //[request setPostValue:[password text] forKey:@"pw"];
         
         [request setCompletionBlock:^{
             NSLog(@"Complete Post Recipe.");
+            NSLog(@"%d", request.responseStatusCode);
             if (request.responseStatusCode == 200) {
-                NSLog(@"%d", request.responseStatusCode);
-                [recipe setRecipeId:request.responseString];
+                
+                //[recipe setRecipeId:request.responseString];
                 //NSLog(@"recipe id: %s", [request.responseData bytes]);
                 NSLog(@"recipe id: %@", request.responseString);
-                NSLog(@"set recipe id : %@",[recipe recipeId]);
-                //UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
-                //[handler setEndDocumentTarget:self andAction:@selector(didParsedLoggingUser)];
-                //NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
-                //parser.delegate = handler;
-                //[parser parse];
-                //            }else if(request.responseStatusCode == 404){
+                
+                RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:recipe];
+                
+                [handler setEndDocumentTarget:self andAction:@selector(didParsedInsertRecipe)];
+                NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+                parser.delegate = handler;
+                [parser parse];
+                
                 [self reloadPage];
             } else {
                 //_user = nil;
                 //[self didParsedLoggingUser];
+                NSLog(@"Khong co gi xay ra");
             }
         }];
         [request setFailedBlock:^{
             //            [self handleError:request.error];
+            NSLog(@"bi failed me no roi");
         }];
         
         [request startAsynchronous];
