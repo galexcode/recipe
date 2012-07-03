@@ -12,6 +12,7 @@
 #import "MCSegmentedControl.h"
 
 @implementation AuthViewController
+@synthesize scrollView;
 @synthesize containerView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -19,30 +20,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        // Segment controll
-        NSArray *items = [NSArray arrayWithObjects:
-                          @"Login",
-                          @"Register",
-                          nil];
-        MCSegmentedControl *segmentedControl = [[MCSegmentedControl alloc] initWithItems:items];
-        
-        // set frame, add to view, set target and action for value change as usual
-        segmentedControl.frame = CGRectMake(20.0f, 20.0f, 280.0f, 30.0f);
-        //[self.view addSubview:segmentedControl];
-        [segmentedControl addTarget:self action:@selector(segmentControlChanged:) forControlEvents:UIControlEventValueChanged];
-        
-        segmentedControl.selectedSegmentIndex = 0;
-        
-        // Set a tint color
-        //segmentedControl.tintColor = [UIColor colorWithRed:.0 green:.6 blue:.0 alpha:1.0];
-        segmentedControl.tintColor = [UIColor brownColor];
-        
-        // Customize font and items color
-        segmentedControl.selectedItemColor   = [UIColor whiteColor];
-        segmentedControl.unselectedItemColor = [UIColor darkGrayColor];
-        segmentedControl.unSelectedItemBackgroundGradientColors = [NSArray arrayWithObjects:[UIColor grayColor] , [UIColor brownColor], nil];
-        
-        //[self.view addSubview:segmentedControl];
     }
     return self;
 }
@@ -70,6 +47,7 @@
 }
 
 - (IBAction)segmentControlChanged:(id)sender {
+    [self needToScroll:0];
     UISegmentedControl *segmentControl = sender;
     switch (segmentControl.selectedSegmentIndex) {
         case 0:
@@ -81,6 +59,11 @@
     }
 }
 
+- (void)needToScroll:(CGFloat)y
+{
+    [scrollView scrollRectToVisible:CGRectMake(0, y, 320, 200) animated:YES];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -90,11 +73,14 @@
     registerViewController = [[RegisterViewController alloc] initWithParentRef:self];
     currentViewController = loginViewController;
     [containerView addSubview:loginViewController.view];
+    [scrollView setContentSize:CGSizeMake(320, 800)];
+    [scrollView setScrollEnabled:NO];
 }
 
 - (void)viewDidUnload
 {
     [self setContainerView:nil];
+    [self setScrollView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

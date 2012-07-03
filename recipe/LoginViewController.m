@@ -34,7 +34,7 @@
     return self;
 }
 
-- (id)initWithParentRef:(UIViewController*)parentViewController{
+- (id)initWithParentRef:(AuthViewController*)parentViewController{
     self = [super init];
     if (self) {
         _parentController = parentViewController;
@@ -77,9 +77,7 @@
 
 #pragma mark - Login feature
 - (IBAction)onLoginTap:(id)sender{
-    if (activeTextField != nil) {
-        [activeTextField resignFirstResponder];
-    }
+    [self dismissKeyboard];
     if ([trimSpaces([userName text]) length] != 0 && [[password text] length] != 0) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [hud setLabelText:@"Checking..."];
@@ -146,17 +144,20 @@
 - (IBAction)dismissKeyboard{
     if (activeTextField != nil) {
         [activeTextField resignFirstResponder];
+        //[_parentController needToScroll:0];
     }
 }
 
 #pragma mark - Text Fields Delegate Methods
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     activeTextField = textField;
+    //[_parentController needToScroll:360];
     return YES;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
+    //[_parentController needToScroll:0];
     return YES;
 }
 

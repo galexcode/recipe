@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AuthViewController.h"
 #import "recipeGlobal.h"
 
 @interface LoginViewController : UIViewController{
     __weak UITextField *activeTextField;
-    __weak UIViewController* _parentController;
+    __weak AuthViewController* _parentController;
     User* _user;
 }
 
@@ -22,7 +23,7 @@
 - (IBAction)dismissKeyboard;
 - (IBAction)onLoginTap:(id)sender;
 
-- (id)initWithParentRef:(UIViewController*)parentViewController;
+- (id)initWithParentRef:(AuthViewController*)parentViewController;
 - (void)didParsedLoggingUser;
 
 @end

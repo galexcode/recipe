@@ -29,7 +29,7 @@
     return self;
 }
 
-- (id)initWithParentRef:(UIViewController*)parentViewController{
+- (id)initWithParentRef:(AuthViewController*)parentViewController{
     self = [super init];
     if (self) {
         _parentController = parentViewController;
@@ -74,9 +74,7 @@
 
 #pragma mark - Register feature
 - (IBAction)onRegisterTap{
-    if (activeTextField != nil) {
-        [activeTextField resignFirstResponder];
-    }
+    [self dismissKeyboard];
     if ([trimSpaces([userName text]) length] != 0
         && [trimSpaces([email text]) length] != 0
         && [NSStringUtil stringIsValidEmail:[email text]]
@@ -169,17 +167,20 @@
     if ([textField tag] == 2) {
         [textField setKeyboardType:UIKeyboardTypeEmailAddress];
     }
+    [_parentController needToScroll:360];
     return YES;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
+    [_parentController needToScroll:0];
     return YES;
 }
 
 - (IBAction)dismissKeyboard{
     if (activeTextField != nil) {
         [activeTextField resignFirstResponder];
+        [_parentController needToScroll:0];
     }
 }
 
