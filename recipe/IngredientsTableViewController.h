@@ -21,10 +21,11 @@
     NSMutableArray *unitArray;
     //UIImage *_image;
     NSData *imageData;
+    NSMutableArray* _resuableCells;
 }
 //@property (nonatomic, retain) UIPickerView *picker;
 @property (weak, nonatomic) IBOutlet UITextField *txtIngredientUnit;
-
+@property (nonatomic) NSMutableArray *reusableCells;
 @property (weak, nonatomic) IBOutlet UITextField *txtIngredientName;
 @property (weak, nonatomic) IBOutlet UITextView *txtIngredientDescription;
 @property (nonatomic) Recipe *recipe;

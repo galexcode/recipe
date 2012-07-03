@@ -30,6 +30,7 @@
 @synthesize navController;
 @synthesize ingredientForm;
 @synthesize imagePicker;
+@synthesize reusableCells = _resuableCells;
 
 - (IBAction)btnSelectImage:(id)sender {
     [self presentModalViewController:imagePicker animated:YES];
@@ -59,6 +60,8 @@
     RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
     [[self navigationItem] setTitleView:label];
     
+    [self initResuableCells];
+    
     if (editable) {
         barButton = [[UIBarButtonItem alloc] 
                      initWithTitle:@"Add"                                            
@@ -82,7 +85,7 @@
     imagePicker.allowsEditing = NO;
     imagePicker.delegate = self;
     
-    unitArray = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",nil];
+    unitArray = [[NSMutableArray alloc] initWithObjects:@"cup",@"tablespoon",@"ounce",nil];
     UIPickerView *picker = [[UIPickerView alloc] init];
     [picker setDelegate:self];
     [picker setDataSource:self];
@@ -166,7 +169,7 @@
 
 - (void)didParsedInsertIngredient
 {
-    [[self tableView] reloadData];
+    [self initResuableCells];
 }
 
 - (Boolean)validateInputInformation
@@ -242,38 +245,24 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if ([[[self recipe] ingredientList] count] > 0)
-        return [[[self recipe] ingredientList] count];
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if ([[[self recipe] ingredientList] count] > 0) {
-        static NSString *CellIdentifier = @"IngredientCell";
+- (void)initResuableCells{
+    [self setReusableCells:nil];
+    self.reusableCells = [NSMutableArray array];
+    
+    for (int i = 0; i < [[[self recipe] ingredientList] count]; i++) {
+        IngredientCell *cell = [[IngredientCell alloc] init];
         
-        IngredientCell *cell = (IngredientCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        Ingredient *currentIngredient = (Ingredient*)[[[self recipe] ingredientList] objectAtIndex:i];
         
-        Ingredient *currentIngredient = (Ingredient*)[[[self recipe] ingredientList] objectAtIndex:indexPath.row];
-        
-        if (cell == nil) 
-        {
             NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"IngredientCell" owner:self options:nil];
-            
-            for (id currentObject in topLevelObjects) {
-                if ([currentObject isKindOfClass:[IngredientCell class]]) {
-                    cell = (IngredientCell*)currentObject;
-                    break;
-                }
+        
+        for (id currentObject in topLevelObjects) {
+            if ([currentObject isKindOfClass:[IngredientCell class]]) {
+                cell = (IngredientCell*)currentObject;
+                break;
             }
         }
+        //}
         
         cell.unit.text = [currentIngredient unit];
         cell.quantity.text = [currentIngredient quantity];
@@ -293,6 +282,63 @@
             }];
             [request startAsynchronous];
         }
+        
+        [[self reusableCells] addObject:cell];;
+    }
+    
+    [[self tableView] reloadData];
+}
+
+   - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if ([[[self recipe] ingredientList] count] > 0)
+        return [[[self recipe] ingredientList] count];
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([[[self recipe] ingredientList] count] > 0) {
+        IngredientCell *cell = [[self reusableCells] objectAtIndex:indexPath.row];
+        
+//        Ingredient *currentIngredient = (Ingredient*)[[[self recipe] ingredientList] objectAtIndex:indexPath.row];
+//        
+//        if (cell == nil) 
+//        {
+//            NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"IngredientCell" owner:self options:nil];
+//            
+//            for (id currentObject in topLevelObjects) {
+//                if ([currentObject isKindOfClass:[IngredientCell class]]) {
+//                    cell = (IngredientCell*)currentObject;
+//                    break;
+//                }
+//            }
+//        //}
+//        
+//            cell.unit.text = [currentIngredient unit];
+//            cell.quantity.text = [currentIngredient quantity];
+//            cell.name.text = [currentIngredient name];
+//            
+//            if (![[currentIngredient imagePath] isEqualToString:@"-1"]) {
+//                NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[currentIngredient imagePath] forWidth:60 andHeight:0]];
+//                
+//                __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
+//                [request setCompletionBlock:^{
+//                    NSData *data = request.responseData;
+//                    [cell.thumb setImage:[[UIImage alloc] initWithData:data]];
+//                }];
+//                [request setFailedBlock:^{
+//                    NSError *error = request.error;
+//                    NSLog(@"Error downloading image: %@", error.localizedDescription);
+//                }];
+//                [request startAsynchronous];
+//            }
+//        }
         
         return cell;
     } else {
@@ -373,7 +419,7 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     [txtIngredientUnit setText:[unitArray objectAtIndex:row]];
-    //[txtIngredientUnit resignFirstResponder];
+    [txtIngredientUnit resignFirstResponder];
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;

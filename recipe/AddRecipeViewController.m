@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 OngSoft. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "AddRecipeViewController.h"
 #import "SelectCategoresViewController.h"
 #import "IngredientsTableViewController.h"
@@ -47,6 +48,9 @@
     [super viewDidLoad];
     RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
     [[self navigationItem] setTitleView:label];
+    
+    [[[self btnImagePicker] layer] setCornerRadius:4];
+    [[[self btnImagePicker] layer] setMasksToBounds:YES];
     
     _images = [NSMutableArray array];
     
