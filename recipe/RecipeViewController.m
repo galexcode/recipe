@@ -18,6 +18,7 @@
 #import "HJManagedImageV.h"
 
 @implementation RecipeViewController
+@synthesize pageControl;
 @synthesize recipeDetailsTable;
 @synthesize recipe = _recipe;
 @synthesize slideShowCell;
@@ -58,6 +59,8 @@
     RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
     [[self navigationItem] setTitleView:label];
     
+    [[self pageControl] setHidesForSinglePage:YES];
+    
 //    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
 //    [[self navigationItem] setTitleView:headerView];
     
@@ -92,6 +95,7 @@
     [self setUserInfoCell:nil];
     [self setImageSlider:nil];
     [self setBorderThumb:nil];
+    [self setPageControl:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -124,12 +128,15 @@
 - (void)loadImageSlider
 {
     NSInteger count = [[[self recipe] imageList] count];
+    [[self pageControl] setNumberOfPages:count];
     CGFloat w = 300.00f;
     CGFloat y = 0.00f;
     CGFloat sx = 0.00f;
     if (count > 0) {
         for (NSInteger i = 0; i < count; i++) {
             HJManagedImageV *image = [[HJManagedImageV alloc] initWithFrame:CGRectMake(sx,y,w,200)];
+            [[image layer] setCornerRadius:10];
+            [[image layer] setMasksToBounds:YES];
             [imageSlider addSubview:image];
 
             image.url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[[self recipe] imageList] objectAtIndex:i] forWidth:600 andHeight:400]];
@@ -155,6 +162,41 @@
     [imageSlider setPagingEnabled:YES];
     [imageSlider setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
 }
+
+#pragma mark Scroll View delegate
+- (void)scrollViewDidScroll:(UIScrollView *)sender {
+    if (pageControlUsed) {
+        return;
+    }
+    CGFloat pageWidth = imageSlider.frame.size.width;
+    int page = floor((imageSlider.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    pageControl.currentPage = page;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    pageControlUsed = NO;
+}
+
+- (IBAction)changePage:(id)sender {
+    int page = pageControl.currentPage;
+    CGRect frame = imageSlider.frame;
+    frame.origin.x = frame.size.width * page;
+    frame.origin.y = 0;
+    [imageSlider scrollRectToVisible:frame animated:YES];
+    pageControlUsed = YES;
+}
+
+//- (IBAction)changePage:(id)sender {
+//    int page = pageControl.currentPage;
+//    [self loadScrollViewWithPage:page - 1];
+//    [self loadScrollViewWithPage:page];
+//    [self loadScrollViewWithPage:page + 1];
+//    CGRect frame = scrollView.frame;
+//    frame.origin.x = frame.size.width * page;
+//    frame.origin.y = 0;
+//    [scrollView scrollRectToVisible:frame animated:YES];
+//    pageControlUsed = YES;
+//}
 
 #pragma mark Table delegate methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

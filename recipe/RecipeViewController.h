@@ -9,13 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
 
-@interface RecipeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface RecipeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 {
     Recipe* _recipe;
     NSString* ingredientTitleText;
     NSString* stepTitleText;
+    Boolean pageControlUsed;
 }
 
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (weak, nonatomic) IBOutlet UITableView *recipeDetailsTable;
 @property (nonatomic) Recipe *recipe;
 @property (strong, nonatomic) IBOutlet UITableViewCell *slideShowCell;
@@ -29,5 +31,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UILabel *timeSpanSinceCreated;
 @property (weak, nonatomic) IBOutlet UIScrollView *imageSlider;
+
+- (IBAction)changePage:(id)sender;
 
 @end
