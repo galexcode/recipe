@@ -22,6 +22,7 @@
 
 @implementation IngredientsTableViewController
 @synthesize btnSelectImage;
+@synthesize txtIngredientUnit;
 @synthesize txtIngredientName;
 @synthesize txtIngredientDescription;
 @synthesize recipe = _recipe;
@@ -81,6 +82,12 @@
     imagePicker.allowsEditing = NO;
     imagePicker.delegate = self;
     
+    unitArray = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",nil];
+    UIPickerView *picker = [[UIPickerView alloc] init];
+    [picker setDelegate:self];
+    [picker setDataSource:self];
+    txtIngredientUnit.inputView = picker;
+    
 }
 
 - (void)addIngredient:(id)sender
@@ -120,12 +127,13 @@
         [request setPostValue:[[self recipe] recipeId] forKey:@"rid"];
         [request setPostValue:[txtIngredientName text] forKey:@"in"];
         [request setPostValue:[txtIngredientDescription text] forKey:@"idesc"];
+        
         if( imageData != nil ){
             [request addData:imageData forKey:@"ii"];
         }
         
         [request setPostValue:@"1/2" forKey:@"iqty"];
-        [request setPostValue:@"cup" forKey:@"iunit"];
+        [request setPostValue:[txtIngredientUnit text] forKey:@"iunit"];
         
         [request setCompletionBlock:^{
             NSLog(@"Complete Post Ingredient.");
@@ -173,6 +181,11 @@
     if ([trimSpaces([txtIngredientDescription text]) length] == 0){
         flag = NO;
     }
+    if( [trimSpaces([txtIngredientUnit text]) length] == 0 ){
+        [txtIngredientUnit setText:@""];
+        [txtIngredientUnit setPlaceholder:@"Recipe unit is blank"];
+        flag = NO;
+    }
     return flag;
 }
 
@@ -180,6 +193,7 @@
 {
     txtIngredientName.text = @"";
     txtIngredientDescription.text = @"";
+    txtIngredientUnit.text = @"";
     imageData = nil;
     [btnSelectImage setImage:[UIImage imageNamed:@"add_photo"] forState:UIControlStateNormal];
 }
@@ -189,6 +203,7 @@
     [self setBtnSelectImage:nil];
     [self setTxtIngredientName:nil];
     [self setTxtIngredientDescription:nil];
+    [self setTxtIngredientUnit:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -347,6 +362,28 @@
             [[self navigationController] pushViewController:viewControllerToPush animated:YES];
         }
     }
+}
+
+#pragma mark - UIpicker view delegate
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
+{
+    return 1;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    [txtIngredientUnit setText:[unitArray objectAtIndex:row]];
+    //[txtIngredientUnit resignFirstResponder];
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
+{
+    return [unitArray count];
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
+{
+    return [unitArray objectAtIndex:row];
 }
 
 @end

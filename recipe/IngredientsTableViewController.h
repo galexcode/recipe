@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
 
-@interface IngredientsTableViewController : UITableViewController<UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>{
+@interface IngredientsTableViewController : UITableViewController<UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>{
     Recipe* _recipe;
     NSArray* _ingredients;
     Boolean editable;
@@ -17,9 +17,13 @@
     __weak UITextField *activeTextField;
     __weak UITextView *activeTextView;
     UIImagePickerController *imagePicker;
+    //UIPickerView *picker;
+    NSMutableArray *unitArray;
     //UIImage *_image;
     NSData *imageData;
 }
+//@property (nonatomic, retain) UIPickerView *picker;
+@property (weak, nonatomic) IBOutlet UITextField *txtIngredientUnit;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtIngredientName;
 @property (weak, nonatomic) IBOutlet UITextView *txtIngredientDescription;
