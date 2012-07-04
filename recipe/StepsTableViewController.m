@@ -18,6 +18,7 @@
 #import "ASI2HTTPRequest.h"
 #import "ASIForm2DataRequest.h"
 #import "RecipeXMLHandler.h"
+#import "GlobalStore.h"
 
 @interface StepsTableViewController ()
 
@@ -51,13 +52,12 @@
 - (IBAction)insertStep:(id)sender {
     NSLog(@"Insert Ingredient");
     if ([self validateInputInformation]) {
-        [[self recipe] setStepList:nil];
-        [[self recipe] setStepList:[NSMutableArray array]];
+//        [[self recipe] setStepList:nil];
+//        [[self recipe] setStepList:[NSMutableArray array]];
         
-        NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/step/add"];
+        NSURL *url = [NSURL URLWithString:[GlobalStore addStepLink]];
         
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
-        //[request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
         [request setPostValue:[[self recipe] recipeId] forKey:@"rid"];
         [request setPostValue:[txtStepName text] forKey:@"sname"];
         [request setPostValue:[txtStepDescription text] forKey:@"sdesc"];
@@ -266,7 +266,7 @@
         return cell;
     } else {
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-        [[cell textLabel] setText:@"No steps. Tap \"Add\" to add step"];
+        [[cell textLabel] setText:@"No steps. Tap here or \"Add\" to add step"];
         [[cell textLabel] setTextColor:[UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f]];
         [[cell textLabel] setFont:[UIFont systemFontOfSize:15.00f]];
 //        [[cell textLabel] setLineBreakMode:UILineBreakModeWordWrap];
@@ -336,6 +336,8 @@
         //Finally set the selected index to the new selection and reload it to expand
         selectedIndex = indexPath.row;
         [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else {
+        [self addStep:nil];
     }
 }
 

@@ -26,6 +26,10 @@
 + (NSString*) registerLink;
 + (NSString*) categoriesLink;
 + (NSString*) recipesLink;
++ (NSString*) addRecipeLink;
++ (NSString*) updateRecipeLink;
++ (NSString*) addIngredientLink;
++ (NSString*) addStepLink;
 
 + (NSString*) searchLink;
 

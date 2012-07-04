@@ -45,6 +45,11 @@
         [self refresh];
         loaded = YES;
     }
+    if (isNeedToReload  && isMyRecipe) {
+        isNeedToReload = NO;
+        [self refresh];
+        loaded = YES;
+    }
 }
 
 - (id)initWithEditableTable
@@ -143,6 +148,7 @@
 }
 
 -(IBAction)addRecipe:(id)sender{
+    isNeedToReload = YES;
     AddRecipeViewController *viewControllerToPush = [[AddRecipeViewController alloc] initWithNibName:@"AddRecipeViewController" bundle:nil];
     [[viewControllerToPush navigationItem] setTitle:@"Add Recipe"];
     [[self navigationController] pushViewController:viewControllerToPush animated:YES];

@@ -121,9 +121,7 @@
 - (IBAction)insertIngredient:(id)sender {
     NSLog(@"Insert Ingredient");
     if ([self validateInputInformation]) {
-        
-        //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/recipe/add"];
-        NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/ingredient/add"];
+        NSURL *url = [NSURL URLWithString:[GlobalStore addIngredientLink]];
         
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];

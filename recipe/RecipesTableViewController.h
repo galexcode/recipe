@@ -22,6 +22,7 @@
     Boolean isMyRecipe;
     Boolean editable;
     UIBarButtonItem *barButton;
+    Boolean isNeedToReload;
 }
 
 @property (nonatomic) NSMutableArray* recipes;

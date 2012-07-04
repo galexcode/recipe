@@ -11,8 +11,6 @@
 #import "SelectCategoresViewController.h"
 #import "IngredientsTableViewController.h"
 #import "StepsTableViewController.h"
-//#import "AddIngredientViewController.h"
-//#import "AddStepViewController.h"
 #import "ASIForm2DataRequest.h"
 #import "RecipeXMLHandler.h"
 #import "MBProgressHUD.h"
@@ -83,8 +81,6 @@
     [self setBtnAddIngredient:nil];
     [self setBtnAddStep:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -103,11 +99,6 @@
 }
 
 - (IBAction)selectIngredient:(id)sender {
-//    AddIngredientViewController *addIngredientViewController = [[AddIngredientViewController alloc] initWithNibName:@"AddIngredientViewController" bundle:nil];
-//    [addIngredientViewController setTitle:@"Ingredients"];
-//    [addIngredientViewController setRecipe:recipe];
-//    [[self navigationController] pushViewController:addIngredientViewController animated:YES];
-
     if([recipe recipeId] == @"-1"){
         isCallFromAddIngredient = YES;
         [self insertNewRecipe];
@@ -120,10 +111,6 @@
 }
 
 - (IBAction)selectSteps:(id)sender {
-//    AddStepViewController *addStepViewController = [[AddStepViewController alloc] initWithNibName:@"AddStepViewController" bundle:nil];
-//    [addStepViewController setTitle:@"Steps"];
-//    [addStepViewController setRecipe:recipe];
-//    [[self navigationController] pushViewController:addStepViewController animated:YES];
     if( [recipe recipeId] == @"-1" ){
         isCallFromAddStep = YES;
         [self insertNewRecipe];
@@ -131,7 +118,6 @@
         StepsTableViewController *viewControllerToPush = [[StepsTableViewController alloc] initWithEditableTable];
         [viewControllerToPush setTitle:@"Steps"];
         [viewControllerToPush setRecipe:recipe];
-        //[viewControllerToPush setSteps:[recipe stepList]];
         [[self navigationController] pushViewController:viewControllerToPush animated:YES];
     }
 }
@@ -296,8 +282,6 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
 {
-    NSLog(@"Nhay vao delegate set Image");
-    //[btnAddImage setBackgroundImage:image forState:UIControlStateNormal];
     [btnImagePicker setImage:image forState:UIControlStateNormal];
 
     NSData *imageData = UIImagePNGRepresentation(image);
@@ -309,16 +293,10 @@
 
 - (void)reloadPage
 {
-    NSLog(@"nhay vao ham reloadpage");
     if([recipe recipeId] == @"-1"){
         [btnSaveRecipe setTitle:@"Save" forState:UIControlStateNormal];
-        //[btnAddIngredient setEnabled:NO];
-        //[btnAddStep setEnabled:NO];
     } else {
         [btnSaveRecipe setTitle:@"Update" forState:UIControlStateNormal];
-        //[btnSaveRecipe setEnabled:NO];
-        //[btnAddIngredient setEnabled:YES];
-        //[btnAddStep setEnabled:YES];
     }
 }
 
@@ -327,8 +305,7 @@
     if ([self validateInputInformation]) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [hud setLabelText:@"Saving Recipe..."];
-        //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/recipe/add"];
-        NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/recipe/add"];
+        NSURL *url = [NSURL URLWithString:[GlobalStore addRecipeLink]];
         
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
@@ -338,21 +315,16 @@
             [request addData:[_images objectAtIndex:i] forKey:@"ri[]"];
             
         }
+        
         //multiple category
         for ( NSInteger i = 0; i < [[recipe categoryList] count]; i++ ){
             [request addPostValue:[[recipe categoryList] objectAtIndex:i]  forKey:@"cid[]"];
         }
-        //[request addPostValue:@"1" forKey:@"cid[]"];
-        //[request addPostValue:@"2" forKey:@"cid[]"];
-        
-        //[request setPostValue:[password text] forKey:@"pw"];
         
         [request setCompletionBlock:^{
             NSLog(@"Complete Post Recipe.");
             if (request.responseStatusCode == 200) {
                 NSLog(@"%d", request.responseStatusCode);
-                //[recipe setRecipeId:request.responseString];
-                //NSLog(@"recipe id: %s", [request.responseData bytes]);
                 NSLog(@"recipe id: %@", request.responseString);
                 
                 RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:recipe];
@@ -377,34 +349,10 @@
     }
 }
 
-- (void)didParsedInsertRecipe
-{
-    NSLog(@"after insert number of category is: %d", [[recipe categoryList] count]);
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    
-    if (isCallFromAddIngredient) {
-        isCallFromAddIngredient = NO;
-        IngredientsTableViewController *viewControllerToPush = [[IngredientsTableViewController alloc] initWithEditableTable];
-        [viewControllerToPush setTitle:@"Ingredients"];
-        [viewControllerToPush setRecipe:recipe];
-        //[viewControllerToPush setIngredients:[recipe ingredientList]];
-        [[self navigationController] pushViewController:viewControllerToPush animated:YES];
-    } else if (isCallFromAddStep){
-        isCallFromAddStep = NO;
-        StepsTableViewController *viewControllerToPush = [[StepsTableViewController alloc] initWithEditableTable];
-        [viewControllerToPush setTitle:@"Steps"];
-        [viewControllerToPush setRecipe:recipe];
-        //[viewControllerToPush setSteps:[recipe stepList]];
-        [[self navigationController] pushViewController:viewControllerToPush animated:YES];
-    }
-}
-
 - (void)updateRecipe
 {
     if ([self validateInputInformation]) {
-        NSLog(@"Bat dau update recipe");
-        //NSURL *url = [NSURL URLWithString:@"http://www.perselab.com/recipe/recipe/update"];
-        NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/recipe/update"];
+        NSURL *url = [NSURL URLWithString:[GlobalStore updateRecipeLink]];
         
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
@@ -426,15 +374,10 @@
             NSLog(@"update post: %@",[[recipe categoryList] objectAtIndex:i]);
         }
         
-        //[request setPostValue:[password text] forKey:@"pw"];
-        
         [request setCompletionBlock:^{
             NSLog(@"Complete Post Recipe.");
             NSLog(@"%d", request.responseStatusCode);
             if (request.responseStatusCode == 200) {
-                
-                //[recipe setRecipeId:request.responseString];
-                //NSLog(@"recipe id: %s", [request.responseData bytes]);
                 NSLog(@"recipe id: %@", request.responseString);
                 
                 RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:recipe];
@@ -446,17 +389,35 @@
                 
                 [self reloadPage];
             } else {
-                //_user = nil;
-                //[self didParsedLoggingUser];
                 NSLog(@"Khong co gi xay ra");
             }
         }];
         [request setFailedBlock:^{
-            //            [self handleError:request.error];
+            //[self handleError:request.error];
             NSLog(@"bi failed me no roi");
         }];
         
         [request startAsynchronous];
+    }
+}
+
+- (void)didParsedInsertRecipe
+{
+    NSLog(@"after insert number of category is: %d", [[recipe categoryList] count]);
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
+    if (isCallFromAddIngredient) {
+        isCallFromAddIngredient = NO;
+        IngredientsTableViewController *viewControllerToPush = [[IngredientsTableViewController alloc] initWithEditableTable];
+        [viewControllerToPush setTitle:@"Ingredients"];
+        [viewControllerToPush setRecipe:recipe];
+        [[self navigationController] pushViewController:viewControllerToPush animated:YES];
+    } else if (isCallFromAddStep){
+        isCallFromAddStep = NO;
+        StepsTableViewController *viewControllerToPush = [[StepsTableViewController alloc] initWithEditableTable];
+        [viewControllerToPush setTitle:@"Steps"];
+        [viewControllerToPush setRecipe:recipe];
+        [[self navigationController] pushViewController:viewControllerToPush animated:YES];
     }
 }
 
