@@ -186,18 +186,6 @@
     pageControlUsed = YES;
 }
 
-//- (IBAction)changePage:(id)sender {
-//    int page = pageControl.currentPage;
-//    [self loadScrollViewWithPage:page - 1];
-//    [self loadScrollViewWithPage:page];
-//    [self loadScrollViewWithPage:page + 1];
-//    CGRect frame = scrollView.frame;
-//    frame.origin.x = frame.size.width * page;
-//    frame.origin.y = 0;
-//    [scrollView scrollRectToVisible:frame animated:YES];
-//    pageControlUsed = YES;
-//}
-
 #pragma mark Table delegate methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -212,9 +200,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-//    if (section == 0) {
-//        return 35.00f;
-//    }
     if (section == 2) {
         return 40.00f;
     }
@@ -251,7 +236,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0 && indexPath.row == 0) {
-        return 50.0;
+        return 40.0;
     }
     if (indexPath.section == 1 && indexPath.row == 0) {
         return 201.0;

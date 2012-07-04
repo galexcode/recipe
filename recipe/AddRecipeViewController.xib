@@ -284,7 +284,7 @@
 							<object class="IBUIImageView" id="820638456">
 								<reference key="NSNextResponder" ref="525246262"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{131, 17}, {23, 23}}</string>
+								<string key="NSFrame">{{143, 17}, {23, 23}}</string>
 								<reference key="NSSuperview" ref="525246262"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="329700587"/>
@@ -299,7 +299,7 @@
 							<object class="IBUIImageView" id="1040615810">
 								<reference key="NSNextResponder" ref="525246262"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{131, 57}, {23, 23}}</string>
+								<string key="NSFrame">{{143, 57}, {23, 23}}</string>
 								<reference key="NSSuperview" ref="525246262"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="751900145"/>
@@ -311,7 +311,7 @@
 							<object class="IBUILabel" id="467895815">
 								<reference key="NSNextResponder" ref="525246262"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{168, 19}, {113, 21}}</string>
+								<string key="NSFrame">{{187, 19}, {113, 21}}</string>
 								<reference key="NSSuperview" ref="525246262"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1040615810"/>
@@ -321,7 +321,7 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Add Ingredient</string>
+								<string key="IBUIText">Ingredients</string>
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">2</int>
 									<bytes key="NSRGB">MC44MzkyMTU3NTU1IDAuNjExNzY0NzI5IDAuMzI5NDExNzc0OQA</bytes>
@@ -342,7 +342,7 @@
 							<object class="IBUILabel" id="631206017">
 								<reference key="NSNextResponder" ref="525246262"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{167, 58}, {113, 22}}</string>
+								<string key="NSFrame">{{187, 58}, {113, 22}}</string>
 								<reference key="NSSuperview" ref="525246262"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
@@ -352,7 +352,7 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Add Step</string>
+								<string key="IBUIText">Steps</string>
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">2</int>
 									<bytes key="NSRGB">MC44MzkyMTU3NTU1IDAuNjExNzY0NzI5IDAuMzI5NDExNzc0OQA</bytes>

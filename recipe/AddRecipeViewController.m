@@ -174,10 +174,11 @@
     }
     if ( flag == YES && [[recipe categoryList] count] == 0 ){
         UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Message"
-                                                                 message:[NSString stringWithFormat:@"Category is not available"]
+                                                                 message:[NSString stringWithFormat:@"No category selected"]
                                                                 delegate:nil
                                                        cancelButtonTitle:@"OK"
-                                                       otherButtonTitles:nil];
+                                                       otherButtonTitles:@"Select Categories", nil];
+        [errorAlertView setDelegate:self];
         [errorAlertView show];
 
         flag = NO;
@@ -207,6 +208,15 @@
 {
     [recipeName resignFirstResponder];
     [serving resignFirstResponder];
+}
+
+#pragma mark UI Alert View Delegate Methods
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"button index: %d", buttonIndex);
+    if (buttonIndex == 1) {
+        [self selectCategories:nil];
+    }
 }
 
 #pragma mark UI Table Deletage Methods

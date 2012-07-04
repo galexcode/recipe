@@ -343,7 +343,7 @@
         return cell;
     } else {
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-        [[cell textLabel] setText:@"No ingredients. Tap \"Add\" to add ingredient"];
+        [[cell textLabel] setText:@"No ingredients. Tap here or \"Add\" to add ingredient"];
         [[cell textLabel] setTextColor:[UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f]];
         [[cell textLabel] setFont:[UIFont systemFontOfSize:15.00f]];
         [[cell textLabel] setLineBreakMode:UILineBreakModeWordWrap];
@@ -407,6 +407,8 @@
         } else {
             [[self navigationController] pushViewController:viewControllerToPush animated:YES];
         }
+    } else {
+        [self addIngredient:nil];
     }
 }
 

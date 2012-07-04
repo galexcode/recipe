@@ -10,7 +10,7 @@
 #import "Recipe.h"
 #import "RecipeTextField.h"
 
-@interface AddRecipeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>{
+@interface AddRecipeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate>{
     Recipe *recipe;
     NSMutableArray *selectedCategories;
     UIImagePickerController *imagePicker;
