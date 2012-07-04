@@ -210,7 +210,7 @@
 - (void)formReset
 {
     txtIngredientName.text = @"";
-    txtIngredientDescription.text = @"";
+    txtIngredientDescription.text = @"Simple description";
     txtIngredientUnit.text = @"";
     imageData = nil;
     [btnSelectImage setImage:[UIImage imageNamed:@"add_photo"] forState:UIControlStateNormal];

@@ -167,7 +167,7 @@
 - (void)formReset
 {
     txtStepName.text = @"";
-    txtStepDescription.text = @"";
+    txtStepDescription.text = @"Simple description";
 }
 - (void)viewDidUnload
 {
