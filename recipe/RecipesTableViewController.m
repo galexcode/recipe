@@ -242,7 +242,6 @@
         Recipe *currentRecipe = [self.recipes objectAtIndex:i];
         
         cell.recipeName.text = [currentRecipe name];
-        cell.thumb.image = [UIImage imageNamed:@"default_recipe.jpg"];
         
         if ([[currentRecipe imageList] count] > 0) {
             NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:120 andHeight:0]];

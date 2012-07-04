@@ -308,12 +308,28 @@ AAgACAAIAAEAAQABAAE</bytes>
 						<int key="NSvFlags">256</int>
 						<object class="NSMutableArray" key="NSSubviews">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBUIImageView" id="889462161">
+								<reference key="NSNextResponder" ref="765638055"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{0, 1}, {300, 199}}</string>
+								<reference key="NSSuperview" ref="765638055"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="378505593"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">default_recipe_wide.png</string>
+								</object>
+							</object>
 							<object class="IBUIScrollView" id="379398467">
 								<reference key="NSNextResponder" ref="765638055"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrameSize">{300, 200}</string>
 								<reference key="NSSuperview" ref="765638055"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="889462161"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -706,6 +722,14 @@ AAgACAAIAAEAAQABAAE</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">defaultRecipeView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="889462161"/>
+					</object>
+					<int key="connectionID">54</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">dataSource</string>
 						<reference key="source" ref="1070122960"/>
 						<reference key="destination" ref="372490531"/>
@@ -781,6 +805,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="379398467"/>
 							<reference ref="378505593"/>
+							<reference ref="889462161"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Section 1 Recipe Thumb</string>
@@ -911,6 +936,11 @@ AAgACAAIAAEAAQABAAE</bytes>
 						<reference key="object" ref="378505593"/>
 						<reference key="parent" ref="133678674"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">53</int>
+						<reference key="object" ref="889462161"/>
+						<reference key="parent" ref="133678674"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -942,6 +972,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 					<string>45.IBPluginDependency</string>
 					<string>47.IBPluginDependency</string>
 					<string>49.IBPluginDependency</string>
+					<string>53.IBPluginDependency</string>
 					<string>8.IBPluginDependency</string>
 				</object>
 				<object class="NSArray" key="dict.values">
@@ -949,6 +980,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 					<string>RecipeViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>UIResponder</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -986,7 +1018,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">52</int>
+			<int key="maxID">54</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1010,6 +1042,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>borderThumb</string>
+							<string>defaultRecipeView</string>
 							<string>imageSlider</string>
 							<string>pageControl</string>
 							<string>recipeDetailsTable</string>
@@ -1026,6 +1059,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIView</string>
+							<string>UIImageView</string>
 							<string>UIScrollView</string>
 							<string>UIPageControl</string>
 							<string>UITableView</string>
@@ -1045,6 +1079,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>borderThumb</string>
+							<string>defaultRecipeView</string>
 							<string>imageSlider</string>
 							<string>pageControl</string>
 							<string>recipeDetailsTable</string>
@@ -1063,6 +1098,10 @@ AAgACAAIAAEAAQABAAE</bytes>
 							<object class="IBToOneOutletInfo">
 								<string key="name">borderThumb</string>
 								<string key="candidateClassName">UIView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">defaultRecipeView</string>
+								<string key="candidateClassName">UIImageView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">imageSlider</string>
@@ -1139,6 +1178,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>Aviation.png</string>
 				<string>bgt.png</string>
+				<string>default_recipe_wide.png</string>
 				<string>icon_like.png</string>
 				<string>icon_todo.png</string>
 				<string>icon_twitter.png</string>
@@ -1148,6 +1188,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{200, 200}</string>
 				<string>{320, 26}</string>
+				<string>{300, 199}</string>
 				<string>{18, 18}</string>
 				<string>{18, 18}</string>
 				<string>{18, 18}</string>

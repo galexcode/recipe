@@ -14,6 +14,7 @@
 @synthesize recipeDescription;
 @synthesize thumbBorder;
 @synthesize thumb;
+@synthesize thumbDefault;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -30,6 +31,8 @@
     [[[self thumb] layer] setMasksToBounds:YES];
     [[[self thumbBorder] layer] setCornerRadius:5];
     [[[self thumbBorder] layer] setMasksToBounds:YES];
+    [[[self thumbDefault] layer] setCornerRadius:5];
+    [[[self thumbDefault] layer] setMasksToBounds:YES];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

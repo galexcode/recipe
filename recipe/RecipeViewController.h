@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UILabel *timeSpanSinceCreated;
 @property (weak, nonatomic) IBOutlet UIScrollView *imageSlider;
+@property (weak, nonatomic) IBOutlet UIImageView *defaultRecipeView;
 
 - (IBAction)changePage:(id)sender;
 

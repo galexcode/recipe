@@ -32,6 +32,7 @@
 @synthesize userName;
 @synthesize timeSpanSinceCreated;
 @synthesize imageSlider;
+@synthesize defaultRecipeView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -75,6 +76,8 @@
     [[[self userThumb] layer] setMasksToBounds:YES];
     [[[self borderThumb] layer] setCornerRadius:8.0];
     [[[self borderThumb] layer] setMasksToBounds:YES];
+    [[[self defaultRecipeView] layer] setCornerRadius:10.0];
+    [[self defaultRecipeView] setClipsToBounds:YES];
     
     [self loadImageSlider];
     [self loadUserAvatar];
@@ -96,6 +99,7 @@
     [self setImageSlider:nil];
     [self setBorderThumb:nil];
     [self setPageControl:nil];
+    [self setDefaultRecipeView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

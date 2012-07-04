@@ -14,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *recipeDescription;
 @property (weak, nonatomic) IBOutlet UIView *thumbBorder;
 @property (weak, nonatomic) IBOutlet UIImageView *thumb;
+@property (weak, nonatomic) IBOutlet UIImageView *thumbDefault;
 @end
