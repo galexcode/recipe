@@ -19,10 +19,14 @@
     UIImagePickerController *imagePicker;
     //UIPickerView *picker;
     NSMutableArray *unitArray;
+    NSMutableArray *quantityArray;
     //UIImage *_image;
     NSData *imageData;
     NSMutableArray* _resuableCells;
+    UIPickerView* quantityPicker;
+    UIPickerView* unitPicker;
 }
+@property (weak, nonatomic) IBOutlet UITextField *txtIngredientQuantity;
 //@property (nonatomic, retain) UIPickerView *picker;
 @property (weak, nonatomic) IBOutlet UITextField *txtIngredientUnit;
 @property (nonatomic) NSMutableArray *reusableCells;

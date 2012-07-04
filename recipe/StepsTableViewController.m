@@ -50,13 +50,12 @@
 }
 
 - (IBAction)insertStep:(id)sender {
-    NSLog(@"Insert Ingredient");
     if ([self validateInputInformation]) {
 //        [[self recipe] setStepList:nil];
 //        [[self recipe] setStepList:[NSMutableArray array]];
         
         NSURL *url = [NSURL URLWithString:[GlobalStore addStepLink]];
-        
+        //NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/step/add"];
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[self recipe] recipeId] forKey:@"rid"];
         [request setPostValue:[txtStepName text] forKey:@"sname"];
@@ -97,12 +96,12 @@
     
     if ([trimSpaces([txtStepName text]) length] == 0){
         [txtStepName setText:@""];
-        [txtStepName setPlaceholder:@"Recipe name is blank"];
+        [txtStepName setPlaceholder:@"Name is blank"];
         flag = NO;
     }
-    if ([trimSpaces([txtStepDescription text]) length] == 0){
-        flag = NO;
-    }
+//    if ([trimSpaces([txtStepDescription text]) length] == 0){
+//        flag = NO;
+//    }
     return flag;
 }
 
@@ -308,7 +307,7 @@
             return nil;
         }
     }
-    return nil;
+    return indexPath;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

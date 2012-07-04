@@ -61,7 +61,7 @@
     
 //    [imagePicker setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
     //[imagePicker setShowsCameraControls:YES];
-    imagePicker.allowsEditing = NO;
+    imagePicker.allowsEditing = YES;
     imagePicker.delegate = self;
 
     [self reloadPage];
@@ -101,6 +101,7 @@
 - (IBAction)selectIngredient:(id)sender {
     if([recipe recipeId] == @"-1"){
         isCallFromAddIngredient = YES;
+        isCallFromAddStep = NO;
         [self insertNewRecipe];
     } else {
         IngredientsTableViewController *viewControllerToPush = [[IngredientsTableViewController alloc] initWithEditableTable];
@@ -113,6 +114,7 @@
 - (IBAction)selectSteps:(id)sender {
     if( [recipe recipeId] == @"-1" ){
         isCallFromAddStep = YES;
+        isCallFromAddIngredient = NO;
         [self insertNewRecipe];
     } else {
         StepsTableViewController *viewControllerToPush = [[StepsTableViewController alloc] initWithEditableTable];
@@ -306,7 +308,7 @@
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [hud setLabelText:@"Saving Recipe..."];
         NSURL *url = [NSURL URLWithString:[GlobalStore addRecipeLink]];
-        
+        //NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/recipe/add"];
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
         [request setPostValue:[recipeName text] forKey:@"rn"];

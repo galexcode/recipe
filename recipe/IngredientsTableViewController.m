@@ -5,7 +5,7 @@
 //  Created by Vu Tran on 6/29/12.
 //  Copyright (c) 2012 OngSoft. All rights reserved.
 //
-
+#import <QuartzCore/QuartzCore.h>
 #import "IngredientsTableViewController.h"
 #import "Ingredient.h"
 #import "GlobalStore.h"
@@ -21,6 +21,7 @@
 @end
 
 @implementation IngredientsTableViewController
+@synthesize txtIngredientQuantity;
 @synthesize btnSelectImage;
 @synthesize txtIngredientUnit;
 @synthesize txtIngredientName;
@@ -73,6 +74,10 @@
         [ingredientForm setHidden:YES];
     }
     NSLog(@"new recipe Id: %@",[_recipe recipeId]);
+    
+    [[[self btnSelectImage] layer] setCornerRadius:4];
+    [[[self btnSelectImage] layer] setMasksToBounds:YES];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -82,15 +87,22 @@
     
     //    [imagePicker setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
     //[imagePicker setShowsCameraControls:YES];
-    imagePicker.allowsEditing = NO;
+    imagePicker.allowsEditing = YES;
     imagePicker.delegate = self;
     
     unitArray = [[NSMutableArray alloc] initWithObjects:@"cup",@"tablespoon",@"ounce",nil];
-    UIPickerView *picker = [[UIPickerView alloc] init];
-    [picker setDelegate:self];
-    [picker setDataSource:self];
-    txtIngredientUnit.inputView = picker;
+    unitPicker = [[UIPickerView alloc] init];
+    [unitPicker setDelegate:self];
+    [unitPicker setDataSource:self];
+    [unitPicker setShowsSelectionIndicator:YES];
+    txtIngredientUnit.inputView = unitPicker;
     
+    quantityArray = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",nil];
+    quantityPicker = [[UIPickerView alloc] init];
+    [quantityPicker setDelegate:self];
+    [quantityPicker setDataSource:self];
+    [quantityPicker setShowsSelectionIndicator:YES];
+    txtIngredientQuantity.inputView = quantityPicker;
 }
 
 - (void)addIngredient:(id)sender
@@ -122,7 +134,7 @@
     NSLog(@"Insert Ingredient");
     if ([self validateInputInformation]) {
         NSURL *url = [NSURL URLWithString:[GlobalStore addIngredientLink]];
-        
+        //NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/ingredient/add"];
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
         [request setPostValue:[[self recipe] recipeId] forKey:@"rid"];
@@ -133,7 +145,7 @@
             [request addData:imageData forKey:@"ii"];
         }
         
-        [request setPostValue:@"1/2" forKey:@"iqty"];
+        [request setPostValue:[txtIngredientQuantity text] forKey:@"iqty"];
         [request setPostValue:[txtIngredientUnit text] forKey:@"iunit"];
         
         [request setCompletionBlock:^{
@@ -176,15 +188,20 @@
     
     if ([trimSpaces([txtIngredientName text]) length] == 0){
         [txtIngredientName setText:@""];
-        [txtIngredientName setPlaceholder:@"Recipe name is blank"];
+        [txtIngredientName setPlaceholder:@"Name is blank"];
         flag = NO;
     }
-    if ([trimSpaces([txtIngredientDescription text]) length] == 0){
-        flag = NO;
-    }
+//    if ([trimSpaces([txtIngredientDescription text]) length] == 0){
+//        flag = NO;
+//    }
     if( [trimSpaces([txtIngredientUnit text]) length] == 0 ){
         [txtIngredientUnit setText:@""];
-        [txtIngredientUnit setPlaceholder:@"Recipe unit is blank"];
+        [txtIngredientUnit setPlaceholder:@"Unit is blank"];
+        flag = NO;
+    }
+    if( [trimSpaces([txtIngredientQuantity text]) length] == 0 ){
+        [txtIngredientQuantity setText:@""];
+        [txtIngredientQuantity setPlaceholder:@"Quantity is blank"];
         flag = NO;
     }
     return flag;
@@ -205,6 +222,7 @@
     [self setTxtIngredientName:nil];
     [self setTxtIngredientDescription:nil];
     [self setTxtIngredientUnit:nil];
+    [self setTxtIngredientQuantity:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -418,18 +436,36 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    [txtIngredientUnit setText:[unitArray objectAtIndex:row]];
-    [txtIngredientUnit resignFirstResponder];
+    if(pickerView == unitPicker){
+        [txtIngredientUnit setText:[unitArray objectAtIndex:row]];
+        //[txtIngredientUnit resignFirstResponder];
+    }
+    if(pickerView == quantityPicker){
+        [txtIngredientQuantity setText:[quantityArray objectAtIndex:row]];
+        //[txtIngredientQuantity resignFirstResponder];
+    }
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
 {
-    return [unitArray count];
+    if (pickerView == unitPicker){
+        return [unitArray count];
+    }
+    if(pickerView == quantityPicker){
+        return [quantityArray count];
+    }
+    return 0;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
 {
-    return [unitArray objectAtIndex:row];
+    if (pickerView == unitPicker) {
+        return [unitArray objectAtIndex:row];
+    }
+    if (pickerView == quantityPicker) {
+        return [quantityArray objectAtIndex:row];
+    }
+    return @"";
 }
 
 @end
