@@ -406,6 +406,9 @@
 - (void)didParsedInsertRecipe
 {
     NSLog(@"after insert number of category is: %d", [[recipe categoryList] count]);
+        [[self navigationItem] setTitle:@"Update Recipe"];
+    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
+    [[self navigationItem] setTitleView:label];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     if (isCallFromAddIngredient) {

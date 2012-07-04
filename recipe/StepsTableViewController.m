@@ -152,6 +152,7 @@
     [barButton setTitle:@"Cancel"];
     [barButton setAction:@selector(cancelAddStep:)];
     [stepForm setHidden:NO];
+    [[self tableView] setScrollEnabled:NO];
 }
 
 - (void)cancelAddStep:(id)sender
@@ -162,6 +163,7 @@
     
     [self dismissKeyboard:self];
     [self formReset];
+    [[self tableView] setScrollEnabled:YES];
 }
 
 - (void)formReset

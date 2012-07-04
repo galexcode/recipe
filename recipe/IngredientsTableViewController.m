@@ -110,6 +110,7 @@
     [barButton setTitle:@"Cancel"];
     [barButton setAction:@selector(cancelAddIngredient:)];
     [ingredientForm setHidden:NO];
+    [[self tableView] setScrollEnabled:NO];
 }
 
 - (void)cancelAddIngredient:(id)sender
@@ -119,6 +120,7 @@
     [ingredientForm setHidden:YES];
     [self dismissKeyboard:self];
     [self formReset];
+    [[self tableView] setScrollEnabled:YES];
 }
 
 - (IBAction)dismissKeyboard:(id)sender{
