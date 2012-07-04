@@ -47,12 +47,18 @@
          [[self.thumbnail layer] setCornerRadius:10];
          [self.thumbnail setClipsToBounds:YES];
          
+         UIImageView *defaultRecipe = [[UIImageView alloc] initWithFrame:CGRectMake(kArticleCellHorizontalInnerPadding, kArticleCellVerticalInnerPadding, kCellWidth - kArticleCellHorizontalInnerPadding * 2, kCellHeight - kArticleCellVerticalInnerPadding * 2)];
+         [defaultRecipe setImage:[UIImage imageNamed:@"default_recipe_square"]];
+         [[defaultRecipe layer] setCornerRadius:10];
+         [defaultRecipe setClipsToBounds:YES];
+         
          UIView *shadowView = [[UIView alloc] initWithFrame:CGRectMake(kArticleCellHorizontalInnerPadding+1, kArticleCellVerticalInnerPadding+1, kCellWidth - kArticleCellHorizontalInnerPadding * 2, kCellHeight - kArticleCellVerticalInnerPadding * 2)];
          [shadowView setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.5]];
          [[shadowView layer] setCornerRadius:10];
          [shadowView setClipsToBounds:YES];
          
          [self.contentView addSubview:shadowView];
+         [self.contentView addSubview:defaultRecipe];
          [self.contentView addSubview:self.thumbnail];
          
          self.titleLabel = [[RecipeTitleLabel alloc] initWithFrame:CGRectMake(0, self.thumbnail.frame.size.height * 0.632, self.thumbnail.frame.size.width, self.thumbnail.frame.size.height * 0.37)];
