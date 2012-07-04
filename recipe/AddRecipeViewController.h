@@ -17,6 +17,7 @@
     NSMutableArray* _images;
     Boolean isCallFromAddIngredient;
     Boolean isCallFromAddStep;
+    UITextField* activeTextField;
 }
 
 @property (strong, nonatomic) IBOutlet UITableViewCell *inputCell;

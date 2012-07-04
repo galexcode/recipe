@@ -95,9 +95,10 @@
 #pragma mark Add Recipe Logic
 - (IBAction)selectCategories:(id)sender
 {
+    [self dismissKeyboard];
     SelectCategoresViewController *viewControllerToPush = [[SelectCategoresViewController alloc] initWithNibName:@"SelectCategoresViewController" bundle:nil];
-    NSLog(@"current recipe id: %@", [recipe recipeId]);
     [viewControllerToPush setRecipe:recipe];
+    [viewControllerToPush setTitle:@"Select Categories"];
     [[self navigationController] pushViewController:viewControllerToPush animated:YES];
 }
 
@@ -114,7 +115,6 @@
         IngredientsTableViewController *viewControllerToPush = [[IngredientsTableViewController alloc] initWithEditableTable];
         [viewControllerToPush setTitle:@"Ingredients"];
         [viewControllerToPush setRecipe:recipe];
-        //[viewControllerToPush setIngredients:[recipe ingredientList]];
         [[self navigationController] pushViewController:viewControllerToPush animated:YES];
     }
 }
@@ -175,12 +175,11 @@
     if ( flag == YES && [[recipe categoryList] count] == 0 ){
         UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Message"
                                                                  message:[NSString stringWithFormat:@"No category selected"]
-                                                                delegate:nil
-                                                       cancelButtonTitle:@"OK"
-                                                       otherButtonTitles:@"Select Categories", nil];
-        [errorAlertView setDelegate:self];
+                                                                delegate:self
+                                                       cancelButtonTitle:@"Close"
+                                                       otherButtonTitles:@"Categories", nil];
         [errorAlertView show];
-
+        [self dismissKeyboard];
         flag = NO;
     }
     
@@ -189,7 +188,7 @@
 
 #pragma mark - Text Fields Delegate Methods
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    //activeTextField = textField;
+    activeTextField = textField;
     if ([textField tag] == 1) {
         [textField setKeyboardType:UIKeyboardTypeDefault];
     }
@@ -204,6 +203,12 @@
     return YES;
 }
 
+- (void)dismissKeyboard{
+    if (activeTextField != nil) {
+        [activeTextField resignFirstResponder];
+    }
+}
+
 - (IBAction)backgroundTap:(id)sender
 {
     [recipeName resignFirstResponder];
@@ -213,7 +218,6 @@
 #pragma mark UI Alert View Delegate Methods
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"button index: %d", buttonIndex);
     if (buttonIndex == 1) {
         [self selectCategories:nil];
     }
@@ -384,6 +388,13 @@
         [viewControllerToPush setTitle:@"Ingredients"];
         [viewControllerToPush setRecipe:recipe];
         //[viewControllerToPush setIngredients:[recipe ingredientList]];
+        [[self navigationController] pushViewController:viewControllerToPush animated:YES];
+    } else if (isCallFromAddStep){
+        isCallFromAddStep = NO;
+        StepsTableViewController *viewControllerToPush = [[StepsTableViewController alloc] initWithEditableTable];
+        [viewControllerToPush setTitle:@"Steps"];
+        [viewControllerToPush setRecipe:recipe];
+        //[viewControllerToPush setSteps:[recipe stepList]];
         [[self navigationController] pushViewController:viewControllerToPush animated:YES];
     }
 }
