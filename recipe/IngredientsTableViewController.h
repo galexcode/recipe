@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
 
-@interface IngredientsTableViewController : UITableViewController<UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>{
+@interface IngredientsTableViewController : UITableViewController<UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIAlertViewDelegate>{
     Recipe* _recipe;
     NSArray* _ingredients;
     Boolean editable;

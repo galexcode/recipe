@@ -34,7 +34,17 @@
 @synthesize reusableCells = _resuableCells;
 
 - (IBAction)btnSelectImage:(id)sender {
-    [self presentModalViewController:imagePicker animated:YES];
+    //[self presentModalViewController:imagePicker animated:YES];
+    if(![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        [self presentModalViewController:imagePicker animated:YES];
+    }
+    else
+    {
+        UIAlertView *imagePickerAlertView = [[UIAlertView alloc] initWithTitle:@"Select Source" message:nil delegate:self cancelButtonTitle:@"Close" otherButtonTitles:@"Camera", @"Library", nil];
+        [imagePickerAlertView show];
+    }
 }
 
 - (id)initWithEditableTable
@@ -242,6 +252,20 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark UI Alert View Delegate Methods
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    }
+    if (buttonIndex == 2) {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    }
+    if (buttonIndex != 0) {
+        [self presentModalViewController:imagePicker animated:YES];
+    }
 }
 
 #pragma mark - Text Fields Delegate Methods

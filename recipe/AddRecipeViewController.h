@@ -18,6 +18,7 @@
     Boolean isCallFromAddIngredient;
     Boolean isCallFromAddStep;
     UITextField* activeTextField;
+    UIAlertView* imagePickerAlertView;
 }
 
 @property (strong, nonatomic) IBOutlet UITableViewCell *inputCell;

@@ -76,7 +76,7 @@
     [[[self userThumb] layer] setMasksToBounds:YES];
     [[[self borderThumb] layer] setCornerRadius:8.0];
     [[[self borderThumb] layer] setMasksToBounds:YES];
-    [[[self defaultRecipeView] layer] setCornerRadius:10.0];
+    [[[self defaultRecipeView] layer] setCornerRadius:11.0];
     [[self defaultRecipeView] setClipsToBounds:YES];
     
     [self loadImageSlider];

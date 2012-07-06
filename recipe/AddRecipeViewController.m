@@ -59,13 +59,12 @@
     
     imagePicker = [[UIImagePickerController alloc] init];
     
-//    [imagePicker setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
-    //[imagePicker setShowsCameraControls:YES];
-    imagePicker.allowsEditing = YES;
+    imagePicker.allowsEditing = NO;
     imagePicker.delegate = self;
+    
+    imagePickerAlertView = [[UIAlertView alloc] initWithTitle:@"Select Source" message:nil delegate:self cancelButtonTitle:@"Close" otherButtonTitles:@"Camera", @"Library", nil];
 
     [self reloadPage];
-    //[self presentModalViewController:self.imagePicker animated:NO];
 }
 
 - (void)viewDidUnload
@@ -206,9 +205,21 @@
 #pragma mark UI Alert View Delegate Methods
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 1) {
-        [self selectCategories:nil];
-    }
+    if (alertView == imagePickerAlertView) {
+        if (buttonIndex == 1) {
+            [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+        }
+        if (buttonIndex == 2) {
+            [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        }
+        if (buttonIndex != 0) {
+            [self presentModalViewController:imagePicker animated:YES];
+        }
+    } else {
+        if (buttonIndex == 1) {
+            [self selectCategories:nil];
+        }
+    } 
 }
 
 #pragma mark UI Table Deletage Methods
@@ -279,7 +290,15 @@
 
 - (IBAction)btnSelectImage:(id)sender
 {
-    [self presentModalViewController:imagePicker animated:YES];
+    if(![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        [self presentModalViewController:imagePicker animated:YES];
+    }
+    else
+    {
+        [imagePickerAlertView show];
+    }
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
@@ -308,7 +327,6 @@
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [hud setLabelText:@"Saving Recipe..."];
         NSURL *url = [NSURL URLWithString:[GlobalStore addRecipeLink]];
-        //NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/recipe/add"];
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
         [request setPostValue:[recipeName text] forKey:@"rn"];
