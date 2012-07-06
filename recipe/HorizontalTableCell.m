@@ -74,24 +74,34 @@
     {
         cell = [[RecipeCell alloc] initWithFrame:CGRectMake(0, 0, kCellWidth, kCellHeight)];
     
-        __block Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
         
-        dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-        
-        dispatch_async(concurrentQueue, ^{        
-            UIImage *image = nil;
-            if ([[currentRecipe imageList] count] > 0) {
-                NSURL *url = [NSURL URLWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:184 andHeight:0]];
-                image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-            }
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [cell.thumbnail setImage:image]; 
-            });
-        }); 
-        
-        cell.titleLabel.text = [currentRecipe name];
     }
+    
+    __block Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
+    
+//    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    
+//    dispatch_async(concurrentQueue, ^{        
+//        UIImage *image = nil;
+//        if ([[currentRecipe imageList] count] > 0) {
+//            NSURL *url = [NSURL URLWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:184 andHeight:0]];
+//            image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+//        }
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [cell.thumbnail setImage:image]; 
+//        });
+//    });
+    
+    if ([[currentRecipe imageList] count] > 0) {
+        cell.thumbnail.url = [NSURL URLWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:184 andHeight:184]];
+    
+        [[[GlobalStore sharedStore] objectManager] manage:cell.thumbnail];
+    } else {
+        cell.thumbnail.image = [UIImage imageNamed:@"default_recipe_square"];
+    }
+    
+    cell.titleLabel.text = [currentRecipe name];
     
     return cell;
 }

@@ -10,13 +10,14 @@
 #import "QuartzCore/QuartzCore.h"
 #import "RecipeTitleLabel.h"
 #import "ControlVariables.h"
+#import "HJManagedImageV.h"
 
 @interface RecipeCell : UITableViewCell
 {
-    UIImageView *_thumbnail;
+    HJManagedImageV *_thumbnail;
     RecipeTitleLabel *_titleLabel;
 }
 
-@property (nonatomic, retain) UIImageView *thumbnail;
+@property (nonatomic, retain) HJManagedImageV *thumbnail;
 @property (nonatomic, retain) RecipeTitleLabel *titleLabel;
 @end

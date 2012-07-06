@@ -54,8 +54,8 @@ static GlobalStore *sharedStore = nil;
         _objMan.fileCache = fileCache;
         
         // Have the file cache trim itself down to a size & age limit, so it doesn't grow forever
-        fileCache.fileCountLimit = 100;
-        fileCache.fileAgeLimit = 60*60*24*7; //1 week
+        fileCache.fileCountLimit = 500;
+        fileCache.fileAgeLimit = 60*60*24;//1 day
         [fileCache trimCacheUsingBackgroundThread];
         
         _categories = [[NSMutableDictionary alloc] init];

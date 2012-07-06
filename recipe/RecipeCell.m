@@ -40,7 +40,7 @@
 {
      if ((self = [super initWithFrame:frame]))
      {
-         self.thumbnail = [[UIImageView alloc] initWithFrame:CGRectMake(kArticleCellHorizontalInnerPadding, kArticleCellVerticalInnerPadding, kCellWidth - kArticleCellHorizontalInnerPadding * 2, kCellHeight - kArticleCellVerticalInnerPadding * 2)];
+         self.thumbnail = [[HJManagedImageV alloc] initWithFrame:CGRectMake(kArticleCellHorizontalInnerPadding, kArticleCellVerticalInnerPadding, kCellWidth - kArticleCellHorizontalInnerPadding * 2, kCellHeight - kArticleCellVerticalInnerPadding * 2)];
          self.thumbnail.opaque = YES;
          
          //Round Corner and Drop Shadow
@@ -49,7 +49,7 @@
          
          UIImageView *defaultRecipe = [[UIImageView alloc] initWithFrame:CGRectMake(kArticleCellHorizontalInnerPadding, kArticleCellVerticalInnerPadding, kCellWidth - kArticleCellHorizontalInnerPadding * 2, kCellHeight - kArticleCellVerticalInnerPadding * 2)];
          [defaultRecipe setImage:[UIImage imageNamed:@"default_recipe_square"]];
-         [[defaultRecipe layer] setCornerRadius:10];
+         [[defaultRecipe layer] setCornerRadius:11];
          [defaultRecipe setClipsToBounds:YES];
          
          UIView *shadowView = [[UIView alloc] initWithFrame:CGRectMake(kArticleCellHorizontalInnerPadding+1, kArticleCellVerticalInnerPadding+1, kCellWidth - kArticleCellHorizontalInnerPadding * 2, kCellHeight - kArticleCellVerticalInnerPadding * 2)];
