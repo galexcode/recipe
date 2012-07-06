@@ -280,7 +280,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RecipeLongCell *cell = [self.reusableCells objectAtIndex:indexPath.row];
-    
     return cell;
 //    static NSString *CellIdentifier = @"RecipeLongCell";
 //    
@@ -346,8 +345,10 @@
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    if (editable) {
+        return YES;
+    }
+    return NO;
 }
 
 
@@ -355,13 +356,17 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    if (editable) {
+        if (editingStyle == UITableViewCellEditingStyleDelete) {
+            // Delete the row from the data source
+            [[self recipes] removeObjectAtIndex:indexPath.row];
+            [[self reusableCells] removeObjectAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }   
+        else if (editingStyle == UITableViewCellEditingStyleInsert) {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
 }
 
 /*
@@ -369,7 +374,8 @@
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
 }
-*/
+ */
+
 
 /*
 // Override to support conditional rearranging of the table view.
@@ -386,7 +392,12 @@
 {
     if ([[self recipes] count] > 0) {
         Recipe *currentRecipe = (Recipe*)[[self recipes] objectAtIndex:indexPath.row];
-        RecipeViewController *viewControllerToPush = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
+        RecipeViewController *viewControllerToPush;// = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
+        if (editable || [[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:[[currentRecipe owner] userId]]) {
+            viewControllerToPush = [[RecipeViewController alloc] initWithEditableRecipe];
+        } else {
+            viewControllerToPush = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
+        }
         [viewControllerToPush setRecipe:currentRecipe];
         [[viewControllerToPush navigationItem] setTitle:[currentRecipe name]];
         if ([self navController] != nil) {

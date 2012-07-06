@@ -11,7 +11,7 @@
 #import "RecipeTextField.h"
 
 @interface AddRecipeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate>{
-    Recipe *recipe;
+    Recipe *_recipe;
     NSMutableArray *selectedCategories;
     UIImagePickerController *imagePicker;
     NSMutableArray* _images;
@@ -24,6 +24,7 @@
 @property (strong, nonatomic) IBOutlet UITableViewCell *inputCell;
 @property (strong, nonatomic) IBOutlet UITableViewCell *itemCell;
 @property (strong, nonatomic) IBOutlet UITableViewCell *actionCell;
+@property (nonatomic) Recipe *recipe;
 
 - (IBAction)selectCategories:(id)sender;
 - (IBAction)selectIngredient:(id)sender;

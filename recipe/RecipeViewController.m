@@ -15,6 +15,7 @@
 #import "RecipeNavigationLabel.h"
 #import "ASI2HTTPRequest.h"
 #import "RecipeDisclosureIndicators.h"
+#import "AddRecipeViewController.h"
 #import "HJManagedImageV.h"
 
 @implementation RecipeViewController
@@ -44,6 +45,14 @@
     return self;
 }
 
+- (id)initWithEditableRecipe{
+    self = [super initWithNibName:@"RecipeViewController" bundle:nil];
+    if (self) {
+        editable = YES;
+    }
+    return self;
+}
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -59,6 +68,15 @@
     [super viewDidLoad];
     RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
     [[self navigationItem] setTitleView:label];
+    
+    if (editable) {
+        barButton = [[UIBarButtonItem alloc] 
+                     initWithTitle:@"Edit"                                            
+                     style:UIBarButtonItemStyleBordered 
+                     target:self 
+                     action:@selector(editRecipe:)];
+        self.navigationItem.rightBarButtonItem = barButton;
+    }
     
     [[self pageControl] setHidesForSinglePage:YES];
     
@@ -103,6 +121,13 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (void)editRecipe:(id)sender{
+    AddRecipeViewController *viewControllerToPush = [[AddRecipeViewController alloc] initWithNibName:@"AddRecipeViewController" bundle:nil];
+    [[viewControllerToPush navigationItem] setTitle:@"Edit Recipe"];
+    [viewControllerToPush setRecipe:[self recipe]];
+    [[self navigationController] pushViewController:viewControllerToPush animated:YES];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

@@ -21,6 +21,7 @@
 @end
 
 @implementation AddRecipeViewController
+@synthesize recipe = _recipe;
 @synthesize imagePicker;
 @synthesize btnImagePicker;
 @synthesize recipeName;
@@ -36,7 +37,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        recipe = [[Recipe alloc] init];
+        //_recipe = [[Recipe alloc] init];
     }
     return self;
 }
@@ -46,6 +47,14 @@
     [super viewDidLoad];
     RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
     [[self navigationItem] setTitleView:label];
+    
+    if ([self recipe] == nil) {
+        _recipe = [[Recipe alloc] init];
+    } else {
+        [recipeName setText:[_recipe name]];
+        [serving setText:[NSString stringWithFormat:@"%d", [_recipe serving]]];
+        [self reloadPage];
+    }
     
     [[[self btnImagePicker] layer] setCornerRadius:4];
     [[[self btnImagePicker] layer] setMasksToBounds:YES];
@@ -92,33 +101,33 @@
 {
     [self dismissKeyboard];
     SelectCategoresViewController *viewControllerToPush = [[SelectCategoresViewController alloc] initWithNibName:@"SelectCategoresViewController" bundle:nil];
-    [viewControllerToPush setRecipe:recipe];
+    [viewControllerToPush setRecipe:_recipe];
     [viewControllerToPush setTitle:@"Select Categories"];
     [[self navigationController] pushViewController:viewControllerToPush animated:YES];
 }
 
 - (IBAction)selectIngredient:(id)sender {
-    if([recipe recipeId] == @"-1"){
+    if([_recipe recipeId] == @"-1"){
         isCallFromAddIngredient = YES;
         isCallFromAddStep = NO;
         [self insertNewRecipe];
     } else {
         IngredientsTableViewController *viewControllerToPush = [[IngredientsTableViewController alloc] initWithEditableTable];
         [viewControllerToPush setTitle:@"Ingredients"];
-        [viewControllerToPush setRecipe:recipe];
+        [viewControllerToPush setRecipe:_recipe];
         [[self navigationController] pushViewController:viewControllerToPush animated:YES];
     }
 }
 
 - (IBAction)selectSteps:(id)sender {
-    if( [recipe recipeId] == @"-1" ){
+    if( [_recipe recipeId] == @"-1" ){
         isCallFromAddStep = YES;
         isCallFromAddIngredient = NO;
         [self insertNewRecipe];
     } else {
         StepsTableViewController *viewControllerToPush = [[StepsTableViewController alloc] initWithEditableTable];
         [viewControllerToPush setTitle:@"Steps"];
-        [viewControllerToPush setRecipe:recipe];
+        [viewControllerToPush setRecipe:_recipe];
         [[self navigationController] pushViewController:viewControllerToPush animated:YES];
     }
 }
@@ -130,7 +139,7 @@
 
 - (IBAction)saveAction:(id)sender
 {
-    if([recipe recipeId] == @"-1"){
+    if([_recipe recipeId] == @"-1"){
         [self insertNewRecipe];
     } else {
         NSLog(@"Update Recipe");
@@ -159,7 +168,7 @@
         [serving setPlaceholder:@"Serving is blank"];
         flag = NO;
     }
-    if ( flag == YES && [[recipe categoryList] count] == 0 ){
+    if ( flag == YES && [[_recipe categoryList] count] == 0 ){
         UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Message"
                                                                  message:[NSString stringWithFormat:@"No category selected"]
                                                                 delegate:self
@@ -314,7 +323,7 @@
 
 - (void)reloadPage
 {
-    if([recipe recipeId] == @"-1"){
+    if([_recipe recipeId] == @"-1"){
         [btnSaveRecipe setTitle:@"Save" forState:UIControlStateNormal];
     } else {
         [btnSaveRecipe setTitle:@"Update" forState:UIControlStateNormal];
@@ -337,8 +346,8 @@
         }
         
         //multiple category
-        for ( NSInteger i = 0; i < [[recipe categoryList] count]; i++ ){
-            [request addPostValue:[[recipe categoryList] objectAtIndex:i]  forKey:@"cid[]"];
+        for ( NSInteger i = 0; i < [[_recipe categoryList] count]; i++ ){
+            [request addPostValue:[[_recipe categoryList] objectAtIndex:i]  forKey:@"cid[]"];
         }
         
         [request setCompletionBlock:^{
@@ -347,7 +356,7 @@
                 NSLog(@"%d", request.responseStatusCode);
                 NSLog(@"recipe id: %@", request.responseString);
                 
-                RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:recipe];
+                RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:_recipe];
                 
                 [handler setEndDocumentTarget:self andAction:@selector(didParsedInsertRecipe)];
                 NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
@@ -376,7 +385,7 @@
         
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
-        [request setPostValue:[recipe recipeId] forKey:@"rid"];
+        [request setPostValue:[_recipe recipeId] forKey:@"rid"];
         [request setPostValue:[recipeName text] forKey:@"rn"];
         [request setPostValue:[serving text] forKey:@"rs"];
         
@@ -389,9 +398,9 @@
 //        }
         
         //multiple category
-        for ( NSInteger i = 0; i < [[recipe categoryList] count]; i++ ){
-            [request addPostValue:[[recipe categoryList] objectAtIndex:i]  forKey:@"cid[]"];
-            NSLog(@"update post: %@",[[recipe categoryList] objectAtIndex:i]);
+        for ( NSInteger i = 0; i < [[_recipe categoryList] count]; i++ ){
+            [request addPostValue:[[_recipe categoryList] objectAtIndex:i]  forKey:@"cid[]"];
+            NSLog(@"update post: %@",[[_recipe categoryList] objectAtIndex:i]);
         }
         
         [request setCompletionBlock:^{
@@ -400,7 +409,7 @@
             if (request.responseStatusCode == 200) {
                 NSLog(@"recipe id: %@", request.responseString);
                 
-                RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:recipe];
+                RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:_recipe];
                 
                 [handler setEndDocumentTarget:self andAction:@selector(didParsedInsertRecipe)];
                 NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
@@ -423,8 +432,8 @@
 
 - (void)didParsedInsertRecipe
 {
-    NSLog(@"after insert number of category is: %d", [[recipe categoryList] count]);
-        [[self navigationItem] setTitle:@"Update Recipe"];
+    NSLog(@"after insert number of category is: %d", [[_recipe categoryList] count]);
+        [[self navigationItem] setTitle:@"Edit Recipe"];
     RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
     [[self navigationItem] setTitleView:label];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -433,13 +442,13 @@
         isCallFromAddIngredient = NO;
         IngredientsTableViewController *viewControllerToPush = [[IngredientsTableViewController alloc] initWithEditableTable];
         [viewControllerToPush setTitle:@"Ingredients"];
-        [viewControllerToPush setRecipe:recipe];
+        [viewControllerToPush setRecipe:_recipe];
         [[self navigationController] pushViewController:viewControllerToPush animated:YES];
     } else if (isCallFromAddStep){
         isCallFromAddStep = NO;
         StepsTableViewController *viewControllerToPush = [[StepsTableViewController alloc] initWithEditableTable];
         [viewControllerToPush setTitle:@"Steps"];
-        [viewControllerToPush setRecipe:recipe];
+        [viewControllerToPush setRecipe:_recipe];
         [[self navigationController] pushViewController:viewControllerToPush animated:YES];
     }
 }

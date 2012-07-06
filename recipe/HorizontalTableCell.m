@@ -109,7 +109,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
-    RecipeViewController *viewControllerToPush = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
+    RecipeViewController *viewControllerToPush;
+    if ([[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:[[currentRecipe owner] userId]]) {
+        viewControllerToPush = [[RecipeViewController alloc] initWithEditableRecipe];
+    } else {
+        viewControllerToPush = [[RecipeViewController alloc] initWithNibName:@"RecipeViewController" bundle:nil];
+    }
     [[viewControllerToPush navigationItem] setTitle:[currentRecipe name]];
     [viewControllerToPush setRecipe:currentRecipe];
     [self.navController performSelector:@selector(pushViewController:animated:) withObject:viewControllerToPush];

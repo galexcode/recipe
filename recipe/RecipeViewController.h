@@ -14,6 +14,8 @@
     Recipe* _recipe;
     NSString* ingredientTitleText;
     NSString* stepTitleText;
+    Boolean editable;
+    UIBarButtonItem *barButton;
     Boolean pageControlUsed;
 }
 
@@ -33,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *imageSlider;
 @property (weak, nonatomic) IBOutlet UIImageView *defaultRecipeView;
 
+- (id)initWithEditableRecipe;
 - (IBAction)changePage:(id)sender;
 
 @end
