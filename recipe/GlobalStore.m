@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 OngSoft. All rights reserved.
 //
 
+#define enKey @"R9Rc5m9RGFT2rJdaGDEMJ2Nn2O6fqVMa"
 #define BASE_URL @"http://www.perselab.com/recipe"
 
 #import "GlobalStore.h"
@@ -62,6 +63,11 @@ static GlobalStore *sharedStore = nil;
         return self;
     }
 }
+#pragma mark Security
++ (NSString*)encryptionKey
+{
+    return enKey;
+}
 
 #pragma mark Link Preconfig
 + (NSString*)imageLinkWithImageId:(NSString *)imageId forWidth:(NSInteger)width andHeight:(NSInteger)height
@@ -117,6 +123,11 @@ static GlobalStore *sharedStore = nil;
 + (NSString*) updateRecipeLink
 {
     return [NSString stringWithFormat:@"%@/recipe/update", BASE_URL];
+}
+
++ (NSString*) deleteRecipeLink
+{
+    return [NSString stringWithFormat:@"%@/recipe/delete", BASE_URL];
 }
 
 + (NSString*) addIngredientLink

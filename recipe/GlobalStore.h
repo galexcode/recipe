@@ -19,6 +19,7 @@
 
 @property (nonatomic) User *loggedUser;
 
++ (NSString*)encryptionKey;
 + (GlobalStore *) sharedStore;
 
 + (NSString*) imageLinkWithImageId:(NSString*)imageId forWidth:(NSInteger)width andHeight:(NSInteger)height;
@@ -28,6 +29,7 @@
 + (NSString*) recipesLink;
 + (NSString*) addRecipeLink;
 + (NSString*) updateRecipeLink;
++ (NSString*) deleteRecipeLink;
 + (NSString*) addIngredientLink;
 + (NSString*) addStepLink;
 

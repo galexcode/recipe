@@ -15,6 +15,7 @@
 #import "AddRecipeViewController.h"
 #import "ASI2HTTPRequest.h"
 #import "ASIForm2DataRequest.h"
+#import "MBProgressHUD.h"
 
 @interface RecipesTableViewController ()
 
@@ -359,13 +360,80 @@
     if (editable) {
         if (editingStyle == UITableViewCellEditingStyleDelete) {
             // Delete the row from the data source
-            [[self recipes] removeObjectAtIndex:indexPath.row];
-            [[self reusableCells] removeObjectAtIndex:indexPath.row];
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            // implement uialertview to confirm delete recipe
+            deleteConfirmAlert = [[UIAlertView alloc] initWithTitle:@"Delete Recipe" message:@"Do you really want to delete recipe. Delete recipe could not be reversed after delete" delegate:self cancelButtonTitle:@"Close" otherButtonTitles:@"Delete", nil];
+            [deleteConfirmAlert show];
+            indexToDelete = indexPath;
+            //[self deleteRecipeAtIndexPath:indexPath];
         }   
         else if (editingStyle == UITableViewCellEditingStyleInsert) {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
+    }
+}
+
+- (void)deleteRecipeAtIndexPath:(NSIndexPath*)indexPath
+{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [hud setLabelText:@"Deleting Recipe..."];
+    
+    Recipe *currentRecipe = (Recipe*)[[self recipes] objectAtIndex:indexPath.row];
+    
+    NSURL *url = [NSURL URLWithString:[GlobalStore deleteRecipeLink]];
+    __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+    [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
+    [request setPostValue:[currentRecipe recipeId]  forKey:@"rid"];
+    
+    [request setCompletionBlock:^{
+        if (request.responseStatusCode == 200) {
+            if ([request.responseString isEqualToString:@"1"]) {
+                [self didDeleteRecipeAtIndex:indexPath];
+            } else {
+                [self didDeleteRecipeAtIndex:nil];
+            }
+            
+            //NSLog(@"%d", request.responseStatusCode);
+            //NSLog(@"recipe id: %@", request.responseString);
+            
+            //RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:_recipe];
+            
+            //[handler setEndDocumentTarget:self andAction:@selector(didDeleteRecipe)];
+            //NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
+            //parser.delegate = handler;
+            //[parser parse];
+            
+            //[self reloadPage];
+            //}else if(request.responseStatusCode == 404){
+        } else {
+            //_user = nil;
+            [self didDeleteRecipeAtIndex:nil];
+        }
+    }];
+    [request setFailedBlock:^{
+        //            [self handleError:request.error];
+    }];
+    
+    [request startAsynchronous];
+}
+
+- (void)didDeleteRecipeAtIndex:(NSIndexPath*)indexPath
+{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if (indexPath != nil) {
+        [[self recipes] removeObjectAtIndex:indexPath.row];
+        [[self reusableCells] removeObjectAtIndex:indexPath.row];
+        [[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Could not delete recipe, please try again" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
+#pragma mark - UI Alert View Deletgate Method
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [self deleteRecipeAtIndexPath:indexToDelete];
     }
 }
 

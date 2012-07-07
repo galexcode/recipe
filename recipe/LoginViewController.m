@@ -6,8 +6,6 @@
 //  Copyright 2012 Perselab. All rights reserved.
 //
 
-#define enKey @"dGnQyejUZrNey9u"
-
 #import "LoginViewController.h"
 #import "MBProgressHUD.h"
 #import "ASIForm2DataRequest.h"
@@ -97,7 +95,7 @@
     
     if (![username isEqualToString:@""] && passWord != nil) {
         [[self userName] setText:username];
-        [[self password] setText:[NSStringUtil decryptData:passWord withKey:enKey]];
+        [[self password] setText:[NSStringUtil decryptData:passWord withKey:[GlobalStore encryptionKey]]];
         
         [self onLoginTap:nil];
     }
@@ -154,7 +152,7 @@
         if (![[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:@"-1"]) {
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults setObject:[[[GlobalStore sharedStore] loggedUser] name] forKey:@"recipe.username"];
-            [defaults setObject:[NSStringUtil encryptString:[password text] withKey:enKey] forKey:@"recipe.password"];
+            [defaults setObject:[NSStringUtil encryptString:[password text] withKey:[GlobalStore encryptionKey]] forKey:@"recipe.password"];
             //[defaults setObject:passkey forKey:@"passkey"];
             [defaults synchronize];
             [_parentController.view setHidden:YES];
@@ -173,6 +171,7 @@
 {
     NSLog(@"Error receiving respone for login request: %@", error.localizedDescription);
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    NSLog(@"error code: %d", [error code]);
     NSString *errorTitle;
     NSString *errorMessage;
     if ([error code] == 1) {

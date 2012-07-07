@@ -12,7 +12,7 @@
 #import "User.h"
 #import "Category.h"
 
-@interface RecipesTableViewController : PullRefreshTableViewController{
+@interface RecipesTableViewController : PullRefreshTableViewController<UIAlertViewDelegate>{
     NSMutableArray* _recipes;
     User* _user;
     Category* _category;
@@ -23,6 +23,8 @@
     Boolean editable;
     UIBarButtonItem *barButton;
     Boolean isNeedToReload;
+    UIAlertView *deleteConfirmAlert;
+    NSIndexPath *indexToDelete;
 }
 
 @property (nonatomic) NSMutableArray* recipes;
