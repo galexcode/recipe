@@ -170,10 +170,6 @@ AAgACAAIAAEAAQABAAE</bytes>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<object class="NSCustomResource" key="IBUIImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">Aviation.png</string>
-								</object>
 							</object>
 							<object class="IBUILabel" id="929793650">
 								<reference key="NSNextResponder" ref="324209223"/>
@@ -1176,7 +1172,6 @@ AAgACAAIAAEAAQABAAE</bytes>
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="NSArray" key="dict.sortedKeys">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>Aviation.png</string>
 				<string>bgt.png</string>
 				<string>default_recipe_wide.png</string>
 				<string>icon_like.png</string>
@@ -1186,7 +1181,6 @@ AAgACAAIAAEAAQABAAE</bytes>
 			</object>
 			<object class="NSArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>{200, 200}</string>
 				<string>{320, 26}</string>
 				<string>{300, 199}</string>
 				<string>{18, 18}</string>

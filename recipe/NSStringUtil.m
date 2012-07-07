@@ -7,6 +7,7 @@
 //
 
 #import "NSStringUtil.h"
+#import "RNCryptor.h"
 
 @implementation NSStringUtil
 
@@ -28,6 +29,48 @@
     [formatter setLocale:[NSLocale currentLocale]];
     NSString *ret = [formatter stringFromDate:date];
     return ret;
+}
+
++ (NSData*) encryptString:(NSString*)plaintext withKey:(NSString*)key {
+    RNCryptor *cryptor = [RNCryptor AES256Cryptor];
+    
+    NSData *plainData = [plaintext dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSError *error;
+    
+    NSInputStream *encryptInputStream = [NSInputStream inputStreamWithData:plainData];
+    NSOutputStream *encryptOutputStream = [NSOutputStream outputStreamToMemory];
+    
+    [cryptor encryptFromStream:encryptInputStream toStream:encryptOutputStream password:key error:&error];
+    
+    NSLog(@"Encrypt failed:%@", error);
+    
+    [encryptOutputStream close];
+    [encryptInputStream close];
+    
+    NSData *encryptedData = [encryptOutputStream propertyForKey:NSStreamDataWrittenToMemoryStreamKey];
+    
+    return encryptedData;
+}
+
++ (NSString*) decryptData:(NSData*)ciphertext withKey:(NSString*)key {
+    RNCryptor *cryptor = [RNCryptor AES256Cryptor];
+    
+    NSError *error;
+    
+    NSInputStream *decryptInputStream = [NSInputStream inputStreamWithData:ciphertext];
+    NSOutputStream *decryptOutputStream = [NSOutputStream outputStreamToMemory];
+    
+    [cryptor decryptFromStream:decryptInputStream toStream:decryptOutputStream password:key error:&error];
+    
+    NSLog(@"Decrypt failed:%@", error);
+    
+    [decryptOutputStream close];
+    [decryptInputStream close];
+    
+    NSData *decryptedData = [decryptOutputStream propertyForKey:NSStreamDataWrittenToMemoryStreamKey];
+    
+    return [[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding];
 }
 
 @end

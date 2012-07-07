@@ -6,10 +6,13 @@
 //  Copyright 2012 Perselab. All rights reserved.
 //
 
+#define enKey @"dGnQyejUZrNey9u"
+
 #import "LoginViewController.h"
 #import "MBProgressHUD.h"
 #import "ASIForm2DataRequest.h"
 #import "UserXMLHandler.h"
+#import "NSStringUtil.h"
 #import "GlobalStore.h"
 
 @implementation LoginViewController
@@ -57,6 +60,10 @@
     [super viewDidLoad];
     UIImage *imageFromBackground = [[UIImage imageNamed:@"form_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(11, 0, 11, 0)];
     [[self formBackgound] setImage:imageFromBackground];
+    
+    if ([self autoLogin]) {
+        [[[self parentViewController] view] setHidden:YES];
+    }
 }
 
 - (void)viewDidUnload
@@ -76,6 +83,27 @@
 }
 
 #pragma mark - Login feature
+- (Boolean)autoLogin
+{
+    Boolean flag = YES;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *username = [defaults objectForKey:@"recipe.username"];
+    
+    NSData *passWord = [defaults objectForKey:@"recipe.password"];
+    
+    //NSString *passkey = [defaults objectForKey:@"recipe.passkey"];
+    
+    if (![username isEqualToString:@""] && passWord != nil) {
+        [[self userName] setText:username];
+        [[self password] setText:[NSStringUtil decryptData:passWord withKey:enKey]];
+        
+        [self onLoginTap:nil];
+    }
+    return flag;
+}
+
 - (IBAction)onLoginTap:(id)sender{
     [self dismissKeyboard];
     if ([trimSpaces([userName text]) length] != 0 && [[password text] length] != 0) {
@@ -90,7 +118,6 @@
         [request setPostValue:[password text] forKey:@"pw"];
         
         [request setCompletionBlock:^{
-            NSLog(@"Login xml loaded.");
             if (request.responseStatusCode == 200) {
                 NSLog(@"%d", request.responseStatusCode);
                 UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
@@ -117,6 +144,28 @@
         [userName setPlaceholder:@"User name is blank"];
         if ([[password text] length] == 0)
             [password setPlaceholder:@"Password is blank"];
+    }
+}
+
+-(void) didParsedLoggingUser
+{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if (_user != nil) {
+        if (![[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:@"-1"]) {
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:[[[GlobalStore sharedStore] loggedUser] name] forKey:@"recipe.username"];
+            [defaults setObject:[NSStringUtil encryptString:[password text] withKey:enKey] forKey:@"recipe.password"];
+            //[defaults setObject:passkey forKey:@"passkey"];
+            [defaults synchronize];
+            [_parentController.view setHidden:YES];
+        } else if ([[[[GlobalStore sharedStore] loggedUser] userId]  isEqualToString:@"-1"]) {
+            UIAlertView *failsAlertView = [[UIAlertView alloc] initWithTitle:@"Login Failed"
+                                                                     message:[NSString stringWithFormat:@"Username or Password is not correct"]
+                                                                    delegate:nil
+                                                           cancelButtonTitle:@"OK"
+                                                           otherButtonTitles:nil];
+            [failsAlertView show];
+        }
     }
 }
 
@@ -159,30 +208,6 @@
     [textField resignFirstResponder];
     //[_parentController needToScroll:0];
     return YES;
-}
-
-#pragma mark Application Service Delegate Methods
--(void) didParsedLoggingUser
-{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    if (_user != nil) {
-        if (![[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:@"-1"]) {
-//            UIAlertView *successAlertView = [[UIAlertView alloc] initWithTitle:@"Login Success"
-//                                                                       message:[NSString stringWithFormat:@"Welcome back %@",[[[GlobalStore sharedStore] loggedUser] name] ]
-//                                                                      delegate:nil
-//                                                             cancelButtonTitle:@"OK"
-//                                                             otherButtonTitles:nil];
-            //[successAlertView show];
-            [_parentController.view setHidden:YES];
-        } else if ([[[[GlobalStore sharedStore] loggedUser] userId]  isEqualToString:@"-1"]) {
-            UIAlertView *failsAlertView = [[UIAlertView alloc] initWithTitle:@"Login Failed"
-                                                                     message:[NSString stringWithFormat:@"Username or Password is not correct"]
-                                                                    delegate:nil
-                                                           cancelButtonTitle:@"OK"
-                                                           otherButtonTitles:nil];
-            [failsAlertView show];
-        }
-    }
 }
     
 //-(void) didFinishVerifyUser:(__weak User *)loggedUser{

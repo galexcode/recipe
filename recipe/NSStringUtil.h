@@ -12,5 +12,7 @@
 
 + (Boolean)stringIsValidEmail:(NSString *)checkString;
 + (NSString *)formatDate:(NSDate*)date usingFormat:(NSString *)dateFormat;
++ (NSData*) encryptString:(NSString*)plaintext withKey:(NSString*)key;
++ (NSString*) decryptData:(NSData*)ciphertext withKey:(NSString*)key;
 
 @end

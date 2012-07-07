@@ -381,8 +381,9 @@
 - (void)updateRecipe
 {
     if ([self validateInputInformation]) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [hud setLabelText:@"Saving Recipe..."];
         NSURL *url = [NSURL URLWithString:[GlobalStore updateRecipeLink]];
-        
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
         [request setPostValue:[_recipe recipeId] forKey:@"rid"];

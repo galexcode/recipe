@@ -137,6 +137,9 @@
 		979B1639159D9A9D00329E51 /* refresh_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 979B1637159D9A9D00329E51 /* refresh_arrow@2x.png */; };
 		979B163B159D9E0D00329E51 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 979B163A159D9E0D00329E51 /* logo@2x.png */; };
 		979B4A931577241A00BD6A05 /* CategoriesXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 979B4A921577241A00BD6A05 /* CategoriesXMLHandler.m */; };
+		97A49C1015A7DFB800AE670C /* RNCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A49C0D15A7DFB800AE670C /* RNCryptor.m */; };
+		97A49C1115A7DFB800AE670C /* RNOpenSSLCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A49C0F15A7DFB800AE670C /* RNOpenSSLCryptor.m */; };
+		97A49C1415A7E46000AE670C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A49C1315A7E46000AE670C /* Security.framework */; };
 		97A645ED157DE9320084F7A2 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A645EB157DE9320084F7A2 /* RegisterViewController.m */; };
 		97A645EE157DE9320084F7A2 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A645EC157DE9320084F7A2 /* RegisterViewController.xib */; };
 		97A645F8157E05A60084F7A2 /* sbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A645F4157E05A20084F7A2 /* sbutton.png */; };
@@ -388,6 +391,12 @@
 		979B163A159D9E0D00329E51 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		979B4A911577241A00BD6A05 /* CategoriesXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesXMLHandler.h; sourceTree = "<group>"; };
 		979B4A921577241A00BD6A05 /* CategoriesXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesXMLHandler.m; sourceTree = "<group>"; };
+		97A49C0B15A7DFB800AE670C /* RNCryptor-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-Prefix.pch"; sourceTree = "<group>"; };
+		97A49C0C15A7DFB800AE670C /* RNCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCryptor.h; sourceTree = "<group>"; };
+		97A49C0D15A7DFB800AE670C /* RNCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCryptor.m; sourceTree = "<group>"; };
+		97A49C0E15A7DFB800AE670C /* RNOpenSSLCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNOpenSSLCryptor.h; sourceTree = "<group>"; };
+		97A49C0F15A7DFB800AE670C /* RNOpenSSLCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNOpenSSLCryptor.m; sourceTree = "<group>"; };
+		97A49C1315A7E46000AE670C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		97A645EA157DE9320084F7A2 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		97A645EB157DE9320084F7A2 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		97A645EC157DE9320084F7A2 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
@@ -451,6 +460,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97A49C1415A7E46000AE670C /* Security.framework in Frameworks */,
 				5A3B818715367B2A007BD9ED /* libz.1.2.5.dylib in Frameworks */,
 				5A3B818515367B04007BD9ED /* CFNetwork.framework in Frameworks */,
 				5A3B818315367AF5007BD9ED /* SystemConfiguration.framework in Frameworks */,
@@ -558,6 +568,7 @@
 		90296496152014AF002BAC2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				97A49C1315A7E46000AE670C /* Security.framework */,
 				5A3B818615367B2A007BD9ED /* libz.1.2.5.dylib */,
 				C5776C731599A3E700188248 /* QuartzCore.framework */,
 				5A3B818415367B04007BD9ED /* CFNetwork.framework */,
@@ -800,6 +811,7 @@
 		9084A2ED1522EFCA00BDEDC4 /* utitities */ = {
 			isa = PBXGroup;
 			children = (
+				97A49C0A15A7DFB800AE670C /* RNCryptor */,
 				5A3B81651536771C007BD9ED /* ASIHTTPRequest */,
 				5A0AD4C71536C1BB00D057A9 /* CustomASIHTTPRequest */,
 				9761369215A2ADAC00B8FE43 /* HJCache */,
@@ -855,6 +867,18 @@
 				97A645EC157DE9320084F7A2 /* RegisterViewController.xib */,
 			);
 			name = authentication;
+			sourceTree = "<group>";
+		};
+		97A49C0A15A7DFB800AE670C /* RNCryptor */ = {
+			isa = PBXGroup;
+			children = (
+				97A49C0B15A7DFB800AE670C /* RNCryptor-Prefix.pch */,
+				97A49C0C15A7DFB800AE670C /* RNCryptor.h */,
+				97A49C0D15A7DFB800AE670C /* RNCryptor.m */,
+				97A49C0E15A7DFB800AE670C /* RNOpenSSLCryptor.h */,
+				97A49C0F15A7DFB800AE670C /* RNOpenSSLCryptor.m */,
+			);
+			path = RNCryptor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1086,6 +1110,8 @@
 				976136AD15A2ADD400B8FE43 /* HJMOUserBase.m in Sources */,
 				976136AE15A2ADD400B8FE43 /* HJObjManager.m in Sources */,
 				976136AF15A2ADD400B8FE43 /* HJWeakMutableArray.m in Sources */,
+				97A49C1015A7DFB800AE670C /* RNCryptor.m in Sources */,
+				97A49C1115A7DFB800AE670C /* RNOpenSSLCryptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
