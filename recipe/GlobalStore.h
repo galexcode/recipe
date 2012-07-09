@@ -31,7 +31,9 @@
 + (NSString*) updateRecipeLink;
 + (NSString*) deleteRecipeLink;
 + (NSString*) addIngredientLink;
++ (NSString*) deleteIngredientLink;
 + (NSString*) addStepLink;
++ (NSString*) deleteStepLink;
 
 + (NSString*) searchLink;
 

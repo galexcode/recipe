@@ -63,13 +63,20 @@
 
 #pragma mark - View lifecycle
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (isNeedToRefresh) {
+        [[self recipeDetailsTable] reloadData];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
     [[self navigationItem] setTitleView:label];
     
-    if (editable) {
+    if (editable || [[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:[[[self recipe] owner] userId]]) {
         barButton = [[UIBarButtonItem alloc] 
                      initWithTitle:@"Edit"                                            
                      style:UIBarButtonItemStyleBordered 
@@ -340,28 +347,19 @@
 {
     if (indexPath.section == 2) {
         if (indexPath.row == 0) {
-            if ([[[self recipe] ingredientList] count] > 0){
-//                IngredientListViewController *viewControllerToPush = [[IngredientListViewController alloc] initWithNibName:@"IngredientListViewController" bundle:nil];
-//                [viewControllerToPush.navigationItem setTitle:ingredientTitleText];
-//                [viewControllerToPush setIngredients:[[self recipe] ingredientList]];
-//                [self.navigationController pushViewController:viewControllerToPush animated:YES];
+            if ([[[self recipe] ingredientList] count] > 0 || [[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:[[[self recipe] owner] userId]]){
+                isNeedToRefresh = YES;
                 IngredientsTableViewController *viewControllerToPush = [[IngredientsTableViewController alloc] initWithNibName:@"IngredientsTableViewController" bundle:nil];
                 [viewControllerToPush.navigationItem setTitle:ingredientTitleText];
                 [viewControllerToPush setRecipe:[self recipe]];
-                //[viewControllerToPush setIngredients:[[self recipe] ingredientList]];
                 [self.navigationController pushViewController:viewControllerToPush animated:YES];
-                
             }
         } else if (indexPath.row == 1){
-            if ([[[self recipe] stepList] count] > 0){
-//                StepListViewController *viewControllerToPush = [[StepListViewController alloc] initWithNibName:@"StepListViewController" bundle:nil];
-//                [viewControllerToPush.navigationItem setTitle:ingredientTitleText];
-//                [viewControllerToPush setSteps:[[self recipe] stepList]];
-//                [self.navigationController pushViewController:viewControllerToPush animated:YES];
+            if ([[[self recipe] stepList] count] > 0 || [[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:[[[self recipe] owner] userId]]){
+                isNeedToRefresh = YES;
                 StepsTableViewController *viewControllerToPush = [[StepsTableViewController alloc] initWithNibName:@"StepsTableViewController" bundle:nil];
                 [viewControllerToPush.navigationItem setTitle:stepTitleText];
                 [viewControllerToPush setRecipe:[self recipe]];
-                //[viewControllerToPush setSteps:[[self recipe] stepList]];
                 [self.navigationController pushViewController:viewControllerToPush animated:YES];
             }
         }

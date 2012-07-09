@@ -19,6 +19,7 @@
 #import "ASIForm2DataRequest.h"
 #import "RecipeXMLHandler.h"
 #import "GlobalStore.h"
+#import "MBProgressHUD.h"
 
 @interface StepsTableViewController ()
 
@@ -55,7 +56,6 @@
 //        [[self recipe] setStepList:[NSMutableArray array]];
         
         NSURL *url = [NSURL URLWithString:[GlobalStore addStepLink]];
-        //NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/step/add"];
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[self recipe] recipeId] forKey:@"rid"];
         [request setPostValue:[txtStepName text] forKey:@"sname"];
@@ -128,7 +128,7 @@
     
     selectedIndex = 0;
     
-    if (ediable) {
+    if (ediable || [[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:[[[self recipe] owner] userId]]) {
         barButton = [[UIBarButtonItem alloc] 
                      initWithTitle:@"Add"                                            
                      style:UIBarButtonItemStyleBordered 
@@ -233,7 +233,6 @@
         
         if (cell == nil) 
         {
-            //NSArray* topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"IngredientCell" owner:nil options:nil];
             NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"StepCell" owner:self options:nil];
             
             for (id currentObject in topLevelObjects) {
@@ -358,28 +357,87 @@
     activeTextView = textView;
     return YES;
 }
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    if (ediable || [[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:[[[self recipe] owner] userId]])
+        return YES;
+    return NO;
 }
-*/
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        deleteConfirmAlert = [[UIAlertView alloc] initWithTitle:@"Delete Step" message:@"Do you really want to delete step. Delete step could not be reversed." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:@"Delete", nil];
+        [deleteConfirmAlert show];
+        indexToDelete = indexPath;
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
+- (void)deleteStepAtIndexPath:(NSIndexPath*)indexPath
+{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [hud setLabelText:@"Deleting Ingredient..."];
+    
+    Step *currentStep = (Step*)[[[self recipe] stepList] objectAtIndex:indexPath.row];
+    
+    NSURL *url = [NSURL URLWithString:[GlobalStore deleteStepLink]];
+    __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+    [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
+    [request setPostValue:[[self recipe] recipeId] forKey:@"rid"];
+    [request setPostValue:[currentStep stepId] forKey:@"sid"];
+    
+    [request setCompletionBlock:^{
+        if (request.responseStatusCode == 200) {
+            if ([request.responseString isEqualToString:@"1"]) {
+                [self didDeleteSteptAtIndex:indexPath];
+            } else {
+                [self didDeleteSteptAtIndex:nil];
+            }
+        } else {
+            [self didDeleteSteptAtIndex:nil];
+        }
+    }];
+    [request setFailedBlock:^{
+        //            [self handleError:request.error];
+    }];
+    
+    [request startAsynchronous];
+}
+
+- (void)didDeleteSteptAtIndex:(NSIndexPath*)indexPath
+{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if (indexPath != nil) {
+//        if ([[[self recipe] stepList] count] == 1) {
+//            [[[self recipe] stepList] removeObjectAtIndex:indexPath.row];
+//            [[self tableView] reloadData];
+//        } else {
+//            [[[self recipe] stepList] removeObjectAtIndex:indexPath.row];
+//            [[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//        }
+        [[[self recipe] stepList] removeObjectAtIndex:indexPath.row];
+        [[self tableView] reloadData];
+    } else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Could not delete step, please try again" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
+#pragma mark - UI Alert View Deletgate Method
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [self deleteStepAtIndexPath:indexToDelete];
+    }
+}
+
 
 /*
 // Override to support rearranging the table view.

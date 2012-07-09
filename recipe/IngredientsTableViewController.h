@@ -25,6 +25,8 @@
     NSMutableArray* _resuableCells;
     UIPickerView* quantityPicker;
     UIPickerView* unitPicker;
+    UIAlertView *deleteConfirmAlert;
+    NSIndexPath *indexToDelete;
 }
 @property (weak, nonatomic) IBOutlet UITextField *txtIngredientQuantity;
 //@property (nonatomic, retain) UIPickerView *picker;

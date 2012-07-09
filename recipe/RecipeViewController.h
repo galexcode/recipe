@@ -17,6 +17,7 @@
     Boolean editable;
     UIBarButtonItem *barButton;
     Boolean pageControlUsed;
+    Boolean isNeedToRefresh;
 }
 
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;

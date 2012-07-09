@@ -132,12 +132,22 @@ static GlobalStore *sharedStore = nil;
 
 + (NSString*) addIngredientLink
 {
-    return [NSString stringWithFormat:@"%@/ingredient/add", BASE_URL];
+    return [NSString stringWithFormat:@"%@/recipe/ingredient/add", BASE_URL];
+}
+
++ (NSString*) deleteIngredientLink
+{
+    return  [NSString stringWithFormat:@"%@/recipe/ingredient/delete", BASE_URL];
 }
 
 + (NSString*) addStepLink
 {
-    return [NSString stringWithFormat:@"%@/step/add", BASE_URL];
+    return [NSString stringWithFormat:@"%@/recipe/step/add", BASE_URL];
+}
+
++ (NSString*) deleteStepLink
+{
+    return  [NSString stringWithFormat:@"%@/recipe/step/delete", BASE_URL];
 }
 
 #pragma mark Global Logged User

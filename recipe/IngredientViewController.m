@@ -42,7 +42,6 @@
     
     self.pageTitle.text = self.ingredient.name;
     self.ingredientDesc.text = self.ingredient.desc;
-    NSLog(@"iid: %@", [[self ingredient] ingredientId]);
     
     NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[self ingredient] imagePath] forWidth:600 andHeight:0]];
     

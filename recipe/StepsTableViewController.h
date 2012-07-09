@@ -10,12 +10,15 @@
 #import "Recipe.h"
 //#import "Step.m"
 
-@interface StepsTableViewController : UITableViewController <UITextFieldDelegate, UITextViewDelegate>{
+@interface StepsTableViewController : UITableViewController <UITextFieldDelegate, UITextViewDelegate, UIAlertViewDelegate>{
     NSInteger selectedIndex;
     Recipe* _recipe;
     NSArray* _steps;
     Boolean ediable;
     UIBarButtonItem* barButton;
+    
+    UIAlertView *deleteConfirmAlert;
+    NSIndexPath *indexToDelete;
     
     __weak UITextView *activeTextView;
     __weak UITextField *activeTextField;

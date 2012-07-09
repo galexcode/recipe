@@ -15,6 +15,7 @@
 #import "ASI2HTTPRequest.h"
 #import "ASIForm2DataRequest.h"
 #import "RecipeXMLHandler.h"
+#import "MBProgressHUD.h"
 
 @interface IngredientsTableViewController ()
 
@@ -73,7 +74,7 @@
     
     [self initResuableCells];
     
-    if (editable) {
+    if (editable || [[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:[[[self recipe] owner] userId]]) {
         barButton = [[UIBarButtonItem alloc] 
                      initWithTitle:@"Add"                                            
                      style:UIBarButtonItemStyleBordered 
@@ -83,7 +84,6 @@
         [self.view addSubview:ingredientForm];
         [ingredientForm setHidden:YES];
     }
-    NSLog(@"new recipe Id: %@",[_recipe recipeId]);
     
     [[[self btnSelectImage] layer] setCornerRadius:4];
     [[[self btnSelectImage] layer] setMasksToBounds:YES];
@@ -146,7 +146,6 @@
     NSLog(@"Insert Ingredient");
     if ([self validateInputInformation]) {
         NSURL *url = [NSURL URLWithString:[GlobalStore addIngredientLink]];
-        //NSURL *url = [NSURL URLWithString:@"http://192.168.0.100/recipe_php/ingredient/add"];
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
         [request setPostValue:[[self recipe] recipeId] forKey:@"rid"];
@@ -161,7 +160,6 @@
         [request setPostValue:[txtIngredientUnit text] forKey:@"iunit"];
         
         [request setCompletionBlock:^{
-            NSLog(@"Complete Post Ingredient.");
             if (request.responseStatusCode == 200) {
                 NSLog(@"%@", request.responseString);
                 [[self recipe] setIngredientList:nil];
@@ -174,6 +172,7 @@
                 [parser parse];
                 
                 [self cancelAddIngredient:self];
+                
                 //[self reloadPage];
                 //}else if(request.responseStatusCode == 404){
             } else {
@@ -191,6 +190,7 @@
 
 - (void)didParsedInsertIngredient
 {
+    
     [self initResuableCells];
 }
 
@@ -257,14 +257,20 @@
 #pragma mark UI Alert View Delegate Methods
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 1) {
-        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
-    }
-    if (buttonIndex == 2) {
-        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    }
-    if (buttonIndex != 0) {
-        [self presentModalViewController:imagePicker animated:YES];
+    if (alertView == deleteConfirmAlert) {
+        if (buttonIndex == 1) {
+            [self deleteIngredientAtIndexPath:indexToDelete];
+        }
+    } else {
+        if (buttonIndex == 1) {
+            [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+        }
+        if (buttonIndex == 2) {
+            [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        }
+        if (buttonIndex != 0) {
+            [self presentModalViewController:imagePicker animated:YES];
+        }
     }
 }
 
@@ -347,41 +353,6 @@
 {
     if ([[[self recipe] ingredientList] count] > 0) {
         IngredientCell *cell = [[self reusableCells] objectAtIndex:indexPath.row];
-        
-//        Ingredient *currentIngredient = (Ingredient*)[[[self recipe] ingredientList] objectAtIndex:indexPath.row];
-//        
-//        if (cell == nil) 
-//        {
-//            NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"IngredientCell" owner:self options:nil];
-//            
-//            for (id currentObject in topLevelObjects) {
-//                if ([currentObject isKindOfClass:[IngredientCell class]]) {
-//                    cell = (IngredientCell*)currentObject;
-//                    break;
-//                }
-//            }
-//        //}
-//        
-//            cell.unit.text = [currentIngredient unit];
-//            cell.quantity.text = [currentIngredient quantity];
-//            cell.name.text = [currentIngredient name];
-//            
-//            if (![[currentIngredient imagePath] isEqualToString:@"-1"]) {
-//                NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[currentIngredient imagePath] forWidth:60 andHeight:0]];
-//                
-//                __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
-//                [request setCompletionBlock:^{
-//                    NSData *data = request.responseData;
-//                    [cell.thumb setImage:[[UIImage alloc] initWithData:data]];
-//                }];
-//                [request setFailedBlock:^{
-//                    NSError *error = request.error;
-//                    NSLog(@"Error downloading image: %@", error.localizedDescription);
-//                }];
-//                [request startAsynchronous];
-//            }
-//        }
-        
         return cell;
     } else {
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
@@ -395,28 +366,74 @@
     }
 }
 
-/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    if (editable || [[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:[[[self recipe] owner] userId]])
+        return YES;
+    return NO;
 }
-*/
 
-/*
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        deleteConfirmAlert = [[UIAlertView alloc] initWithTitle:@"Delete Ingredient" message:@"Do you really want to delete ingredient. Delete ingredient could not be reversed." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:@"Delete", nil];
+        [deleteConfirmAlert show];
+        indexToDelete = indexPath;
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
+- (void)deleteIngredientAtIndexPath:(NSIndexPath*)indexPath
+{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [hud setLabelText:@"Deleting Ingredient..."];
+    
+    Ingredient *currentIngredient = (Ingredient*)[[[self recipe] ingredientList] objectAtIndex:indexPath.row];
+    
+    NSURL *url = [NSURL URLWithString:[GlobalStore deleteIngredientLink]];
+    __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+    [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
+    [request setPostValue:[[self recipe] recipeId] forKey:@"rid"];
+    [request setPostValue:[currentIngredient ingredientId] forKey:@"iid"];
+    
+    [request setCompletionBlock:^{
+        if (request.responseStatusCode == 200) {
+            if ([request.responseString isEqualToString:@"1"]) {
+                [self didDeleteIngredientAtIndex:indexPath];
+            } else {
+                [self didDeleteIngredientAtIndex:nil];
+            }
+        } else {
+            [self didDeleteIngredientAtIndex:nil];
+        }
+    }];
+    [request setFailedBlock:^{
+        //            [self handleError:request.error];
+    }];
+    
+    [request startAsynchronous];
+}
+
+- (void)didDeleteIngredientAtIndex:(NSIndexPath*)indexPath
+{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if (indexPath != nil) {
+        if ([[[self recipe] ingredientList] count] == 1) {
+            [[[self recipe] ingredientList] removeObjectAtIndex:indexPath.row];
+            [[self tableView] reloadData];
+        } else {
+            [[[self recipe] ingredientList] removeObjectAtIndex:indexPath.row];
+            [[self reusableCells] removeObjectAtIndex:indexPath.row];
+            [[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }
+    } else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Could not delete ingredient, please try again" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+        [alertView show];
+    }
+}
 
 /*
 // Override to support rearranging the table view.

@@ -194,7 +194,6 @@
     }
     
     [request setCompletionBlock:^{
-        NSLog(@"respone code: %d", request.responseStatusCode);
         if (request.responseStatusCode == 200) {
             RecipesXMLHandler* handler = [[RecipesXMLHandler alloc] initWithRecipeArray:_recipes];
             [handler setEndDocumentTarget:self andAction:@selector(didParsedRecipes)];
@@ -346,25 +345,19 @@
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editable) {
+    if (editable)
         return YES;
-    }
     return NO;
 }
-
-
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editable) {
         if (editingStyle == UITableViewCellEditingStyleDelete) {
-            // Delete the row from the data source
-            // implement uialertview to confirm delete recipe
-            deleteConfirmAlert = [[UIAlertView alloc] initWithTitle:@"Delete Recipe" message:@"Do you really want to delete recipe. Delete recipe could not be reversed after delete" delegate:self cancelButtonTitle:@"Close" otherButtonTitles:@"Delete", nil];
+            deleteConfirmAlert = [[UIAlertView alloc] initWithTitle:@"Delete Recipe" message:@"Do you really want to delete recipe. Delete recipe could not be reversed." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:@"Delete", nil];
             [deleteConfirmAlert show];
             indexToDelete = indexPath;
-            //[self deleteRecipeAtIndexPath:indexPath];
         }   
         else if (editingStyle == UITableViewCellEditingStyleInsert) {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -391,21 +384,7 @@
             } else {
                 [self didDeleteRecipeAtIndex:nil];
             }
-            
-            //NSLog(@"%d", request.responseStatusCode);
-            //NSLog(@"recipe id: %@", request.responseString);
-            
-            //RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:_recipe];
-            
-            //[handler setEndDocumentTarget:self andAction:@selector(didDeleteRecipe)];
-            //NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];
-            //parser.delegate = handler;
-            //[parser parse];
-            
-            //[self reloadPage];
-            //}else if(request.responseStatusCode == 404){
         } else {
-            //_user = nil;
             [self didDeleteRecipeAtIndex:nil];
         }
     }];

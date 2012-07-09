@@ -43,7 +43,8 @@
     
     [cryptor encryptFromStream:encryptInputStream toStream:encryptOutputStream password:key error:&error];
     
-    NSLog(@"Encrypt failed:%@", error);
+    if (error != nil)
+        NSLog(@"Encrypt failed:%@", error);
     
     [encryptOutputStream close];
     [encryptInputStream close];
@@ -63,7 +64,8 @@
     
     [cryptor decryptFromStream:decryptInputStream toStream:decryptOutputStream password:key error:&error];
     
-    NSLog(@"Decrypt failed:%@", error);
+    if (error != nil)
+        NSLog(@"Decrypt failed:%@", error);
     
     [decryptOutputStream close];
     [decryptInputStream close];
