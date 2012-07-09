@@ -37,7 +37,6 @@
 #pragma mark Customization UI
 - (void)customizeAppearance
 {
-    // Create resizable images
     UIImage *gradientImage44 = [[UIImage imageNamed:@"topbar_44"] 
                                 resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     UIImage *plain_bar44 = [[UIImage imageNamed:@"plain_bar_bg_44"] 
@@ -47,30 +46,20 @@
 //    UIImage *gradientImage32 = [[UIImage imageNamed:@"surf_gradient_textured_32"] 
 //                                resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     
-    // Set the background image for *all* UINavigationBars
     [[UINavigationBar appearance] setBackgroundImage:gradientImage44 forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                           [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f],UITextAttributeTextColor, 
                                                           [UIColor blackColor], UITextAttributeTextShadowColor, 
                                                           [NSValue valueWithUIOffset:UIOffsetMake(-1, 0)], UITextAttributeTextShadowOffset, nil]];
-//    [UINavigationBar appearance] setBackgroundImage:gradientImage32 forBarMetrics:UIBarMetricsLandscapePhone];
-    
-    //[[UILabel appearanceWhenContainedIn:[UIToolbar class], nil] setColor:[UIColor redColor]];
-    
     [[UISearchBar appearance] setBackgroundImage:plain_bar44];
     [[UISearchBar appearance] setImage:searchIcon forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
     [[UISearchBar appearance] setSearchFieldBackgroundImage:searchTextFieldBackbround forState:UIControlStateNormal];
     [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setTextColor:[UIColor colorWithRed:0.27f green:0.13f blue:0.05f alpha:1.00f]];
-    
-    // Customize UIBarButtonItems 
     UIImage *button30 = [[UIImage imageNamed:@"normal_button_30"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
 //    UIImage *button24 = [[UIImage imageNamed:@"button_textured_24"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
     [[UIBarButtonItem appearance] setBackgroundImage:button30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 //    [[UIBarButtonItem appearance] setBackgroundImage:button24 forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
-    
-    //UINavigationBar customization
-    
-    // Customize back button items differently
+
     UIImage *buttonBack30 = [[UIImage imageNamed:@"back_button_30"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 5)];
 //    UIImage *buttonBack24 = [[UIImage imageNamed:@"button_back_textured_24"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 12, 0, 5)];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:buttonBack30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
@@ -84,35 +73,19 @@
                                                           [UIColor blackColor], UITextAttributeTextShadowColor, 
                                                           [NSValue valueWithUIOffset:UIOffsetMake(0, 1)], UITextAttributeTextShadowOffset, nil] 
                                                 forState:UIControlStateHighlighted];
-//    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:buttonBack24 forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
-    
-    // Customize UITabbar
     UIImage *tabBackground = [[UIImage imageNamed:@"tabbar_49"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     [[UITabBar appearance] setBackgroundImage:tabBackground];
-    //[[UITabBar appearance] setSelectedImageTintColor:[UIColor yellowColor]];
-    
-    // Custommize UITextField
-    //[[UITextField appearance] setValue:[UIColor redColor] forKey:@"insertionPointColor"];
-    //[[UITextField appearance] setBackgroundColor:[UIColor brownColor]];
-    //[[UITextField appearance] setValue:[UIColor darkGrayColor] forKeyPath:@"textField.placeholderLabel.textColor"];
-    
+
     [[UITextField appearance] setBorderStyle:UITextBorderStyleNone];
     
-    UIImage *textFieldBackground = [UIImage imageNamed:@"tf_bg"];// resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
+    UIImage *textFieldBackground = [UIImage imageNamed:@"tf_bg"];
     [[UITextField appearance] setBackground:textFieldBackground];
     
-    
-    //UIImage *mainBackground = [[UIImage imageNamed:@"background"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-    //[[UIView appearance] setBackgroundImage:mainBackground];
-    
-    //UITabbarItem Title
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                        [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f], UITextAttributeTextColor, 
                                                        [UIColor blackColor], UITextAttributeTextShadowColor, 
                                                        [NSValue valueWithUIOffset:UIOffsetMake(0, 1)], UITextAttributeTextShadowOffset, nil] 
                                              forState:UIControlStateNormal];
-    
-    //UISegmentedControl appearance
     UIImage *segmentSelected = [[UIImage imageNamed:@"seg_s.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 8, 0, 8)];
     UIImage *segmentUnselected = [[UIImage imageNamed:@"seg_u.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 8, 0, 8)];
     UIImage *segmentSelectedUnselected = [UIImage imageNamed:@"seg_s_u.png"];
