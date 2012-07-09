@@ -61,9 +61,6 @@
     
     _images = [NSMutableArray array];
     
-//    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
-//    [[self navigationItem] setTitleView:headerView];
-    
     selectedCategories = [[NSMutableArray alloc] init];
     
     imagePicker = [[UIImagePickerController alloc] init];
@@ -389,14 +386,6 @@
         [request setPostValue:[_recipe recipeId] forKey:@"rid"];
         [request setPostValue:[recipeName text] forKey:@"rn"];
         [request setPostValue:[serving text] forKey:@"rs"];
-        
-//        if([_images count] > 0){
-//            for (NSInteger i = 0; i < [_images count]; i++) {
-//                NSLog(@"post image: %d",i);
-//                [request addData:[_images objectAtIndex:i] forKey:@"ri[]"];
-//                
-//            }
-//        }
         
         //multiple category
         for ( NSInteger i = 0; i < [[_recipe categoryList] count]; i++ ){

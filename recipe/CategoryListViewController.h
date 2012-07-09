@@ -14,6 +14,7 @@
 {
     NSMutableDictionary *_categoryDictionary;
     NSMutableArray *_reusableCells;
+//    NSMutableArray *categoryIndex;
 }
 
 @property (nonatomic) NSMutableDictionary *categoryDictionary;

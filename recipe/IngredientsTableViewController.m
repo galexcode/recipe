@@ -35,7 +35,6 @@
 @synthesize reusableCells = _resuableCells;
 
 - (IBAction)btnSelectImage:(id)sender {
-    //[self presentModalViewController:imagePicker animated:YES];
     if(![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
         [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
@@ -93,10 +92,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    imagePicker = [[UIImagePickerController alloc] init];
     
-    //    [imagePicker setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
-    //[imagePicker setShowsCameraControls:YES];
+    imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.allowsEditing = YES;
     imagePicker.delegate = self;
     
@@ -203,9 +200,6 @@
         [txtIngredientName setPlaceholder:@"Name is blank"];
         flag = NO;
     }
-//    if ([trimSpaces([txtIngredientDescription text]) length] == 0){
-//        flag = NO;
-//    }
     if( [trimSpaces([txtIngredientUnit text]) length] == 0 ){
         [txtIngredientUnit setText:@""];
         [txtIngredientUnit setPlaceholder:@"Unit is blank"];
@@ -236,8 +230,6 @@
     [self setTxtIngredientUnit:nil];
     [self setTxtIngredientQuantity:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
@@ -481,11 +473,9 @@
 {
     if(pickerView == unitPicker){
         [txtIngredientUnit setText:[unitArray objectAtIndex:row]];
-        //[txtIngredientUnit resignFirstResponder];
     }
     if(pickerView == quantityPicker){
         [txtIngredientQuantity setText:[quantityArray objectAtIndex:row]];
-        //[txtIngredientQuantity resignFirstResponder];
     }
 }
 

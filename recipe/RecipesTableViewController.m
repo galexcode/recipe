@@ -158,8 +158,6 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -281,68 +279,8 @@
 {
     RecipeLongCell *cell = [self.reusableCells objectAtIndex:indexPath.row];
     return cell;
-//    static NSString *CellIdentifier = @"RecipeLongCell";
-//    
-//    RecipeLongCell *cell = (RecipeLongCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    
-//    if (cell == nil) 
-//    {
-//        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"RecipeLongCell" owner:self options:nil];
-//        
-//        for (id currentObject in topLevelObjects) {
-//            if ([currentObject isKindOfClass:[RecipeLongCell class]]) {
-//                cell = (RecipeLongCell*)currentObject;
-//                break;
-//            }
-//        }
-//        
-//        if ([[self recipes] count] > 0) {
-//            Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
-//            
-//            cell.recipeName.text = [currentRecipe name];
-//            
-//            //cell.thumb.image = [UIImage imageNamed:@"default_recipe.jpg"];
-//            
-//            if ([[currentRecipe imageList] count] > 0) {
-//                if (cell.thumb.image == nil) {
-//                    NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:120 andHeight:0]];
-//                    
-//                    __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
-//                    [request setCompletionBlock:^{
-//                        NSData *data = request.responseData;
-//                        if (data != nil) {
-//                            [cell.thumb setImage:[[UIImage alloc] initWithData:data]];
-//                        } else {
-//                            cell.thumb.image = [UIImage imageNamed:@"default_recipe.jpg"];
-//                        }
-//                    }];
-//                    [request setFailedBlock:^{
-//                        NSError *error = request.error;
-//                        NSLog(@"Error downloading image: %@", error.localizedDescription);
-//                    }];
-//                    [request startAsynchronous];
-//                }
-////                NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:120 andHeight:0]];
-////                
-////                __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
-////                [request setCompletionBlock:^{
-////                    NSData *data = request.responseData;
-////                    [cell.thumb setImage:[[UIImage alloc] initWithData:data]];
-////                }];
-////                [request setFailedBlock:^{
-////                    NSError *error = request.error;
-////                    NSLog(@"Error downloading image: %@", error.localizedDescription);
-////                }];
-////                [request startAsynchronous];
-//            }
-//        }        
-//    }
-//    
-//    return cell;
 }
 
-
-// Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editable)
@@ -350,7 +288,6 @@
     return NO;
 }
 
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editable) {

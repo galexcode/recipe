@@ -112,6 +112,16 @@
     NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];
     NSArray* sortedCategories = [self.categoryDictionary.allKeys sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     
+//    categoryIndex = nil;
+//    categoryIndex = [[NSMutableArray alloc] init];
+//    
+//    for (int i = 0; i < [[[self categoryDictionary] allKeys] count]; i++) {
+//        char alphabet = [[sortedCategories objectAtIndex:i] characterAtIndex:0];
+//        NSString *uniChar = [NSString stringWithFormat:@"%C", alphabet];
+//        if (![categoryIndex containsObject:uniChar])
+//            [categoryIndex addObject:uniChar];
+//    }
+    
     self.reusableCells = [NSMutableArray array];
     
     for (int i = 0; i < [self.categoryDictionary.allKeys count]; i++)
@@ -148,11 +158,6 @@
 - (void)tapOnHeader:(id)sender
 {
     __weak HeaderButton* tempButton = (HeaderButton*)sender;
-//    RecipeListViewController* viewControllerToPush = [[RecipeListViewController alloc] initWithNibName:@"RecipeListViewController" bundle:nil];
-//    viewControllerToPush.recipes = tempButton.array;
-//    [[viewControllerToPush navigationItem] setTitle:tempButton.titleText];
-//    UINavigationController *nav = (UINavigationController*)self.navController;
-//    [nav pushViewController:viewControllerToPush animated:YES];
     RecipesTableViewController *viewControllerToPush = [[RecipesTableViewController alloc] initWithCategory:[tempButton category]];
     [viewControllerToPush setRecipes:[[tempButton category] latestRecipes]];
     [[viewControllerToPush navigationItem] setTitle:tempButton.titleText];
@@ -179,6 +184,13 @@
     }
     return 0;
 }
+
+//- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+//    if (categoryIndex != nil)
+//        return categoryIndex;
+//    else
+//        return nil;
+//}
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {

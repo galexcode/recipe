@@ -20,12 +20,6 @@
     return self;
 }
 
-//- (void)drawTextInRect:(CGRect)rect
-//{
-//    [[UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f] setFill];
-//    [[self placeholder] drawInRect:rect withFont:[UIFont systemFontOfSize:14.00f]];
-//}
-
 - (void)drawPlaceholderInRect:(CGRect)rect
 {
     [[UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:0.7f] setFill];

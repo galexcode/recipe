@@ -52,9 +52,6 @@
 
 - (IBAction)insertStep:(id)sender {
     if ([self validateInputInformation]) {
-//        [[self recipe] setStepList:nil];
-//        [[self recipe] setStepList:[NSMutableArray array]];
-        
         NSURL *url = [NSURL URLWithString:[GlobalStore addStepLink]];
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[self recipe] recipeId] forKey:@"rid"];
@@ -75,7 +72,6 @@
                 [parser parse];
                 
                 [self cancelAddStep:self];
-                //[self reloadPage];
                 //}else if(request.responseStatusCode == 404){
             } else {
                 //_user = nil;
@@ -99,9 +95,6 @@
         [txtStepName setPlaceholder:@"Name is blank"];
         flag = NO;
     }
-//    if ([trimSpaces([txtStepDescription text]) length] == 0){
-//        flag = NO;
-//    }
     return flag;
 }
 
@@ -144,7 +137,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    NSLog(@"recipe ID: %@",[[self recipe] recipeId]);
 }
 
 - (void)addStep:(id)sender
@@ -269,8 +261,6 @@
         [[cell textLabel] setText:@"No steps. Tap here or \"Add\" to add step"];
         [[cell textLabel] setTextColor:[UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f]];
         [[cell textLabel] setFont:[UIFont systemFontOfSize:15.00f]];
-//        [[cell textLabel] setLineBreakMode:UILineBreakModeWordWrap];
-//        [[cell textLabel] setNumberOfLines:2];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         [cell setBackgroundColor:[UIColor clearColor]];
         return cell;
@@ -415,13 +405,6 @@
 {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     if (indexPath != nil) {
-//        if ([[[self recipe] stepList] count] == 1) {
-//            [[[self recipe] stepList] removeObjectAtIndex:indexPath.row];
-//            [[self tableView] reloadData];
-//        } else {
-//            [[[self recipe] stepList] removeObjectAtIndex:indexPath.row];
-//            [[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//        }
         [[[self recipe] stepList] removeObjectAtIndex:indexPath.row];
         [[self tableView] reloadData];
     } else {

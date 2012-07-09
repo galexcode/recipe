@@ -76,37 +76,30 @@
     RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
     [[self navigationItem] setTitleView:label];
     
-    if (editable || [[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:[[[self recipe] owner] userId]]) {
-        barButton = [[UIBarButtonItem alloc] 
-                     initWithTitle:@"Edit"                                            
-                     style:UIBarButtonItemStyleBordered 
-                     target:self 
-                     action:@selector(editRecipe:)];
-        self.navigationItem.rightBarButtonItem = barButton;
-    }
+    //Uncomment for allowing edit recipe
+//    if (editable || [[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:[[[self recipe] owner] userId]]) {
+//        barButton = [[UIBarButtonItem alloc] 
+//                     initWithTitle:@"Edit"                                            
+//                     style:UIBarButtonItemStyleBordered 
+//                     target:self 
+//                     action:@selector(editRecipe:)];
+//        self.navigationItem.rightBarButtonItem = barButton;
+//    }
     
     [[self pageControl] setHidesForSinglePage:YES];
-    
-//    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
-//    [[self navigationItem] setTitleView:headerView];
-    
     [self.recipeDetailsTable setBackgroundColor:[UIColor clearColor]];
     [[self recipeNameLabel] setText:[[self recipe] name]];
     [[self userName] setText:[[[self recipe] owner] name]];
     [[self timeSpanSinceCreated] setText:[NSStringUtil formatDate:[[self recipe] createDate] usingFormat:@"yyyy-MM-dd"]];
-    
     [[self recipeLikeCount] setText:[NSString stringWithFormat:@"%d", [[self recipe] likeCount]]];
-    
     [[[self userThumb] layer] setCornerRadius:8.0];
     [[[self userThumb] layer] setMasksToBounds:YES];
     [[[self borderThumb] layer] setCornerRadius:8.0];
     [[[self borderThumb] layer] setMasksToBounds:YES];
     [[[self defaultRecipeView] layer] setCornerRadius:11.0];
     [[self defaultRecipeView] setClipsToBounds:YES];
-    
     [self loadImageSlider];
     [self loadUserAvatar];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
@@ -126,8 +119,6 @@
     [self setPageControl:nil];
     [self setDefaultRecipeView:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)editRecipe:(id)sender{
@@ -225,13 +216,11 @@
 #pragma mark Table delegate methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    //remove when finish
     return 3;
-    
-    if ([[[self recipe] ingredientList] count] == 0 && [[[self recipe] stepList] count] == 0) {
-        return 2;
-    }
-    return 3;
+//    if ([[[self recipe] ingredientList] count] == 0 && [[[self recipe] stepList] count] == 0) {
+//        return 2;
+//    }
+//    return 3;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -244,9 +233,6 @@
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-//    if (section == 0) {
-//        return [self recipeHeaderView];
-//    }
     if (section == 2) {
         return [self recipeInfoView];
     }
@@ -290,8 +276,6 @@
     if (indexPath.section == 0) {
         UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:userCell];
         if (cell == nil) {
-            //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:imageCell];
-            //userInfoCell set
             cell = userInfoCell;
         }
         
@@ -302,7 +286,6 @@
     if (indexPath.section == 1) {
         UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:imageCell];
         if (cell == nil) {
-            //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:imageCell];
             cell = slideShowCell;
         }
     

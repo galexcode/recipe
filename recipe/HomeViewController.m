@@ -46,8 +46,6 @@
 {
     [self setMySearchBar:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -93,13 +91,9 @@
 {
     if(_recipes != nil && [_recipes count] > 0)
     {
-//        RecipeListViewController* viewControllerToPush = [[RecipeListViewController alloc] initWithNibName:@"RecipeListViewController" bundle:nil];
-//        viewControllerToPush.recipes = _recipes;
-//        [[viewControllerToPush navigationItem] setTitle:[[self mySearchBar] text]];
         RecipesTableViewController *viewControllerToPush = [[RecipesTableViewController alloc] initWithKeyword:[[self mySearchBar] text]];
         [viewControllerToPush setRecipes:_recipes];
         [[viewControllerToPush navigationItem] setTitle:[[self mySearchBar] text]];
-        //[viewControllerToPush setNavController:nil];
         [[self navigationController] pushViewController:viewControllerToPush animated:YES];
     } else {
         [[self mySearchBar] resignFirstResponder];
