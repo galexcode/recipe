@@ -8,7 +8,6 @@
 
 #import "IngredientViewController.h"
 #import "GlobalStore.h"
-#import "RecipeNavigationLabel.h"
 #import "ASI2HTTPRequest.h"
 
 @interface IngredientViewController ()
@@ -36,8 +35,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
-    [[self navigationItem] setTitleView:label];
     [[self pageTitle] setText:[self pageTitleText]];
     
     self.pageTitle.text = self.ingredient.name;

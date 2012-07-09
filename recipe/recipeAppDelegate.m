@@ -49,6 +49,10 @@
     
     // Set the background image for *all* UINavigationBars
     [[UINavigationBar appearance] setBackgroundImage:gradientImage44 forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f],UITextAttributeTextColor, 
+                                                          [UIColor blackColor], UITextAttributeTextShadowColor, 
+                                                          [NSValue valueWithUIOffset:UIOffsetMake(-1, 0)], UITextAttributeTextShadowOffset, nil]];
 //    [UINavigationBar appearance] setBackgroundImage:gradientImage32 forBarMetrics:UIBarMetricsLandscapePhone];
     
     //[[UILabel appearanceWhenContainedIn:[UIToolbar class], nil] setColor:[UIColor redColor]];

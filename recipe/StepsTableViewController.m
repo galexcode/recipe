@@ -12,7 +12,6 @@
 
 #import "StepsTableViewController.h"
 #import "recipeGlobal.h"
-#import "RecipeNavigationLabel.h"
 #import "StepCell.h"
 #import "Step.h"
 #import "ASI2HTTPRequest.h"
@@ -100,6 +99,11 @@
 
 - (void)didParsedInsertStep
 {
+    selectedIndex = [[[self recipe] stepList] count] - 1;
+    if ([[[self recipe] stepList] count] == 1 || [[[self recipe] stepList] count] == 0)
+        [[self navigationItem] setTitle:[NSString stringWithFormat:@"%d Step", [[[self recipe] stepList] count]]];
+    else
+        [[self navigationItem] setTitle:[NSString stringWithFormat:@"%d Steps", [[[self recipe] stepList] count]]];
     [[self tableView] reloadData];
 }
 
@@ -115,12 +119,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
-    [[self navigationItem] setTitleView:label];
-    
     selectedIndex = 0;
-    
     if (ediable || [[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:[[[self recipe] owner] userId]]) {
         barButton = [[UIBarButtonItem alloc] 
                      initWithTitle:@"Add"                                            
@@ -331,23 +330,6 @@
     }
 }
 
-#pragma mark - Text Fields Delegate Methods
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    activeTextField = textField;
-    return YES;
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
-    return YES;
-}
-
-- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
-{
-    activeTextView = textView;
-    return YES;
-}
-
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -405,12 +387,35 @@
 {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     if (indexPath != nil) {
+        selectedIndex = -1;
         [[[self recipe] stepList] removeObjectAtIndex:indexPath.row];
         [[self tableView] reloadData];
+        if ([[[self recipe] ingredientList] count] == 1 || [[[self recipe] stepList] count] == 0)
+            [[self navigationItem] setTitle:[NSString stringWithFormat:@"%d Step", [[[self recipe] stepList] count]]];
+        else
+            [[self navigationItem] setTitle:[NSString stringWithFormat:@"%d Steps", [[[self recipe] stepList] count]]];
+        
     } else {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Could not delete step, please try again" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
         [alertView show];
     }
+}
+
+#pragma mark - Text Fields Delegate Methods
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    activeTextField = textField;
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    activeTextView = textView;
+    return YES;
 }
 
 #pragma mark - UI Alert View Deletgate Method

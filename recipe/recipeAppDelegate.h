@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
-#import "RecipeNavigationLabel.h"
 
 @interface recipeAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate>{
     UIViewController *authViewController;

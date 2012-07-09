@@ -10,7 +10,6 @@
 #import "Ingredient.h"
 #import "GlobalStore.h"
 #import "IngredientViewController.h"
-#import "RecipeNavigationLabel.h"
 #import "IngredientCell.h"
 #import "ASI2HTTPRequest.h"
 #import "ASIForm2DataRequest.h"
@@ -68,8 +67,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
-    [[self navigationItem] setTitleView:label];
     
     [self initResuableCells];
     
@@ -187,7 +184,10 @@
 
 - (void)didParsedInsertIngredient
 {
-    
+    if ([[[self recipe] ingredientList] count] == 1 || [[[self recipe] ingredientList] count] == 0)
+        [[self navigationItem] setTitle:[NSString stringWithFormat:@"%d Ingredient", [[[self recipe] ingredientList] count]]];
+    else
+        [[self navigationItem] setTitle:[NSString stringWithFormat:@"%d Ingredients", [[[self recipe] ingredientList] count]]];
     [self initResuableCells];
 }
 
@@ -415,11 +415,16 @@
     if (indexPath != nil) {
         if ([[[self recipe] ingredientList] count] == 1) {
             [[[self recipe] ingredientList] removeObjectAtIndex:indexPath.row];
+            [[self navigationItem] setTitle:@"0 Ingredient"];
             [[self tableView] reloadData];
         } else {
             [[[self recipe] ingredientList] removeObjectAtIndex:indexPath.row];
             [[self reusableCells] removeObjectAtIndex:indexPath.row];
             [[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            if ([[[self recipe] ingredientList] count] > 1)
+                [[self navigationItem] setTitle:[NSString stringWithFormat:@"%d Ingredients", [[[self recipe] ingredientList] count]]];
+            else
+                [[self navigationItem] setTitle:@"1 Ingredient"];
         }
     } else {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Could not delete ingredient, please try again" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];

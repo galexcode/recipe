@@ -12,7 +12,6 @@
 #import "NSStringUtil.h"
 #import "IngredientsTableViewController.h"
 #import "StepsTableViewController.h"
-#import "RecipeNavigationLabel.h"
 #import "ASI2HTTPRequest.h"
 #import "RecipeDisclosureIndicators.h"
 #import "AddRecipeViewController.h"
@@ -73,8 +72,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
-    [[self navigationItem] setTitleView:label];
     
     //Uncomment for allowing edit recipe
 //    if (editable || [[[[GlobalStore sharedStore] loggedUser] userId] isEqualToString:[[[self recipe] owner] userId]]) {

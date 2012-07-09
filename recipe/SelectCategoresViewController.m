@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 OngSoft. All rights reserved.
 //
 
+#define checkmark [UIImage imageNamed:@"checkmark.png"]
+
 #import "SelectCategoresViewController.h"
 #import "Category.h"
 #import "GlobalStore.h"
@@ -30,21 +32,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
-    [[self navigationItem] setTitleView:label];
-    
     NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(localizedCompare:)];
     sortedCategories = [[[[GlobalStore sharedStore] categories] allKeys] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-    
-//    UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_header"]];
-//    [[self navigationItem] setTitleView:headerView];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -53,9 +47,9 @@
 }
 
 #pragma mark UI Table Deletage Methods
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-//    return 1;
-//}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[[[GlobalStore sharedStore] categories] allKeys] count];
@@ -73,35 +67,35 @@
     NSString *categoryName = [sortedCategories objectAtIndex:indexPath.row];
     Category *currentCategory = (Category*)[[[GlobalStore sharedStore] categories] objectForKey:categoryName];
     
+    UIImageView *checkmarkView = [[UIImageView alloc] initWithFrame:CGRectMake(294, 10, checkmark.size.width, checkmark.size.height)];
+    checkmarkView.image = nil;
+    [cell setAccessoryView:checkmarkView];
     for (int i = 0; i < [[[self recipe] categoryList] count]; i++) {
-        NSLog(@"current cat id: %@", [currentCategory categoryId]);
-        NSLog(@"this cat id: %@", [[[self recipe] categoryList] objectAtIndex:i]);
         if ([[currentCategory categoryId] isEqualToString:[[[self recipe] categoryList] objectAtIndex:i]]) {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            checkmarkView.image = checkmark;
+            break;
         }
     }
-    
-    
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.text = [NSString stringWithString:categoryName];
     cell.textLabel.textColor = [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f];
-    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
     NSString *categoryName = [sortedCategories objectAtIndex:indexPath.row];
     Category *currentCategory = (Category*)[[[GlobalStore sharedStore] categories] objectForKey:categoryName];
-    
     if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
         cell.accessoryType = UITableViewCellAccessoryNone;
+        [((UIImageView*)[cell accessoryView]) setImage:nil];
         [[[self recipe] categoryList] removeObject:[currentCategory categoryId]];
     } else {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [((UIImageView*)[cell accessoryView]) setImage:checkmark];
         [[[self recipe] categoryList] addObject:[currentCategory categoryId]];
     }
 }

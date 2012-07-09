@@ -10,7 +10,6 @@
 #import "GlobalStore.h"
 #import "RecipeViewController.h"
 #import "RecipeLongCell.h"
-#import "RecipeNavigationLabel.h"
 #import "RecipesXMLHandler.h"
 #import "AddRecipeViewController.h"
 #import "ASI2HTTPRequest.h"
@@ -125,9 +124,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
-    [[self navigationItem] setTitleView:label];
     
     if (editable) {
         barButton = [[UIBarButtonItem alloc] 

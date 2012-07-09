@@ -13,6 +13,7 @@
     __weak NSMutableArray* _selectedCategories;
     Recipe* _recipe;
     NSArray* sortedCategories;
+    NSMutableArray *markedCategoryList;
 }
 
 @property (nonatomic, weak) NSMutableArray *selectedCategories;

@@ -45,8 +45,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
-    [[self navigationItem] setTitleView:label];
     
     if ([self recipe] == nil) {
         _recipe = [[Recipe alloc] init];
@@ -139,7 +137,6 @@
     if([_recipe recipeId] == @"-1"){
         [self insertNewRecipe];
     } else {
-        NSLog(@"Update Recipe");
         [self updateRecipe];
     }
 }
@@ -348,10 +345,7 @@
         }
         
         [request setCompletionBlock:^{
-            NSLog(@"Complete Post Recipe.");
             if (request.responseStatusCode == 200) {
-                NSLog(@"%d", request.responseStatusCode);
-                NSLog(@"recipe id: %@", request.responseString);
                 
                 RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:_recipe];
                 
@@ -390,12 +384,9 @@
         //multiple category
         for ( NSInteger i = 0; i < [[_recipe categoryList] count]; i++ ){
             [request addPostValue:[[_recipe categoryList] objectAtIndex:i]  forKey:@"cid[]"];
-            NSLog(@"update post: %@",[[_recipe categoryList] objectAtIndex:i]);
         }
         
         [request setCompletionBlock:^{
-            NSLog(@"Complete Post Recipe.");
-            NSLog(@"%d", request.responseStatusCode);
             if (request.responseStatusCode == 200) {
                 NSLog(@"recipe id: %@", request.responseString);
                 
@@ -408,12 +399,10 @@
                 
                 [self reloadPage];
             } else {
-                NSLog(@"Khong co gi xay ra");
             }
         }];
         [request setFailedBlock:^{
             //[self handleError:request.error];
-            NSLog(@"bi failed me no roi");
         }];
         
         [request startAsynchronous];
@@ -424,8 +413,6 @@
 {
     NSLog(@"after insert number of category is: %d", [[_recipe categoryList] count]);
         [[self navigationItem] setTitle:@"Edit Recipe"];
-    RecipeNavigationLabel *label = [[RecipeNavigationLabel alloc] initWithTitle:[[self navigationItem] title]];
-    [[self navigationItem] setTitleView:label];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     if (isCallFromAddIngredient) {
