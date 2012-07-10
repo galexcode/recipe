@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "CategoryListViewController.h"
+#import "CategoryList2ViewController.h"
 #import "RecipesXMLHandler.h"
 #import "GlobalStore.h"
 #import "recipeGlobal.h"
@@ -34,9 +35,35 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];    
-    CategoryListViewController *tableViewController = [[CategoryListViewController alloc] initWithNibName:@"CategoryListViewController" bundle:nil];
-    CGRect frame = CGRectMake(0, 44, 320, 446);
+    [super viewDidLoad];
+    
+    UIImageView *bigBgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 64, 300, 285)];
+    
+    UIImage *bigBg = [[UIImage imageNamed:@"form_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(11, 0, 11, 0)];
+    
+    [bigBgView setImage:bigBg];
+    
+    [self.view addSubview:bigBgView];
+    
+    UIImage *smallBg = [[UIImage imageNamed:@"glass"] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 15, 15)];
+    
+    UIImageView *upperSmallBgView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 75, 290, 132)];
+    
+    [upperSmallBgView setImage:smallBg];
+    
+    [self.view addSubview:upperSmallBgView];
+    
+    UIImageView *lowerSmallBgView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 207, 290, 132)];
+    
+    [lowerSmallBgView setImage:smallBg];
+    
+    [self.view addSubview:lowerSmallBgView];
+    
+    
+    //CategoryListViewController *tableViewController = [[CategoryListViewController alloc] initWithNibName:@"CategoryListViewController" bundle:nil];
+    CategoryList2ViewController *tableViewController = [[CategoryList2ViewController alloc] initWithNibName:@"CategoryList2ViewController" bundle:nil];
+    //CGRect frame = CGRectMake(0, 44, 320, 446);
+    CGRect frame = CGRectMake(15, 64, 290, 357);
     [tableViewController.view setFrame:frame];
     tableViewController.navController = self.navigationController;
     [self.view addSubview:tableViewController.view];

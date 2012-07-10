@@ -1,19 +1,19 @@
 //
-//  HorizontalTableCell.m
-//  HorizontalTables
+//  HorizontalTableCell2.m
+//  recipe
 //
-//  Created by Felipe Laso on 8/19/11.
-//  Copyright 2011 Felipe Laso. All rights reserved.
+//  Created by Vu Tran on 7/10/12.
+//  Copyright (c) 2012 OngSoft. All rights reserved.
 //
 
-#import "HorizontalTableCell.h"
+#import "HorizontalTableCell2.h"
 #import "GlobalStore.h"
 #import "RecipeCell.h"
 #import "RecipeTitleLabel.h"
 #import "ControlVariables.h"
 #import "RecipeViewController.h"
 
-@implementation HorizontalTableCell
+@implementation HorizontalTableCell2
 
 @synthesize horizontalTableView = _horizontalTableView;
 @synthesize recipes = _recipes;
@@ -30,14 +30,26 @@
 {
     if ((self = [super initWithFrame:frame]))
     {
+        //UIImageView *contentBgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 290, kCellHeight+5)];
+        //UIImage *contentBg = [[UIImage imageNamed:@"glass_content"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 15, 15)];
+        //[contentBgView setImage:contentBg];
+        
+        //[self addSubview:contentBgView];
+        
+        //self.horizontalTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kCellHeight, kTableLength)];
         self.horizontalTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kCellHeight, kTableLength)];
+        
+        //[self.horizontalTableView setContentInset:UIEdgeInsetsMake(20, 0, 20, 0)];
+        
+        [self.horizontalTableView setPagingEnabled:YES];
         
         self.horizontalTableView.showsVerticalScrollIndicator = YES;
         self.horizontalTableView.showsHorizontalScrollIndicator = NO;
         [self.horizontalTableView setScrollIndicatorInsets:UIEdgeInsetsMake(0, 0, 0, 100)];
         
         self.horizontalTableView.transform = CGAffineTransformMakeRotation(-M_PI * 0.5);
-        [self.horizontalTableView setFrame:CGRectMake(kRowHorizontalPadding * 0.5, kRowVerticalPadding * 0.5, kTableLength - kRowHorizontalPadding, kCellHeight)];
+        //[self.horizontalTableView setFrame:CGRectMake(kRowHorizontalPadding * 0.5, kRowVerticalPadding * 0.5, kTableLength - kRowHorizontalPadding, kCellHeight)];
+        [self.horizontalTableView setFrame:CGRectMake(7, 4, 275, kCellHeight)];
         
         self.horizontalTableView.rowHeight = kCellWidth;
         //self.horizontalTableView.backgroundColor = kHorizontalTableBackgroundColor;
@@ -45,6 +57,8 @@
         
         self.horizontalTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         self.horizontalTableView.separatorColor = [UIColor clearColor];
+        
+        [self.horizontalTableView setBounces:NO];
         
         self.horizontalTableView.dataSource = self;
         self.horizontalTableView.delegate = self;
@@ -58,10 +72,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ([self.recipes count] > 6) {
-        return 6;
+    if ([self.recipes count] <= 3) {
+        return [self.recipes count];
     }
-    return [self.recipes count];
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,35 +87,39 @@
     if (cell == nil) 
     {
         cell = [[RecipeCell alloc] initWithFrame:CGRectMake(0, 0, kCellWidth, kCellHeight)];
-    
-        
     }
     
+    if (indexPath.row >= [self.recipes count]) {
+        [cell.shadowView setBackgroundColor:[UIColor clearColor]];
+        cell.defaultRecipe.image = nil;
+        cell.thumbnail.image = nil;
+        return cell;
+    }    
     __block Recipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
     
-//    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-//    
-//    dispatch_async(concurrentQueue, ^{        
-//        UIImage *image = nil;
-//        if ([[currentRecipe imageList] count] > 0) {
-//            NSURL *url = [NSURL URLWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:184 andHeight:0]];
-//            image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-//        }
-//        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [cell.thumbnail setImage:image]; 
-//        });
-//    });
+    //    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    //    
+    //    dispatch_async(concurrentQueue, ^{        
+    //        UIImage *image = nil;
+    //        if ([[currentRecipe imageList] count] > 0) {
+    //            NSURL *url = [NSURL URLWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:184 andHeight:0]];
+    //            image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+    //        }
+    //        
+    //        dispatch_async(dispatch_get_main_queue(), ^{
+    //            [cell.thumbnail setImage:image]; 
+    //        });
+    //    });
     
     if ([[currentRecipe imageList] count] > 0) {
         cell.thumbnail.url = [NSURL URLWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:184 andHeight:184]];
-    
+        
         [[[GlobalStore sharedStore] objectManager] manage:cell.thumbnail];
     } else {
         cell.thumbnail.image = [UIImage imageNamed:@"default_recipe_square"];
     }
     
-    cell.titleLabel.text = [currentRecipe name];
+    //cell.titleLabel.text = [currentRecipe name];
     
     return cell;
 }
@@ -123,3 +141,4 @@
 }
 
 @end
+

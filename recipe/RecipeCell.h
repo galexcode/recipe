@@ -16,8 +16,12 @@
 {
     HJManagedImageV *_thumbnail;
     RecipeTitleLabel *_titleLabel;
+    UIImageView *_defaultRecipe;
+    UIView *_shadowView;
 }
 
+@property (nonatomic) UIImageView *defaultRecipe;
+@property (nonatomic) UIView *shadowView;
 @property (nonatomic, retain) HJManagedImageV *thumbnail;
 @property (nonatomic, retain) RecipeTitleLabel *titleLabel;
 @end
