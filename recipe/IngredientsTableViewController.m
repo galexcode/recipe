@@ -41,8 +41,8 @@
     }
     else
     {
-        UIAlertView *imagePickerAlertView = [[UIAlertView alloc] initWithTitle:@"Select Source" message:nil delegate:self cancelButtonTitle:@"Close" otherButtonTitles:@"Camera", @"Library", nil];
-        [imagePickerAlertView show];
+        UIActionSheet *imagePickerActionSheet = [[UIActionSheet alloc] initWithTitle:@"Select Image Source" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Library", nil];
+        [imagePickerActionSheet showInView:ingredientForm];
     }
 }
 
@@ -91,10 +91,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.allowsEditing = YES;
+    imagePicker.allowsEditing = NO;
     imagePicker.delegate = self;
     
-    unitArray = [[NSMutableArray alloc] initWithObjects:@"cup",@"tablespoon",@"ounce",nil];
+    unitArray = [[NSMutableArray alloc] initWithObjects:@"cup",@"tbls",@"tsp",@"ounce",nil];
     unitPicker = [[UIPickerView alloc] init];
     [unitPicker setDelegate:self];
     [unitPicker setDataSource:self];
@@ -246,23 +246,25 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark UI Action Sheet Delegate Methods
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    }
+    if (buttonIndex == 1) {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    }
+    if (buttonIndex != 2) {
+        [self presentModalViewController:imagePicker animated:YES];
+    }
+}
+
 #pragma mark UI Alert View Delegate Methods
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (alertView == deleteConfirmAlert) {
-        if (buttonIndex == 1) {
-            [self deleteIngredientAtIndexPath:indexToDelete];
-        }
-    } else {
-        if (buttonIndex == 1) {
-            [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
-        }
-        if (buttonIndex == 2) {
-            [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-        }
-        if (buttonIndex != 0) {
-            [self presentModalViewController:imagePicker animated:YES];
-        }
+    if (buttonIndex == 1) {
+        [self deleteIngredientAtIndexPath:indexToDelete];
     }
 }
 
@@ -369,7 +371,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        deleteConfirmAlert = [[UIAlertView alloc] initWithTitle:@"Delete Ingredient" message:@"Do you really want to delete ingredient. Delete ingredient could not be reversed." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:@"Delete", nil];
+        UIAlertView *deleteConfirmAlert = [[UIAlertView alloc] initWithTitle:@"Delete Ingredient" message:@"Do you really want to delete ingredient. Delete ingredient could not be reversed." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:@"Delete", nil];
         [deleteConfirmAlert show];
         indexToDelete = indexPath;
     }   

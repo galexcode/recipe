@@ -140,11 +140,7 @@
     [[self navItem3] setTitleView:headerView3];
     [[self navItem4] setTitleView:headerView4];
 
-    //_appService = [[ApplicationService alloc] init];
-    GlobalStore *store = [GlobalStore sharedStore];
-    NSLog(@"%@", store.loggedUser);
-    
-    //_user = [[User alloc] init];
+    //GlobalStore *store = [GlobalStore sharedStore];
     
     // Override point for customization after application launch.
     // Add the tab bar controller's current view as a subview of the window

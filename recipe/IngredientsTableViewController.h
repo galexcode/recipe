@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
 
-@interface IngredientsTableViewController : UITableViewController<UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIAlertViewDelegate>{
+@interface IngredientsTableViewController : UITableViewController<UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIAlertViewDelegate, UIActionSheetDelegate>{
     Recipe* _recipe;
     NSArray* _ingredients;
     Boolean editable;
@@ -25,7 +25,6 @@
     NSMutableArray* _resuableCells;
     UIPickerView* quantityPicker;
     UIPickerView* unitPicker;
-    UIAlertView *deleteConfirmAlert;
     NSIndexPath *indexToDelete;
 }
 @property (weak, nonatomic) IBOutlet UITextField *txtIngredientQuantity;

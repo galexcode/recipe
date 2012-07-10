@@ -10,7 +10,7 @@
 #import "Recipe.h"
 #import "RecipeTextField.h"
 
-@interface AddRecipeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate>{
+@interface AddRecipeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UIActionSheetDelegate>{
     Recipe *_recipe;
     NSMutableArray *selectedCategories;
     UIImagePickerController *imagePicker;
@@ -18,7 +18,6 @@
     Boolean isCallFromAddIngredient;
     Boolean isCallFromAddStep;
     UITextField* activeTextField;
-    UIAlertView* imagePickerAlertView;
 }
 
 @property (strong, nonatomic) IBOutlet UITableViewCell *inputCell;
