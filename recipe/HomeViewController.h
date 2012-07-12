@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CategoryListViewController.h"
+#import "CategoryList2ViewController.h"
 
 @interface HomeViewController : UIViewController <UISearchBarDelegate>
 {
     NSMutableArray *_recipes;
+    UIImageView *bigBgView;
+    UIImageView *upperSmallBgView;
+    UIImageView *lowerSmallBgView;
+    CategoryListViewController *tableViewController;
+    CategoryList2ViewController *tableView2Controller;
+    Boolean isSwitch;
 }
 
 @property (nonatomic) NSMutableArray *recipes;

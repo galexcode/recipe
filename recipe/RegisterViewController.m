@@ -97,9 +97,7 @@
             [request setPostValue:[email text] forKey:@"em"];
         
             [request setCompletionBlock:^{
-                NSLog(@"Register xml loaded.");
                 if (request.responseStatusCode == 200) {
-                    NSLog(@"%d", request.responseStatusCode);
                     UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
                     [handler setEndDocumentTarget:self andAction:@selector(didFinishRegisterUser)];
                     NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];

@@ -183,7 +183,6 @@
         [request setPostValue:[_category categoryId] forKey:@"cid"];
     }
     if (_keyword != nil) {
-        NSLog(@"the keyword: %@", _keyword);
         [request setPostValue:_keyword forKey:@"key"];
     }
     

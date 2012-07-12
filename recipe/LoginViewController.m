@@ -117,7 +117,6 @@
         
         [request setCompletionBlock:^{
             if (request.responseStatusCode == 200) {
-                NSLog(@"%d", request.responseStatusCode);
                 UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
                 [handler setEndDocumentTarget:self andAction:@selector(didParsedLoggingUser)];
                 NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];

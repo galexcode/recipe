@@ -69,8 +69,6 @@
     NSURL *url = [NSURL URLWithString:[GlobalStore categoriesLink]];
     
     __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
-    NSLog(@"%@", request.requestHeaders);
-    //    [request setPostValue:@"1" forKey:@"rw_app_id"];
     
     [request setCompletionBlock:^{
         if (request.responseStatusCode == 200) {

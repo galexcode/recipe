@@ -7,8 +7,6 @@
 //
 
 #import "HomeViewController.h"
-#import "CategoryListViewController.h"
-#import "CategoryList2ViewController.h"
 #import "RecipesXMLHandler.h"
 #import "GlobalStore.h"
 #import "recipeGlobal.h"
@@ -37,7 +35,15 @@
 {
     [super viewDidLoad];
     
-    UIImageView *bigBgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 64, 300, 285)];
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] 
+                 initWithTitle:@"Switch Style"                                            
+                 style:UIBarButtonItemStyleBordered 
+                 target:self 
+                 action:@selector(switchView)];
+    self.navigationItem.rightBarButtonItem = barButton;
+
+    
+    bigBgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 64, 300, 285)];
     
     UIImage *bigBg = [[UIImage imageNamed:@"form_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(11, 0, 11, 0)];
     
@@ -47,26 +53,42 @@
     
     UIImage *smallBg = [[UIImage imageNamed:@"glass"] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 15, 15)];
     
-    UIImageView *upperSmallBgView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 75, 290, 132)];
+    upperSmallBgView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 75, 290, 132)];
     
     [upperSmallBgView setImage:smallBg];
     
     [self.view addSubview:upperSmallBgView];
     
-    UIImageView *lowerSmallBgView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 207, 290, 132)];
+    lowerSmallBgView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 207, 290, 132)];
     
     [lowerSmallBgView setImage:smallBg];
     
     [self.view addSubview:lowerSmallBgView];
     
     
-    //CategoryListViewController *tableViewController = [[CategoryListViewController alloc] initWithNibName:@"CategoryListViewController" bundle:nil];
-    CategoryList2ViewController *tableViewController = [[CategoryList2ViewController alloc] initWithNibName:@"CategoryList2ViewController" bundle:nil];
-    //CGRect frame = CGRectMake(0, 44, 320, 446);
-    CGRect frame = CGRectMake(15, 64, 290, 357);
+    tableViewController = [[CategoryListViewController alloc] initWithNibName:@"CategoryListViewController" bundle:nil];
+    CGRect frame = CGRectMake(0, 44, 320, 446);
     [tableViewController.view setFrame:frame];
     tableViewController.navController = self.navigationController;
     [self.view addSubview:tableViewController.view];
+    [tableViewController.view setHidden:YES];
+    isSwitch = YES;
+    
+    tableView2Controller = [[CategoryList2ViewController alloc] initWithNibName:@"CategoryList2ViewController" bundle:nil];
+    CGRect frame2 = CGRectMake(15, 64, 290, 357);
+    [tableView2Controller.view setFrame:frame2];
+    tableView2Controller.navController = self.navigationController;
+    [self.view addSubview:tableView2Controller.view];
+}
+
+- (void)switchView
+{
+    [bigBgView setHidden:isSwitch];
+    [upperSmallBgView setHidden:isSwitch];
+    [lowerSmallBgView setHidden:isSwitch];
+    [tableView2Controller.view setHidden:isSwitch];
+    [tableViewController.view setHidden:!isSwitch];
+    isSwitch = !isSwitch;
 }
 
 - (void)viewDidUnload

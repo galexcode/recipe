@@ -58,9 +58,7 @@
         [request setPostValue:[txtStepDescription text] forKey:@"sdesc"];
         
         [request setCompletionBlock:^{
-            NSLog(@"Complete Post Step.");
             if (request.responseStatusCode == 200) {
-                NSLog(@"%@", request.responseString);
                 [[self recipe] setIngredientList:nil];
                 [[self recipe] setIngredientList:[NSMutableArray array]];
                 RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:_recipe];

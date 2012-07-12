@@ -389,8 +389,6 @@
         
         [request setCompletionBlock:^{
             if (request.responseStatusCode == 200) {
-                NSLog(@"recipe id: %@", request.responseString);
-                
                 RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:_recipe];
                 
                 [handler setEndDocumentTarget:self andAction:@selector(didParsedInsertRecipe)];
@@ -412,8 +410,7 @@
 
 - (void)didParsedInsertRecipe
 {
-    NSLog(@"after insert number of category is: %d", [[_recipe categoryList] count]);
-        [[self navigationItem] setTitle:@"Edit Recipe"];
+    [[self navigationItem] setTitle:@"Edit Recipe"];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     if (isCallFromAddIngredient) {

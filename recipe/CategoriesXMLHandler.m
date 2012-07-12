@@ -195,7 +195,6 @@
         [[_currentRecipe categoryList] addObject:_chars];
     }
     if ([elementName isEqualToString:@"recipe"]) {
-        //NSLog(@"recipe name: %@ listed in %d category", [_currentRecipe name], [[_currentRecipe categoryList] count]);
         [[_currentCategory latestRecipes] addObject:_currentRecipe];
         _currentRecipe = nil;
         _currentObject = nil;

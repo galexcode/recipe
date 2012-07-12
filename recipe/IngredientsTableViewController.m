@@ -137,7 +137,6 @@
 }
 
 - (IBAction)insertIngredient:(id)sender {
-    NSLog(@"Insert Ingredient");
     if ([self validateInputInformation]) {
         NSURL *url = [NSURL URLWithString:[GlobalStore addIngredientLink]];
         __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
@@ -155,7 +154,6 @@
         
         [request setCompletionBlock:^{
             if (request.responseStatusCode == 200) {
-                NSLog(@"%@", request.responseString);
                 [[self recipe] setIngredientList:nil];
                 [[self recipe] setIngredientList:[NSMutableArray array]];
                 RecipeXMLHandler* handler = [[RecipeXMLHandler alloc] initWithRecipe:_recipe];
