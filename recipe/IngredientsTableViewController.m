@@ -101,7 +101,7 @@
     [unitPicker setShowsSelectionIndicator:YES];
     txtIngredientUnit.inputView = unitPicker;
     
-    quantityArray = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",nil];
+    quantityArray = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",nil];
     quantityPicker = [[UIPickerView alloc] init];
     [quantityPicker setDelegate:self];
     [quantityPicker setDataSource:self];

@@ -139,6 +139,8 @@
         
         cell.recipes = thisCategory.latestRecipes;
         
+        [cell populatePageControl];
+        
         [self.reusableCells addObject:cell];
     }
     
@@ -262,12 +264,12 @@
         
         [customSectionHeaderView addSubview:headerButton];
         
-        UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(255, 25, 10, 10)];
-        if ([[thisCategory latestRecipes] count] > 3)
-            [pageControl setNumberOfPages:2];
-        else
-            [pageControl setNumberOfPages:1];
-        [customSectionHeaderView addSubview:pageControl];
+//        UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(255, 25, 10, 10)];
+//        if ([[thisCategory latestRecipes] count] > 3)
+//            [pageControl setNumberOfPages:2];
+//        else
+//            [pageControl setNumberOfPages:1];
+//        [customSectionHeaderView addSubview:pageControl];
         
         return customSectionHeaderView;
     }

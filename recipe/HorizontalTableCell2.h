@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HorizontalTableCell2 : UITableViewCell <UITableViewDelegate, UITableViewDataSource>
+@interface HorizontalTableCell2 : UITableViewCell <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 {
     UITableView *_horizontalTableView;
     NSMutableArray *_recipes;
+    UIPageControl *pageControl;
+    Boolean pageControlUsed;
 }
 
 @property (nonatomic, retain) UITableView *horizontalTableView;
 @property (nonatomic, retain) NSMutableArray *recipes;
 @property (nonatomic, weak) UIViewController* navController;
+
+- (void)populatePageControl;
 
 @end

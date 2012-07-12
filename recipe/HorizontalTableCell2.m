@@ -39,7 +39,7 @@
         //self.horizontalTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kCellHeight, kTableLength)];
         self.horizontalTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kCellHeight, kTableLength)];
         
-        //[self.horizontalTableView setContentInset:UIEdgeInsetsMake(20, 0, 20, 0)];
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         
         [self.horizontalTableView setPagingEnabled:YES];
         
@@ -49,7 +49,7 @@
         
         self.horizontalTableView.transform = CGAffineTransformMakeRotation(-M_PI * 0.5);
         //[self.horizontalTableView setFrame:CGRectMake(kRowHorizontalPadding * 0.5, kRowVerticalPadding * 0.5, kTableLength - kRowHorizontalPadding, kCellHeight)];
-        [self.horizontalTableView setFrame:CGRectMake(7, 4, 275, kCellHeight)];
+        [self.horizontalTableView setFrame:CGRectMake(7, 4, 276, kCellHeight)];
         
         self.horizontalTableView.rowHeight = kCellWidth;
         //self.horizontalTableView.backgroundColor = kHorizontalTableBackgroundColor;
@@ -63,9 +63,38 @@
         self.horizontalTableView.dataSource = self;
         self.horizontalTableView.delegate = self;
         [self addSubview:self.horizontalTableView];
+        
+        pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(260, -13, 10, 10)];
+        [self addSubview:pageControl];
     }
     
     return self;
+}
+
+- (void)populatePageControl
+{
+    if ([self.recipes count] > 3)
+        [pageControl setNumberOfPages:2];
+    else
+        [pageControl setNumberOfPages:1];
+}
+
+#pragma mark Scroll View delegate
+- (void)scrollViewDidScroll:(UIScrollView *)sender {
+    if (pageControlUsed) {
+        return;
+    }
+    CGFloat pageWidth = 276;
+    int page = floor((sender.contentOffset.y - pageWidth / 2) / pageWidth) + 1;
+    pageControl.currentPage = page;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    pageControlUsed = NO;
+}
+
+- (IBAction)changePage:(id)sender {
+
 }
 
 #pragma mark - Table View Data Source
