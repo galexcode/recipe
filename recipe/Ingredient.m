@@ -25,7 +25,7 @@
         _desc = nil;
         _quantity = nil;
         _unit = nil;
-        _imagePath = [NSString stringWithString:@"-1"];
+        _imagePath = @"-1";
     }
     
     return self;

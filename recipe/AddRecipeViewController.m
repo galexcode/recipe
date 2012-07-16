@@ -277,7 +277,7 @@
         
         cell.backgroundColor = [UIColor clearColor];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.textLabel.text = [NSString stringWithString:@"Recipe Information"];
+        cell.textLabel.text = @"Recipe Information";
         cell.textLabel.textColor = [UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f];
         
         return cell;

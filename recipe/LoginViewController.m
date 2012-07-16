@@ -174,11 +174,11 @@
     NSString *errorTitle;
     NSString *errorMessage;
     if ([error code] == 1) {
-        errorTitle = [[NSString alloc] initWithString:@"Internet Access Problem"];
-        errorMessage = [[NSString alloc] initWithString:@"Please check your internet access!"];
+        errorTitle = @"Internet Access Problem";
+        errorMessage = @"Please check your internet access!";
     } else {
-        errorTitle = [[NSString alloc] initWithString:@"Error Ocurring"];
-        errorMessage = [[NSString alloc] initWithString:@"Unknown error"];
+        errorTitle = @"Error Ocurring";
+        errorMessage = @"Unknown error";
     }
     UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:errorTitle
                                                                     message:errorMessage

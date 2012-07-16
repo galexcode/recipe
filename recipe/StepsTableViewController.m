@@ -176,7 +176,7 @@
     if ([[[self recipe] stepList] count] > 0) {
         CGSize maximumSize = CGSizeMake(COMMENT_LABEL_WIDTH, 10000);
         
-        NSString *oneLine = [NSString stringWithString:@"1 line"];
+        NSString *oneLine = @"1 line";
         
         CGSize heighOfOneLine = [oneLine sizeWithFont: [UIFont fontWithName:@"Helvetica" size:17.0f]
                                     constrainedToSize:maximumSize
