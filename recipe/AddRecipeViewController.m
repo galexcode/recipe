@@ -100,7 +100,7 @@
 }
 
 - (IBAction)selectIngredient:(id)sender {
-    if([_recipe recipeId] == @"-1"){
+    if([[_recipe recipeId] isEqualToString:@"-1"]){
         isCallFromAddIngredient = YES;
         isCallFromAddStep = NO;
         [self insertNewRecipe];
@@ -113,7 +113,7 @@
 }
 
 - (IBAction)selectSteps:(id)sender {
-    if( [_recipe recipeId] == @"-1" ){
+    if( [[_recipe recipeId] isEqualToString:@"-1"] ){
         isCallFromAddStep = YES;
         isCallFromAddIngredient = NO;
         [self insertNewRecipe];
@@ -132,7 +132,7 @@
 
 - (IBAction)saveAction:(id)sender
 {
-    if([_recipe recipeId] == @"-1"){
+    if([[_recipe recipeId] isEqualToString: @"-1"]){
         [self insertNewRecipe];
     } else {
         [self updateRecipe];
@@ -318,7 +318,7 @@
 
 - (void)reloadPage
 {
-    if([_recipe recipeId] == @"-1"){
+    if([[_recipe recipeId] isEqualToString:@"-1"]){
         [btnSaveRecipe setTitle:@"Save" forState:UIControlStateNormal];
     } else {
         [btnSaveRecipe setTitle:@"Update" forState:UIControlStateNormal];

@@ -69,7 +69,7 @@
     __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
     
     [request setCompletionBlock:^{
-        if (request.responseStatusCode == 200) {
+        if ([request responseStatusCode] == 200) {
             CategoriesXMLHandler* handler = [[CategoriesXMLHandler alloc] initWithCategoryDictionary:_categoryDictionary];
             [handler setEndDocumentTarget:self andAction:@selector(didParsedCategories)];
             NSXMLParser* parser = [[NSXMLParser alloc] initWithData:request.responseData];

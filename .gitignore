@@ -4,3 +4,11 @@
 recipe.xcodeproj/project.xcworkspace/xcuserdata/tri.xcuserdatad/UserInterfaceState.xcuserstate
 
 recipe.xcodeproj/project.xcworkspace/xcuserdata/tri.xcuserdatad/UserInterfaceState.xcuserstate
+
+*.xcuserstate
+
+*.xcsettings
+
+*.xcscheme
+
+recipe.xcodeproj/xcuserdata/isaryx.xcuserdatad/xcschemes/xcschememanagement.plist

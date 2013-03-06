@@ -248,7 +248,7 @@
                                                 cell.stepDescription.frame.size.width, 
                                                 labelHeight);
         
-        cell.stepIndentifier.text = [NSString stringWithFormat:@"Step %d", indexPath.row+1];
+        cell.stepIndentifier.text = [NSString stringWithFormat:@"Step %d: %@", indexPath.row+1, [[[[self recipe] stepList] objectAtIndex:indexPath.row] name]];
         cell.stepDescription.text  = [currentStep desc];
         
         

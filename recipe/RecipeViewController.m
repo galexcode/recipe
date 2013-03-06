@@ -316,7 +316,7 @@
         [accessory setHighlightedColor:[UIColor orangeColor]];
         [cell setAccessoryView:accessory];
         [[cell textLabel] setTextColor:[UIColor colorWithRed:0.76f green:0.54f blue:0.29f alpha:1.00f]];
-        [cell setSelectionStyle:UITableViewCellEditingStyleNone];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         [cell setBackgroundColor:[UIColor clearColor]];
         
         return cell;

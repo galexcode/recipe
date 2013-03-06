@@ -73,7 +73,7 @@
          self.backgroundColor = [UIColor colorWithRed:0 green:0.40784314 blue:0.21568627 alpha:1.0];
          
          //Selected Item UI Stage
-         [self setSelectionStyle:UITableViewCellEditingStyleNone];
+         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
 //         self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.thumbnail.frame];
 //         self.selectedBackgroundView.backgroundColor = kHorizontalTableSelectedBackgroundColor;
          
