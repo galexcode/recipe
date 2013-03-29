@@ -174,7 +174,7 @@
         url = [NSURL URLWithString:[GlobalStore recipesLink]];
     }
     
-    __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+    __weak __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
     
     if (_user != nil) {
         [request setPostValue:[_user userId] forKey:@"uid"];
@@ -239,7 +239,7 @@
         if ([[currentRecipe imageList] count] > 0) {
             NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[currentRecipe imageList] objectAtIndex:0] forWidth:120 andHeight:0]];
             
-            __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
+            __weak __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
             [request setCompletionBlock:^{
                 NSData *data = request.responseData;
                 if (data != nil)
@@ -305,7 +305,7 @@
     Recipe *currentRecipe = (Recipe*)[[self recipes] objectAtIndex:indexPath.row];
     
     NSURL *url = [NSURL URLWithString:[GlobalStore deleteRecipeLink]];
-    __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+    __weak __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
     [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
     [request setPostValue:[currentRecipe recipeId]  forKey:@"rid"];
     

@@ -18,9 +18,8 @@ static GlobalStore *sharedStore = nil;
 + (GlobalStore *)sharedStore
 {
     @synchronized (self) {
-        if (sharedStore == nil) {
-            [[self alloc] init];
-        }
+        if (sharedStore == nil)
+            sharedStore = [[self alloc] init];
     }
     
     return sharedStore;

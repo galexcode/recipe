@@ -17,7 +17,7 @@
     BOOL            _stop;
 }
 
--(id) initObjectAfterElementStarting:(NSString*)elementName;
+-(id) setupObjectAfterElementStarting:(NSString*)elementName;
 -(void) afterElementStarting:(NSString*)elementName withAttributes:(NSDictionary *)attributeDict;
 -(void) afterElementEnding:(NSString*)elementName;
 -(void) setEndDocumentTarget:(id)target andAction: (SEL)action;

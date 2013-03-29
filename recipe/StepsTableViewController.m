@@ -52,7 +52,7 @@
 - (IBAction)insertStep:(id)sender {
     if ([self validateInputInformation]) {
         NSURL *url = [NSURL URLWithString:[GlobalStore addStepLink]];
-        __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+        __weak __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[self recipe] recipeId] forKey:@"rid"];
         [request setPostValue:[txtStepName text] forKey:@"sname"];
         [request setPostValue:[txtStepDescription text] forKey:@"sdesc"];
@@ -358,7 +358,7 @@
     Step *currentStep = (Step*)[[[self recipe] stepList] objectAtIndex:indexPath.row];
     
     NSURL *url = [NSURL URLWithString:[GlobalStore deleteStepLink]];
-    __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+    __weak __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
     [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
     [request setPostValue:[[self recipe] recipeId] forKey:@"rid"];
     [request setPostValue:[currentStep stepId] forKey:@"sid"];

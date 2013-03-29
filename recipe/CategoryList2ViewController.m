@@ -68,7 +68,7 @@
     
     NSURL *url = [NSURL URLWithString:[GlobalStore categoriesLink]];
     
-    __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+    __weak __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
     
     [request setCompletionBlock:^{
         if (request.responseStatusCode == 200) {

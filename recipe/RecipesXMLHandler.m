@@ -23,7 +23,7 @@
     return self;
 }
 
--(id) initObjectAfterElementStarting:(NSString *)elementName{
+-(id) setupObjectAfterElementStarting:(NSString *)elementName{
     if ([elementName isEqualToString:@"recipes"]){
         return self;
     }

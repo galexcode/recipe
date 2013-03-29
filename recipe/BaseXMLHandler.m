@@ -21,7 +21,7 @@
 	return self;
 }
 
--(id) initObjectAfterElementStarting:(NSString*)elementName
+-(id) setupObjectAfterElementStarting:(NSString*)elementName
 {
 	// abstract
 	return nil;
@@ -43,7 +43,7 @@
 	attributes:(NSDictionary *)attributeDict {
 	
 	if (_stop) return;
-	id object = [self initObjectAfterElementStarting:elementName];
+	id object = [self setupObjectAfterElementStarting:elementName];
 	
 	if (object != nil) {	
 		//for (NSString* key in attributeDict) {
@@ -80,8 +80,12 @@
 
 - (void) parserDidEndDocument:(NSXMLParser *)parser
 {
-	if (_target && [_target respondsToSelector:_action])
-		[_target performSelector:_action];
+	if (_target && [_target respondsToSelector:_action]){
+#       pragma clang diagnostic push
+#       pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [_target performSelector:_action];
+#       pragma clang diagnostic pop		
+    }
 }
 
 -(void) setEndDocumentTarget:(id)target andAction: (SEL)action

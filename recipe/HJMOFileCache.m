@@ -181,7 +181,7 @@
 	}
 }
 
-int fileAgeCompareFunction(id obj1, id obj2, void *context) {
+static int fileAgeCompareFunction(id obj1, id obj2, void *context) {
 	NSNumber* age1 = [(NSArray*)obj1 objectAtIndex:0]; 
 	NSNumber* age2 = [(NSArray*)obj2 objectAtIndex:0]; 
 	return [age1 compare:age2];

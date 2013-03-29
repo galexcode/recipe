@@ -91,12 +91,15 @@
 
              NSURL *url = [NSURL URLWithString:[GlobalStore registerLink]];
         
-            __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+            __weak __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+//            __weak ASI2HTTPRequest *weakRequest = request;
             [request setPostValue:[userName text] forKey:@"un"];
             [request setPostValue:[password text] forKey:@"pw"];
             [request setPostValue:[email text] forKey:@"em"];
         
             [request setCompletionBlock:^{
+//                ASIHTTPRequest *request = weakRequest;
+//                if (!request) return;
                 if (request.responseStatusCode == 200) {
                     UserXMLHandler* handler = [[UserXMLHandler alloc] initWithUser:_user];
                     [handler setEndDocumentTarget:self andAction:@selector(didFinishRegisterUser)];
@@ -110,6 +113,8 @@
                 }
             }];
             [request setFailedBlock:^{
+//                ASIHTTPRequest *request = weakRequest;
+//                if (!request) return;
                 [self handleError:request.error];
             }];
         

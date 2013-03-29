@@ -42,7 +42,7 @@
     
     NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[self ingredient] imagePath] forWidth:600 andHeight:0]];
     
-    __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
+    __weak __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
     [request setCompletionBlock:^{
         NSData *data = request.responseData;
         [self.imageIngredient setImage:[[UIImage alloc] initWithData:data]];

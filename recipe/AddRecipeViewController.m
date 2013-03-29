@@ -331,7 +331,7 @@
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [hud setLabelText:@"Saving Recipe..."];
         NSURL *url = [NSURL URLWithString:[GlobalStore addRecipeLink]];
-        __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+        __weak __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
         [request setPostValue:[recipeName text] forKey:@"rn"];
         [request setPostValue:[serving text] forKey:@"rs"];
@@ -376,7 +376,7 @@
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [hud setLabelText:@"Saving Recipe..."];
         NSURL *url = [NSURL URLWithString:[GlobalStore updateRecipeLink]];
-        __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+        __weak __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
         [request setPostValue:[_recipe recipeId] forKey:@"rid"];
         [request setPostValue:[recipeName text] forKey:@"rn"];

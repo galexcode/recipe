@@ -38,7 +38,7 @@
     return self;
 }
 
--(id) initObjectAfterElementStarting:(NSString *)elementName
+-(id) setupObjectAfterElementStarting:(NSString *)elementName
 {
     if ([elementName isEqualToString:@"categories"]){
         return self;

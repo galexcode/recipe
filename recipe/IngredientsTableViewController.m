@@ -139,7 +139,7 @@
 - (IBAction)insertIngredient:(id)sender {
     if ([self validateInputInformation]) {
         NSURL *url = [NSURL URLWithString:[GlobalStore addIngredientLink]];
-        __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+        __weak __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
         [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
         [request setPostValue:[[self recipe] recipeId] forKey:@"rid"];
         [request setPostValue:[txtIngredientName text] forKey:@"in"];
@@ -311,7 +311,7 @@
         if (![[currentIngredient imagePath] isEqualToString:@"-1"]) {
             NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[currentIngredient imagePath] forWidth:60 andHeight:0]];
             
-            __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
+            __weak __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
             [request setCompletionBlock:^{
                 NSData *data = request.responseData;
                 [cell.thumb setImage:[[UIImage alloc] initWithData:data]];
@@ -386,7 +386,7 @@
     Ingredient *currentIngredient = (Ingredient*)[[[self recipe] ingredientList] objectAtIndex:indexPath.row];
     
     NSURL *url = [NSURL URLWithString:[GlobalStore deleteIngredientLink]];
-    __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+    __weak __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
     [request setPostValue:[[[GlobalStore sharedStore] loggedUser] userId] forKey:@"uid"];
     [request setPostValue:[[self recipe] recipeId] forKey:@"rid"];
     [request setPostValue:[currentIngredient ingredientId] forKey:@"iid"];

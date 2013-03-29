@@ -22,7 +22,7 @@
     return self;
 }
 
--(id) initObjectAfterElementStarting:(NSString *)elementName{
+-(id) setupObjectAfterElementStarting:(NSString *)elementName{
     if ([elementName isEqualToString:@"user"]){
         _currentObject = _currentUser;
         return self;

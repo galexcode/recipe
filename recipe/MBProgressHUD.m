@@ -627,7 +627,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 
 - (void)setTransformForCurrentOrientation:(BOOL)animated {	
 	// Stay in sync with the superview
-	if (self.superview) {
+	if (self && [self superview]) {
 		self.bounds = self.superview.bounds;
 		[self setNeedsDisplay];
 	}

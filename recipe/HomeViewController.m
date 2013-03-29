@@ -110,10 +110,13 @@
         
         NSURL *url = [NSURL URLWithString:[GlobalStore searchLink]];
         
-        __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+        __weak __block ASIForm2DataRequest *request = [ASIForm2DataRequest requestWithURL:url];
+//        __weak ASI2HTTPRequest *weakRequest = request;
         [request setPostValue:searchBar.text forKey:@"key"];
         
         [request setCompletionBlock:^{
+////            ASI2HTTPRequest *request = weakRequest;
+//            if (!request) return;
             if (request.responseStatusCode == 200) {
                 RecipesXMLHandler* handler = [[RecipesXMLHandler alloc] initWithRecipeArray:_recipes];
                 [handler setEndDocumentTarget:self andAction:@selector(didParsedSearchRecipes)];
@@ -126,6 +129,8 @@
             }
         }];
         [request setFailedBlock:^{
+//            ASI2HTTPRequest *request = weakRequest;
+//            if (!request) return;
             NSError *error = request.error;
             NSLog(@"Error downloading image: %@", error.localizedDescription);
         }];

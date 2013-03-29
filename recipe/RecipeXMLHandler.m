@@ -38,7 +38,7 @@
     [_recipe setCategoryList:[NSMutableArray array]];
 }
 
--(id) initObjectAfterElementStarting:(NSString *)elementName{
+-(id) setupObjectAfterElementStarting:(NSString *)elementName{
     if ([elementName isEqualToString:@"recipe"]){
         if (_recipe == nil) {
             _recipe = [[Recipe alloc] init];

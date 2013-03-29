@@ -136,7 +136,7 @@
     if (![[[[self recipe] owner] avatarId] isEqualToString:@"-1"]) {
         NSURL *url = [[NSURL alloc] initWithString:[GlobalStore imageLinkWithImageId:[[[self recipe] owner] avatarId] forWidth:100 andHeight:0]];
         
-        __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
+        __weak __block ASI2HTTPRequest *request = [ASI2HTTPRequest requestWithURL:url];
         [request setCompletionBlock:^{
             NSData *data = request.responseData;
             [userThumb setImage:[[UIImage alloc] initWithData:data]];
